@@ -515,7 +515,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -529,7 +529,7 @@
             "navigationSection": {
               "expr": {
                 "Literal": {
-                  "Value": "'ff6194288b81c31860f8'"
+                  "Value": "'c2d89ad90b8769116587'"
                 }
               }
             },

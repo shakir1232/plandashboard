@@ -14,22 +14,7 @@
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "State"
-                    }
-                  },
-                  "Property": "Column2"
-                }
-              },
-              "queryRef": "State.Column2",
-              "nativeQueryRef": "Column2"
-            }
-          ]
+          "projections": []
         },
         "Value": {
           "projections": [
