@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "e048142c495ce0d40330",
+  "displayName": "Duplicate of Agency",
+  "displayOption": "FitToWidth",
+  "height": 1280,
+  "width": 1280,
+  "pageBinding": {
+    "name": "70c33d7a485b233509ac",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "183L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "type": "Tooltip"
+}

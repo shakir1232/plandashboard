@@ -1,0 +1,110 @@
+table Variable
+	lineageTag: 0032b038-45a5-4ab6-b2a5-4cea8e7ccce7
+
+	column Id
+		dataType: string
+		lineageTag: 5cb5c4aa-1c48-404a-892b-31a7b9c02858
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 4ed71bbb-eee5-42b5-bca6-dd677a350979
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: e8a91e7d-4715-4977-a5ba-904cf36048d4
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 831f5f07-dc9e-4fda-9ba4-7251598054b6
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Options
+		dataType: string
+		lineageTag: ff9140f6-e4d9-4b1a-b670-3e95c6e5fc71
+		summarizeBy: none
+		sourceColumn: Options
+
+		annotation SummarizationSetBy = Automatic
+
+	column ControlCss
+		dataType: string
+		lineageTag: 1529a17b-53d9-42b3-842d-9edb7f1ab4fc
+		summarizeBy: none
+		sourceColumn: ControlCss
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateWarning
+		dataType: string
+		lineageTag: da489832-4fbf-4e05-ba34-a428eb7ee7d0
+		summarizeBy: none
+		sourceColumn: UpdateWarning
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 082f4222-2827-438a-aa71-aea308ccec87
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Version
+		dataType: string
+		lineageTag: e4113c94-c971-4edd-9d2a-7a985b26751b
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 891a5762-cbe7-413f-962d-6d9b3e602657
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 17a7605d-8432-47e8-bf0c-95c1325ab0d0
+			defaultHierarchy: LocalDateTable_0a715daf-9650-429d-8c5a-49275424a521.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: a18ddcfb-32c6-4061-b491-bfd251ca3308
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Variable = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Variable = Source{[Schema="dbo",Item="Variable"]}[Data]
+				in
+				    dbo_Variable
+
+	annotation PBI_ResultType = Table
+

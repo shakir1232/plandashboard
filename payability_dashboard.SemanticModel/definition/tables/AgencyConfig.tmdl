@@ -1,0 +1,1022 @@
+table AgencyConfig
+	lineageTag: 8776cc5f-d152-4455-af19-10c81eb11154
+
+	column Id
+		dataType: string
+		lineageTag: aaa2ff08-6daf-443e-b470-8dc0d339545b
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 612a7685-34f1-4712-aab9-fd349be6248f
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Domain
+		dataType: string
+		lineageTag: bd613f75-088c-4911-856e-8bef9ba797d2
+		summarizeBy: none
+		sourceColumn: Domain
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaseUrl
+		dataType: string
+		lineageTag: 47d1cf5d-4b0b-4e0b-a9fb-c155426f8fcc
+		summarizeBy: none
+		sourceColumn: BaseUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Container
+		dataType: string
+		lineageTag: 95033953-31d9-4c38-8880-f21fe3a18164
+		summarizeBy: none
+		sourceColumn: Container
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailFromName
+		dataType: string
+		lineageTag: c99b62b3-d32a-45b2-8d56-be3e7023ebd5
+		summarizeBy: none
+		sourceColumn: EmailFromName
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailSender
+		dataType: string
+		lineageTag: d15a73a5-c47d-4e44-87ae-4ac03705e0ee
+		summarizeBy: none
+		sourceColumn: EmailSender
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoReplyEmail
+		dataType: string
+		lineageTag: d4974d19-87ff-4537-ba50-2a2742cd6b1a
+		summarizeBy: none
+		sourceColumn: NoReplyEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReplyToEmail
+		dataType: string
+		lineageTag: d7e36341-dd14-4949-bf2c-7372e0f70227
+		summarizeBy: none
+		sourceColumn: ReplyToEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockGracePeriodDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 8de34f7d-a2b0-4830-9247-f2add1df5ca1
+		summarizeBy: sum
+		sourceColumn: LockGracePeriodDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimAutoApprovalLeadDays
+		dataType: int64
+		formatString: 0
+		lineageTag: 82abcb13-d0fc-40bd-b3c4-a92c156dc4de
+		summarizeBy: sum
+		sourceColumn: ClaimAutoApprovalLeadDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchClaimHourlyLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: 52187e5c-d449-42fc-9dd4-c8fb4e21f3dc
+		summarizeBy: sum
+		sourceColumn: BatchClaimHourlyLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantProcessBatchSize
+		dataType: int64
+		formatString: 0
+		lineageTag: a51c0919-e7b5-4957-81da-d1545762efe4
+		summarizeBy: sum
+		sourceColumn: ParticipantProcessBatchSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanApiKey
+		dataType: string
+		lineageTag: bca50f80-9dee-42f7-9e86-269bd97f145f
+		summarizeBy: none
+		sourceColumn: ScanApiKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsScanEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d551388e-6abc-4b77-a2aa-0833f941b2f2
+		summarizeBy: none
+		sourceColumn: IsScanEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsMergeScanData
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7832bdf6-7c87-4c68-aa60-a2968c454e29
+		summarizeBy: none
+		sourceColumn: IsMergeScanData
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPayabilityClient
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5670986d-8ec7-4647-b906-6a8f91e87a63
+		summarizeBy: none
+		sourceColumn: IsPayabilityClient
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoHandleRoundingDiscrepancies
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91e3567c-bca4-42b3-a3c5-00b20fb05d39
+		summarizeBy: none
+		sourceColumn: IsAutoHandleRoundingDiscrepancies
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsIncludeSelfBalancingRecord
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e9961315-d869-4525-b114-70cc047c00c9
+		summarizeBy: none
+		sourceColumn: IsIncludeSelfBalancingRecord
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsMergeSameAccountPayments
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 717f523d-8a9c-40ad-9f4b-c4fe9ca293c0
+		summarizeBy: none
+		sourceColumn: IsMergeSameAccountPayments
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoEmailPlanStatements
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 89e72d21-4d78-4cb3-a624-843331262451
+		summarizeBy: none
+		sourceColumn: IsAutoEmailPlanStatements
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: d74c0989-53bc-4ca0-bb7e-17e0d96b3513
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 27269ca4-5265-4336-b777-23d54ca53315
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 04d6c2ce-3f53-4948-8f74-5c8db8f30175
+			defaultHierarchy: LocalDateTable_515da9d8-8d7a-4867-8184-01cdb481097b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: fe4fac86-c6b4-4565-82f4-95ba44df4e29
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 7bc1f17e-215d-4a3f-95c6-8436856dc9d2
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoundingDiscrepancyThreshold
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e3c64456-51ea-4a52-b917-09c2e9dea164
+		summarizeBy: sum
+		sourceColumn: RoundingDiscrepancyThreshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ServiceAgreementBudgetUsageWarningThreshold
+		dataType: double
+		lineageTag: 864400d8-8c02-4078-b4ca-2557175b02cf
+		summarizeBy: sum
+		sourceColumn: ServiceAgreementBudgetUsageWarningThreshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsParticipantRegistrationEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5c0a1d5b-461e-49ba-9842-a6828db13d33
+		summarizeBy: none
+		sourceColumn: IsParticipantRegistrationEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c5f33243-4dc8-4b89-bbc4-f9109138df5c
+		summarizeBy: none
+		sourceColumn: IsPaceEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientDeviceTrustDuration
+		dataType: int64
+		formatString: 0
+		lineageTag: 883c6cfa-e9b8-4850-80e7-8e235ff9d83d
+		summarizeBy: sum
+		sourceColumn: ClientDeviceTrustDuration
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPwaEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a86778ac-9fb7-47e0-9ec0-a1b7f622b33a
+		summarizeBy: none
+		sourceColumn: IsPwaEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCustomFieldsEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 747ee451-5112-4534-9a1a-8e91a4980583
+		summarizeBy: none
+		sourceColumn: IsCustomFieldsEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomFieldsMaxLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: 55338600-7a1f-408f-a702-da360aff08cf
+		summarizeBy: sum
+		sourceColumn: CustomFieldsMaxLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsImportByCsvEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 64a51056-44be-42d3-a12b-4256bd073c2e
+		summarizeBy: none
+		sourceColumn: IsClaimsImportByCsvEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsImportByMailboxEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 069b787e-518d-4846-bacc-eef9565c9b96
+		summarizeBy: none
+		sourceColumn: IsClaimsImportByMailboxEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimsMailFolder
+		dataType: string
+		lineageTag: 037d2e73-1880-4c57-9cb0-dafc981dcb8a
+		summarizeBy: none
+		sourceColumn: ClaimsMailFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimsMailbox
+		dataType: string
+		lineageTag: a49ba9e2-257f-48e8-8c03-29ed0e5b8d71
+		summarizeBy: none
+		sourceColumn: ClaimsMailbox
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanServiceProvider
+		dataType: string
+		lineageTag: fdf66e91-92f0-4a3f-a524-1c16fa85751b
+		summarizeBy: none
+		sourceColumn: ScanServiceProvider
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxFolder
+		dataType: string
+		lineageTag: eaf5648b-cbd4-4a03-a852-66688f0d6410
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxTrustedSenders
+		dataType: string
+		lineageTag: 305aff77-c073-4ac0-bb04-ca0a01239eaf
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxTrustedSenders
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsCsvImportEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1eba0cb8-d13d-4fe9-84cc-072a4d0ad5f4
+		summarizeBy: none
+		sourceColumn: IsClaimsCsvImportEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsBulkImportEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bee4a872-ee8a-4fad-88d8-fe367421ddbc
+		summarizeBy: none
+		sourceColumn: IsClaimsBulkImportEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsMailboxImportEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1a131650-d71f-4288-9129-1564760319ce
+		summarizeBy: none
+		sourceColumn: IsClaimsMailboxImportEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBudgetExcludesNonPlanManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d80f0d7f-ba3c-4d19-b737-40e8f75c4427
+		summarizeBy: none
+		sourceColumn: IsBudgetExcludesNonPlanManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSeekConfirmationOnClaimHoldForReview
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2a01dda5-bace-4661-a368-c395fc17c914
+		summarizeBy: none
+		sourceColumn: IsSeekConfirmationOnClaimHoldForReview
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimBulkUploadFilesMaxLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: d3fc2e94-cbb8-48ec-b0c9-665075e94b05
+		summarizeBy: sum
+		sourceColumn: ClaimBulkUploadFilesMaxLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBudgetForecastEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 17123101-de56-49b2-90a7-9ae7e52a48b9
+		summarizeBy: none
+		sourceColumn: IsBudgetForecastEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoInvoiceSetupFee
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: baf23c83-41b2-4e42-b10c-9de234b053b5
+		summarizeBy: none
+		sourceColumn: IsAutoInvoiceSetupFee
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagementFeeProviderId
+		dataType: string
+		lineageTag: 93afa4f8-cd7a-4134-ac3f-5cccfa694d22
+		summarizeBy: none
+		sourceColumn: ManagementFeeProviderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagementFeeTaxCodeId
+		dataType: string
+		lineageTag: d29c0fb9-34de-4516-9ead-5f90a55b675f
+		summarizeBy: none
+		sourceColumn: ManagementFeeTaxCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ManagementFeeClaimTypeId
+		dataType: string
+		lineageTag: 965b3793-eb6a-4abf-9bd0-565a7b531222
+		summarizeBy: none
+		sourceColumn: ManagementFeeClaimTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SetupFeeSupportItemId
+		dataType: string
+		lineageTag: 3eadb2fe-f178-46c1-89ec-c6918bc44f38
+		summarizeBy: none
+		sourceColumn: SetupFeeSupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoInvoiceMonthlyFee
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0a8da9e9-b944-4f91-be31-1b0ef46f4b52
+		summarizeBy: none
+		sourceColumn: IsAutoInvoiceMonthlyFee
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyFeeSupportItemId
+		dataType: string
+		lineageTag: 29ef07c4-ffdc-4e46-9389-9b223b4387c4
+		summarizeBy: none
+		sourceColumn: MonthlyFeeSupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subdomain
+		dataType: string
+		lineageTag: 64b60b05-1a77-4979-80a0-03c13e51f9f4
+		summarizeBy: none
+		sourceColumn: Subdomain
+
+		annotation SummarizationSetBy = Automatic
+
+	column LegacySubdomain
+		dataType: string
+		lineageTag: f8abe755-9657-4c32-bc3d-68cce9e00209
+		summarizeBy: none
+		sourceColumn: LegacySubdomain
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchPrefix
+		dataType: string
+		lineageTag: da078eb9-5823-40a6-bca1-f6cfb5466413
+		summarizeBy: none
+		sourceColumn: BatchPrefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column ThemeFolder
+		dataType: string
+		lineageTag: 36ed8a63-de32-449d-b3dc-f267c6bf79cf
+		summarizeBy: none
+		sourceColumn: ThemeFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyFeeClaimSchedule
+		dataType: string
+		lineageTag: 18ace530-7a83-4b41-a011-cf35702df45e
+		summarizeBy: none
+		sourceColumn: MonthlyFeeClaimSchedule
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimApprovalTimeoutAction
+		dataType: string
+		lineageTag: c1a72af6-8c70-4f56-a992-0af12ba1bd89
+		summarizeBy: none
+		sourceColumn: ClaimApprovalTimeoutAction
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDedicatedFormRecognizerInstance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b5985890-52a8-4f74-bf19-7b548a5594d8
+		summarizeBy: none
+		sourceColumn: IsDedicatedFormRecognizerInstance
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormRecognizerInstanceEndpoint
+		dataType: string
+		lineageTag: 5e2bd431-2174-46a7-9c22-e236cfb3bfc8
+		summarizeBy: none
+		sourceColumn: FormRecognizerInstanceEndpoint
+
+		annotation SummarizationSetBy = Automatic
+
+	column FormRecognizerInstanceApiKey
+		dataType: string
+		lineageTag: d6279f8d-a442-404c-869d-187991da8b5f
+		summarizeBy: none
+		sourceColumn: FormRecognizerInstanceApiKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxEmail
+		dataType: string
+		lineageTag: 877a8649-3933-4961-868f-e9b7d6dac4a0
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxIdentityRef
+		dataType: string
+		lineageTag: 8bcc17b1-df0b-418f-afb6-706a533c3741
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxIdentityRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxProcessIssueNotifyEmails
+		dataType: string
+		lineageTag: 1040562c-a4b3-4edc-b399-f0190dfae3bf
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxProcessIssueNotifyEmails
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDataConcurrencyLockEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 62cbf30e-a568-45d2-b1b2-7e95e7712420
+		summarizeBy: none
+		sourceColumn: IsDataConcurrencyLockEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimsMailboxCheckJunkEmails
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 95b8a027-7d72-42c7-ba75-c8462ff36cf3
+		summarizeBy: none
+		sourceColumn: IsClaimsMailboxCheckJunkEmails
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRunBackgroundTasks
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 47176a36-f598-4e23-b0aa-7b0821a6f67b
+		summarizeBy: none
+		sourceColumn: IsRunBackgroundTasks
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRegisterWebhooks
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a8c77409-ece4-4556-9895-a10e52d361f3
+		summarizeBy: none
+		sourceColumn: IsRegisterWebhooks
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNppApiEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 172c52f2-ae3e-4d4a-b1a8-3b96457a1287
+		summarizeBy: none
+		sourceColumn: IsNppApiEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column FollowUpEmail
+		dataType: string
+		lineageTag: 3ec08864-cfdd-4b0c-8f03-2d5451be9b70
+		summarizeBy: none
+		sourceColumn: FollowUpEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceMailboxFollowUpEmails
+		dataType: string
+		lineageTag: d97960c7-9edf-49eb-90cf-6c84155c573e
+		summarizeBy: none
+		sourceColumn: InvoiceMailboxFollowUpEmails
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaFileLinesMaxLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e88dcc2-e389-4eb8-8037-e19881398142
+		summarizeBy: sum
+		sourceColumn: AbaFileLinesMaxLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBillingEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ceb887c8-91f8-4a47-b479-e571b3d21829
+		summarizeBy: none
+		sourceColumn: IsBillingEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column RateCardId
+		dataType: string
+		lineageTag: 51fb195e-5850-43be-88a8-5d614282c314
+		summarizeBy: none
+		sourceColumn: RateCardId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MyobCardNumber
+		dataType: string
+		lineageTag: 2890b08a-04e3-4c57-889f-4248d96807de
+		summarizeBy: none
+		sourceColumn: MyobCardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanFeeMethod
+		dataType: string
+		lineageTag: f4867be8-8a37-4394-b358-6e0523155e22
+		summarizeBy: none
+		sourceColumn: ScanFeeMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingStartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 98fb8f92-d0c7-4ab2-83c1-0bfb11dc8c4e
+		summarizeBy: none
+		sourceColumn: BillingStartDate
+
+		variation Variation
+			isDefault
+			relationship: b2e74f1a-d54b-4c42-bdc2-5c48d925dcad
+			defaultHierarchy: LocalDateTable_62abfad2-120b-4fc8-b49d-e53e914ff189.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SaasRateCardId
+		dataType: string
+		lineageTag: 695e6265-fd00-48d6-a989-4dbf333287a6
+		summarizeBy: none
+		sourceColumn: SaasRateCardId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanRateCardId
+		dataType: string
+		lineageTag: 2daefa6d-5b13-4fce-b301-cd6a2a1b9487
+		summarizeBy: none
+		sourceColumn: ScanRateCardId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingName
+		dataType: string
+		lineageTag: beaa2041-ba36-49c4-9092-0d9d088579c8
+		summarizeBy: none
+		sourceColumn: BillingName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppSlotRef
+		dataType: string
+		lineageTag: 5ef97278-57b9-4768-a77b-fa5273bfebee
+		summarizeBy: none
+		sourceColumn: AppSlotRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsServiceAgreementMandatory
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 28dd672c-5f0e-41fa-85ea-4f4a13a74cd3
+		summarizeBy: none
+		sourceColumn: IsServiceAgreementMandatory
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoInvoiceSetupFeeOnPaceReassessment
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7ec207e8-473e-4f0a-8c40-1e20453ba4ad
+		summarizeBy: none
+		sourceColumn: IsAutoInvoiceSetupFeeOnPaceReassessment
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimSetupFeeOnPaceReassessment
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9900c0ea-5dc9-42e7-97f8-a806fcf942d7
+		summarizeBy: none
+		sourceColumn: IsClaimSetupFeeOnPaceReassessment
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPosabilityEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 44e24617-35be-46c5-89ec-1f1c807668c9
+		summarizeBy: none
+		sourceColumn: IsPosabilityEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDirectClaimsEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4ca84cd-9ded-4554-8c5a-eba1a3d342e7
+		summarizeBy: none
+		sourceColumn: IsDirectClaimsEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsServiceAgreementRequiredForDirectClaims
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ec2dda6a-31c8-49ab-a869-0d042e1a5a99
+		summarizeBy: none
+		sourceColumn: IsServiceAgreementRequiredForDirectClaims
+
+		annotation SummarizationSetBy = Automatic
+
+	column DirectClaimsServiceDateLimitDays
+		dataType: int64
+		formatString: 0
+		lineageTag: ebe7eaf4-2249-4c3c-b5b2-d3a1abfd6989
+		summarizeBy: sum
+		sourceColumn: DirectClaimsServiceDateLimitDays
+
+		annotation SummarizationSetBy = Automatic
+
+	column DirectClaimsInvoiceAmountThreshold
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1e36bbbd-42f5-4fa9-bba7-8a5d2d852645
+		summarizeBy: sum
+		sourceColumn: DirectClaimsInvoiceAmountThreshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsMyCareSpacePromoEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e46d91d3-8507-4616-a351-6b3f6655fa7f
+		summarizeBy: none
+		sourceColumn: IsMyCareSpacePromoEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBillingCommDisabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e96fa230-b2f2-4f88-a84f-c41582cccf6c
+		summarizeBy: none
+		sourceColumn: IsBillingCommDisabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingMinExpFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bb235296-57f3-4c0d-8e97-4dd2ea5c1839
+		summarizeBy: sum
+		sourceColumn: BillingMinExpFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsCustomBrandingEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 80643d19-c67d-47bb-817f-3c9ecb504327
+		summarizeBy: none
+		sourceColumn: IsCustomBrandingEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlanabilityProEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 72cda723-9c32-4556-8350-8a5ab127eecd
+		summarizeBy: none
+		sourceColumn: IsPlanabilityProEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column MyobRef
+		dataType: string
+		lineageTag: 76dd4276-63af-4152-97c6-f40f6648a65d
+		summarizeBy: none
+		sourceColumn: MyobRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column XeroRef
+		dataType: string
+		lineageTag: 9d770399-2194-4e45-ad25-f59b9643a333
+		summarizeBy: none
+		sourceColumn: XeroRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantRegistrationIntroductoryText
+		dataType: string
+		lineageTag: 2fbde9a2-c2e6-4088-bcac-7d64ec70444b
+		summarizeBy: none
+		sourceColumn: ParticipantRegistrationIntroductoryText
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantRegistrationCompletionText
+		dataType: string
+		lineageTag: 78550a88-beac-485c-bf06-05b4992522b9
+		summarizeBy: none
+		sourceColumn: ParticipantRegistrationCompletionText
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsParticipantAgreementSigningEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fff2b8d6-a7fc-4461-9cba-624aca12cd7e
+		summarizeBy: none
+		sourceColumn: IsParticipantAgreementSigningEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantRegistrationAgreementFileName
+		dataType: string
+		lineageTag: be8e7aa1-942a-4e81-a816-4416d8f5cbe1
+		summarizeBy: none
+		sourceColumn: ParticipantRegistrationAgreementFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZohoFolderId
+		dataType: string
+		lineageTag: a2383912-552f-46cd-a95b-b87f5c01ef0e
+		summarizeBy: none
+		sourceColumn: ZohoFolderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZohoFolderName
+		dataType: string
+		lineageTag: 33f98807-0454-48a9-8674-4846761e02b8
+		summarizeBy: none
+		sourceColumn: ZohoFolderName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencySignerName
+		dataType: string
+		lineageTag: 9fdccc7e-0aa6-4619-bfa2-75cf7c4529d7
+		summarizeBy: none
+		sourceColumn: AgencySignerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencySignerEmail
+		dataType: string
+		lineageTag: ae220a4f-0f59-440a-ab24-209e6990c199
+		summarizeBy: none
+		sourceColumn: AgencySignerEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCheckRequestOrigin
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d0f5e702-3d4a-481a-948c-74ebd97d1689
+		summarizeBy: none
+		sourceColumn: IsCheckRequestOrigin
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRestrictClaimCancellation
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 14fc7b73-5b11-46a0-93a0-7cb609e099f3
+		summarizeBy: none
+		sourceColumn: IsRestrictClaimCancellation
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanBudgetAlertThreshold
+		dataType: double
+		lineageTag: 9e43e1fe-08e5-48df-bdd8-a74594dbf2e4
+		summarizeBy: sum
+		sourceColumn: PlanBudgetAlertThreshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FundingPeriodBudgetAlertThreshold
+		dataType: double
+		lineageTag: 09c8fd38-6a2a-439b-ae2a-192441d5b3fc
+		summarizeBy: sum
+		sourceColumn: FundingPeriodBudgetAlertThreshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsBlockDirectClaimsOnInvoiceAmountVariance
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: efcb3767-f2c2-4f9b-ab74-98388fba4bf9
+		summarizeBy: none
+		sourceColumn: IsBlockDirectClaimsOnInvoiceAmountVariance
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBlockFundingPeriodBackClaiming
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ece23b59-2794-4c61-a8bc-ffce9f3c3d8d
+		summarizeBy: none
+		sourceColumn: IsBlockFundingPeriodBackClaiming
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetAlertExcludedCategoryIds
+		dataType: string
+		lineageTag: 08a38a26-b83a-40c0-85de-b142aec6a513
+		summarizeBy: none
+		sourceColumn: BudgetAlertExcludedCategoryIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFundingPeriodBackClaimingAllowed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b625cc48-c3c8-48de-b561-03b4a3754b83
+		summarizeBy: none
+		sourceColumn: IsFundingPeriodBackClaimingAllowed
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessPermits
+		dataType: string
+		lineageTag: 33414249-434f-451f-a688-1afb7b90ec20
+		summarizeBy: none
+		sourceColumn: AccessPermits
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisBudgetApiRef
+		dataType: string
+		lineageTag: b14b0db1-cfb6-4270-b3f1-29b649b07e47
+		summarizeBy: none
+		sourceColumn: NdisBudgetApiRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AgencyConfig = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_AgencyConfig = Source{[Schema="dbo",Item="AgencyConfig"]}[Data]
+				in
+				    dbo_AgencyConfig
+
+	annotation PBI_ResultType = Table
+

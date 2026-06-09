@@ -1,0 +1,249 @@
+table SupportItem
+	lineageTag: 3cebca79-0d99-48cd-96c6-8577005278a9
+
+	column Id
+		dataType: string
+		lineageTag: 28a15caf-02b0-4c5d-a75d-74fe9fba19f1
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryId
+		dataType: string
+		lineageTag: 3ce250b4-7c95-43d9-be84-0b4139b06cb8
+		summarizeBy: none
+		sourceColumn: CategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeId
+		dataType: string
+		lineageTag: 5373d92b-9c7b-43d2-86e0-56b8f0f67530
+		summarizeBy: none
+		sourceColumn: TypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchId
+		dataType: string
+		lineageTag: d48b525b-0252-4913-b649-e43bd2b2d48a
+		summarizeBy: none
+		sourceColumn: BatchId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimTypeId
+		dataType: string
+		lineageTag: c8a9c40e-a854-4e33-89dd-6292da761232
+		summarizeBy: none
+		sourceColumn: ClaimTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeRef
+		dataType: string
+		lineageTag: e08b04c6-937a-4781-a847-d0f82f4db49f
+		summarizeBy: none
+		sourceColumn: TypeRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: b932ae36-d952-4f21-8f4d-13203736d5e1
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisDesc
+		dataType: string
+		lineageTag: 46244723-8f37-4db5-82f3-5221229f4d11
+		summarizeBy: none
+		sourceColumn: NdisDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: b30070ca-febc-42a1-8e00-91868e5416d2
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: 463c6700-2a53-4427-bd8f-ff215c22cdc4
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 42b52af0-719f-4e03-96f7-d2af6b6c3cf3
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 024f1da5-c07b-4e1c-9371-599c4df09a41
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 5cd4b9da-2584-4bf9-92c9-6e68cb173aa6
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceCategoryId
+		dataType: string
+		lineageTag: 4a3a32d4-1fee-4b29-959d-2ae0524309c1
+		summarizeBy: none
+		sourceColumn: PaceCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInKind
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9fb6b7cc-f07d-4803-9f1b-3f106adac2bc
+		summarizeBy: none
+		sourceColumn: IsInKind
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: aafc6f23-9a52-46c8-817d-fc5f8e158755
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxCodeId
+		dataType: string
+		lineageTag: 57881c79-7d5d-41eb-82fa-281ad5e0d0eb
+		summarizeBy: none
+		sourceColumn: TaxCodeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlertMessage
+		dataType: string
+		lineageTag: 087d4b90-3886-4cde-a453-537100c45c09
+		summarizeBy: none
+		sourceColumn: AlertMessage
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDisabledForClaim
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ec8c658a-c6e3-4173-bdeb-fc709c751697
+		summarizeBy: none
+		sourceColumn: IsDisabledForClaim
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBlockedForClaim
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9417a3ac-5ddc-4b37-9252-c93fae427f0c
+		summarizeBy: none
+		sourceColumn: IsBlockedForClaim
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlertSeverity
+		dataType: string
+		lineageTag: dc3688a0-b9a9-4fd1-8fd5-2bb8b968f35a
+		summarizeBy: none
+		sourceColumn: AlertSeverity
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceRestrictedClaimTypeIds
+		dataType: string
+		lineageTag: bf8346b8-612b-48a2-ad7a-3783663910b4
+		summarizeBy: none
+		sourceColumn: PaceRestrictedClaimTypeIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column RateType
+		dataType: string
+		lineageTag: a78bb06d-0c22-49af-9810-6d829d6ac6c5
+		summarizeBy: none
+		sourceColumn: RateType
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRefVariant
+		dataType: string
+		lineageTag: 5d55ef16-f684-47b4-8210-6ce93754f81d
+		summarizeBy: none
+		sourceColumn: NdisRefVariant
+
+		annotation SummarizationSetBy = Automatic
+
+	column VariantApplicableFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 65a3f332-4197-4d7d-bbdc-b640c456e8d7
+		summarizeBy: none
+		sourceColumn: VariantApplicableFrom
+
+		variation Variation
+			isDefault
+			relationship: 7ce4db89-19ba-453e-85b6-4e76cfcb192a
+			defaultHierarchy: LocalDateTable_a2fd854f-5be9-46d1-8fc9-3093db2dceef.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VariantApplicableTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7cc21a34-7e90-4018-bba6-67c44dfb8a9d
+		summarizeBy: none
+		sourceColumn: VariantApplicableTo
+
+		variation Variation
+			isDefault
+			relationship: 3fb2ed87-6721-4420-b65b-0add3880e5c2
+			defaultHierarchy: LocalDateTable_15e57039-df08-4dd6-97dd-99090b045c6c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAlertForProviderTravel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 86d8f7ae-ec79-4318-b091-1f4115349a3a
+		summarizeBy: none
+		sourceColumn: IsAlertForProviderTravel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SupportItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_SupportItem = Source{[Schema="dbo",Item="SupportItem"]}[Data]
+				in
+				    dbo_SupportItem
+
+	annotation PBI_ResultType = Table
+

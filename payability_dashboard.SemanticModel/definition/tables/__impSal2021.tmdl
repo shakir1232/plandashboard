@@ -1,0 +1,96 @@
+table __impSal2021
+	lineageTag: 935239f1-1d74-4741-9066-b7f641d486f9
+
+	column Code
+		dataType: string
+		lineageTag: 3c294616-6dab-40ba-bce5-15cb50c75ad5
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbName
+		dataType: string
+		lineageTag: d88e83a5-8c70-49d7-b8b7-c88604bfa650
+		summarizeBy: none
+		sourceColumn: SuburbName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Postcode
+		dataType: string
+		lineageTag: dd29b644-bc03-4be7-bddc-74dbd6e6fc23
+		summarizeBy: none
+		sourceColumn: Postcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: double
+		lineageTag: daf54f8c-3d36-41a6-93b3-db09d957316c
+		summarizeBy: sum
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MMM
+		dataType: string
+		lineageTag: e03c1f76-3e49-4072-b9ec-1d8b614b084d
+		summarizeBy: none
+		sourceColumn: MMM
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 36d8415a-36b6-4a1b-b038-13db5bb4aa2c
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column MappingName
+		dataType: string
+		lineageTag: 854657ea-8b46-4469-99ca-631423153703
+		summarizeBy: none
+		sourceColumn: MappingName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MappingState
+		dataType: string
+		lineageTag: 0352ab3b-76fa-4409-a70a-e266652ee318
+		summarizeBy: none
+		sourceColumn: MappingState
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 12ad48c1-32c4-47cc-b9ef-f9dca429d09d
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExistingSuburbId
+		dataType: string
+		lineageTag: 866c95b1-9878-457c-8113-69c91bb754ea
+		summarizeBy: none
+		sourceColumn: ExistingSuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition __impSal2021 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo___impSal2021 = Source{[Schema="dbo",Item="__impSal2021"]}[Data]
+				in
+				    dbo___impSal2021
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,195 @@
+table BankFeedTransaction
+	lineageTag: 45d49f15-ade1-4a3e-a29a-67f312c4d467
+
+	column Id
+		dataType: string
+		lineageTag: 4537bf44-c0d9-4f71-bbf5-c85a1b491464
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportId
+		dataType: string
+		lineageTag: 64decc81-e129-47bf-a66b-32a3c205efd4
+		summarizeBy: none
+		sourceColumn: ImportId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankTransactionId
+		dataType: string
+		lineageTag: 5e1b5e3f-3af4-4564-b33e-1a6662a8e66a
+		summarizeBy: none
+		sourceColumn: BankTransactionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f4a4bfde-7071-4a34-ae6f-0bf33b3bdc44
+		summarizeBy: none
+		sourceColumn: TransactionDate
+
+		variation Variation
+			isDefault
+			relationship: b9a3c843-4c42-4c12-9ccc-8304ed32ad3c
+			defaultHierarchy: LocalDateTable_923ed0ee-3ee1-49dd-85b0-2e2a695d753b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountNumber
+		dataType: string
+		lineageTag: db26c995-bfbb-43d1-9c54-d0c45096e504
+		summarizeBy: none
+		sourceColumn: AccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceOfAccount
+		dataType: string
+		lineageTag: feb3c0c0-bf74-482e-b2ea-9dc0ab5a47bd
+		summarizeBy: none
+		sourceColumn: SourceOfAccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountFormat
+		dataType: string
+		lineageTag: 2b5bf181-7135-4127-b57a-c1b611edffb1
+		summarizeBy: none
+		sourceColumn: AccountFormat
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountName
+		dataType: string
+		lineageTag: d5b44a28-6023-4561-95c4-ec36bf1a68a0
+		summarizeBy: none
+		sourceColumn: AccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyCode
+		dataType: string
+		lineageTag: 31a2991c-3af1-4638-a9b1-266c6b41a33c
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubAccountName
+		dataType: string
+		lineageTag: 5520b191-9975-4ea4-8383-3fe0b25d5d92
+		summarizeBy: none
+		sourceColumn: SubAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortTransactionDescription
+		dataType: string
+		lineageTag: 7fd84b24-62fc-449d-bb0d-7d8f6c41c963
+		summarizeBy: none
+		sourceColumn: ShortTransactionDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: f981b96a-14fe-4c94-819c-7f40348b4526
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 28d3c9f8-2f05-42e7-8ed7-2161e9e38def
+		summarizeBy: sum
+		sourceColumn: TransactionAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Narrative
+		dataType: string
+		lineageTag: f7ddb3d6-b369-4400-b6d3-327ec8b338d5
+		summarizeBy: none
+		sourceColumn: Narrative
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValueDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 87b5d2c0-d383-43d5-bf34-bdbf0ce8f15b
+		summarizeBy: none
+		sourceColumn: ValueDate
+
+		variation Variation
+			isDefault
+			relationship: 996f72f1-72e4-4f27-b5ad-796f4ade81d1
+			defaultHierarchy: LocalDateTable_f422c68b-fdd5-46a7-9f7e-f5921043640a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TraceId
+		dataType: string
+		lineageTag: d7a48321-85e8-4a28-be5d-184185450c4c
+		summarizeBy: none
+		sourceColumn: TraceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TranCode
+		dataType: string
+		lineageTag: 31777216-6184-48ee-becb-1f1220cb6c58
+		summarizeBy: none
+		sourceColumn: TranCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AuxDom
+		dataType: string
+		lineageTag: 3fcc28d6-5aa5-4d83-b1da-c38870054f1e
+		summarizeBy: none
+		sourceColumn: AuxDom
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: b29823b2-d98d-4ee7-a1b6-13b4b23bdc77
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d3bcdc70-5605-4da2-bdf2-5df89dbdb88c
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: aa0a43e0-0042-4a68-b44a-a655171ef35a
+			defaultHierarchy: LocalDateTable_0ea2cc14-a444-4f27-8373-eec5a4a79605.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BankFeedTransaction = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BankFeedTransaction = Source{[Schema="dbo",Item="BankFeedTransaction"]}[Data]
+				in
+				    dbo_BankFeedTransaction
+
+	annotation PBI_ResultType = Table
+

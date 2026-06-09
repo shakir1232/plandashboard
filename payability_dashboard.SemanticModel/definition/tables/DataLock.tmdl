@@ -1,0 +1,82 @@
+table DataLock
+	lineageTag: b01623e4-759c-4d2e-b30e-4ebf3a41bb15
+
+	column Id
+		dataType: string
+		lineageTag: 81b3034e-7e02-4174-b46e-3b3ea4bff886
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: bd5d980e-dfa2-45c0-ac20-bbc490b4fe26
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimId
+		dataType: string
+		lineageTag: 4ac69d46-cd66-4d77-b82e-cc42a726534c
+		summarizeBy: none
+		sourceColumn: ClaimId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockedById
+		dataType: string
+		lineageTag: a637a2e2-2b53-4b38-bf8b-e85831fdb718
+		summarizeBy: none
+		sourceColumn: LockedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceRef
+		dataType: string
+		lineageTag: fa5896ac-27b8-4daf-a995-9bdc49940a96
+		summarizeBy: none
+		sourceColumn: DeviceRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5be21114-941c-4a0b-9547-e602682ca88a
+		summarizeBy: none
+		sourceColumn: LockedAt
+
+		variation Variation
+			isDefault
+			relationship: 00ef18a1-5b9f-4eae-9866-f90fb5bcd5d6
+			defaultHierarchy: LocalDateTable_c2154db0-0536-45d6-917b-5a1cc81b9a04.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastSignalAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c1e47bf6-4e43-4f21-b045-a44f783390ef
+		summarizeBy: none
+		sourceColumn: LastSignalAt
+
+		variation Variation
+			isDefault
+			relationship: 4e73df99-8221-46f3-aa1b-753d6bc0179d
+			defaultHierarchy: LocalDateTable_d47f161c-9acd-4cd4-8237-5eafbf60ee10.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DataLock = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_DataLock = Source{[Schema="dbo",Item="DataLock"]}[Data]
+				in
+				    dbo_DataLock
+
+	annotation PBI_ResultType = Table
+

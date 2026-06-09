@@ -1,0 +1,485 @@
+table Plan_20241111_PacePlans
+	lineageTag: b4b572e6-3ca4-4e32-9dec-6ffea892afee
+
+	column Id
+		dataType: string
+		lineageTag: b0aec697-9e3a-4a62-9a60-8c8ec8abb568
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 0cd44b84-f605-44f9-b858-366ad7865d4a
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: df9ba1fb-9961-4563-adaf-65a26770756f
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 0b17372c-dc73-4f6f-a303-450f02649f21
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f3add5df-63d2-4b0b-b199-cd9bc4b6901e
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: b0642606-3846-4d73-8745-dbf5579a5a02
+			defaultHierarchy: LocalDateTable_31eca0d6-4c35-40dc-9af9-fa4b26a4a3ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d03c72cf-2f6f-425c-9bea-59f7c6732f2c
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: 8b53c051-9857-4304-99d6-0dd182f932fc
+			defaultHierarchy: LocalDateTable_af2a1310-64db-47ae-a957-1a3c8c523e55.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemainingDaysNotifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 630cc243-7ead-446a-ac37-8db4d0d515af
+		summarizeBy: none
+		sourceColumn: RemainingDaysNotifiedAt
+
+		variation Variation
+			isDefault
+			relationship: 5830e345-be08-4f06-a70e-e71901b85984
+			defaultHierarchy: LocalDateTable_8e9a671b-df15-48ff-aeea-ada99b2a0663.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8e2f21e3-807c-4bc9-8637-cb8ce96b7abd
+		summarizeBy: sum
+		sourceColumn: BudgetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a2986c10-8158-4ef3-92bd-4303f3c4c852
+		summarizeBy: sum
+		sourceColumn: SpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1c45daa7-b4f9-4b44-befb-893f49874b0c
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsOverBudget
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c346f343-1237-493d-bb33-327efb91f620
+		summarizeBy: none
+		sourceColumn: IsOverBudget
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagImportAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0dad4dd2-2f6c-4586-b880-dd142d7c4d49
+		summarizeBy: none
+		sourceColumn: FlagImportAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagBudgetAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f90508d6-9a96-4bb5-b6b4-495cdbd52f7c
+		summarizeBy: none
+		sourceColumn: FlagBudgetAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagExpiryAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bb6417f7-f8c2-42b7-be11-8c1d3911758a
+		summarizeBy: none
+		sourceColumn: FlagExpiryAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExpiryAlertNotifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1761e8b9-acb8-4d63-a07e-255a6a4f087a
+		summarizeBy: none
+		sourceColumn: ExpiryAlertNotifiedAt
+
+		variation Variation
+			isDefault
+			relationship: 43e20708-8aba-47ea-bc27-24c0a3ca4a2f
+			defaultHierarchy: LocalDateTable_1e0ee3f4-95d8-4655-9300-637036929d5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: bf5d247b-89ad-4e27-a1a5-d5ff56beb1df
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ab463ea3-d475-413c-bb9a-6a0de1fa04de
+		summarizeBy: none
+		sourceColumn: ImportedAt
+
+		variation Variation
+			isDefault
+			relationship: 7e7cd332-24ff-4074-9d14-0ab052bb8be6
+			defaultHierarchy: LocalDateTable_0c8f89ac-63a5-42ed-bcdf-62d2b637c383.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanSyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 90c5dd98-a402-4723-9c78-8b6719d98526
+		summarizeBy: none
+		sourceColumn: PlanSyncedAt
+
+		variation Variation
+			isDefault
+			relationship: bc0583c0-66f5-4a85-ac03-ebc2c4b819b3
+			defaultHierarchy: LocalDateTable_2ebf5a50-0d59-427e-aaf1-1382f3e41995.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceBookingsSyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f5faef90-4e90-438e-b45b-00483d93446c
+		summarizeBy: none
+		sourceColumn: ServiceBookingsSyncedAt
+
+		variation Variation
+			isDefault
+			relationship: 29bfb674-db4c-4b65-a7b6-5fe8acbe181d
+			defaultHierarchy: LocalDateTable_2d356a79-6a55-4a02-b778-6ab92f5f9cb7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetSyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 327fe4db-cb08-46c0-85c7-6f8ae8983d30
+		summarizeBy: none
+		sourceColumn: BudgetSyncedAt
+
+		variation Variation
+			isDefault
+			relationship: 2dc5e5a0-77fc-4803-b41a-7c5136cf1ee0
+			defaultHierarchy: LocalDateTable_abd61995-6bf7-4785-a468-d3c264888b81.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAddedManually
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 224555d0-26e7-499e-bf42-cf0e09a479fd
+		summarizeBy: none
+		sourceColumn: IsAddedManually
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNdisArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 69db562e-949d-40ce-bfdf-cf5b0ea9990f
+		summarizeBy: none
+		sourceColumn: IsNdisArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 58e10e1a-3168-44da-a2d0-a9efc860b4b0
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 71547e34-1c9c-45fc-a06c-3fe796148d71
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ef69b493-4cab-40d2-a834-8d05989455fe
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 9c6aee81-9b8a-4eac-83da-c2f6dbb6c4f6
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 170061db-6226-43dd-af25-b5eaf6b0d24e
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagExtendAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f2f762f1-4f4c-4b92-85b9-de192e4fd723
+		summarizeBy: none
+		sourceColumn: FlagExtendAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessTempRef
+		dataType: string
+		lineageTag: 871656e5-b2cf-4260-8ad5-fb2e05585ea6
+		summarizeBy: none
+		sourceColumn: ProcessTempRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 995f7127-3e26-464d-b087-f6ef8700a31b
+		summarizeBy: none
+		sourceColumn: IsPaceManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasBudgetConsent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c2585102-e2a4-4b03-b13a-45969e5a60f9
+		summarizeBy: none
+		sourceColumn: HasBudgetConsent
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstStartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 275e83fe-16da-4828-b8c2-f66d97c3c457
+		summarizeBy: none
+		sourceColumn: FirstStartDate
+
+		variation Variation
+			isDefault
+			relationship: 088c8b42-5d48-4ad9-bf65-f68348c9e69d
+			defaultHierarchy: LocalDateTable_c3736bab-f34f-4fdf-b2a9-be97e1148edb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisBudgetCheckedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6e602fd9-20d9-4612-ae28-b915ceaaaaa2
+		summarizeBy: none
+		sourceColumn: NdisBudgetCheckedAt
+
+		variation Variation
+			isDefault
+			relationship: ba85a499-3b75-418c-bfbd-5b3c5fd13d2a
+			defaultHierarchy: LocalDateTable_24e8d486-06a9-4f8a-851d-e5b2acded756.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ForceNdisBudgetCheck
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dbcc639e-fd81-4419-8c83-b47ef0f80739
+		summarizeBy: none
+		sourceColumn: ForceNdisBudgetCheck
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagPlanManagedServiceBookingAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 059b10c5-993b-4841-8420-d26afb664bf7
+		summarizeBy: none
+		sourceColumn: FlagPlanManagedServiceBookingAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSetupCostRequested
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 30ff56f4-9767-45f7-9c0c-53df19a7da55
+		summarizeBy: none
+		sourceColumn: IsSetupCostRequested
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBudgetExcludesNonPlanManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: abbb7626-7375-4ce2-97d6-280b74be8cb6
+		summarizeBy: none
+		sourceColumn: IsBudgetExcludesNonPlanManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column VirtualEndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 07809b6e-9275-448b-b7b7-cd3ee0aeafde
+		summarizeBy: none
+		sourceColumn: VirtualEndDate
+
+		variation Variation
+			isDefault
+			relationship: 15d878a3-435c-485c-81c9-da4c3bbb57ef
+			defaultHierarchy: LocalDateTable_89b1c078-a2b8-4ab9-b1de-3e188e961fdf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentPeriodId
+		dataType: string
+		lineageTag: 2502a87e-535d-4daa-b871-f077be8b715f
+		summarizeBy: none
+		sourceColumn: CurrentPeriodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterId
+		dataType: string
+		lineageTag: cf2126f2-a2b4-4f5d-9693-26b8e9e7ba95
+		summarizeBy: none
+		sourceColumn: MasterId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceHistorical
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b177a096-da3f-42f7-8fb2-7b64246c524e
+		summarizeBy: none
+		sourceColumn: IsPaceHistorical
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhaseRef
+		dataType: string
+		lineageTag: 45b4f6bc-c6fe-48d6-aece-34a1cbe0fda1
+		summarizeBy: none
+		sourceColumn: PhaseRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRequestSetupCostForPaceReassessment
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1873362d-a4bf-4785-a69e-9b13495471ff
+		summarizeBy: none
+		sourceColumn: IsRequestSetupCostForPaceReassessment
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagReassessAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b8cc2186-64ab-43bc-bdce-5c8adf3b56e3
+		summarizeBy: none
+		sourceColumn: FlagReassessAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSetupCostClaimForbidden
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 46bef8f2-2f5b-4b7c-a643-ef4dcfc665a9
+		summarizeBy: none
+		sourceColumn: IsSetupCostClaimForbidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TempRef
+		dataType: string
+		lineageTag: dca75fdb-c836-4dd8-b9e3-361f6fb4d658
+		summarizeBy: none
+		sourceColumn: TempRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hash
+		dataType: string
+		lineageTag: cca9b3dc-7808-4719-9df6-e400e5863ac4
+		summarizeBy: none
+		sourceColumn: Hash
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Plan_20241111_PacePlans = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Plan_20241111_PacePlans = Source{[Schema="dbo",Item="Plan_20241111_PacePlans"]}[Data]
+				in
+				    dbo_Plan_20241111_PacePlans
+
+	annotation PBI_ResultType = Table
+

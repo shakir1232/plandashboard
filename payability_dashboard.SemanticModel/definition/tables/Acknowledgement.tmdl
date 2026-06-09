@@ -1,0 +1,89 @@
+table Acknowledgement
+	lineageTag: 1a64fda3-57dd-4c0a-a4cb-d0c82b1bc06b
+
+	measure 'Total Revenue' = SUM(Bill[BillAmount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 54869da3-c56a-4c7b-959c-6633fbb453fc
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Id
+		dataType: string
+		lineageTag: da8e326f-2637-4873-b9ed-ccc1b2333ead
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: f9e193f3-e6b2-46f5-a935-6541f2130cad
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BulletinId
+		dataType: string
+		lineageTag: 64834db1-c115-45a6-b2ad-06de70cb4e0f
+		summarizeBy: none
+		sourceColumn: BulletinId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemoteIp
+		dataType: string
+		lineageTag: 0bd1db9b-a70e-4593-8b1e-57b9c883299b
+		summarizeBy: none
+		sourceColumn: RemoteIp
+
+		annotation SummarizationSetBy = Automatic
+
+	column ViewedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dec041ef-5416-4883-a3ad-c59353477175
+		summarizeBy: none
+		sourceColumn: ViewedAt
+
+		variation Variation
+			isDefault
+			relationship: 74298950-a5a0-48f2-b587-a112be6ef52d
+			defaultHierarchy: LocalDateTable_75a43d56-8ed9-4043-a417-3b7e18df7d7d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6586c228-061b-45bb-8ac7-0fcab099a301
+		summarizeBy: none
+		sourceColumn: AcceptedAt
+
+		variation Variation
+			isDefault
+			relationship: 26b1049d-103b-4bcc-977f-9555cde07f6d
+			defaultHierarchy: LocalDateTable_6feb26ae-a3f9-44e7-a14a-90a062187e1a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Views
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d66a1d2-17f4-48b7-9f47-1a75fa4af36e
+		summarizeBy: sum
+		sourceColumn: Views
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Acknowledgement = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Acknowledgement = Source{[Schema="dbo",Item="Acknowledgement"]}[Data]
+				in
+				    dbo_Acknowledgement
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,177 @@
+table ClaimBatch
+	lineageTag: c4cf5a23-ef79-4e99-a581-96c37a0b3882
+
+	column Id
+		dataType: string
+		lineageTag: af1daa38-61dd-4f8d-b518-e879cb5b07c5
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 32a55be8-5d08-4eef-9733-d59dfbe8b962
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterId
+		dataType: string
+		lineageTag: 823a69eb-e67c-4554-a9bb-a88440db6b48
+		summarizeBy: none
+		sourceColumn: MasterId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchNdisRef
+		dataType: string
+		lineageTag: f408af49-7edb-44bf-9e0e-af6d4de89b26
+		summarizeBy: none
+		sourceColumn: BatchNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 2afbcdb4-cf5a-4c7c-a2fd-4a94bf838599
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubmittedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ce9ec4b8-1662-48d6-961e-5b0d0c6716cb
+		summarizeBy: none
+		sourceColumn: SubmittedAt
+
+		variation Variation
+			isDefault
+			relationship: 89f83bab-bb42-4c1c-a152-6387d27658d5
+			defaultHierarchy: LocalDateTable_8eb736b2-d2bf-4a83-96d8-5549af862df0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CallbackReceivedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8ab4c4b-6cb1-4c6a-afa2-016d199cd1ea
+		summarizeBy: none
+		sourceColumn: CallbackReceivedAt
+
+		variation Variation
+			isDefault
+			relationship: 94ea66aa-2fbd-468a-a287-34863d311503
+			defaultHierarchy: LocalDateTable_53c5e7be-ba76-489e-846f-f56ecb5072ab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f0fa1732-1b5a-4724-bd91-73fd821ded40
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 6355217d-5750-48e3-ae77-a32a54c3f26f
+			defaultHierarchy: LocalDateTable_77ee2d8c-b2c7-4ed0-b9ba-aae959832625.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: b7d059a4-49a3-40a0-a424-d8a4245b5e09
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsProcessPending
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 16408944-c073-41b1-bf28-37cd2439dfa4
+		summarizeBy: none
+		sourceColumn: IsProcessPending
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 47ceb89a-c00e-4270-a8a1-b647000b5d42
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisStatusCode
+		dataType: string
+		lineageTag: 92283a77-9d7f-4efa-bc53-17e33ea611f9
+		summarizeBy: none
+		sourceColumn: NdisStatusCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisIssues
+		dataType: string
+		lineageTag: 9622b056-95e9-4809-8ef1-cf2b5a038093
+		summarizeBy: none
+		sourceColumn: NdisIssues
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisResponse
+		dataType: string
+		lineageTag: 682f07de-6f09-46f9-8db6-74395c48e8d9
+		summarizeBy: none
+		sourceColumn: NdisResponse
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceBatch
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e1789e9d-21b0-4a7f-a90c-b2d5007ee982
+		summarizeBy: none
+		sourceColumn: IsPaceBatch
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8f5a937e-7d2f-4c30-81ba-3224813bcd8d
+		summarizeBy: none
+		sourceColumn: ProcessedAt
+
+		variation Variation
+			isDefault
+			relationship: a8d13438-c9f2-49b0-b01d-43b016e99608
+			defaultHierarchy: LocalDateTable_532f09f6-23a6-4434-b401-158566294805.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContentHash
+		dataType: string
+		lineageTag: f39283a8-2f22-4b50-9b38-95cd7fd96a21
+		summarizeBy: none
+		sourceColumn: ContentHash
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ClaimBatch = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ClaimBatch = Source{[Schema="dbo",Item="ClaimBatch"]}[Data]
+				in
+				    dbo_ClaimBatch
+
+	annotation PBI_ResultType = Table
+

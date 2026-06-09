@@ -1,0 +1,194 @@
+table BillingRateCard
+	lineageTag: fba61526-3c56-4cea-b271-12831070db6a
+
+	column Id
+		dataType: string
+		lineageTag: 53a40522-e3a4-45f5-9c21-afc65929c7ae
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 7b2508bd-a9fc-40d2-bcd6-478cb88fd37d
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 99dd9c19-2096-44e7-adea-daa5aefc02b4
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: fae6ba05-ef6c-4ffa-9271-1869e0b40474
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column CardNumber
+		dataType: string
+		lineageTag: 6a5cfbff-ce5a-436b-86dd-96e1ee2ff597
+		summarizeBy: none
+		sourceColumn: CardNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanBillingMethod
+		dataType: string
+		lineageTag: bea959e7-3175-44be-8982-f8325d24c0ae
+		summarizeBy: none
+		sourceColumn: ScanBillingMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanFeePerParticipant
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d2e0076a-d3ce-481d-af7c-f40b03a9b8a8
+		summarizeBy: sum
+		sourceColumn: ScanFeePerParticipant
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ScanFeePerPage
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7a0e2dd9-066f-4164-a617-970911671ca4
+		summarizeBy: sum
+		sourceColumn: ScanFeePerPage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsDefault
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1f071fd3-1d8d-4df0-b688-5a1248757c37
+		summarizeBy: none
+		sourceColumn: IsDefault
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 33b792dd-6f54-4b50-9de4-723c8e73ae02
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: de2752f0-3d00-4dab-a499-1cf948298fda
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tags
+		dataType: string
+		lineageTag: 047dc6f6-36b5-45d8-8f79-2c359483ed1b
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: a509f39c-dcc9-4cfd-92b0-7f6acd94d5bf
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 80232733-a15a-476c-bd32-9c215958071d
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: fa51cc7a-67a2-4bab-bb93-a9abbb7fe870
+			defaultHierarchy: LocalDateTable_2f3b9ee7-84cd-47ac-816c-91c2e286793a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: faca358e-56b7-4b3a-85d9-374c68c0602b
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ec92948f-4baf-4cb2-8e83-130c90f7ceae
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 0dbdc910-dc36-42ec-b141-cf7a54c7ec4a
+			defaultHierarchy: LocalDateTable_76c361e3-3a7d-4d24-9ddb-b2bea1487cba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 2fd64060-38ce-49ad-90b1-f1315165df21
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinExpFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b9269014-b0b1-49da-b174-f48483233961
+		summarizeBy: sum
+		sourceColumn: MinExpFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpecialMinExpFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1e99bd3a-3066-4e6a-a88c-40ce22755ea4
+		summarizeBy: sum
+		sourceColumn: SpecialMinExpFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition BillingRateCard = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BillingRateCard = Source{[Schema="dbo",Item="BillingRateCard"]}[Data]
+				in
+				    dbo_BillingRateCard
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,392 @@
+table Provider_BCK_20230705
+	lineageTag: ca271f51-4006-4862-9186-27e16b2b2c81
+
+	column Id
+		dataType: string
+		lineageTag: 285fccf0-a4c2-424f-8f03-192c9405ae0b
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 36874403-7a47-4d4c-af1c-d4391300c56e
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 9609ffc4-68bd-42e2-8050-0bba52829ca4
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbId
+		dataType: string
+		lineageTag: 5f60e31a-1d04-4ead-b344-90259db25dde
+		summarizeBy: none
+		sourceColumn: SuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchId
+		dataType: string
+		lineageTag: 7c9d125a-e014-4194-a165-fba178bcfce8
+		summarizeBy: none
+		sourceColumn: BatchId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: b3e0d8d0-cc49-47e1-af50-385b230a626e
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAgency
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b60ef75c-4b53-4294-9790-8a49910dc017
+		summarizeBy: none
+		sourceColumn: IsAgency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: a9294e39-0a67-462e-9491-e1bf30705dd1
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: dce90f87-1820-45aa-9362-9424bd3b14ec
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: c38f6533-f952-4604-9aef-e9ab68a9cfc0
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: 7222d5cf-f368-4e30-a471-e0dc1b53aa28
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abn
+		dataType: string
+		lineageTag: d0186956-d33c-4f2e-b4fb-4ef273b61bcf
+		summarizeBy: none
+		sourceColumn: Abn
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAbnExempted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0e24cb8b-3c25-4ce7-b77a-e8bbf9f87e56
+		summarizeBy: none
+		sourceColumn: IsAbnExempted
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAbnVerified
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 46183883-b01f-43ec-aa4e-40b015fba1c9
+		summarizeBy: none
+		sourceColumn: IsAbnVerified
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbnVerifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 86186b5e-02fc-4c8d-b15c-27b3ee66579c
+		summarizeBy: none
+		sourceColumn: AbnVerifiedAt
+
+		variation Variation
+			isDefault
+			relationship: 348641a3-5422-4cd2-b361-3f1f298e1095
+			defaultHierarchy: LocalDateTable_12ea1bbd-eaa0-4065-9d5c-83eb040fc591.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbnStatus
+		dataType: string
+		lineageTag: 56484380-ab25-4163-b962-2e5ce24b60e9
+		summarizeBy: none
+		sourceColumn: AbnStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		lineageTag: 4c14cda1-f32d-491a-8048-0f5e361be6d6
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 161031d7-475a-476a-bbe8-8e2e994b5594
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactName
+		dataType: string
+		lineageTag: ee22a7a0-8924-476b-8969-90f652eff46d
+		summarizeBy: none
+		sourceColumn: ContactName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 657779a7-24aa-478a-8a36-114523e5b25e
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: e6bc2608-2c19-44ba-9d2a-088e81f3364f
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 8a4b4ab5-38f5-4d14-8825-8b04d790bbc6
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: fbd6174e-53d3-4df0-84b7-ec00b5d563f4
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentMethod
+		dataType: string
+		lineageTag: 07c343bf-7f94-47a4-86b1-cf8553e8b774
+		summarizeBy: none
+		sourceColumn: PaymentMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankCode
+		dataType: string
+		lineageTag: 4236fbf5-7658-4332-a284-ce3b8352004c
+		summarizeBy: none
+		sourceColumn: BankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: 7b2bef01-cccd-4e95-b9b6-08f02d6fa86c
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: 93ce4555-232d-47b6-95c7-3848ecd97247
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: 651b600a-7374-4693-a2c1-b0767eb678c6
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayBillerName
+		dataType: string
+		lineageTag: 5e0d5fcb-d810-42e9-bb33-4f12be38addb
+		summarizeBy: none
+		sourceColumn: BpayBillerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayBillerCode
+		dataType: string
+		lineageTag: 7afbde8e-86f1-4701-acde-b738b74ec968
+		summarizeBy: none
+		sourceColumn: BpayBillerCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayReference
+		dataType: string
+		lineageTag: f1db5946-bca1-4dc3-8af3-f9949ce8c3ef
+		summarizeBy: none
+		sourceColumn: BpayReference
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b18aba22-8daf-4aa4-9d89-695d4d83d227
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 1af1b0f7-88b1-4a55-a7e1-cd6cbe98da7a
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cb92be92-298a-4659-b0ef-2b6e16d66b3b
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 114bd3ab-beb8-400e-8411-a7f9074a3c58
+			defaultHierarchy: LocalDateTable_e0fa418a-7e4f-4e46-b5f8-a3ceed6384b0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 9d3f9007-31ad-42b9-a9a7-bbf73e60dee6
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7539e527-f619-4812-867d-16206b5bdc02
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: bb2030f0-28c6-4da3-9c92-72ed4b69369f
+			defaultHierarchy: LocalDateTable_477f5dfb-82e6-47da-97fc-92c8af04e402.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 4caae85b-a3e3-40ee-8956-a71311e8fdd8
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b36157ab-8aa4-462e-a056-8882aae52584
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 81fd1ea5-d1ea-48eb-9781-29823d8765ad
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPayabilityClient
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c3388a59-4974-4edd-b849-864ea226dd10
+		summarizeBy: none
+		sourceColumn: IsPayabilityClient
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanRating
+		dataType: int64
+		formatString: 0
+		lineageTag: 120a73be-9f5c-435a-987e-213842cd3762
+		summarizeBy: sum
+		sourceColumn: ScanRating
+
+		annotation SummarizationSetBy = Automatic
+
+	column NameVariants
+		dataType: string
+		lineageTag: 36cb078e-024f-4bfe-aed5-0c83ea898566
+		summarizeBy: none
+		sourceColumn: NameVariants
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessId
+		dataType: string
+		lineageTag: 012c3c15-040d-447c-ae86-3ad4746cae78
+		summarizeBy: none
+		sourceColumn: BusinessId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAbnActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aa8b692f-38f4-474b-a068-bf7c79b7c1e8
+		summarizeBy: none
+		sourceColumn: IsAbnActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Provider_BCK_20230705 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Provider_BCK_20230705 = Source{[Schema="dbo",Item="Provider_BCK_20230705"]}[Data]
+				in
+				    dbo_Provider_BCK_20230705
+
+	annotation PBI_ResultType = Table
+

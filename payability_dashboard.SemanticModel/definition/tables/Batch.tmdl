@@ -1,0 +1,221 @@
+table Batch
+	lineageTag: d4363a56-456c-490e-98bf-c1e4b8dc8e65
+
+	column Id
+		dataType: string
+		lineageTag: 1e3d1eb9-1488-492a-8223-cdc2f4b4b8af
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterId
+		dataType: string
+		lineageTag: d45ef4dd-24d3-4a81-8acc-ff79a854e708
+		summarizeBy: none
+		sourceColumn: MasterId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: e01ca7d4-625c-417b-883b-711f2eae5c24
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 489ddfee-afd0-40f1-9a5a-3b106efcbad6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 86458ae3-fac3-4a9e-95a8-4b9330e1f036
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Process
+		dataType: string
+		lineageTag: d0be6a05-e7c5-4cf1-846e-34fea4b8820b
+		summarizeBy: none
+		sourceColumn: Process
+
+		annotation SummarizationSetBy = Automatic
+
+	column Number
+		dataType: string
+		lineageTag: fcaa5350-10c9-437d-ba8c-f45c8fe40a82
+		summarizeBy: none
+		sourceColumn: Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 42260b26-eded-474c-8e6e-128d4acf3ee4
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 171b0a7d-1a85-4961-9047-8e6244a1984d
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Steps
+		dataType: string
+		lineageTag: 0f2e8769-f69b-4fb6-a2be-d748ffb41801
+		summarizeBy: none
+		sourceColumn: Steps
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileRef
+		dataType: string
+		lineageTag: c305e4e5-9be6-43bc-97ba-98272bd1448a
+		summarizeBy: none
+		sourceColumn: FileRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 532f705d-55ab-4b87-9a31-833646bc5988
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Errors
+		dataType: string
+		lineageTag: 873997c9-2451-4fb1-8edf-0fd7ac2de6e7
+		summarizeBy: none
+		sourceColumn: Errors
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessStart
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09959884-95f2-4e6c-96db-7543cca14092
+		summarizeBy: none
+		sourceColumn: ProcessStart
+
+		variation Variation
+			isDefault
+			relationship: 41ce1a92-2a81-4791-8db7-2c74c41a3b58
+			defaultHierarchy: LocalDateTable_f0b934f4-8e4d-492f-a994-54c803a8dadf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1271e5bb-43a3-47a8-8f37-1c76510b434b
+		summarizeBy: none
+		sourceColumn: ProcessEnd
+
+		variation Variation
+			isDefault
+			relationship: aa57ce64-56e0-4b67-9f1f-b38224d93e97
+			defaultHierarchy: LocalDateTable_2933250a-47e5-433e-b3db-9d710ff704b2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3251a7b4-3c0c-47c5-8efa-6975e824c1ba
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: ceb231b7-0983-4f50-a33f-96f8b6eee082
+			defaultHierarchy: LocalDateTable_5052541b-97ca-44cf-906b-5ba88bf32235.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 5fad7021-8169-4874-9765-1a0f8d960ff0
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: afe87f0c-c7a0-421b-a506-771b688fcb1e
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceFileName
+		dataType: string
+		lineageTag: d666f217-1a75-4a6e-ad0e-f9f0f563c159
+		summarizeBy: none
+		sourceColumn: SourceFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessScheduledAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7d0677be-9a98-4439-9df7-6476dca16ed7
+		summarizeBy: none
+		sourceColumn: ProcessScheduledAt
+
+		variation Variation
+			isDefault
+			relationship: a9574f21-6004-4aac-978d-e75492e1f700
+			defaultHierarchy: LocalDateTable_0c8c0a0b-56c5-4c86-a732-7651642b2d16.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 589c4e17-763b-4f75-a9dd-ac5fcfc2b6a4
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastActivityAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 07e78004-d197-412a-b503-72b638826596
+		summarizeBy: none
+		sourceColumn: LastActivityAt
+
+		variation Variation
+			isDefault
+			relationship: 5be9172a-411d-4739-9d5e-a85e42cad90c
+			defaultHierarchy: LocalDateTable_7057a354-397c-4660-b97c-e406bee2fc95.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Batch = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Batch = Source{[Schema="dbo",Item="Batch"]}[Data]
+				in
+				    dbo_Batch
+
+	annotation PBI_ResultType = Table
+

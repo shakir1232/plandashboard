@@ -1,0 +1,72 @@
+table Notification
+	lineageTag: 4f3e8bf6-c40b-4101-bcdd-5228bc705787
+
+	column Id
+		dataType: string
+		lineageTag: f62257e2-271f-42b5-8a1a-e1dc0dd345a7
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Methods
+		dataType: string
+		lineageTag: e3f023a5-bd13-4120-8bfb-b37765c188c0
+		summarizeBy: none
+		sourceColumn: Methods
+
+		annotation SummarizationSetBy = Automatic
+
+	column MergeFields
+		dataType: string
+		lineageTag: 82b0b68e-ede8-4669-87bb-2c1bcd40ea0a
+		summarizeBy: none
+		sourceColumn: MergeFields
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: b2abe3c7-7d24-4b38-b748-02e0e2b3454b
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column TemplateVariants
+		dataType: string
+		lineageTag: 9a3741d4-e135-4b77-9952-4412ef1a2943
+		summarizeBy: none
+		sourceColumn: TemplateVariants
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e1a357a8-d6fe-492b-99c4-a76f22f266ce
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column CanOverrideLayout
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c76c8e3b-d853-48b1-bde6-3d7704d27c7c
+		summarizeBy: none
+		sourceColumn: CanOverrideLayout
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Notification = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Notification = Source{[Schema="dbo",Item="Notification"]}[Data]
+				in
+				    dbo_Notification
+
+	annotation PBI_ResultType = Table
+

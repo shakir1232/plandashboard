@@ -1,0 +1,70 @@
+table ReleaseVersion
+	lineageTag: 42c82c5e-7b4b-419a-a3c6-d7a35e4afcc8
+
+	column Id
+		dataType: string
+		lineageTag: 841c011b-c700-4c7e-8f5a-3bdffa75eae1
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Number
+		dataType: string
+		lineageTag: 0428b9c6-a881-4f5b-a967-5525a66b8ba9
+		summarizeBy: none
+		sourceColumn: Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Changes
+		dataType: string
+		lineageTag: 36623f06-d713-44e4-ad23-29a65d40e231
+		summarizeBy: none
+		sourceColumn: Changes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleaseDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9f532412-2d56-4cf6-acfc-83494f84a25f
+		summarizeBy: none
+		sourceColumn: ReleaseDate
+
+		variation Variation
+			isDefault
+			relationship: 161ab712-45e8-43cc-a926-14f16c3023bc
+			defaultHierarchy: LocalDateTable_dec57d80-6079-4e08-862f-035054ed17d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: f48214fd-3bcc-4171-81d3-8ecf836fba8d
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 5cb6f2b6-313a-4acb-926f-c3aa6383d4fe
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ReleaseVersion = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ReleaseVersion = Source{[Schema="dbo",Item="ReleaseVersion"]}[Data]
+				in
+				    dbo_ReleaseVersion
+
+	annotation PBI_ResultType = Table
+

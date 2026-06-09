@@ -1,0 +1,60 @@
+table DebugLog
+	lineageTag: 0a55d786-1c4f-4ce9-b382-c6665a437e72
+
+	column Id
+		dataType: string
+		lineageTag: dcabb8c8-acaa-4c1e-8000-21bc87650cf3
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Message
+		dataType: string
+		lineageTag: c460152e-a090-4888-857f-db1a0d8a7a9d
+		summarizeBy: none
+		sourceColumn: Message
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd2c9a04-80b3-43cd-8576-962d6a1b5b89
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: f0b12642-d59c-4135-9b11-112b0a415f0c
+			defaultHierarchy: LocalDateTable_aae6853c-cfdc-4223-bfc5-d2034cc2306a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tag
+		dataType: string
+		lineageTag: 1d10dffb-e299-48f8-977a-641ae4a6ae8d
+		summarizeBy: none
+		sourceColumn: Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: string
+		lineageTag: 4f4836f1-2904-40c1-ba6f-1cdcd99d1058
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DebugLog = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_DebugLog = Source{[Schema="dbo",Item="DebugLog"]}[Data]
+				in
+				    dbo_DebugLog
+
+	annotation PBI_ResultType = Table
+

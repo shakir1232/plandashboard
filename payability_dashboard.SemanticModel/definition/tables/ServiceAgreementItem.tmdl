@@ -1,0 +1,255 @@
+table ServiceAgreementItem
+	lineageTag: 16a4f48c-db5a-4cf2-98fa-c5ec25cb79a6
+
+	column Id
+		dataType: string
+		lineageTag: 1d73b7b8-8132-49fa-a1d2-e6bf56bf8c15
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgreementId
+		dataType: string
+		lineageTag: d873290e-176b-41db-83df-2e6e50746c8a
+		summarizeBy: none
+		sourceColumn: AgreementId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: 718d5789-7eb4-4877-82a8-1b3fe9db1eba
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: da119433-b699-4813-9d33-3b323cf694f0
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 503b3959-d6fe-43e4-8943-dea25419ffdd
+			defaultHierarchy: LocalDateTable_aefdc8ec-5530-47f6-96fb-b9abb504fc1f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d8fa8802-0668-4460-adb4-c54410d6ed11
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: c378e204-7e33-4c89-b577-31463e9a3e9d
+			defaultHierarchy: LocalDateTable_b831945b-980f-4e64-9caa-486ff7ff27c7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f7162733-0d44-4648-8280-0c71bf81ab60
+		summarizeBy: sum
+		sourceColumn: TotalAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d10870fc-9ae4-441d-b63c-328ab7e10d4b
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PendingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: acbb3dfc-1bb4-461d-ae41-9740bf1a1330
+		summarizeBy: sum
+		sourceColumn: PendingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ProcessedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: dbf466f3-27d4-47b0-8aca-4034ebf3fcb1
+		summarizeBy: sum
+		sourceColumn: ProcessedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RejectedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 647bce89-464c-4f34-ac83-ad5ca18595dd
+		summarizeBy: sum
+		sourceColumn: RejectedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Version
+		dataType: string
+		lineageTag: c808cdc8-d0eb-4253-b455-ba553e0164ef
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f395155e-66c8-4eb5-bb8a-4eedba8354b2
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: c9290bc7-fff7-4783-b24d-0cea91796dc8
+			defaultHierarchy: LocalDateTable_8c037dc5-48ea-41a4-bea2-9b8790f0436c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b6749be4-8ff8-4f57-8ff5-978beaada05a
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: a71b25f7-480a-46c5-bc6b-6d31d29ec10c
+			defaultHierarchy: LocalDateTable_7b267de9-27f4-422d-b8b2-f1c3c36e79c6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ebcddfab-203f-4d05-a0af-3ccc1569f250
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: b85595c1-d100-491d-8c11-f8e86103c1a2
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 9cdb7c5a-c26d-4886-9b0c-1a3ab440e7ce
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 96a30a78-9f04-455f-b7fa-ebc28048c7e6
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemId
+		dataType: string
+		lineageTag: 311d244f-7eda-4e0d-9845-ce5df002a790
+		summarizeBy: none
+		sourceColumn: SupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumRef
+		dataType: string
+		lineageTag: 3a71ce88-1205-4781-bf10-649f5065bb31
+		summarizeBy: none
+		sourceColumn: NumRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeqNum
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e2e5faa-acbb-4b11-aeb2-6951837f9c4f
+		summarizeBy: sum
+		sourceColumn: SeqNum
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e02bcfff-f72e-4625-af8d-4cd2f2201d59
+		summarizeBy: sum
+		sourceColumn: ContractAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ExternalSpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 88b18acd-a879-4311-ac6d-697066821d66
+		summarizeBy: sum
+		sourceColumn: ExternalSpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column HasExternalSpent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3ce8c3a2-f1f5-449e-a5b1-979ce8d4ac03
+		summarizeBy: none
+		sourceColumn: HasExternalSpent
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFundingPeriodApplied
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c659c7e8-963c-4542-943a-b798a45d6e5d
+		summarizeBy: none
+		sourceColumn: IsFundingPeriodApplied
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ServiceAgreementItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ServiceAgreementItem = Source{[Schema="dbo",Item="ServiceAgreementItem"]}[Data]
+				in
+				    dbo_ServiceAgreementItem
+
+	annotation PBI_ResultType = Table
+

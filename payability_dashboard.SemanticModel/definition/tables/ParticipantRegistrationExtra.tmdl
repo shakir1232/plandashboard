@@ -1,0 +1,38 @@
+table ParticipantRegistrationExtra
+	lineageTag: 7cd5c061-0f91-456a-8e8e-99c554e96a3b
+
+	column RegistrationId
+		dataType: string
+		lineageTag: 059b5b48-6b94-4a1d-b44d-3a3d220cb356
+		summarizeBy: none
+		sourceColumn: RegistrationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomFieldId
+		dataType: string
+		lineageTag: 1db61a40-4fd9-47b2-afbe-c61a4530dc54
+		summarizeBy: none
+		sourceColumn: CustomFieldId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Value
+		dataType: string
+		lineageTag: ef521017-066e-4b63-ae9b-fb3d9690b25a
+		summarizeBy: none
+		sourceColumn: Value
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ParticipantRegistrationExtra = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ParticipantRegistrationExtra = Source{[Schema="dbo",Item="ParticipantRegistrationExtra"]}[Data]
+				in
+				    dbo_ParticipantRegistrationExtra
+
+	annotation PBI_ResultType = Table
+

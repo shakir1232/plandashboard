@@ -1,0 +1,235 @@
+table PayabilityConfig
+	lineageTag: 13e0eeff-eead-4adb-8844-7a0a47c1e8ee
+
+	column Id
+		dataType: string
+		lineageTag: b8245780-ee05-43b0-be4a-c5fe0f5d022d
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyName
+		dataType: string
+		lineageTag: 2e174f77-767f-4f5e-acec-a8ee431e8423
+		summarizeBy: none
+		sourceColumn: CompanyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abn
+		dataType: string
+		lineageTag: 1dc3206a-8bb0-499f-9363-41a4a7c0bd73
+		summarizeBy: none
+		sourceColumn: Abn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 2be23cc2-481f-4871-aab2-e18d8418f30a
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: d97d90ae-ee27-470d-b877-3d6718b7312d
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: 1cd59706-a408-4250-bfef-76d581b509e6
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: b2775802-380a-4c5d-b0c5-c54d975cd486
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankCode
+		dataType: string
+		lineageTag: 70746ac8-b09e-422a-84b2-2d5269330f63
+		summarizeBy: none
+		sourceColumn: BankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankName
+		dataType: string
+		lineageTag: e77d42af-da82-4173-b22b-85b189543741
+		summarizeBy: none
+		sourceColumn: BankName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankDirectEntryUserRef
+		dataType: string
+		lineageTag: 35ea2e4d-1b3d-4364-afee-28463af12c0f
+		summarizeBy: none
+		sourceColumn: BankDirectEntryUserRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaFileIncludeSelfBalancingRecord
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aaf42057-7f6b-4422-b331-cf6c32541502
+		summarizeBy: none
+		sourceColumn: AbaFileIncludeSelfBalancingRecord
+
+		annotation SummarizationSetBy = Automatic
+
+	column MergeSameAccountPayments
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ec7201db-f3af-4094-9140-4bbc6672df70
+		summarizeBy: none
+		sourceColumn: MergeSameAccountPayments
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaseCharge
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2b10301f-1132-48f9-94b0-d1af33b759b4
+		summarizeBy: sum
+		sourceColumn: BaseCharge
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CommissionRate
+		dataType: double
+		lineageTag: aaa3dfb4-a687-44e9-a8f1-10a13dba050d
+		summarizeBy: sum
+		sourceColumn: CommissionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CommissionMaxLimit
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a7533863-42ae-4f28-a94a-38c0646d3265
+		summarizeBy: sum
+		sourceColumn: CommissionMaxLimit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column InvoiceAmountMinLimit
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 459fe600-06f4-404b-bf52-525a0bdcd70a
+		summarizeBy: sum
+		sourceColumn: InvoiceAmountMinLimit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PayingBankBsb
+		dataType: string
+		lineageTag: 78d7b302-8aed-4386-b6e7-255f19732384
+		summarizeBy: none
+		sourceColumn: PayingBankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayingBankAccountNumber
+		dataType: string
+		lineageTag: f07a518b-c164-4bdd-a9fe-c19052986ce1
+		summarizeBy: none
+		sourceColumn: PayingBankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayingBankAccountName
+		dataType: string
+		lineageTag: e6b241ef-e689-40ee-a1b8-42bd0abf237d
+		summarizeBy: none
+		sourceColumn: PayingBankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayingBankCode
+		dataType: string
+		lineageTag: a38174d4-af67-407e-8a4f-172dd6d0eb78
+		summarizeBy: none
+		sourceColumn: PayingBankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayingBankName
+		dataType: string
+		lineageTag: 9036ab32-d78e-45a8-a039-e149c9816539
+		summarizeBy: none
+		sourceColumn: PayingBankName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayingBankDirectEntryUserRef
+		dataType: string
+		lineageTag: 2ff5d690-6e3a-4e86-91f8-d76844bd6c61
+		summarizeBy: none
+		sourceColumn: PayingBankDirectEntryUserRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceivingBankBsb
+		dataType: string
+		lineageTag: f6de477d-46cd-450c-b5da-4d9071f157c3
+		summarizeBy: none
+		sourceColumn: ReceivingBankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceivingBankAccountNumber
+		dataType: string
+		lineageTag: 2e26eeca-b8fd-44b4-adf8-ff5efd5a0069
+		summarizeBy: none
+		sourceColumn: ReceivingBankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceivingBankAccountName
+		dataType: string
+		lineageTag: d74eb3e6-b5cd-49df-a14a-05a0694e5bb9
+		summarizeBy: none
+		sourceColumn: ReceivingBankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReceivingBankName
+		dataType: string
+		lineageTag: a57fdceb-00ba-428f-86dd-61dcda620fa8
+		summarizeBy: none
+		sourceColumn: ReceivingBankName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PayabilityConfig = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PayabilityConfig = Source{[Schema="dbo",Item="PayabilityConfig"]}[Data]
+				in
+				    dbo_PayabilityConfig
+
+	annotation PBI_ResultType = Table
+

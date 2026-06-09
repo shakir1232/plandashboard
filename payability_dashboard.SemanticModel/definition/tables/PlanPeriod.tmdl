@@ -1,0 +1,89 @@
+table PlanPeriod
+	lineageTag: 72416aed-069c-40b4-b793-e728c093de1d
+
+	column Id
+		dataType: string
+		lineageTag: 608ad1bf-196b-481b-bf2d-cec1b6d673aa
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: b677e79f-7b9c-4c24-a6e9-ab7706e6b0fb
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hash
+		dataType: string
+		lineageTag: 9b2f61d2-c3e5-49bc-be0a-6f39c1966583
+		summarizeBy: none
+		sourceColumn: Hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7809f30d-fbeb-4849-a68c-ee1d0d04e95c
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 7fe4b3d6-32fd-4263-ab34-fcedf656c498
+			defaultHierarchy: LocalDateTable_221858d2-bbf4-4959-bd87-84b94978b27d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9943cab-10a1-4986-bcec-69d2bb588715
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: 1ae5cc25-1891-4f3a-8523-5f54ae3dcdd3
+			defaultHierarchy: LocalDateTable_6ba65c7b-35e2-4559-86de-85d1d08b582c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPredicted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: eb307417-5a90-45f6-9711-ea1aa733cecf
+		summarizeBy: none
+		sourceColumn: IsPredicted
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ef5bd81c-245e-4dc7-bba8-4f8660c2da60
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 14aa1e79-eba7-41df-a92b-54a03d7caaca
+			defaultHierarchy: LocalDateTable_3a679680-5d37-431b-9a37-67af7717d127.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PlanPeriod = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PlanPeriod = Source{[Schema="dbo",Item="PlanPeriod"]}[Data]
+				in
+				    dbo_PlanPeriod
+
+	annotation PBI_ResultType = Table
+

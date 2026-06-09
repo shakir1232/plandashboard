@@ -1,0 +1,57 @@
+table __impClaimRejectReason
+	lineageTag: 69013f26-44c2-410e-80ea-1accdf3f1c92
+
+	column Id
+		dataType: string
+		lineageTag: 0dd4742c-0fac-4fa4-a016-310ef41e2d34
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 5dd8c83b-ea92-4e7f-8b5b-435a4e77b04f
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 42c3dca6-21e6-46b7-b605-8a95fd22f042
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: f397ea2f-b566-4bf7-b40c-97ee47903ba4
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 703f1f8b-669d-406f-a8cd-931b11ad2569
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition __impClaimRejectReason = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo___impClaimRejectReason = Source{[Schema="dbo",Item="__impClaimRejectReason"]}[Data]
+				in
+				    dbo___impClaimRejectReason
+
+	annotation PBI_ResultType = Table
+

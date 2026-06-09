@@ -1,0 +1,148 @@
+table __impNoteP1
+	lineageTag: b5275569-f289-46fc-8bdb-ad5b43407a49
+
+	column Id
+		dataType: string
+		lineageTag: d24b60b5-b8da-4343-80ad-24cd31b98d38
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 90a933f6-abed-4512-9260-2bf0ededb5ea
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryId
+		dataType: string
+		lineageTag: 2449d7c7-3b78-4347-979b-5c97d8bfabf4
+		summarizeBy: none
+		sourceColumn: CategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: ef71aaf4-af00-41e0-807d-c555c417c5e0
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantNdisRef
+		dataType: string
+		lineageTag: 13a9660f-fb9e-4396-aa2d-38a7f2679342
+		summarizeBy: none
+		sourceColumn: ParticipantNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderAbn
+		dataType: string
+		lineageTag: 0f328a65-f6b3-4183-9d35-5f872d62a083
+		summarizeBy: none
+		sourceColumn: ProviderAbn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderName
+		dataType: string
+		lineageTag: 96346d2c-1f35-4aa1-8aea-5f706b5d7e10
+		summarizeBy: none
+		sourceColumn: ProviderName
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderId
+		dataType: string
+		lineageTag: 85b031d7-db92-40e5-a21b-a5d20883e4e3
+		summarizeBy: none
+		sourceColumn: HolderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderType
+		dataType: string
+		lineageTag: 126d6d5d-9d1a-495a-94c3-674575448fba
+		summarizeBy: none
+		sourceColumn: HolderType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 064c88ad-e379-4cb9-b141-5e24e1246d9a
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 98a54dc0-6992-4dfb-a2d8-29f08d7df0c3
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Content
+		dataType: string
+		lineageTag: 068feff6-2be0-4749-93de-e965689bf1cc
+		summarizeBy: none
+		sourceColumn: Content
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPinned
+		dataType: string
+		lineageTag: b75330a2-1b26-4c1b-988f-e6412b9bbffb
+		summarizeBy: none
+		sourceColumn: IsPinned
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAlert
+		dataType: string
+		lineageTag: 8848d08f-7973-40f4-947a-e949099ad84c
+		summarizeBy: none
+		sourceColumn: IsAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 80f976d3-2f69-4679-aefb-7067b74f0411
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 529bc48d-df3b-4751-b539-9aee841c02a4
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 14041dbc-892c-4059-9f52-dfd5024c93b8
+			defaultHierarchy: LocalDateTable_a6075c07-f2e5-4b99-a36f-cc7882676bdb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition __impNoteP1 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo___impNoteP1 = Source{[Schema="dbo",Item="__impNoteP1"]}[Data]
+				in
+				    dbo___impNoteP1
+
+	annotation PBI_ResultType = Table
+

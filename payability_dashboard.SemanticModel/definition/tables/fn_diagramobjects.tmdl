@@ -1,0 +1,25 @@
+table fn_diagramobjects
+	lineageTag: c37d5ef1-77a6-47e0-9aae-942c27fe6324
+
+	column fn_diagramobjects
+		dataType: double
+		lineageTag: d03c76c4-64ca-48c0-8fb5-f16191c98b06
+		summarizeBy: sum
+		sourceColumn: fn_diagramobjects
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fn_diagramobjects = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_fn_diagramobjects = Source{[Schema="dbo",Item="fn_diagramobjects"]}[Data],
+				    #"Invoked Functiondbo_fn_diagramobjects1" = dbo_fn_diagramobjects()
+				in
+				    #"Invoked Functiondbo_fn_diagramobjects1"
+
+	annotation PBI_ResultType = Number
+

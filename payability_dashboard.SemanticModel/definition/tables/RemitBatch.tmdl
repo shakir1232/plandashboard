@@ -1,0 +1,301 @@
+table RemitBatch
+	lineageTag: 763903ee-834a-4e1f-8c1b-17e3bd84c72b
+
+	column Id
+		dataType: string
+		lineageTag: 0e1931f5-6852-4aa3-b30e-f5947d23373c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: fd17a17d-0ada-42ae-8ebb-bac23e293f69
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: db9c7773-4037-4da3-b972-4b461d2b57fa
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchNumber
+		dataType: string
+		lineageTag: be6533ee-1a6c-4c30-aac2-bef584dda135
+		summarizeBy: none
+		sourceColumn: BatchNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cc58fc12-591b-4c03-9a0b-25e3727c3884
+		summarizeBy: none
+		sourceColumn: BatchDate
+
+		variation Variation
+			isDefault
+			relationship: 4dc25db3-7bd7-4138-b10c-829122a081bf
+			defaultHierarchy: LocalDateTable_c8ccf79e-6684-40d8-aa59-7f7505818ff8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0f604a4b-b42b-424f-81a5-cf8e7d3ce376
+		summarizeBy: sum
+		sourceColumn: TotalAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CompanyName
+		dataType: string
+		lineageTag: c31d339a-ea59-4124-8a34-7c9c0f10d640
+		summarizeBy: none
+		sourceColumn: CompanyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankName
+		dataType: string
+		lineageTag: 3252c779-8f07-4466-bc9c-3e4bbfc0a08a
+		summarizeBy: none
+		sourceColumn: BankName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankCode
+		dataType: string
+		lineageTag: 7d5a2f15-c0de-4a8e-be4a-cabf93eae0d2
+		summarizeBy: none
+		sourceColumn: BankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: 5527990c-a1e9-4de4-8fd2-abf99c5c1b71
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: eb07f72a-3c49-4007-87c4-ddf0f10712bf
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: 175106dc-036a-46ca-b650-908fada75f10
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaUserRef
+		dataType: string
+		lineageTag: fd86348f-dda7-4fc4-87e8-779424a94cd7
+		summarizeBy: none
+		sourceColumn: AbaUserRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaUserNumber
+		dataType: string
+		lineageTag: 9689cc87-d804-4d23-8389-4ca437c83809
+		summarizeBy: none
+		sourceColumn: AbaUserNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaDescription
+		dataType: string
+		lineageTag: 926282c8-842d-4f17-89d9-5190ab1000c0
+		summarizeBy: none
+		sourceColumn: AbaDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbaDownloadedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bc66cc4c-b485-4183-a873-0f7e08d98947
+		summarizeBy: none
+		sourceColumn: AbaDownloadedAt
+
+		variation Variation
+			isDefault
+			relationship: 2c0fc6ec-90b8-43ee-bbbd-79fac31b5ffc
+			defaultHierarchy: LocalDateTable_26a61436-4041-4fae-8223-3cd322d30bcf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpbFileNumber
+		dataType: string
+		lineageTag: ec5484a3-cfff-4205-a889-b59c8f6db341
+		summarizeBy: none
+		sourceColumn: BpbFileNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpbDownloadedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ef277c99-6b9a-4e14-a790-eaf553534ca2
+		summarizeBy: none
+		sourceColumn: BpbDownloadedAt
+
+		variation Variation
+			isDefault
+			relationship: 68035205-fe62-4d7a-9af1-e86d1e8f7d55
+			defaultHierarchy: LocalDateTable_a92a9948-45fb-4bd9-8381-465d3fcb05a1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: b02a958c-7c10-44df-a30c-aa41bb677b34
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83f87eb9-975a-499e-b3a5-9eeffd228da3
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 853fbbd4-cd15-40c0-8de9-0383b20603e7
+			defaultHierarchy: LocalDateTable_22998665-f6ba-4251-889e-30fdaee98b42.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 00794892-fe3a-4090-a1c5-ab2e2c4922ed
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9c7f75a5-dafc-48da-ac59-97a640bc8223
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 7f37ec49-f2d9-4309-9777-058d9a9493b8
+			defaultHierarchy: LocalDateTable_fba88838-227f-40c1-a018-8fcd59e08137.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: b75d0ecf-040c-4410-8e6c-72e8c1a150c5
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d6318048-ccf1-4ece-b193-23349ba6851f
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 1c973ac1-6606-42b6-b9c6-2b62697bf07e
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPayabilityManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dab0c78f-4f57-4ee9-963f-0c27521c925b
+		summarizeBy: none
+		sourceColumn: IsPayabilityManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayabilityFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 16f06192-d45d-474c-a0c2-5faa070f6334
+		summarizeBy: sum
+		sourceColumn: PayabilityFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PayabilityReceivableAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2662c387-42cd-4a1e-9835-9b9cb28b32be
+		summarizeBy: sum
+		sourceColumn: PayabilityReceivableAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CreditorFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6a6e10bf-14a5-4426-b492-ebd5c7208822
+		summarizeBy: sum
+		sourceColumn: CreditorFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CreditorReceivableAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3dda48b1-3b07-49b9-ba8d-b052358a977c
+		summarizeBy: sum
+		sourceColumn: CreditorReceivableAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition RemitBatch = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_RemitBatch = Source{[Schema="dbo",Item="RemitBatch"]}[Data]
+				in
+				    dbo_RemitBatch
+
+	annotation PBI_ResultType = Table
+

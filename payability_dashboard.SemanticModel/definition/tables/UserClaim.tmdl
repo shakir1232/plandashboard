@@ -1,0 +1,47 @@
+table UserClaim
+	lineageTag: 5703ae78-e76d-436a-9aef-e6a34696ca96
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: f9cb2650-0f5b-460a-b6f2-727aa2b70da4
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 7cd6d6b8-c828-4ea0-857b-132db2fd6a8a
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimType
+		dataType: string
+		lineageTag: 9b954425-4969-4c93-a179-d988a69156e7
+		summarizeBy: none
+		sourceColumn: ClaimType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimValue
+		dataType: string
+		lineageTag: 35a66412-447a-4f2c-a3e3-be4831321cc3
+		summarizeBy: none
+		sourceColumn: ClaimValue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserClaim = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserClaim = Source{[Schema="dbo",Item="UserClaim"]}[Data]
+				in
+				    dbo_UserClaim
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,79 @@
+table UserAppConfig
+	lineageTag: 6d5585c7-6188-4863-a8b3-17c6178edddc
+
+	column Id
+		dataType: string
+		lineageTag: 49e4af43-48b2-414c-ba82-1f92646a28bd
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 07fa6235-b1d2-4581-8432-b67360508487
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlanExpiredNotificationEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 860a9cfc-1c49-427a-be5a-17f4f43d38f2
+		summarizeBy: none
+		sourceColumn: IsPlanExpiredNotificationEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimApprovalNotificationEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5a27b189-109c-4dd2-bde8-348f98dc3d25
+		summarizeBy: none
+		sourceColumn: IsClaimApprovalNotificationEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsParticipantAssociationNotificationEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d8b745d7-13d4-4815-ac03-37a0727e0637
+		summarizeBy: none
+		sourceColumn: IsParticipantAssociationNotificationEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: a04c8093-d3a8-4725-af70-878ba18e7057
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d6ff5f20-0a41-43dc-87c9-05242cf72b79
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 09dbc073-2809-4b2f-9b15-eccd31d5c997
+			defaultHierarchy: LocalDateTable_d41023a2-9b00-413e-bbc1-81cf9d4ee52b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserAppConfig = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserAppConfig = Source{[Schema="dbo",Item="UserAppConfig"]}[Data]
+				in
+				    dbo_UserAppConfig
+
+	annotation PBI_ResultType = Table
+

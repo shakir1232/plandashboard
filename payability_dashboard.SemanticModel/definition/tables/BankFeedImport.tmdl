@@ -1,0 +1,90 @@
+table BankFeedImport
+	lineageTag: 053bb341-6fdb-42fb-9e55-7af896d040ea
+
+	column Id
+		dataType: string
+		lineageTag: bc56d59f-8a11-4715-a091-c2437e3f36c8
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column FeedType
+		dataType: string
+		lineageTag: 5280edc2-0eeb-4dfa-818d-ac51e3dd7ffe
+		summarizeBy: none
+		sourceColumn: FeedType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 95adb034-924a-4474-aa32-db29348deca4
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3b6fb82c-293b-4746-adf8-f417a8e249c8
+		summarizeBy: none
+		sourceColumn: ImportDate
+
+		variation Variation
+			isDefault
+			relationship: 3ebf6dc0-53f8-423b-93fd-e825bbb55eee
+			defaultHierarchy: LocalDateTable_f0c8da4f-ac79-4f36-a45d-4b79f9fddfd0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceFileName
+		dataType: string
+		lineageTag: 59bb5e38-d845-4c78-837f-a4f38cebe46b
+		summarizeBy: none
+		sourceColumn: SourceFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoredFileKey
+		dataType: string
+		lineageTag: 57f3ffec-876f-44fa-a3d6-3f18aa09b992
+		summarizeBy: none
+		sourceColumn: StoredFileKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Issues
+		dataType: string
+		lineageTag: 25e8ce03-070b-404b-bfe0-3fc078fac8aa
+		summarizeBy: none
+		sourceColumn: Issues
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1dab4bca-279b-4b06-a05d-e643f4a0cbc7
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 22402130-f14c-4f89-a5a8-de7e226ffd82
+			defaultHierarchy: LocalDateTable_3be7f9fa-35d1-440b-a380-23f180fa393f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BankFeedImport = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BankFeedImport = Source{[Schema="dbo",Item="BankFeedImport"]}[Data]
+				in
+				    dbo_BankFeedImport
+
+	annotation PBI_ResultType = Table
+

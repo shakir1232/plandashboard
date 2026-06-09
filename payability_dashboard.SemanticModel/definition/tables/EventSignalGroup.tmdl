@@ -1,0 +1,47 @@
+table EventSignalGroup
+	lineageTag: b808fbfe-8cda-499a-864b-a461f53d3b75
+
+	column Id
+		dataType: string
+		lineageTag: dba143ee-d41b-48a6-9f28-5b75496fa7fc
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventRef
+		dataType: string
+		lineageTag: e44d8f59-c283-449b-8634-ea62ae412733
+		summarizeBy: none
+		sourceColumn: EventRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column GroupRef
+		dataType: string
+		lineageTag: 2dc9df60-1a1f-4ef7-8d0c-75edbe70bdd0
+		summarizeBy: none
+		sourceColumn: GroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0036f04c-106e-4a48-ad9e-f8aa8f2b5e01
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition EventSignalGroup = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_EventSignalGroup = Source{[Schema="dbo",Item="EventSignalGroup"]}[Data]
+				in
+				    dbo_EventSignalGroup
+
+	annotation PBI_ResultType = Table
+

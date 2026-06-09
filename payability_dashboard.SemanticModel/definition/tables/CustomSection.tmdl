@@ -1,0 +1,64 @@
+table CustomSection
+	lineageTag: 34ab5060-45ff-4c71-8258-5680c5096350
+
+	column Id
+		dataType: string
+		lineageTag: 8b6ae9be-cf58-4e2c-8c30-68f91a85fe9c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 6c3cbeea-bcbb-4fd8-811c-4be5907f8ca0
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: ba667077-dc4a-4d37-b989-78e71fab9e21
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tag
+		dataType: string
+		lineageTag: 9fb257b2-6ff8-444f-8415-cb38072caf8d
+		summarizeBy: none
+		sourceColumn: Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: a56ca593-757d-47e7-af28-710a6825a9b5
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 9802278a-f17b-4b65-a822-878efc74745a
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition CustomSection = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_CustomSection = Source{[Schema="dbo",Item="CustomSection"]}[Data]
+				in
+				    dbo_CustomSection
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,76 @@
+table SpecifiedSupport
+	lineageTag: f7026bb8-36a2-469a-946f-d1e760cdda7a
+
+	column Id
+		dataType: string
+		lineageTag: 7905ad30-83c9-4813-97a6-528bdff190a4
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: 26b2a0e2-706d-4bfb-a2ab-1d15ad3d8cd9
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: c5686e82-8da0-4c30-8087-b7791252a29e
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemIds
+		dataType: string
+		lineageTag: 958740e4-6076-43c6-a936-14037764af2f
+		summarizeBy: none
+		sourceColumn: SupportItemIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: f96d64c9-dc19-4541-ae45-2aa0afca6250
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: e53af16e-2ee7-4d8d-aece-3853153b66ec
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9cc8fe64-b3f0-4d4f-8ab4-9f7eea4be9cc
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: c8bc430c-2e57-475e-9066-9ecea6a6a757
+			defaultHierarchy: LocalDateTable_1eb34eb7-3fe8-440c-9978-65dea3773ad0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SpecifiedSupport = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_SpecifiedSupport = Source{[Schema="dbo",Item="SpecifiedSupport"]}[Data]
+				in
+				    dbo_SpecifiedSupport
+
+	annotation PBI_ResultType = Table
+

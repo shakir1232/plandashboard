@@ -1,0 +1,36 @@
+table TestJobs
+	lineageTag: 9fd980b5-fb0d-400f-b47a-d2b96a86cd4b
+
+	column ID
+		dataType: string
+		lineageTag: 24a86a8e-095f-4c0d-a6e6-1997d20c4a4e
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7e759bcb-f567-491b-acc4-058ca792afd6
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 9e3a9c41-6450-4ed5-bb63-58f33d45dd24
+			defaultHierarchy: LocalDateTable_7e59e378-909d-4ed4-aed7-0ca1ac5e6330.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TestJobs = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_TestJobs = Source{[Schema="dbo",Item="TestJobs"]}[Data]
+				in
+				    dbo_TestJobs
+
+	annotation PBI_ResultType = Table
+

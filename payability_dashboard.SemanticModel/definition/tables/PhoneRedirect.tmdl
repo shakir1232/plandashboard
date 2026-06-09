@@ -1,0 +1,63 @@
+table PhoneRedirect
+	lineageTag: 892f9227-e2ac-400b-b7a4-3d009f5ab665
+
+	column Id
+		dataType: string
+		lineageTag: 0dec3fc9-b13d-4fa6-a98d-cadc7a43a3b1
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromNumber
+		dataType: string
+		lineageTag: aba7bd1d-561b-46a0-ba61-e5ff1033c0ae
+		summarizeBy: none
+		sourceColumn: FromNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToNumber
+		dataType: string
+		lineageTag: 6e85b057-3094-485f-abb7-979e2c4d4fcc
+		summarizeBy: none
+		sourceColumn: ToNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 6085cd62-bec5-4a2e-b731-64b7bcab12d8
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c6ebdc8f-27c0-40b7-beaf-c3adc05dfc6a
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToEmail
+		dataType: string
+		lineageTag: 37a09db6-025c-4f7a-9c3c-9c40aed40e60
+		summarizeBy: none
+		sourceColumn: ToEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PhoneRedirect = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PhoneRedirect = Source{[Schema="dbo",Item="PhoneRedirect"]}[Data]
+				in
+				    dbo_PhoneRedirect
+
+	annotation PBI_ResultType = Table
+

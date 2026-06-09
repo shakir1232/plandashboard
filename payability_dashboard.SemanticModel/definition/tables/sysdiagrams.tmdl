@@ -1,0 +1,49 @@
+table sysdiagrams
+	lineageTag: 87079ef0-f169-4149-90cb-520f6e5a0d40
+
+	column name
+		dataType: string
+		lineageTag: c0d165ef-c0f1-4dce-a2ed-a694623e05f8
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column principal_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a23351f1-4f91-4915-9c3f-8e7cdf39dee6
+		summarizeBy: sum
+		sourceColumn: principal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column diagram_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 69aa74e9-83f5-49d1-873a-353c39bbe3c1
+		summarizeBy: sum
+		sourceColumn: diagram_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column version
+		dataType: int64
+		formatString: 0
+		lineageTag: 84313117-c56b-44e5-8928-c9445cd3571f
+		summarizeBy: sum
+		sourceColumn: version
+
+		annotation SummarizationSetBy = Automatic
+
+	partition sysdiagrams = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_sysdiagrams = Source{[Schema="dbo",Item="sysdiagrams"]}[Data]
+				in
+				    dbo_sysdiagrams
+
+	annotation PBI_ResultType = Table
+

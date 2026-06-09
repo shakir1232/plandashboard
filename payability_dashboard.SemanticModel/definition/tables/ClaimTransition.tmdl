@@ -1,0 +1,108 @@
+table ClaimTransition
+	lineageTag: 3c586690-53a6-4c4d-8c14-0722a99304e3
+
+	column Id
+		dataType: string
+		lineageTag: 34f2f34a-eec8-4755-9ee9-de7774a41dfe
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShowConfirm
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b72ba94e-f746-4d92-bfde-5dd7f3b2d149
+		summarizeBy: none
+		sourceColumn: ShowConfirm
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConfirmMessage
+		dataType: string
+		lineageTag: 69ea8ff0-127f-4480-a924-1a8fe3c48a21
+		summarizeBy: none
+		sourceColumn: ConfirmMessage
+
+		annotation SummarizationSetBy = Automatic
+
+	column ButtonLabel
+		dataType: string
+		lineageTag: 62dcd439-85aa-4bce-bb8c-a3e868d6c566
+		summarizeBy: none
+		sourceColumn: ButtonLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ButtonCss
+		dataType: string
+		lineageTag: 3c2d090b-ef52-4deb-8d38-3c02e729717c
+		summarizeBy: none
+		sourceColumn: ButtonCss
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupplyNote
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 425d842a-45d4-41ef-b384-1a0ee7fa0b31
+		summarizeBy: none
+		sourceColumn: SupplyNote
+
+		annotation SummarizationSetBy = Automatic
+
+	column NoteInputLabel
+		dataType: string
+		lineageTag: a8ef778b-6503-487e-9963-a95344f0815a
+		summarizeBy: none
+		sourceColumn: NoteInputLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupplyFastTrack
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e5e11a0d-5265-4e3f-bdfa-b035ef77bd81
+		summarizeBy: none
+		sourceColumn: SupplyFastTrack
+
+		annotation SummarizationSetBy = Automatic
+
+	column FastTrackInputLabel
+		dataType: string
+		lineageTag: 8f9b2104-4da6-4bf4-9d14-c523caa30b1d
+		summarizeBy: none
+		sourceColumn: FastTrackInputLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 1439a27c-8ceb-4249-8c7d-a9922807fee0
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SupplyReviewReason
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1b17d2e9-33e2-41ed-85a0-ededae9662f5
+		summarizeBy: none
+		sourceColumn: SupplyReviewReason
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ClaimTransition = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ClaimTransition = Source{[Schema="dbo",Item="ClaimTransition"]}[Data]
+				in
+				    dbo_ClaimTransition
+
+	annotation PBI_ResultType = Table
+

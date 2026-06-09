@@ -1,0 +1,124 @@
+table ApiKey
+	lineageTag: c40ad9eb-1054-4f31-b7fc-9f8454b7a60a
+
+	column Id
+		dataType: string
+		lineageTag: 65faf1b6-c72e-45c8-a4bd-8721c12b8b35
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: string
+		lineageTag: 03f750a5-b78e-48c3-b5d1-f4377628bada
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scope
+		dataType: string
+		lineageTag: 868bfe27-a6e4-4d7d-b70d-ffc7a4a25d97
+		summarizeBy: none
+		sourceColumn: Scope
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientRef
+		dataType: string
+		lineageTag: 806bdf00-1601-49c5-b730-4ee66f155e9f
+		summarizeBy: none
+		sourceColumn: ClientRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: cd59d081-4b51-43a0-95a6-a99868c826c4
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 70376c94-2071-455a-b3ce-a0aab88fee0f
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 51ed20d0-b35a-449e-8df6-a8ea21feeaa8
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4f178376-a021-4da3-bcda-c22d1073821a
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: bb9ff03e-10bd-4782-86e2-004475bbf3f8
+			defaultHierarchy: LocalDateTable_6b7cb108-81b5-46e9-b611-aaadec4664cb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 6b9dd694-bda0-4ee2-ae3e-5bb1353dc5b2
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 00a78a57-bfaf-4f4c-827a-19eb56da9974
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 50453a1a-c56f-49c8-a408-197595a743f4
+			defaultHierarchy: LocalDateTable_c617234c-b99c-4e1c-9949-2716003d94ff.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 85997de0-a97e-4d1c-b02b-3cf1185ab925
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 852faefe-3f24-47f6-b341-3eb0456f80ae
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ApiKey = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ApiKey = Source{[Schema="dbo",Item="ApiKey"]}[Data]
+				in
+				    dbo_ApiKey
+
+	annotation PBI_ResultType = Table
+

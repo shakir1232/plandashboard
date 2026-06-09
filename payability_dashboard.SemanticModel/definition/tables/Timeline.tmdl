@@ -1,0 +1,125 @@
+table Timeline
+	lineageTag: d4df080e-70de-4713-a2b1-96563aab2387
+
+	column Id
+		dataType: string
+		lineageTag: 9d09b607-fffc-4a53-a5ff-01034da5f2a8
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 66ba6bf3-6712-4975-99c4-001fd55597d1
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderId
+		dataType: string
+		lineageTag: ef86662c-fc25-4e3d-8de3-3014a9629c1b
+		summarizeBy: none
+		sourceColumn: HolderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderType
+		dataType: string
+		lineageTag: c80a30e2-39f6-44d9-ac21-e1f2bbb0e640
+		summarizeBy: none
+		sourceColumn: HolderType
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderGroupRef
+		dataType: string
+		lineageTag: d45eedd5-751c-4557-9ef9-62703be55697
+		summarizeBy: none
+		sourceColumn: HolderGroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tag
+		dataType: string
+		lineageTag: ade89b77-9cb1-42bf-93ca-38c34a736970
+		summarizeBy: none
+		sourceColumn: Tag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: 1c2ac9af-ab85-4754-a071-a76b619081b1
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Note
+		dataType: string
+		lineageTag: d4453f88-076e-4e95-835f-a3c4b26361e2
+		summarizeBy: none
+		sourceColumn: Note
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 519c19b3-8ac7-4c5a-a3ea-c8df2ca9138b
+		summarizeBy: none
+		sourceColumn: Time
+
+		variation Variation
+			isDefault
+			relationship: 21fd4dff-e9fc-4988-a02f-d42c20cd771c
+			defaultHierarchy: LocalDateTable_4233d393-4220-4894-8fe7-ca7c232358af.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsHidden
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ca08ecfd-7b7f-4506-ab82-391af47e7992
+		summarizeBy: none
+		sourceColumn: IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionedById
+		dataType: string
+		lineageTag: abad43a3-a321-46fc-973e-7c85391b8a4b
+		summarizeBy: none
+		sourceColumn: ActionedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionedByExternalRef
+		dataType: string
+		lineageTag: c20fb77d-e5f5-48b3-aed3-193f3a6dc728
+		summarizeBy: none
+		sourceColumn: ActionedByExternalRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionedByExternalLabel
+		dataType: string
+		lineageTag: e25cadb2-02e7-4ac3-a696-a9d427354e33
+		summarizeBy: none
+		sourceColumn: ActionedByExternalLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Timeline = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Timeline = Source{[Schema="dbo",Item="Timeline"]}[Data]
+				in
+				    dbo_Timeline
+
+	annotation PBI_ResultType = Table
+

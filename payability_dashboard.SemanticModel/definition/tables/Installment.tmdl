@@ -1,0 +1,274 @@
+table Installment
+	lineageTag: d4847bf7-006d-4194-a2a2-6e8e40537b8a
+
+	column Id
+		dataType: string
+		lineageTag: 4809b7ff-638a-414d-afa2-a06e7b0213ef
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: cfee7dd7-3e9f-4c3d-acde-1670efb8e9e0
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 755ce8aa-22f9-44af-a7d8-811bb6904c1a
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: 7988b498-ed94-400a-881a-ca87f1d75ad6
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryRef
+		dataType: string
+		lineageTag: cc681040-7234-415f-a633-5277c002f5bf
+		summarizeBy: none
+		sourceColumn: SupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 06e29364-0724-4214-b31c-f174d96b9807
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 9775ccf7-26a4-4ba2-a0fa-902759b1be1d
+			defaultHierarchy: LocalDateTable_19191c8d-3162-43ed-b15b-5b5d17235fb8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: eb1885a8-0c8b-49b8-8577-1916ccd2a391
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: b8469f35-dbf4-4daf-a083-4f292e205b7c
+			defaultHierarchy: LocalDateTable_fd40d1ed-4b40-4772-8874-93343db4ae4a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApprovedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4296891c-224b-416a-9135-656bcab83040
+		summarizeBy: sum
+		sourceColumn: ApprovedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 241348d4-c4b4-4901-85f2-b0ab302d4aae
+		summarizeBy: sum
+		sourceColumn: AllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column UnallocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 84cfbcbc-0739-45e0-a58a-2d756047e665
+		summarizeBy: sum
+		sourceColumn: UnallocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c66726d0-5261-410b-805d-262367e65433
+		summarizeBy: sum
+		sourceColumn: SpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: faa4c1dd-3556-4457-bd98-804f8f44df00
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column LastSyncedSpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e2ebf890-62c2-4764-8409-765173324353
+		summarizeBy: sum
+		sourceColumn: LastSyncedSpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column LastSyncedRemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d1d32afb-9cc5-4731-b2f2-75106f1c617f
+		summarizeBy: sum
+		sourceColumn: LastSyncedRemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 222cf3c3-0be8-4962-a93f-fa5be4643d8b
+		summarizeBy: none
+		sourceColumn: SyncedAt
+
+		variation Variation
+			isDefault
+			relationship: 096c4ae7-d756-44cb-ae26-1bcde7d15d78
+			defaultHierarchy: LocalDateTable_e944599c-93df-4b68-abf0-d7d398bd5146.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 42fd1116-8815-4056-a25b-d9980c328ef2
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetTypeDesc
+		dataType: string
+		lineageTag: ccf51b9e-b8ae-41f0-8fdc-f7a1039b9eb2
+		summarizeBy: none
+		sourceColumn: BudgetTypeDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanPeriodId
+		dataType: string
+		lineageTag: 71d58147-76e9-47a8-9cdc-a0f30acfd18d
+		summarizeBy: none
+		sourceColumn: PlanPeriodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hash
+		dataType: string
+		lineageTag: d7eb4fda-f699-4480-a967-dda8f1c8a9c3
+		summarizeBy: none
+		sourceColumn: Hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6c361414-512d-4937-9500-0f726c5725e2
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c7bba501-6f21-4da2-8570-9877a1dd3bfe
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 9a113983-eced-4012-8cf5-900b86e5e2a0
+			defaultHierarchy: LocalDateTable_ec11971b-83dc-4718-9746-61797c09cd95.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleasedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 62520e95-f616-4f1f-ad88-e3ac4388873e
+		summarizeBy: sum
+		sourceColumn: ReleasedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsIgnoreForBudget
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0446689e-80cb-4f50-9147-344a178cc0db
+		summarizeBy: none
+		sourceColumn: IsIgnoreForBudget
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 5d78d897-f0c8-4996-aa94-fa0828f1bad4
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstallmentType
+		dataType: string
+		lineageTag: d58c6d5b-be21-4ce1-bd01-d9f28ede7cd1
+		summarizeBy: none
+		sourceColumn: InstallmentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAccessibleFund
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6d6240e9-3e7a-495d-a5cb-eff1d547af93
+		summarizeBy: none
+		sourceColumn: IsAccessibleFund
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Installment = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Installment = Source{[Schema="dbo",Item="Installment"]}[Data]
+				in
+				    dbo_Installment
+
+	annotation PBI_ResultType = Table
+

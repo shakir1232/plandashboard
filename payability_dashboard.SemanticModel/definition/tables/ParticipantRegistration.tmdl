@@ -1,0 +1,420 @@
+table ParticipantRegistration
+	lineageTag: 1c810afd-e5e3-4c9d-8119-c2dd8b5809d1
+
+	column Id
+		dataType: string
+		lineageTag: d6708078-5f14-4af2-90fc-2c5f5e1d8538
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 73955251-d29e-4b23-9ee4-b627f55d7dd3
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 3bb1d116-c896-4c57-a3c1-ff99b1348558
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbId
+		dataType: string
+		lineageTag: b839b97f-371f-45c1-bf3b-2060b3a85bb0
+		summarizeBy: none
+		sourceColumn: SuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	column GenderId
+		dataType: string
+		lineageTag: 96953be6-3d7c-4f52-bf3d-291c5ad063ce
+		summarizeBy: none
+		sourceColumn: GenderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PronounId
+		dataType: string
+		lineageTag: b55ddcba-b5a2-4c49-bb20-259101551f4d
+		summarizeBy: none
+		sourceColumn: PronounId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthCountryId
+		dataType: string
+		lineageTag: 7edfc55c-2db7-4ded-80b7-a73e54c1e315
+		summarizeBy: none
+		sourceColumn: BirthCountryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IndigenousBackgroundId
+		dataType: string
+		lineageTag: e43eae78-6075-4745-948e-f11d9e3803a9
+		summarizeBy: none
+		sourceColumn: IndigenousBackgroundId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryDisabilityId
+		dataType: string
+		lineageTag: d950d691-4898-457e-943c-b3055163051b
+		summarizeBy: none
+		sourceColumn: PrimaryDisabilityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreferredCommMethodId
+		dataType: string
+		lineageTag: 397f297d-35e1-449f-b8d5-2d726b15dca7
+		summarizeBy: none
+		sourceColumn: PreferredCommMethodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApplicantTypeId
+		dataType: string
+		lineageTag: efab0def-ff44-41b9-80cc-ddcf13ab9e68
+		summarizeBy: none
+		sourceColumn: ApplicantTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApplicantFirstName
+		dataType: string
+		lineageTag: 3c89978f-5235-4d58-a022-c0b44b361ecd
+		summarizeBy: none
+		sourceColumn: ApplicantFirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApplicantLastName
+		dataType: string
+		lineageTag: 0fbb2a76-10ce-4db5-8d2f-9d2cc84f603f
+		summarizeBy: none
+		sourceColumn: ApplicantLastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApplicantPhone
+		dataType: string
+		lineageTag: dd06d163-c0bd-4ee5-b72c-dddd0d439473
+		summarizeBy: none
+		sourceColumn: ApplicantPhone
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApplicantEmail
+		dataType: string
+		lineageTag: 5279ff1e-e79c-4acf-aaad-853a545cd5ce
+		summarizeBy: none
+		sourceColumn: ApplicantEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsProspect
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 956bf40f-21ea-4a4b-b5c0-b50166787082
+		summarizeBy: none
+		sourceColumn: IsProspect
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 6babea1a-7fd2-4735-b94c-6555a42553e9
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 097cc08c-7150-441a-8dca-89eb2ef0c10a
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: 820ec05e-9777-49a8-912d-611732cb4a3c
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 5f3ec04a-c1e3-41c9-af06-346545fc1788
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreferredName
+		dataType: string
+		lineageTag: 842106a3-2d18-467e-9696-2af7817ffd1f
+		summarizeBy: none
+		sourceColumn: PreferredName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 47439f4e-9fe5-4130-8632-0960d5255a73
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		variation Variation
+			isDefault
+			relationship: 215110e1-63f6-4ad5-9b54-500d5fddf38a
+			defaultHierarchy: LocalDateTable_96dee768-b844-4ed5-b349-7944e8066f33.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCulturallyDiverse
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1ad0fbdd-79fb-440d-8bce-121d3d0b9ecd
+		summarizeBy: none
+		sourceColumn: IsCulturallyDiverse
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpokenLanguages
+		dataType: string
+		lineageTag: 4332779f-9cb4-4c73-bbbf-7463ffee7411
+		summarizeBy: none
+		sourceColumn: SpokenLanguages
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInterpreterRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5f870b79-1b82-48fd-987f-e5778cc0c5d5
+		summarizeBy: none
+		sourceColumn: IsInterpreterRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column InterpreterType
+		dataType: string
+		lineageTag: 2c1af81d-bf76-48bf-8bca-f2406a395e05
+		summarizeBy: none
+		sourceColumn: InterpreterType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 57f00993-aae7-402f-a595-865bc1382694
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactEmail
+		dataType: string
+		lineageTag: 49090fca-64ac-4be2-afc2-987468364565
+		summarizeBy: none
+		sourceColumn: ContactEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 3de538fe-7c76-4be2-9b22-c8b421bff8dc
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: f3fba82d-9691-49a6-8467-097d08dc7a1e
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column AdditionalComments
+		dataType: string
+		lineageTag: d4749770-4bd4-425b-83bc-4663a73a793a
+		summarizeBy: none
+		sourceColumn: AdditionalComments
+
+		annotation SummarizationSetBy = Automatic
+
+	column DocumentFileName
+		dataType: string
+		lineageTag: 60402e30-b0ce-4401-acb8-886bf4e6d815
+		summarizeBy: none
+		sourceColumn: DocumentFileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DocumentFileRef
+		dataType: string
+		lineageTag: e49b78fc-4db1-4519-95f6-67b2cb1b35e1
+		summarizeBy: none
+		sourceColumn: DocumentFileRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceAgreementFileRef
+		dataType: string
+		lineageTag: 03b3925d-e742-4e3f-8616-c68f813b075f
+		summarizeBy: none
+		sourceColumn: ServiceAgreementFileRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1390c53e-757e-4ad7-a1f7-e22a68007aca
+		summarizeBy: none
+		sourceColumn: AcceptedAt
+
+		variation Variation
+			isDefault
+			relationship: f261c0d9-17d5-4612-97f7-f478ce1f2e12
+			defaultHierarchy: LocalDateTable_c2861f60-5cce-489d-8380-a9f58580eb9d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptedById
+		dataType: string
+		lineageTag: 06715dc2-e548-4019-ac66-86c874fd0f95
+		summarizeBy: none
+		sourceColumn: AcceptedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeclinedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7ee699e8-5d54-48d2-b9fe-88019e92072d
+		summarizeBy: none
+		sourceColumn: DeclinedAt
+
+		variation Variation
+			isDefault
+			relationship: b503f201-8054-4f65-9455-df28545e888e
+			defaultHierarchy: LocalDateTable_10a443de-1404-4fb0-9346-fe3dbf8321ed.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeclinedById
+		dataType: string
+		lineageTag: 2d0feca7-25f9-4e1a-a26b-7ee48e9c52e4
+		summarizeBy: none
+		sourceColumn: DeclinedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubmittedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 22f777b8-6779-46e3-a208-78936f31d394
+		summarizeBy: none
+		sourceColumn: SubmittedAt
+
+		variation Variation
+			isDefault
+			relationship: 89fd5944-479a-4888-bb9d-91811b2b6135
+			defaultHierarchy: LocalDateTable_dda9e827-34d9-49cc-bbd7-5e43bb4ce4da.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 011306c6-2f6c-4811-92f4-bbc5bf3ec55d
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b31b2b6f-d451-47eb-83c9-e5c49a244a1e
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column SigningRequestId
+		dataType: string
+		lineageTag: 13e569e3-9770-4adf-a91c-8b091d44eba2
+		summarizeBy: none
+		sourceColumn: SigningRequestId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantSigningActionId
+		dataType: string
+		lineageTag: 2adc1714-f901-4c94-9911-a86632bf58de
+		summarizeBy: none
+		sourceColumn: ParticipantSigningActionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencySigningActionId
+		dataType: string
+		lineageTag: 2d8a7521-c315-4e57-8fe6-94c3970e0af2
+		summarizeBy: none
+		sourceColumn: AgencySigningActionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantSigningStatus
+		dataType: string
+		lineageTag: 8b729cd7-022c-4f75-9b93-06dd37fa5555
+		summarizeBy: none
+		sourceColumn: ParticipantSigningStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencySigningStatus
+		dataType: string
+		lineageTag: e2df2467-bd42-4fb0-8a9c-57e5d0093191
+		summarizeBy: none
+		sourceColumn: AgencySigningStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRemoteSigning
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d1a2cab1-6f5b-4b8f-ae5e-50830c266bba
+		summarizeBy: none
+		sourceColumn: IsRemoteSigning
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ParticipantRegistration = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ParticipantRegistration = Source{[Schema="dbo",Item="ParticipantRegistration"]}[Data]
+				in
+				    dbo_ParticipantRegistration
+
+	annotation PBI_ResultType = Table
+

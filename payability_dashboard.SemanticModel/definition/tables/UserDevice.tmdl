@@ -1,0 +1,82 @@
+table UserDevice
+	lineageTag: da19e4a1-716a-4f66-bd06-21216ab1ff07
+
+	column Id
+		dataType: string
+		lineageTag: af0178cb-f23e-4627-972c-8b9c52f5f871
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 5b1778e2-a8c7-466d-b084-3bfccac2e82d
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirebaseRef
+		dataType: string
+		lineageTag: d73613a6-f123-4572-968b-41bc85aad2c9
+		summarizeBy: none
+		sourceColumn: FirebaseRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: 57f6152a-e5f2-481e-8feb-e608b94eed9b
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 50409cd9-e965-4bfb-b12b-ca8a5dbaa69d
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 223185bc-d1ad-485c-9194-4c24b365053f
+			defaultHierarchy: LocalDateTable_97f7434c-bb6c-4b08-ae12-d279d0c29e0e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppVersion
+		dataType: string
+		lineageTag: d7031b5e-5f87-4d53-b3d8-f5f987c0a517
+		summarizeBy: none
+		sourceColumn: AppVersion
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastReportAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f6841dad-06cd-4c7a-aab0-af794e3cd9a9
+		summarizeBy: none
+		sourceColumn: LastReportAt
+
+		variation Variation
+			isDefault
+			relationship: 3ea8da54-0de9-483f-b413-d5e4f257198e
+			defaultHierarchy: LocalDateTable_25975f5f-456f-4d45-8e31-60e7814b2165.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserDevice = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserDevice = Source{[Schema="dbo",Item="UserDevice"]}[Data]
+				in
+				    dbo_UserDevice
+
+	annotation PBI_ResultType = Table
+

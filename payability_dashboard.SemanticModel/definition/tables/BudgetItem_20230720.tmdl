@@ -1,0 +1,149 @@
+table BudgetItem_20230720
+	lineageTag: 07e4fa9c-6436-439e-a56d-d0fd0e5bd5e2
+
+	column Id
+		dataType: string
+		lineageTag: 2122056b-fb81-4eff-9919-166b1dfa405a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: 9725d67c-7400-4187-80da-903d8904107f
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: d4c2c9ca-f92b-4564-af55-cd3d0483a1e7
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApprovedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 06ecf570-c731-4513-90f7-53510fbbb44b
+		summarizeBy: sum
+		sourceColumn: ApprovedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b600f102-4fb7-454d-9c7a-cd0e0e43c5cb
+		summarizeBy: sum
+		sourceColumn: AllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3d4513ca-0b80-457a-8e4d-f5809be754bf
+		summarizeBy: sum
+		sourceColumn: SpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4a98372e-3c54-4450-8d07-1da8fa6b9899
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column FlagBudgetWarning
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ef8e59a6-23ab-4b8d-9a07-de143aa683bb
+		summarizeBy: none
+		sourceColumn: FlagBudgetWarning
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetWarningNotifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ad8f7233-4410-4957-a074-f76315f2f4fd
+		summarizeBy: none
+		sourceColumn: BudgetWarningNotifiedAt
+
+		variation Variation
+			isDefault
+			relationship: e3b0f909-9de8-4aa6-8f57-198d1deb8e11
+			defaultHierarchy: LocalDateTable_cf41198d-d1fd-449b-b79c-0ef09f2c45ee.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 01162be4-2ef0-4e6a-8e84-a189d2405c59
+		summarizeBy: none
+		sourceColumn: SyncedAt
+
+		variation Variation
+			isDefault
+			relationship: eb7b78f8-35b7-4927-974d-200398c8e8cc
+			defaultHierarchy: LocalDateTable_7acf97e6-6868-4e84-a0cc-1f91ac0c1161.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 6b56e32d-3fed-4ca5-9609-8918f230f6cc
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0b0f4a41-aa00-472a-9efe-c8bf5e33cd75
+		summarizeBy: sum
+		sourceColumn: BudgetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NonPlanManagedSbAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8fbac18f-fef7-460c-85c6-19e5e269e71a
+		summarizeBy: sum
+		sourceColumn: NonPlanManagedSbAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition BudgetItem_20230720 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BudgetItem_20230720 = Source{[Schema="dbo",Item="BudgetItem_20230720"]}[Data]
+				in
+				    dbo_BudgetItem_20230720
+
+	annotation PBI_ResultType = Table
+

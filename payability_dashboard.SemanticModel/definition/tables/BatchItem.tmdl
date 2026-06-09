@@ -1,0 +1,147 @@
+table BatchItem
+	lineageTag: 87a8dfde-0e40-4e80-af1b-f7a8d773270e
+
+	column Id
+		dataType: string
+		lineageTag: 3810158b-4c8c-4932-b90e-03f95c2a1f2a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: f853a2f2-39b1-4d74-9f87-818e9e85a62d
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchId
+		dataType: string
+		lineageTag: 580e28db-fa79-450b-8c47-790572ba1238
+		summarizeBy: none
+		sourceColumn: BatchId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResourceId
+		dataType: string
+		lineageTag: 3806aa41-86a1-4155-8372-5e6c8eebb540
+		summarizeBy: none
+		sourceColumn: ResourceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 5a552b0d-ce16-41a1-b2a0-4feb628adcdc
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: string
+		lineageTag: ab20b9a8-3599-4a6f-9710-488182e213ce
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: f9b4e1bf-1176-4a26-81ca-0e4c849a430d
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Notes
+		dataType: string
+		lineageTag: d33b886d-9e92-4586-9a7b-58c471417f96
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Issues
+		dataType: string
+		lineageTag: 27927d5c-1309-4463-9214-e0598a62e2d7
+		summarizeBy: none
+		sourceColumn: Issues
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessStart
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1d50db7b-b9dc-4660-a584-25ce03ae38f7
+		summarizeBy: none
+		sourceColumn: ProcessStart
+
+		variation Variation
+			isDefault
+			relationship: 4010efa6-2b97-4fa6-a11f-9cd32afade73
+			defaultHierarchy: LocalDateTable_31bd3d8c-9d05-41a5-8e0a-0dae6639c245.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 22855432-4b14-4b34-ac00-f0b57b935136
+		summarizeBy: none
+		sourceColumn: ProcessEnd
+
+		variation Variation
+			isDefault
+			relationship: 26d0dcab-78cf-4521-a46b-e6cbef5bf5ee
+			defaultHierarchy: LocalDateTable_4452bf9c-e099-4ca4-aff5-b309dc476794.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0912d6bc-334d-4dbb-85f5-6c956d9ae1b5
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: ba942c2b-c610-43b1-b121-4bedea903071
+			defaultHierarchy: LocalDateTable_04b9f657-85f7-4085-843b-dac1631493b4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportFileLine
+		dataType: int64
+		formatString: 0
+		lineageTag: 78063273-5e82-4d12-bd0a-413a77ddf579
+		summarizeBy: sum
+		sourceColumn: ImportFileLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Logs
+		dataType: string
+		lineageTag: 1f7c0936-cc63-433f-a73d-5c91e540a2d6
+		summarizeBy: none
+		sourceColumn: Logs
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BatchItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BatchItem = Source{[Schema="dbo",Item="BatchItem"]}[Data]
+				in
+				    dbo_BatchItem
+
+	annotation PBI_ResultType = Table
+

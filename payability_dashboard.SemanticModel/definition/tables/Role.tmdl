@@ -1,0 +1,72 @@
+table Role
+	lineageTag: 78d4388d-1b8c-4e03-be71-1d0a1732617a
+
+	column Id
+		dataType: string
+		lineageTag: b175203d-a893-47d7-ade4-d220fe392c2c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: f8c19683-3618-43e5-93c3-cc539dc63d82
+		summarizeBy: none
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Name
+		dataType: string
+		lineageTag: ab92fb25-3231-4b5d-a508-05f70ba6b864
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column NormalizedName
+		dataType: string
+		lineageTag: 6d4c1c9d-9e29-44c6-8b0f-171ded732412
+		summarizeBy: none
+		sourceColumn: NormalizedName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConcurrencyStamp
+		dataType: string
+		lineageTag: 7f9ab8d4-6243-4693-8625-83616da333ab
+		summarizeBy: none
+		sourceColumn: ConcurrencyStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column TwoFactorMethodOptions
+		dataType: string
+		lineageTag: 9fc928b2-06bb-49a2-8f41-6fd02ee1deeb
+		summarizeBy: none
+		sourceColumn: TwoFactorMethodOptions
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortCode
+		dataType: string
+		lineageTag: 66547c23-ef21-4af3-acb9-38c30db235ed
+		summarizeBy: none
+		sourceColumn: ShortCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Role = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Role = Source{[Schema="dbo",Item="Role"]}[Data]
+				in
+				    dbo_Role
+
+	annotation PBI_ResultType = Table
+

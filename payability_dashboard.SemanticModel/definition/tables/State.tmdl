@@ -1,0 +1,62 @@
+table State
+	lineageTag: 2eaf6880-4612-40ce-a429-deac6745df54
+
+	column Id
+		dataType: string
+		lineageTag: 62eb729c-711c-47f6-af1d-7f50709657ac
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 578ed17c-a3bc-4114-a49d-8c8615f5aaec
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: c59f1fd1-88db-4773-9dea-26831e1a939c
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: 2b744681-c5ff-4ca7-b881-5ca4b64f653c
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rank
+		dataType: double
+		lineageTag: c7505b81-d12e-4a0f-9713-9cc6648b8218
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition State = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_State = Source{[Schema="dbo",Item="State"]}[Data]
+				in
+				    dbo_State
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

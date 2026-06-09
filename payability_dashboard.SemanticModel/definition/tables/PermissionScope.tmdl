@@ -1,0 +1,56 @@
+table PermissionScope
+	lineageTag: 92a9a09f-a130-4924-97c5-aa05207978af
+
+	column Id
+		dataType: string
+		lineageTag: ccf1ee5a-01a3-4793-b06d-59815b4c3351
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 7c17cf0c-10d5-4fb0-987a-836feff09621
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: a6dc70eb-1e27-46b2-8de8-5013247b4151
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 54118ec6-f36b-4acb-a53f-4fa6af31134f
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RoleIds
+		dataType: string
+		lineageTag: fe73df13-4215-4c50-a69e-c752f7ac1967
+		summarizeBy: none
+		sourceColumn: RoleIds
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PermissionScope = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PermissionScope = Source{[Schema="dbo",Item="PermissionScope"]}[Data]
+				in
+				    dbo_PermissionScope
+
+	annotation PBI_ResultType = Table
+

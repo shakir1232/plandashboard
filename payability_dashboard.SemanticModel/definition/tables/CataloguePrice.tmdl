@@ -1,0 +1,73 @@
+table CataloguePrice
+	lineageTag: 149f77e7-02ef-4eb4-9cb5-8862cc586894
+
+	column Id
+		dataType: string
+		lineageTag: 6b2e5966-96cf-4e30-81a2-13606d4e4bab
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column CatalogueId
+		dataType: string
+		lineageTag: 415dcf5a-12a4-4494-96e0-070d9c6d1c50
+		summarizeBy: none
+		sourceColumn: CatalogueId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceZoneId
+		dataType: string
+		lineageTag: 2d507751-38a3-49c0-a410-4609ba05b9f0
+		summarizeBy: none
+		sourceColumn: PriceZoneId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AreaType
+		dataType: string
+		lineageTag: d793dcb0-dabc-4cf4-a940-c78584ed8878
+		summarizeBy: none
+		sourceColumn: AreaType
+
+		annotation SummarizationSetBy = Automatic
+
+	column AreaCode
+		dataType: string
+		lineageTag: db2f663f-a926-4404-80e3-f5b97e798fae
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AreaName
+		dataType: string
+		lineageTag: eece22d2-5eb3-4cb7-8c6b-f2da39596b36
+		summarizeBy: none
+		sourceColumn: AreaName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceLimitAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: aace9c56-f51f-4755-a39b-1dd5f2dadf2f
+		summarizeBy: sum
+		sourceColumn: PriceLimitAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition CataloguePrice = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_CataloguePrice = Source{[Schema="dbo",Item="CataloguePrice"]}[Data]
+				in
+				    dbo_CataloguePrice
+
+	annotation PBI_ResultType = Table
+

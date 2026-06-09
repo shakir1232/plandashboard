@@ -1,0 +1,212 @@
+table CustomField
+	lineageTag: 3cdde02f-d6a0-4151-a8f8-8a9a1881dcc4
+
+	column Id
+		dataType: string
+		lineageTag: 04373aa1-e992-480a-a9f1-ff6d5af4f95e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: ebed0be0-5dc6-4e2b-a2b7-f24b8967f615
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderType
+		dataType: string
+		lineageTag: 5ba1c2cb-0a3f-4e26-8a14-ae8fed441039
+		summarizeBy: none
+		sourceColumn: HolderType
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataType
+		dataType: string
+		lineageTag: 7ce87c7e-3ea8-489a-bda7-6d5115c3a6c4
+		summarizeBy: none
+		sourceColumn: DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputType
+		dataType: string
+		lineageTag: 67c17cc7-ca3d-436d-88ab-70ff6a12a9bf
+		summarizeBy: none
+		sourceColumn: InputType
+
+		annotation SummarizationSetBy = Automatic
+
+	column InputSize
+		dataType: int64
+		formatString: 0
+		lineageTag: ad8845ef-397d-43c9-9caf-dc5053420551
+		summarizeBy: sum
+		sourceColumn: InputSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValueOptions
+		dataType: string
+		lineageTag: 1f255ad8-2d79-419e-ae55-7fa0c17d10e3
+		summarizeBy: none
+		sourceColumn: ValueOptions
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 3e6bb4d0-39e5-45e1-8406-1e816395ceee
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 43c88423-a980-47da-a3c2-2e02147f3b1d
+		summarizeBy: none
+		sourceColumn: IsRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsOptedForRegistration
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dd779dc0-a17d-472d-b60b-4afe1cb2345c
+		summarizeBy: none
+		sourceColumn: IsOptedForRegistration
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRequiredForRegistration
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9ab74fba-de4d-417b-9216-ea46668e0e2d
+		summarizeBy: none
+		sourceColumn: IsRequiredForRegistration
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxLength
+		dataType: int64
+		formatString: 0
+		lineageTag: 96028970-932b-4191-bb8a-13e3c5fd4041
+		summarizeBy: sum
+		sourceColumn: MaxLength
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 476a0ab1-0f43-4749-acba-3823e4359fa0
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 83c82d6c-c5b0-4fa6-9d23-ca58d84e71fd
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 9942a139-2e4d-43ee-ad01-8d186dceb8d0
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 98c68a60-f579-4662-a9c5-f69feacafb55
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6010548b-02d4-483e-be31-808e24c5e996
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 455ba870-33a7-44d8-bdb3-01a94a41e0e3
+			defaultHierarchy: LocalDateTable_d0db6d4b-fe50-4e1a-9ee9-a3e65f33a0d3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: ce7280d7-5ec2-4a1c-82aa-3c318f31707b
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6829fb7b-e45c-4369-bfae-6928c3036082
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 369a9718-4a20-482e-b93f-602a98615e7a
+			defaultHierarchy: LocalDateTable_49e0663e-b648-46cf-a6a8-9f448e325ff3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4b699cc1-91f9-4efc-b1d1-a84fe54e558c
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column SectionId
+		dataType: string
+		lineageTag: fad014c0-cb97-4df9-8d09-be4399c58b00
+		summarizeBy: none
+		sourceColumn: SectionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAgencyUseOnly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b479ff9f-43f0-4840-ab89-62ff96ece61e
+		summarizeBy: none
+		sourceColumn: IsAgencyUseOnly
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CustomField = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_CustomField = Source{[Schema="dbo",Item="CustomField"]}[Data]
+				in
+				    dbo_CustomField
+
+	annotation PBI_ResultType = Table
+

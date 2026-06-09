@@ -1,0 +1,113 @@
+table ServiceBookingItem
+	lineageTag: 849bbed1-d1f1-40c3-a665-bd8a4ae3caac
+
+	column Id
+		dataType: string
+		lineageTag: 2fa1cc2d-c6ce-48cd-862d-72cdf13f75d5
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceBookingId
+		dataType: string
+		lineageTag: ecff7abf-0e58-4d4f-8fcd-536844e493cb
+		summarizeBy: none
+		sourceColumn: ServiceBookingId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: 33ac47a5-6ccc-4921-89ed-576b80acf2b2
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemId
+		dataType: string
+		lineageTag: 4c701402-c24e-4f40-bf09-31a69be06a4a
+		summarizeBy: none
+		sourceColumn: SupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryRef
+		dataType: string
+		lineageTag: ea221dda-30f5-4ff5-82d3-342ed97212a7
+		summarizeBy: none
+		sourceColumn: SupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemRef
+		dataType: string
+		lineageTag: 09435067-a207-41b6-868b-00fd39b9c2f9
+		summarizeBy: none
+		sourceColumn: SupportItemRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 6aad0a1c-dee3-4493-a700-c7492db7cb3e
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 0cdbfc46-d709-460c-8ccb-0822db41e217
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 446ba59d-abef-42e5-8f35-7fc86d811143
+		summarizeBy: sum
+		sourceColumn: AllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f1bc8a16-82d9-4e78-a5cd-37115f78cd65
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AccrualAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 40439bdc-f003-44c9-a97f-fbf2d101c9f3
+		summarizeBy: sum
+		sourceColumn: AccrualAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition ServiceBookingItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ServiceBookingItem = Source{[Schema="dbo",Item="ServiceBookingItem"]}[Data]
+				in
+				    dbo_ServiceBookingItem
+
+	annotation PBI_ResultType = Table
+

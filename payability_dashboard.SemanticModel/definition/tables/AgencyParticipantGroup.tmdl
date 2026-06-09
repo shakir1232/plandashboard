@@ -1,0 +1,76 @@
+table AgencyParticipantGroup
+	lineageTag: 6d6019ce-994c-4a6f-af54-a596f6461092
+
+	measure 'Agency Count' =
+			
+			DISTINCTCOUNT(AgencyParticipantGroup[AgencyID])
+		formatString: 0
+		lineageTag: 99853717-e09d-4958-a483-636cb6417544
+
+	measure Measure
+		lineageTag: 737e08b0-8abb-4fcc-8686-a1f536bdcbbd
+
+	column AgencyId
+		lineageTag: f9a7d436-a349-4a48-ac41-d08230fc5a72
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Participant[AgencyId]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantCount
+		formatString: 0
+		lineageTag: ba973f3a-6c93-4486-bbfe-265e8e2b498f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ParticipantCount]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantGroup
+		lineageTag: c382534d-d663-41cc-a731-44bd178a70cb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ParticipantGroup]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AgencyParticipantGroup = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    SUMMARIZE(
+				        Participant,
+				        Participant[AgencyID]
+				    ),
+				
+				    "ParticipantCount",
+				        COUNTROWS(
+				            FILTER(
+				                Participant,
+				                Participant[AgencyID] = EARLIER(Participant[AgencyID])
+				            )
+				        ),
+				
+				    "ParticipantGroup",
+				        VAR C =
+				            COUNTROWS(
+				                FILTER(
+				                    Participant,
+				                    Participant[AgencyID] = EARLIER(Participant[AgencyID])
+				                )
+				            )
+				
+				        VAR L = INT(C / 100) * 100
+				        VAR U = L + 100
+				
+				        RETURN
+				            "Participants: "
+				            & FORMAT(L, "0")
+				            & " - "
+				            & FORMAT(U, "0")
+				)
+
+	annotation PBI_Id = 2214040064484cac84b85ac666830830
+

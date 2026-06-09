@@ -1,0 +1,46 @@
+table UserLogin
+	lineageTag: a343e077-e073-4d4d-8362-40fd9891963c
+
+	column LoginProvider
+		dataType: string
+		lineageTag: ddc0e75f-dc4a-4126-868c-308d9ec41161
+		summarizeBy: none
+		sourceColumn: LoginProvider
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderKey
+		dataType: string
+		lineageTag: 6ada907d-d7a5-4125-9166-929396a0324d
+		summarizeBy: none
+		sourceColumn: ProviderKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 18d89cc6-92a1-4a33-8b99-f950ee3720dd
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderDisplayName
+		dataType: string
+		lineageTag: 93fd03a6-d91f-4806-94b0-d25c82d7cf10
+		summarizeBy: none
+		sourceColumn: ProviderDisplayName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserLogin = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserLogin = Source{[Schema="dbo",Item="UserLogin"]}[Data]
+				in
+				    dbo_UserLogin
+
+	annotation PBI_ResultType = Table
+

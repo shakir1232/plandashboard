@@ -1,0 +1,158 @@
+table InstallmentItem
+	lineageTag: 59bbba0d-60b3-4582-80cf-2dda5bfe4f0d
+
+	column Id
+		dataType: string
+		lineageTag: 938a46fb-3a55-4eea-b9d5-aeca86e8ab75
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column InstallmentId
+		dataType: string
+		lineageTag: 66b48c87-6d1d-4937-acda-586290bbcbbc
+		summarizeBy: none
+		sourceColumn: InstallmentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemTypeId
+		dataType: string
+		lineageTag: 78656ebe-fa5e-4071-870a-0b91a2005e68
+		summarizeBy: none
+		sourceColumn: SupportItemTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemId
+		dataType: string
+		lineageTag: b29921d5-6802-4325-bba7-3dd75b0e2fa8
+		summarizeBy: none
+		sourceColumn: SupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemRef
+		dataType: string
+		lineageTag: dea1ea8b-85f5-4c1d-a796-9c8849665e44
+		summarizeBy: none
+		sourceColumn: SupportItemRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApprovedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e93b0a79-8dae-46e2-a19a-20d2591ab60e
+		summarizeBy: sum
+		sourceColumn: ApprovedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: fe68d6be-122a-4dcc-a3a4-1fee71fcd1c1
+		summarizeBy: sum
+		sourceColumn: AllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column UnallocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1847f2ef-0338-4e1a-909e-9c5a7c048d98
+		summarizeBy: sum
+		sourceColumn: UnallocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 21e43985-05c0-4b71-b22f-1767c2cc142f
+		summarizeBy: sum
+		sourceColumn: SpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8ad11985-fc67-4bcb-b5c8-1e89df7d79d4
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column LastSyncedSpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 2351b87c-cbbe-4e3f-ba0a-0062af98f250
+		summarizeBy: sum
+		sourceColumn: LastSyncedSpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column LastSyncedRemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 50aacb9a-f6f6-4b07-8266-bdd9ff83db3a
+		summarizeBy: sum
+		sourceColumn: LastSyncedRemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsQuotable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1460b05b-5318-48df-a9e7-24824f76ff63
+		summarizeBy: none
+		sourceColumn: IsQuotable
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsQuoteApproved
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 178b581d-bc9b-4a1e-b95f-f0f9d15e4164
+		summarizeBy: none
+		sourceColumn: IsQuoteApproved
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInKind
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b778f581-f1e4-447c-94e0-8f1a9a99c7fc
+		summarizeBy: none
+		sourceColumn: IsInKind
+
+		annotation SummarizationSetBy = Automatic
+
+	partition InstallmentItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_InstallmentItem = Source{[Schema="dbo",Item="InstallmentItem"]}[Data]
+				in
+				    dbo_InstallmentItem
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,171 @@
+table ScanFilter_IMP
+	lineageTag: 34d8d28b-332b-48e5-b323-bf95522e1fab
+
+	column Id
+		dataType: string
+		lineageTag: 702f7eb6-65ac-482d-957a-6a2ec98c0e8c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileId
+		dataType: string
+		lineageTag: f5e668cb-43d1-4112-9dbe-290e8155af19
+		summarizeBy: none
+		sourceColumn: ProfileId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FieldId
+		dataType: string
+		lineageTag: fabc7311-dc86-4ffd-9a32-50e5f9e4812f
+		summarizeBy: none
+		sourceColumn: FieldId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 7ce54b1c-b31a-4fb5-85bd-8021d6aa3a06
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: b022a05d-f7e3-4e87-9284-d26d3b21bda2
+		summarizeBy: none
+		sourceColumn: Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 991b99bd-9e99-433a-9d99-092133f3439c
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Regex
+		dataType: string
+		lineageTag: a4281813-b822-4dd7-bb9f-1907f6e4c22d
+		summarizeBy: none
+		sourceColumn: Regex
+
+		annotation SummarizationSetBy = Automatic
+
+	column Replacer
+		dataType: string
+		lineageTag: 32af075e-1585-47cf-b255-94aa2f50e9f6
+		summarizeBy: none
+		sourceColumn: Replacer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Format
+		dataType: string
+		lineageTag: 41aec9dd-c364-4c8d-9dda-d3fca73447b1
+		summarizeBy: none
+		sourceColumn: Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: b5f046e6-b366-4e97-a51c-2304386b3082
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rank
+		dataType: double
+		lineageTag: 8cc3fd40-4e74-48f2-bb79-d40d0adf4783
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsBoosted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d570cab6-f457-4ebd-a641-9ef0e23b3811
+		summarizeBy: none
+		sourceColumn: IsBoosted
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aa0b92ce-6570-409e-bc84-627b7676b5fd
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsReleaseCandidate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 38ab32aa-57b1-437f-85bd-a49a9debc3d8
+		summarizeBy: none
+		sourceColumn: IsReleaseCandidate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleaseNotes
+		dataType: string
+		lineageTag: 4bc48c7c-08c8-427f-952c-094c0e7b59ef
+		summarizeBy: none
+		sourceColumn: ReleaseNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 1f8f4b08-892f-46fc-8be1-d1fc07965386
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 83227498-4325-40c3-bb5f-623e84309993
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ef17baf0-f472-476a-8794-0b75bc8fee3a
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 3a4316d5-5c1f-4f15-bc04-5831d71bf0da
+			defaultHierarchy: LocalDateTable_a1f50cf8-385e-46c7-9915-b659903a6ac3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ScanFilter_IMP = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ScanFilter_IMP = Source{[Schema="dbo",Item="ScanFilter_IMP"]}[Data]
+				in
+				    dbo_ScanFilter_IMP
+
+	annotation PBI_ResultType = Table
+

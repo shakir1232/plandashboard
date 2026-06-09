@@ -1,0 +1,110 @@
+table ParticipantAssociate
+	lineageTag: 471a2f91-ced1-4be5-9681-d5e0cfa1f43b
+
+	column Id
+		dataType: string
+		lineageTag: 3bf8ff99-5bd0-4ebc-974a-721206605a50
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 586650b2-c601-4dec-be4e-3b872a4f6a96
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantAgencyId
+		dataType: string
+		lineageTag: d1f30e11-8d2b-4b3a-b513-b9d944b87c19
+		summarizeBy: none
+		sourceColumn: ParticipantAgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column MemberId
+		dataType: string
+		lineageTag: c4b24a58-212a-4a07-b135-30c90250111b
+		summarizeBy: none
+		sourceColumn: MemberId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AssociateType
+		dataType: string
+		lineageTag: 1b030a38-3be3-477d-885b-c0077f689a86
+		summarizeBy: none
+		sourceColumn: AssociateType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relationship
+		dataType: string
+		lineageTag: e1252208-d62f-446b-9211-8c64509014d6
+		summarizeBy: none
+		sourceColumn: Relationship
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimApprover
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ba03784c-564d-48b8-87b5-98f24ad7b724
+		summarizeBy: none
+		sourceColumn: IsClaimApprover
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlanReportReceiver
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f7305ea3-d197-4700-b8dc-093a887c4d0c
+		summarizeBy: none
+		sourceColumn: IsPlanReportReceiver
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 26d8c95e-40d9-4c08-8995-1bcf54c5b523
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: d61ac27a-6245-4c0d-a4ea-e8d172d51b11
+			defaultHierarchy: LocalDateTable_cace0ad8-8c32-4e0a-9d8e-dfcc5c409736.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 37edc970-71e1-4a64-8b48-a3ec793427aa
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 5b961eea-6fad-4a34-a5d0-06775dbf6211
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ParticipantAssociate = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ParticipantAssociate = Source{[Schema="dbo",Item="ParticipantAssociate"]}[Data]
+				in
+				    dbo_ParticipantAssociate
+
+	annotation PBI_ResultType = Table
+

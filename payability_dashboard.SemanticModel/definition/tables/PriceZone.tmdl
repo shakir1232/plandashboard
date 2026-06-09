@@ -1,0 +1,56 @@
+table PriceZone
+	lineageTag: dd7de6f8-195a-4336-a499-e6d6d13ede96
+
+	column Id
+		dataType: string
+		lineageTag: 695a3d65-33bd-4305-94da-9395bfe36a76
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: db42ad23-ab47-4b9a-bea8-dd4e1f27533e
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column MmmRef
+		dataType: string
+		lineageTag: 81868b94-d2a9-48e8-87e2-96c5f71cdc61
+		summarizeBy: none
+		sourceColumn: MmmRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceRegion
+		dataType: string
+		lineageTag: 9b0655a5-df9d-4849-a40f-693453b4f46d
+		summarizeBy: none
+		sourceColumn: ServiceRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: ac5349bf-437f-457a-81fb-f3549327e8db
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition PriceZone = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PriceZone = Source{[Schema="dbo",Item="PriceZone"]}[Data]
+				in
+				    dbo_PriceZone
+
+	annotation PBI_ResultType = Table
+

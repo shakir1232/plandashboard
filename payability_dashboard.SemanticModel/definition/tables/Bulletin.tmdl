@@ -1,0 +1,194 @@
+table Bulletin
+	lineageTag: 92a49873-3e48-4426-b565-7a15877b28f4
+
+	column Id
+		dataType: string
+		lineageTag: a5e9c802-e0ab-4446-9d75-b2de49199e6e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeId
+		dataType: string
+		lineageTag: 1e796c2a-d70e-451e-8fad-58c25dfae881
+		summarizeBy: none
+		sourceColumn: TypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleIds
+		dataType: string
+		lineageTag: 65d12b6b-8ae3-4a19-bb7f-7fb6303edb02
+		summarizeBy: none
+		sourceColumn: RoleIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occurrence
+		dataType: string
+		lineageTag: 431ed938-5eda-453d-a5d3-879fef20c517
+		summarizeBy: none
+		sourceColumn: Occurrence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 3f2773af-3b48-47ac-9838-631f18d8e217
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Message
+		dataType: string
+		lineageTag: 447cb483-39a9-4892-be1c-f92a890bde06
+		summarizeBy: none
+		sourceColumn: Message
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAcceptanceRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7b50c9b8-a1c9-4b10-8381-262505e3cc44
+		summarizeBy: none
+		sourceColumn: IsAcceptanceRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column PublishDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 229ddec6-1432-4c16-aecc-4e2b8f7974a1
+		summarizeBy: none
+		sourceColumn: PublishDate
+
+		variation Variation
+			isDefault
+			relationship: 462254b1-1ca8-426e-a9ca-48fee3529bb9
+			defaultHierarchy: LocalDateTable_3f8e757c-3f08-4344-80ce-c7b88ba3878f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 76c5d5e4-7a3f-4427-a0a5-1ff7f16227d9
+		summarizeBy: none
+		sourceColumn: ActiveFrom
+
+		variation Variation
+			isDefault
+			relationship: e9fae345-a83e-4e22-baf6-875267016038
+			defaultHierarchy: LocalDateTable_3647bf16-7286-4dd2-b451-f84eaab48f3c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: aa2d5732-7314-4c27-bbba-6f820ecfd773
+		summarizeBy: none
+		sourceColumn: ActiveTo
+
+		variation Variation
+			isDefault
+			relationship: b1687440-354d-4e80-bfef-706511fe3f70
+			defaultHierarchy: LocalDateTable_99307824-d436-4c6e-846d-40cdc8aa1802.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 7d28bbf9-676e-4746-aed3-24a9ab175a4a
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e1b34cf4-6db7-4ddd-8104-79cc20cc5bc1
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 4a1e7263-6361-48a3-8787-384d82950385
+			defaultHierarchy: LocalDateTable_7022d814-c641-4921-8375-7f184ce4c251.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 3d3f578d-50b0-43ec-aa87-d3dfe141ad05
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a6d2f2a0-dd7a-4959-be94-bab8aea2f970
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ViewerTags
+		dataType: string
+		lineageTag: 7d50be70-2aff-4f6b-83c2-6fe12d184461
+		summarizeBy: none
+		sourceColumn: ViewerTags
+
+		annotation SummarizationSetBy = Automatic
+
+	column AcceptButtonLabel
+		dataType: string
+		lineageTag: e5a538d6-9086-49c4-a8a6-5397f604359f
+		summarizeBy: none
+		sourceColumn: AcceptButtonLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkipButtonLabel
+		dataType: string
+		lineageTag: 862cbb83-8580-47b7-b5de-c9c56ca0c54a
+		summarizeBy: none
+		sourceColumn: SkipButtonLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsSkippable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c94fd37b-e5f0-49b1-83da-45347d982df3
+		summarizeBy: none
+		sourceColumn: IsSkippable
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPublished
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c49987ed-091c-425d-aac6-0609fe22735c
+		summarizeBy: none
+		sourceColumn: IsPublished
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Bulletin = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Bulletin = Source{[Schema="dbo",Item="Bulletin"]}[Data]
+				in
+				    dbo_Bulletin
+
+	annotation PBI_ResultType = Table
+

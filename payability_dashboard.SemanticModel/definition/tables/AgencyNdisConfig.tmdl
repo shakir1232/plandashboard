@@ -1,0 +1,458 @@
+table AgencyNdisConfig
+	lineageTag: d9da564e-1c91-46c3-ac7b-ca568c42172d
+
+	column Id
+		dataType: string
+		lineageTag: 0f6dfe3a-1a26-4b96-bb16-e315ebc38425
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: c5453a52-14f2-4e71-b367-bec502f6bd18
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HostAgencyRef
+		dataType: string
+		lineageTag: 206728f4-3932-44bb-a08a-967a4c14fae3
+		summarizeBy: none
+		sourceColumn: HostAgencyRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaPublicKey
+		dataType: string
+		lineageTag: 40e50586-4357-4a96-a495-9b649ddd378e
+		summarizeBy: none
+		sourceColumn: ProdaPublicKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaPrivateKey
+		dataType: string
+		lineageTag: 96eed6e1-a8cb-4e66-a68f-5351659a679b
+		summarizeBy: none
+		sourceColumn: ProdaPrivateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaDeviceActivationKey
+		dataType: string
+		lineageTag: fcf9ee22-73cf-43ef-a00c-c75132d736cf
+		summarizeBy: none
+		sourceColumn: ProdaDeviceActivationKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaDeviceRef
+		dataType: string
+		lineageTag: e66ef49f-91fc-4bd8-8d58-90b5f08128a3
+		summarizeBy: none
+		sourceColumn: ProdaDeviceRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaClientRef
+		dataType: string
+		lineageTag: 3ef12595-bdda-4714-9738-0174700e90e3
+		summarizeBy: none
+		sourceColumn: ProdaClientRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaOrgRef
+		dataType: string
+		lineageTag: 7e2f0639-b832-4528-9be6-333d93fa53cd
+		summarizeBy: none
+		sourceColumn: ProdaOrgRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaMessageRef
+		dataType: string
+		lineageTag: 2bf421aa-d34a-4434-81aa-02e7079d88c5
+		summarizeBy: none
+		sourceColumn: ProdaMessageRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaCorrelationRef
+		dataType: string
+		lineageTag: 7d8e2b96-374e-46af-8752-7d61da2408d3
+		summarizeBy: none
+		sourceColumn: ProdaCorrelationRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaDeviceExpiresAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 98360d6f-893e-4182-92ce-25719211d958
+		summarizeBy: none
+		sourceColumn: ProdaDeviceExpiresAt
+
+		variation Variation
+			isDefault
+			relationship: 7d1e729b-e535-4157-a813-231a5ddb8193
+			defaultHierarchy: LocalDateTable_b6ac0803-e800-43ca-b579-4d1c56a9de13.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaPublicKeyExpiresAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 26f24453-6be0-4b4f-9d08-cf46c13767d7
+		summarizeBy: none
+		sourceColumn: ProdaPublicKeyExpiresAt
+
+		variation Variation
+			isDefault
+			relationship: 1b4efda5-e6b2-4ee9-8002-f82587d9e73c
+			defaultHierarchy: LocalDateTable_4124b109-a16e-4795-8ebc-89353f10b12a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaDeviceActivatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6d7fa737-a0e5-41d9-9679-73335a4f72ab
+		summarizeBy: none
+		sourceColumn: ProdaDeviceActivatedAt
+
+		variation Variation
+			isDefault
+			relationship: 77ff2066-9275-4c8c-b015-60808ca43b3b
+			defaultHierarchy: LocalDateTable_78465318-d73b-41f4-99e2-12c87df17124.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoRefreshProdaPublicKey
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5806b045-0750-4d39-9774-d1765953bc71
+		summarizeBy: none
+		sourceColumn: IsAutoRefreshProdaPublicKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiClientRef
+		dataType: string
+		lineageTag: 74a4a684-cbba-4e05-bcec-23abd21f5d9f
+		summarizeBy: none
+		sourceColumn: NdisApiClientRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiClientSecret
+		dataType: string
+		lineageTag: 15423a7e-da81-4b30-b9ad-220765e1f8e5
+		summarizeBy: none
+		sourceColumn: NdisApiClientSecret
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiAccessTokenGeneratedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8e263a2f-6378-4a65-838c-9159c1a87a08
+		summarizeBy: none
+		sourceColumn: NdisApiAccessTokenGeneratedAt
+
+		variation Variation
+			isDefault
+			relationship: 52a9473b-87a8-4035-ae66-4f0c06399840
+			defaultHierarchy: LocalDateTable_f7aba0d9-1f9e-4cb6-999b-6c59f72cf923.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiAccessTokenExpiresAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d6e20e94-0e4c-44be-8ff1-fb85d9725af9
+		summarizeBy: none
+		sourceColumn: NdisApiAccessTokenExpiresAt
+
+		variation Variation
+			isDefault
+			relationship: c98a1c9d-7832-4dc9-84df-173ca882ee69
+			defaultHierarchy: LocalDateTable_23599aba-3fd5-4f6a-aba8-9f1db546c3c4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNdisApiEnvOverridden
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7686b637-ead0-449a-b02f-3be8c82281c5
+		summarizeBy: none
+		sourceColumn: IsNdisApiEnvOverridden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaProductRef
+		dataType: string
+		lineageTag: c8d59567-c03d-4952-8eed-e2beed429a3e
+		summarizeBy: none
+		sourceColumn: ProdaProductRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaTokenAudience
+		dataType: string
+		lineageTag: c4cfdd7c-8e15-416d-9570-abee8541c40f
+		summarizeBy: none
+		sourceColumn: ProdaTokenAudience
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaRefreshTokenUrl
+		dataType: string
+		lineageTag: 13cf8e28-7968-4810-9fa0-8df14811fef4
+		summarizeBy: none
+		sourceColumn: ProdaRefreshTokenUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaActivateDeviceBaseUrl
+		dataType: string
+		lineageTag: 8bec6802-7994-49e9-9038-95a0912c70ac
+		summarizeBy: none
+		sourceColumn: ProdaActivateDeviceBaseUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaRefreshDevicePublicKeyBaseUrl
+		dataType: string
+		lineageTag: 4686f2be-c3e3-4eba-9eb3-f6dfab610c8e
+		summarizeBy: none
+		sourceColumn: ProdaRefreshDevicePublicKeyBaseUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiBaseUrlV3
+		dataType: string
+		lineageTag: e07dbaae-2329-46f4-9fa8-efa54d0c2454
+		summarizeBy: none
+		sourceColumn: NdisApiBaseUrlV3
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiBaseUrlV4
+		dataType: string
+		lineageTag: 1d6182e0-d627-4c82-a792-7b8dc31a0470
+		summarizeBy: none
+		sourceColumn: NdisApiBaseUrlV4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 6614459a-e9ac-4c16-8c66-80119f39b2d4
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea6c6545-5593-445e-8c4f-8711fac0d32f
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: d2d1acf0-5143-4a4e-8344-c757bacd6645
+			defaultHierarchy: LocalDateTable_ddf2d849-f36d-4495-b628-f20937a87b5c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: dedad409-05f3-4a33-bd69-61a448a192e1
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiBaseUrlV4Ext
+		dataType: string
+		lineageTag: da999677-99cf-442f-bde4-e00544ad847f
+		summarizeBy: none
+		sourceColumn: NdisApiBaseUrlV4Ext
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiBaseUrlV5
+		dataType: string
+		lineageTag: 6250f050-c733-41e9-b8b2-3ac2cc960b47
+		summarizeBy: none
+		sourceColumn: NdisApiBaseUrlV5
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiBaseUrlV5Ext
+		dataType: string
+		lineageTag: 3e56cace-f01b-41d1-a1af-2e2140d02340
+		summarizeBy: none
+		sourceColumn: NdisApiBaseUrlV5Ext
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisApiTags
+		dataType: string
+		lineageTag: 80c0f638-a0ca-4014-b2e2-398ee992e9fd
+		summarizeBy: none
+		sourceColumn: NdisApiTags
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayProductRef
+		dataType: string
+		lineageTag: 7593adff-0140-48a2-bc33-aa7f4cd0cdc2
+		summarizeBy: none
+		sourceColumn: NdisGatewayProductRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayTokenAudience
+		dataType: string
+		lineageTag: 05803802-7c79-4094-bc96-23f8e122460c
+		summarizeBy: none
+		sourceColumn: NdisGatewayTokenAudience
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayRefreshTokenUrl
+		dataType: string
+		lineageTag: 7eb5bf11-d43a-41ea-870c-10b9792c74df
+		summarizeBy: none
+		sourceColumn: NdisGatewayRefreshTokenUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayDeviceCertClientRef
+		dataType: string
+		lineageTag: 562e614a-e11e-4800-a117-f478e02e676a
+		summarizeBy: none
+		sourceColumn: NdisGatewayDeviceCertClientRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayDeviceCertPrivateKey
+		dataType: string
+		lineageTag: 58913d9a-cf29-4110-a4b3-542b355d5a81
+		summarizeBy: none
+		sourceColumn: NdisGatewayDeviceCertPrivateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayAppKey
+		dataType: string
+		lineageTag: a3b58c96-5dba-4d8e-b7b7-05b33a98b65c
+		summarizeBy: none
+		sourceColumn: NdisGatewayAppKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayAppSecret
+		dataType: string
+		lineageTag: 284d25d5-ae8c-473f-8539-32cedf224061
+		summarizeBy: none
+		sourceColumn: NdisGatewayAppSecret
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaAppKey
+		dataType: string
+		lineageTag: 01a9bf87-9d86-4a26-af20-73544a56b15d
+		summarizeBy: none
+		sourceColumn: ProdaAppKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProdaAppSecret
+		dataType: string
+		lineageTag: 845adc66-f219-4b84-b140-751eafae1523
+		summarizeBy: none
+		sourceColumn: ProdaAppSecret
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductRef
+		dataType: string
+		lineageTag: 53726c1d-6b3d-4315-9a1a-8888af1ba15c
+		summarizeBy: none
+		sourceColumn: ProductRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column TokenAudience
+		dataType: string
+		lineageTag: 7c346f1c-cfc2-40ee-8a7b-fb09c457698e
+		summarizeBy: none
+		sourceColumn: TokenAudience
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefreshTokenUrl
+		dataType: string
+		lineageTag: 6a68fc6c-1879-469d-8626-357cd72ba8df
+		summarizeBy: none
+		sourceColumn: RefreshTokenUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivateDeviceBaseUrl
+		dataType: string
+		lineageTag: 98abb773-c4e9-40cf-a563-f40e33839a5a
+		summarizeBy: none
+		sourceColumn: ActivateDeviceBaseUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefreshDevicePublicKeyBaseUrl
+		dataType: string
+		lineageTag: 0ed9e3ac-934b-42b1-a542-80b2d71c7f17
+		summarizeBy: none
+		sourceColumn: RefreshDevicePublicKeyBaseUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayDeviceRef
+		dataType: string
+		lineageTag: ebf182c5-94a2-4e52-a53a-ed5b0c95c7fe
+		summarizeBy: none
+		sourceColumn: NdisGatewayDeviceRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGatewayDeviceCertExpiryDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 16b6bebb-afc7-47f6-b003-dc290c2bbac8
+		summarizeBy: none
+		sourceColumn: NdisGatewayDeviceCertExpiryDate
+
+		variation Variation
+			isDefault
+			relationship: ea28721d-428f-4162-b73a-eb49d4da1fbd
+			defaultHierarchy: LocalDateTable_c8648dce-1031-4eba-bf3a-bfbc98b331bc.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AgencyNdisConfig = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_AgencyNdisConfig = Source{[Schema="dbo",Item="AgencyNdisConfig"]}[Data]
+				in
+				    dbo_AgencyNdisConfig
+
+	annotation PBI_ResultType = Table
+

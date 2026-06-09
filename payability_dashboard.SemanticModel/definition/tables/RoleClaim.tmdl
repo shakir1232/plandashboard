@@ -1,0 +1,47 @@
+table RoleClaim
+	lineageTag: 302a3495-769a-4745-9244-95482488dc22
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: ff13f3c0-84ec-40e0-b5c0-6f4120a53e12
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleId
+		dataType: string
+		lineageTag: 68b95b5b-e7a1-4b5e-ad20-fc8a726e6c86
+		summarizeBy: none
+		sourceColumn: RoleId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimType
+		dataType: string
+		lineageTag: 1af64926-31e8-4e1d-99d7-0b38e2c87df8
+		summarizeBy: none
+		sourceColumn: ClaimType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimValue
+		dataType: string
+		lineageTag: cf6df7f7-2089-4c8e-8376-f1b09d5da9f7
+		summarizeBy: none
+		sourceColumn: ClaimValue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RoleClaim = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_RoleClaim = Source{[Schema="dbo",Item="RoleClaim"]}[Data]
+				in
+				    dbo_RoleClaim
+
+	annotation PBI_ResultType = Table
+

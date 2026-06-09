@@ -1,0 +1,70 @@
+table Holiday
+	lineageTag: e5e5f9c6-cd8f-4aba-ba4e-4fbac1f05895
+
+	column Id
+		dataType: string
+		lineageTag: 5c7d5e86-6f60-48eb-bd1b-dc5311891691
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: e15a6a7c-d9f4-44d9-afd3-b8bffaa64e88
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateIds
+		dataType: string
+		lineageTag: c30f3987-8033-4750-94a6-2f825c07fd88
+		summarizeBy: none
+		sourceColumn: StateIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 52ace893-8f70-4757-9b5d-0b64894489c5
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 9985acfe-faa1-4f14-875f-27bd4deaadd7
+			defaultHierarchy: LocalDateTable_c239f5ea-bc98-426a-aa51-14163a3852f5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 8180a4e9-28a8-471d-b9cb-1554a5b18304
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d970fbef-aa97-4b9a-a0aa-f3810433a657
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Holiday = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Holiday = Source{[Schema="dbo",Item="Holiday"]}[Data]
+				in
+				    dbo_Holiday
+
+	annotation PBI_ResultType = Table
+

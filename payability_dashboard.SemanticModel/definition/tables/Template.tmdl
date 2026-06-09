@@ -1,0 +1,206 @@
+table Template
+	lineageTag: def4a1e1-ed1d-4fb8-a446-62e2905d7b61
+
+	column Id
+		dataType: string
+		lineageTag: 46db6a60-6ac4-494a-8723-672406fad53a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 339c7d6b-debd-4844-8188-3fbe61752353
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NotificationId
+		dataType: string
+		lineageTag: 8e55bbe3-cbeb-438a-b0ec-0076e2715277
+		summarizeBy: none
+		sourceColumn: NotificationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLayout
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 86457514-b06a-407f-b974-b9b5882d8623
+		summarizeBy: none
+		sourceColumn: IsLayout
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 5132fad5-3873-487b-9689-e30f345a6845
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 3ab2a6b7-5320-4de2-ac01-2dcffe68af9e
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Txn
+		dataType: string
+		lineageTag: e6b108d2-dbcf-4456-9d8d-cd4ec7f13119
+		summarizeBy: none
+		sourceColumn: Txn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subject
+		dataType: string
+		lineageTag: b79f5bfd-c7f1-4a4d-8e0c-7039cd583aa0
+		summarizeBy: none
+		sourceColumn: Subject
+
+		annotation SummarizationSetBy = Automatic
+
+	column BodyText
+		dataType: string
+		lineageTag: 2ce0c0cd-520c-4ff8-a771-985d49549443
+		summarizeBy: none
+		sourceColumn: BodyText
+
+		annotation SummarizationSetBy = Automatic
+
+	column BodyHtml
+		dataType: string
+		lineageTag: 56f9a3b3-c3e6-4314-b088-bd4570c6d58d
+		summarizeBy: none
+		sourceColumn: BodyHtml
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: b2fc7e87-7356-4fc0-b7aa-4483c5345492
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 5a793304-d300-4a5e-b66a-bb85f0cd38b5
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a574e603-f763-4645-b51c-a98a3d4998bc
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 26601565-355e-47f1-8c16-998d6121b1ef
+			defaultHierarchy: LocalDateTable_5ac48e2e-d309-4bf7-affd-5adf79b76bc6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b33cb0c7-2d4f-452d-801e-e1ff9e7fc909
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: bedb54bb-fe79-4399-b0af-dd7a46cdb415
+			defaultHierarchy: LocalDateTable_521dab52-29d5-4813-aa9c-e142ada1b80d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a97bba14-6b0b-40d6-a842-130e16b01fcd
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 4ca3c099-6bf0-4733-a3ff-a30409e3095b
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: fb4fe76a-ed2e-40ea-9df8-7a5ca01afe4f
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column Variant
+		dataType: string
+		lineageTag: 96dbb8d8-b7d4-49a6-b33e-bcafe519fd9e
+		summarizeBy: none
+		sourceColumn: Variant
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleIds
+		dataType: string
+		lineageTag: e66025e4-ffc0-440a-8a8f-c82f78ba9d41
+		summarizeBy: none
+		sourceColumn: RoleIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRoleVariant
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6bf83e20-a765-49f6-8fab-f774f6685c42
+		summarizeBy: none
+		sourceColumn: IsRoleVariant
+
+		annotation SummarizationSetBy = Automatic
+
+	column LayoutId
+		dataType: string
+		lineageTag: cb5d415b-91be-4278-8f8c-8d58f0b1dfe3
+		summarizeBy: none
+		sourceColumn: LayoutId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClonable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cdc4b648-f074-45ea-85d2-635144e66776
+		summarizeBy: none
+		sourceColumn: IsClonable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Template = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Template = Source{[Schema="dbo",Item="Template"]}[Data]
+				in
+				    dbo_Template
+
+	annotation PBI_ResultType = Table
+

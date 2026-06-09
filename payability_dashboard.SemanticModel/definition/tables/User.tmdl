@@ -1,0 +1,593 @@
+table User
+	lineageTag: c632d6c2-1abb-46ac-8c17-8f174ffc7f84
+
+	measure users_count = ```
+			COUNT(User[Id]) 
+			```
+		formatString: 0
+		lineageTag: c090be34-7d1f-4263-b8a1-e50f5fa6e8e5
+
+	measure director_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "DIRECTOR"
+			)
+		formatString: 0
+		lineageTag: c970457c-cfe4-48c3-89a3-2c01c5337ecf
+
+	measure plan_manager_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "PLAN_MANAGER"
+			)
+		formatString: 0
+		lineageTag: 2f714e65-6888-4d80-a3df-9dd85c5f010b
+
+	measure support_coordinator_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "SUPPORT_COORDINATOR"
+			)
+		formatString: 0
+		lineageTag: d9e1ad7f-f90d-4e2d-9768-b47d84d4c969
+
+	measure carer_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "CARER"
+			)
+		formatString: 0
+		lineageTag: 3941c247-da57-4c9e-a730-66bef43bebb3
+
+	measure office_admin_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "OFFICE_ADMIN"
+			)
+		formatString: 0
+		lineageTag: 9f701f89-4f7b-483b-a338-d82823f0b251
+
+	measure system_admin_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "SYSTEM_ADMIN"
+			)
+		formatString: 0
+		lineageTag: 2ac4ff7f-97c5-45bd-8bcc-f3c23419da35
+
+	measure participant_count =
+			
+			CALCULATE(
+			    COUNTROWS('User'),
+			    'User'[RoleId] = "PARTICIPANT"
+			)
+		formatString: 0
+		lineageTag: 928e5e82-e8ad-4698-95a8-9b5a404256d8
+
+	measure 'Deleted Users' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT('User'[Id]),
+			    'User'[isDeleted] = TRUE()
+			)
+		formatString: 0
+		lineageTag: b0efb8f5-eb84-4415-9f3a-1278b41dbf6b
+
+	column Id
+		dataType: string
+		lineageTag: f16b71d0-5c97-43b4-945e-59e61139b73b
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleId
+		dataType: string
+		lineageTag: 853fc0e4-4975-4f2e-8abb-2ce099767e22
+		summarizeBy: none
+		sourceColumn: RoleId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 1a3cae8c-0524-4148-88ce-82ad9e724c83
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 9246854e-68f8-48f6-b417-1bc45f1df953
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AuthStateRef
+		dataType: string
+		lineageTag: 6f796b4b-7df7-43cd-8011-a2d0dc9eab1f
+		summarizeBy: none
+		sourceColumn: AuthStateRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: b6c2e060-7f3a-4c21-8fb3-1ecd8f8ebba3
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalutationName
+		dataType: string
+		lineageTag: 0718aeb8-1734-4af9-a93c-76efcd37c180
+		summarizeBy: none
+		sourceColumn: SalutationName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 7e781e7a-4d3d-4e0f-9817-e01b4d69ec41
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3976ab1c-fc60-43eb-8f07-cf576fb90c19
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: e4d94c74-8f78-404b-a0e0-b9955725b414
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 502d3b0e-3cf6-457e-988d-08a2791c6c19
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 9324cb71-c9d7-499d-a2db-8e48d93e39bb
+			defaultHierarchy: LocalDateTable_b0aab69f-f3e8-4b53-9a0f-539050837620.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2b3cbe18-ac3a-47d4-98fd-564595cafb26
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 2e6f2613-0013-4aef-9451-3de6405e64da
+			defaultHierarchy: LocalDateTable_e79547a7-e8af-4928-9de0-a947783514c6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6bb2d23f-34d6-447c-ad1b-d8fdab4a7424
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column PasswordHash
+		dataType: string
+		lineageTag: 7a63f7aa-7e2e-4293-a3ed-ae4e97e88512
+		summarizeBy: none
+		sourceColumn: PasswordHash
+
+		annotation SummarizationSetBy = Automatic
+
+	column SecurityStamp
+		dataType: string
+		lineageTag: 9d199e36-0ae4-4772-b38f-e70e8aadaa12
+		summarizeBy: none
+		sourceColumn: SecurityStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserName
+		dataType: string
+		lineageTag: e77aefab-1564-46e4-8d09-60717d00ac8c
+		summarizeBy: none
+		sourceColumn: UserName
+
+		annotation SummarizationSetBy = Automatic
+
+	column NormalizedUserName
+		dataType: string
+		lineageTag: d8598934-3535-4b17-9766-1ecbc07ef05c
+		summarizeBy: none
+		sourceColumn: NormalizedUserName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 39601683-3606-41ca-b300-65498cc2cd0f
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column NormalizedEmail
+		dataType: string
+		lineageTag: 6aade289-73fd-4e8d-bdbb-f8c7e5fa6cbf
+		summarizeBy: none
+		sourceColumn: NormalizedEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailConfirmed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fcf452d1-a50e-470c-b3e9-3221f7d15453
+		summarizeBy: none
+		sourceColumn: EmailConfirmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column ConcurrencyStamp
+		dataType: string
+		lineageTag: 16b86657-b4d5-473f-a37e-08ad256382ce
+		summarizeBy: none
+		sourceColumn: ConcurrencyStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhoneNumber
+		dataType: string
+		lineageTag: 2e12375b-c686-4162-a50f-61178ccfe08a
+		summarizeBy: none
+		sourceColumn: PhoneNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhoneNumberConfirmed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0836b752-d4e3-4a90-9c5b-588419a73bca
+		summarizeBy: none
+		sourceColumn: PhoneNumberConfirmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column TwoFactorMethods
+		dataType: string
+		lineageTag: 42e18ddc-466a-4cae-8038-0a22c5a60513
+		summarizeBy: none
+		sourceColumn: TwoFactorMethods
+
+		annotation SummarizationSetBy = Automatic
+
+	column TwoFactorEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 457ee64f-6e83-4031-a481-cba81707046a
+		summarizeBy: none
+		sourceColumn: TwoFactorEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockoutEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c33ca7d1-5bb7-4e85-bdfd-bc11a8119326
+		summarizeBy: none
+		sourceColumn: LockoutEnd
+
+		variation Variation
+			isDefault
+			relationship: 67581b64-bad8-4530-b79b-cdfcd51f5e80
+			defaultHierarchy: LocalDateTable_5d7c6b8b-dfbc-4b0e-a586-516d52551859.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockoutEnabled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6fb6d802-e57f-4ada-81e3-9e75cb7b7a38
+		summarizeBy: none
+		sourceColumn: LockoutEnabled
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccessFailedCount
+		dataType: int64
+		formatString: 0
+		lineageTag: d532fd5a-1155-4318-8439-10b31b6942dd
+		summarizeBy: sum
+		sourceColumn: AccessFailedCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column WelcomeEmailSentAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ed178e56-1eb0-4941-a44b-0e0a5fa482b6
+		summarizeBy: none
+		sourceColumn: WelcomeEmailSentAt
+
+		variation Variation
+			isDefault
+			relationship: 83050784-15b4-4340-a503-108720ddd1ce
+			defaultHierarchy: LocalDateTable_61458106-c651-46dc-818a-5abe1009a3c7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPayabilityFacilitator
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 704a6d36-3e7c-48a4-a717-785a000ee9eb
+		summarizeBy: none
+		sourceColumn: IsPayabilityFacilitator
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 84169e8d-abb5-4ef0-98c1-cff0f089d085
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 25b6a409-46b1-41ad-81a3-cd673da87732
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: fbf8c80c-d2e8-4367-8199-0782cbe88ba5
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ElevatedPermissionScopes
+		dataType: string
+		lineageTag: 0d1a7f90-6533-4413-bf4a-622d4dae1816
+		summarizeBy: none
+		sourceColumn: ElevatedPermissionScopes
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtpActionLockoutEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 560789a9-7a30-4283-a7ea-e82f3efed8b5
+		summarizeBy: none
+		sourceColumn: OtpActionLockoutEnd
+
+		variation Variation
+			isDefault
+			relationship: 99cec9c8-c61e-4698-80d6-af976e0c69dc
+			defaultHierarchy: LocalDateTable_7b6822ca-d837-4c15-8176-a4ce405dba12.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtpActionAccessFailedCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 5114575b-6c68-4f88-9348-3cb34a10f874
+		summarizeBy: sum
+		sourceColumn: OtpActionAccessFailedCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtpSentAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2e7383d4-9f35-4ee7-9084-e5f555da9f87
+		summarizeBy: none
+		sourceColumn: OtpSentAt
+
+		variation Variation
+			isDefault
+			relationship: df45dfc6-4161-4529-af5c-32fc42749820
+			defaultHierarchy: LocalDateTable_278b4428-f667-41b0-8c9d-02562b0e7188.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column BulletinExclusions
+		dataType: string
+		lineageTag: a0b2a129-b9cb-4cbf-b8d7-1aab9b1762b5
+		summarizeBy: none
+		sourceColumn: BulletinExclusions
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisplayName
+		dataType: string
+		lineageTag: 678febca-c6ef-4f48-9969-964a3d98fa3d
+		summarizeBy: none
+		sourceColumn: DisplayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PasswordExpiresAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 09f3df5e-4722-4933-a82c-d8e72e1cc560
+		summarizeBy: none
+		sourceColumn: PasswordExpiresAt
+
+		variation Variation
+			isDefault
+			relationship: 093420d7-4604-4e85-9b5b-91e7d74e9b60
+			defaultHierarchy: LocalDateTable_5acd5ab2-02af-40ec-93de-9fd17139294d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsTemporaryPassword
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 31727a43-e24b-489f-955e-f19d82ec7fbe
+		summarizeBy: none
+		sourceColumn: IsTemporaryPassword
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastLoginAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ff1744d0-430a-41d4-b90a-eb15b739a400
+		summarizeBy: none
+		sourceColumn: LastLoginAt
+
+		variation Variation
+			isDefault
+			relationship: 75a383fd-e4f4-4f68-b391-8639c0f84828
+			defaultHierarchy: LocalDateTable_a7c4cce4-259b-4c85-ae5a-2cb2a732a4f1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtpSecretKeyCypher
+		dataType: string
+		lineageTag: c4026024-880d-4f02-a728-0de0a19dc8c9
+		summarizeBy: none
+		sourceColumn: OtpSecretKeyCypher
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAuthenticatorConfigured
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 73598b37-499b-48b8-a495-ce0601788c13
+		summarizeBy: none
+		sourceColumn: IsAuthenticatorConfigured
+
+		annotation SummarizationSetBy = Automatic
+
+	column AuthenticatorSetupRef
+		dataType: string
+		lineageTag: ae7774ae-8d4e-4423-af9f-4a3e650e4e1b
+		summarizeBy: none
+		sourceColumn: AuthenticatorSetupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppSlotRef
+		dataType: string
+		lineageTag: e07bb025-2429-4c2c-915e-12734e0dad20
+		summarizeBy: none
+		sourceColumn: AppSlotRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AppZoomLevel
+		dataType: double
+		lineageTag: 1a617b01-0ee1-419f-b927-52971e81c8c3
+		summarizeBy: sum
+		sourceColumn: AppZoomLevel
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AppSlotUsageTrack
+		dataType: string
+		lineageTag: 69c17922-4e52-4cc2-af7c-b29397b1c92c
+		summarizeBy: none
+		sourceColumn: AppSlotUsageTrack
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 27872b1f-1e81-4d94-804f-830d8799b9b5
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeclarationConfirmed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 84d2d621-a4e1-4fc7-9534-040364b9535a
+		summarizeBy: none
+		sourceColumn: IsDeclarationConfirmed
+
+		annotation SummarizationSetBy = Automatic
+
+	column RequestId
+		dataType: string
+		lineageTag: d94444be-e227-42ae-af2f-b573f110c119
+		summarizeBy: none
+		sourceColumn: RequestId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasPendingEditRequest
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 707cea41-d328-459e-a0eb-dc5d83820a84
+		summarizeBy: none
+		sourceColumn: HasPendingEditRequest
+
+		annotation SummarizationSetBy = Automatic
+
+	column OtpAuthenticatorKeyCypher
+		dataType: string
+		lineageTag: 224cda97-123f-4876-8a06-f067fc49848b
+		summarizeBy: none
+		sourceColumn: OtpAuthenticatorKeyCypher
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Category'
+		dataType: string
+		lineageTag: 43838b80-4a7a-4512-bcc4-2f530225060c
+		summarizeBy: none
+		sourceColumn: Status Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition User = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_User = Source{[Schema="dbo",Item="User"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_User, each true),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"RoleId", type text}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "Status Category", each if [StatusId] = "USER_ACTIVE" then "Active" else if [StatusId] = "USER_ARCHIVED" then "Archived" else if [StatusId] = "USER_CANCELLED" then "Cancelled" else "Other"),
+				    #"Filtered Rows1" = Table.SelectRows(#"Added Conditional Column", each true)
+				in
+				    #"Filtered Rows1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

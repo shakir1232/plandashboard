@@ -1,0 +1,30 @@
+table UserRole
+	lineageTag: 3a36b1c9-517d-4c1b-8375-773ca9e7b248
+
+	column UserId
+		dataType: string
+		lineageTag: 4508ce35-ca11-487c-9ea3-cd40b58cbed2
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleId
+		dataType: string
+		lineageTag: b7c80a86-9bf5-40ea-8d5d-674c7c05fb69
+		summarizeBy: none
+		sourceColumn: RoleId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserRole = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserRole = Source{[Schema="dbo",Item="UserRole"]}[Data]
+				in
+				    dbo_UserRole
+
+	annotation PBI_ResultType = Table
+

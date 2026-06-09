@@ -1,0 +1,366 @@
+table BudgetItem
+	lineageTag: 1d1ea0ca-69f1-4a31-adef-4526bcc45618
+
+	column Id
+		dataType: string
+		lineageTag: ea601c96-a83d-4974-93ab-9150e15d929b
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: cb245589-2938-4a08-ad1b-aa544b6300d9
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: 24d39e76-a526-43b7-ae7e-15a407cf6d12
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ApprovedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1e370fcd-f89b-4f1e-9696-50ea272811c9
+		summarizeBy: sum
+		sourceColumn: ApprovedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 586f70b4-b0bf-465f-9170-1e4571063bfd
+		summarizeBy: sum
+		sourceColumn: AllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 237b7a47-84a3-4379-8edf-a649f2dc5210
+		summarizeBy: sum
+		sourceColumn: SpentAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1746b341-797f-4574-ae62-83d153fc2d46
+		summarizeBy: sum
+		sourceColumn: RemainingAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column FlagBudgetWarning
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0a313bd4-a472-47b6-b1af-437c368a1fee
+		summarizeBy: none
+		sourceColumn: FlagBudgetWarning
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetWarningNotifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 27e0847b-c34c-460e-9a00-4b477b90599b
+		summarizeBy: none
+		sourceColumn: BudgetWarningNotifiedAt
+
+		variation Variation
+			isDefault
+			relationship: 8fb5a149-86fd-4947-85ff-c91492b83ca9
+			defaultHierarchy: LocalDateTable_2f60e174-e9aa-4bbd-93c9-38ecae95ba6d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8031288f-0891-4d17-ba5e-f684082734e0
+		summarizeBy: none
+		sourceColumn: SyncedAt
+
+		variation Variation
+			isDefault
+			relationship: 04b231e3-7471-4795-a672-1ea13755c28f
+			defaultHierarchy: LocalDateTable_be6f9119-e398-4c04-9d3d-1e1198b773c8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 83f3b62b-3074-474a-8c92-8f0446cd26b0
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 859d49cb-3f09-4bc0-9b1c-b25a608acdac
+		summarizeBy: sum
+		sourceColumn: BudgetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NonPlanManagedSbAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1d726b15-1d03-422e-ae68-e31131a96143
+		summarizeBy: sum
+		sourceColumn: NonPlanManagedSbAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NdiaManagedAllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 28c6db77-31e5-4fb0-8ded-8d4ce3f9fb65
+		summarizeBy: sum
+		sourceColumn: NdiaManagedAllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ExternalAllocatedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a5f18fc7-87e6-4320-a83b-e4b5fa8e7b0e
+		summarizeBy: sum
+		sourceColumn: ExternalAllocatedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmountBudgetPayload
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 17dfb5fe-6f7b-4308-bc1a-36727b20dc17
+		summarizeBy: sum
+		sourceColumn: AllocatedAmountBudgetPayload
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmountServiceBooking
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 626456dc-9960-4d65-bc7f-88fe5087157a
+		summarizeBy: sum
+		sourceColumn: AllocatedAmountServiceBooking
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmountBudgetPayload
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 326b1c5a-7a05-4c32-882a-d69121d605de
+		summarizeBy: sum
+		sourceColumn: SpentAmountBudgetPayload
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmountServiceBooking
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c223145f-c2af-4b92-b4fc-86bf6ea7a8bb
+		summarizeBy: sum
+		sourceColumn: SpentAmountServiceBooking
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmountBudgetPayload
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: f0cf8f5c-a2d1-4dab-935f-995ca1f666d5
+		summarizeBy: sum
+		sourceColumn: RemainingAmountBudgetPayload
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmountServiceBooking
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7aa8162a-da02-498c-a8d3-75a13ef0ee1c
+		summarizeBy: sum
+		sourceColumn: RemainingAmountServiceBooking
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PlanManagedBudgetAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3deb225b-0e2b-49eb-8415-77b0f87a3eee
+		summarizeBy: sum
+		sourceColumn: PlanManagedBudgetAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmountNdiaManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ab3c5883-ea48-4615-bf5f-481722c4c08d
+		summarizeBy: sum
+		sourceColumn: AllocatedAmountNdiaManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmountNdiaManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a9132d59-698e-490e-8440-4ffd57482f47
+		summarizeBy: sum
+		sourceColumn: SpentAmountNdiaManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmountNdiaManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3ca5b1ea-600f-44e3-982c-cfefb4ae200c
+		summarizeBy: sum
+		sourceColumn: RemainingAmountNdiaManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AllocatedAmountSelfManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b8166420-cf1d-46ef-aef0-360ae7018b65
+		summarizeBy: sum
+		sourceColumn: AllocatedAmountSelfManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column SpentAmountSelfManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a1f5befc-219b-4347-8d64-4142e19a6bb5
+		summarizeBy: sum
+		sourceColumn: SpentAmountSelfManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column RemainingAmountSelfManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 28ea4ba3-9565-4e4e-9a6d-e02a5b21b305
+		summarizeBy: sum
+		sourceColumn: RemainingAmountSelfManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ApprovedAmountNdiaManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3ebaec27-f51b-490b-bfb9-55fb42f3089b
+		summarizeBy: sum
+		sourceColumn: ApprovedAmountNdiaManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ApprovedAmountSelfManaged
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c23745f0-4bd9-4470-8a05-05b17b8ca086
+		summarizeBy: sum
+		sourceColumn: ApprovedAmountSelfManaged
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PlanPeriodId
+		dataType: string
+		lineageTag: 8c5c33e4-8b0e-4839-92f9-4acc405adbaf
+		summarizeBy: none
+		sourceColumn: PlanPeriodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleasedAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 137d1988-a3f1-4544-b9a9-d0631bd5b110
+		summarizeBy: sum
+		sourceColumn: ReleasedAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AvailableToUseAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 09f334e2-dc81-45eb-9e95-9be450337f0a
+		summarizeBy: sum
+		sourceColumn: AvailableToUseAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition BudgetItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BudgetItem = Source{[Schema="dbo",Item="BudgetItem"]}[Data]
+				in
+				    dbo_BudgetItem
+
+	annotation PBI_ResultType = Table
+

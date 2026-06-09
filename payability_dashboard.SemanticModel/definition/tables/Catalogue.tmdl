@@ -1,0 +1,322 @@
+table Catalogue
+	lineageTag: 79bd6e7e-46c2-4e97-ac2e-93036f9f87fc
+
+	column Id
+		dataType: string
+		lineageTag: 6e10bec0-d813-41eb-a980-3ae0d4d02f37
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryId
+		dataType: string
+		lineageTag: 7ddcada2-02f9-4dc7-a516-14121db4948c
+		summarizeBy: none
+		sourceColumn: SupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemId
+		dataType: string
+		lineageTag: c0166880-0152-4075-b2ba-77a3d915cc8c
+		summarizeBy: none
+		sourceColumn: SupportItemId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimUnitTypeId
+		dataType: string
+		lineageTag: 450a0576-894e-4c46-a303-bbeadba3617f
+		summarizeBy: none
+		sourceColumn: ClaimUnitTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchId
+		dataType: string
+		lineageTag: 14fb9d35-bde8-4397-9196-17dee44d0789
+		summarizeBy: none
+		sourceColumn: BatchId
+
+		annotation SummarizationSetBy = Automatic
+
+	column GroupRef
+		dataType: string
+		lineageTag: edf9a2dd-455c-49a7-a898-c7104333635c
+		summarizeBy: none
+		sourceColumn: GroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportCategoryRef
+		dataType: string
+		lineageTag: 0ad3fcd3-ca35-486b-af5b-0a897181d260
+		summarizeBy: none
+		sourceColumn: SupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemRef
+		dataType: string
+		lineageTag: 14d58269-268c-49f4-8e75-2ce61afc4b99
+		summarizeBy: none
+		sourceColumn: SupportItemRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisTypeDesc
+		dataType: string
+		lineageTag: 428a6fed-7279-4c51-b9c7-13b6d72626f2
+		summarizeBy: none
+		sourceColumn: NdisTypeDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegistrationGroupNumber
+		dataType: string
+		lineageTag: aad8fe90-f094-410e-8548-7777bdca8d13
+		summarizeBy: none
+		sourceColumn: RegistrationGroupNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegistrationGroupName
+		dataType: string
+		lineageTag: f057ba39-743b-4784-bd01-d991328d1367
+		summarizeBy: none
+		sourceColumn: RegistrationGroupName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPriceControlled
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b0cf9805-5dbd-427b-9394-f3043f38bd5a
+		summarizeBy: none
+		sourceColumn: IsPriceControlled
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsQuoteRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1077f2d5-9a72-4506-a7af-3c9fbdff3510
+		summarizeBy: none
+		sourceColumn: IsQuoteRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceControlAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 5f2f39d2-a14c-4db5-b462-57b0700544ad
+		summarizeBy: sum
+		sourceColumn: PriceControlAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PriceLimitAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b14c41e6-b425-4fa5-a75f-b5c14ac9821b
+		summarizeBy: sum
+		sourceColumn: PriceLimitAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ProviderTravel
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dfe08aa9-d4f1-453b-a8cd-bb8f324f59cb
+		summarizeBy: none
+		sourceColumn: ProviderTravel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortNoticeCancellations
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fb37a83e-3a84-432b-9514-0a2de495db94
+		summarizeBy: none
+		sourceColumn: ShortNoticeCancellations
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdiaRequestedReports
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 238073ab-bf9d-451e-8f03-27b35e4962d5
+		summarizeBy: none
+		sourceColumn: NdiaRequestedReports
+
+		annotation SummarizationSetBy = Automatic
+
+	column NonFaceToFaceSupports
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3f076763-0b0a-4cd9-b34c-66a6eb3f8f2e
+		summarizeBy: none
+		sourceColumn: NonFaceToFaceSupports
+
+		annotation SummarizationSetBy = Automatic
+
+	column IrregularSilSupports
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 295358d1-5866-4ce1-8e0d-23c66a7b95c8
+		summarizeBy: none
+		sourceColumn: IrregularSilSupports
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisStartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d4377fd1-0a8d-4711-8f1e-9e97fac82fbd
+		summarizeBy: none
+		sourceColumn: NdisStartDate
+
+		variation Variation
+			isDefault
+			relationship: c88e0908-11ac-4085-8256-27ccb5dfee23
+			defaultHierarchy: LocalDateTable_d5b263ec-fdb7-475e-820c-9b4741cf5fdb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisEndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dbd0c13f-ff26-43e6-b571-4f3efa15f5c3
+		summarizeBy: none
+		sourceColumn: NdisEndDate
+
+		variation Variation
+			isDefault
+			relationship: 2e8f8163-6255-4f7d-9515-9c29d128fb60
+			defaultHierarchy: LocalDateTable_382b5f92-091c-492a-b3b3-015b0bcf661e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c799e92-03da-4f3c-a907-596abfa72bff
+		summarizeBy: none
+		sourceColumn: ActiveFrom
+
+		variation Variation
+			isDefault
+			relationship: eaef847a-e390-44ce-9ed1-10e73f409996
+			defaultHierarchy: LocalDateTable_2c60365c-670d-4ef5-8651-9996d93e3c6d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 77b61c99-dfc3-4a66-a98a-f326df2fee99
+		summarizeBy: none
+		sourceColumn: ActiveTo
+
+		variation Variation
+			isDefault
+			relationship: 51b43262-252f-4836-b618-91bee2e6b783
+			defaultHierarchy: LocalDateTable_10e62a37-494a-42e5-8afe-27ca0ed2fcfb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ad3fbfcd-568b-4574-909e-6cb1620ef719
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9de22a7b-cb97-4b84-9cd2-317e36d0ca13
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: f586e3cf-00cd-48b0-a7df-3ee8608744d9
+			defaultHierarchy: LocalDateTable_6aae3ffb-5228-4e52-99de-df0724b9a40b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 6f7c044b-3f58-4ca9-923a-6cf16f2607a9
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 846db694-edb6-491e-a7dc-e18c4964c2f0
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 9c0a8430-465c-4a2d-85eb-aa543a582b2a
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceSupportCategoryId
+		dataType: string
+		lineageTag: 4945989a-ffd7-4247-a961-1bec93f9beeb
+		summarizeBy: none
+		sourceColumn: PaceSupportCategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceSupportCategoryRef
+		dataType: string
+		lineageTag: 50d1f458-bac6-46c4-802d-e533f875fdcd
+		summarizeBy: none
+		sourceColumn: PaceSupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreviousSupportCategoryRef
+		dataType: string
+		lineageTag: 278c6101-0fc6-4533-abaf-04139c1a8545
+		summarizeBy: none
+		sourceColumn: PreviousSupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreviousPaceSupportCategoryRef
+		dataType: string
+		lineageTag: eebf1591-fdf3-4d5e-a89d-82fdff48e2d4
+		summarizeBy: none
+		sourceColumn: PreviousPaceSupportCategoryRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Catalogue = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Catalogue = Source{[Schema="dbo",Item="Catalogue"]}[Data]
+				in
+				    dbo_Catalogue
+
+	annotation PBI_ResultType = Table
+

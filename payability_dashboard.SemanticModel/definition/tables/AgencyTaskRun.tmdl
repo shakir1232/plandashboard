@@ -1,0 +1,91 @@
+table AgencyTaskRun
+	lineageTag: 13a7ed10-5e44-465c-854f-792b61a276c1
+
+	column Id
+		dataType: string
+		lineageTag: 96e4f4ab-7439-46d4-b1a4-de4960799765
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column BackgroundTaskId
+		dataType: string
+		lineageTag: f71a11a8-250d-4bc0-a369-c8011f234a59
+		summarizeBy: none
+		sourceColumn: BackgroundTaskId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 587b317f-48df-4d27-ab51-df5647ed7066
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastRunBatchRef
+		dataType: string
+		lineageTag: bed7ad16-0bfb-4b24-b399-9ab85705e908
+		summarizeBy: none
+		sourceColumn: LastRunBatchRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRunning
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 963ef950-8982-4845-a002-034b52b7eeb5
+		summarizeBy: none
+		sourceColumn: IsRunning
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fe1a2bce-d31e-4f67-8731-431baf3552c0
+		summarizeBy: none
+		sourceColumn: StartedAt
+
+		variation Variation
+			isDefault
+			relationship: e69f670d-7ad6-4eaf-a676-99199e1f9304
+			defaultHierarchy: LocalDateTable_94019cdc-362c-4577-b561-8547dc1de722.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 820d21de-cb6a-46ab-8ee3-cdcf726595da
+		summarizeBy: none
+		sourceColumn: EndedAt
+
+		variation Variation
+			isDefault
+			relationship: 90d7ad32-0297-494f-a9a0-3d2067498f54
+			defaultHierarchy: LocalDateTable_86fdb836-a7d4-4fed-a077-aaa3210fd557.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastRunGroupRef
+		dataType: string
+		lineageTag: fb1d77cf-ed5f-46fa-984d-a54de57e31b8
+		summarizeBy: none
+		sourceColumn: LastRunGroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AgencyTaskRun = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_AgencyTaskRun = Source{[Schema="dbo",Item="AgencyTaskRun"]}[Data]
+				in
+				    dbo_AgencyTaskRun
+
+	annotation PBI_ResultType = Table
+

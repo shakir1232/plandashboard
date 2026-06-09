@@ -1,0 +1,156 @@
+table ParticipantContact
+	lineageTag: 7eaf937a-c17e-4e55-95ca-c5a34ddc7825
+
+	column Id
+		dataType: string
+		lineageTag: 4917bd58-7052-478b-b6eb-d4b7f1ee0f5e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 0b78cab7-2878-4df1-b173-146b268c799b
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 08e75a32-82e4-49e0-9499-12f1ccc55979
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: fcf0fa4a-adde-46ce-8d08-89fcae9b4238
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Relationship
+		dataType: string
+		lineageTag: 0f1ce50a-ed8b-4144-9700-1dffaf147aa7
+		summarizeBy: none
+		sourceColumn: Relationship
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: bd40850d-a8f2-497e-8b5a-a2e33fbfaf78
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 9db6fe44-cb97-4054-a1f1-781b9cfe5d8d
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: cdbffe19-f630-482e-8c40-18f57feed38b
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimApprover
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: eb69e825-e07d-4bb0-92c6-77426b346890
+		summarizeBy: none
+		sourceColumn: IsClaimApprover
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: c2da4fbc-59c4-413b-8ef0-987120846e2b
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 401bc4a8-c53e-481a-96c6-bc58fddb763c
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 19b40411-45f1-4204-9f60-7fc422093b46
+			defaultHierarchy: LocalDateTable_ee4593f1-db8c-4ce8-b759-48be1b118cca.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3fdce705-34cd-4cb6-82c1-9ea03a25bdcf
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 89b60d95-e5d8-4984-b9b3-91841f3f2ca5
+			defaultHierarchy: LocalDateTable_0b1c49db-2a9c-4b43-9bfb-f4c0b7b64d99.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ba9ac5d2-2360-4fc4-97da-cbc85b63f20e
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 8854eebc-82de-4741-ba39-a88503abf809
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 13b1dc2d-d81a-4e35-b91a-fd31bcc000cb
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: baa4efa1-2415-4196-a021-bf72f49c5750
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ParticipantContact = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ParticipantContact = Source{[Schema="dbo",Item="ParticipantContact"]}[Data]
+				in
+				    dbo_ParticipantContact
+
+	annotation PBI_ResultType = Table
+

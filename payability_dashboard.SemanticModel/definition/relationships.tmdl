@@ -1,0 +1,2039 @@
+relationship b467e1c9-e36c-4baf-8369-37792061bf02
+	fromColumn: Acknowledgement.BulletinId
+	toColumn: Bulletin.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4a33dc05-730f-48c0-9bbe-c3e4dd1a67fe
+	fromColumn: Acknowledgement.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 59bed825-96ea-4dd6-b65e-6f40b6d27d54
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: AgencyConfig.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1088530f-025e-48c2-aad2-1eba41d7b49e
+	fromColumn: AgencyContact.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 49fef9d3-18a2-4818-a74f-243d76193dfd
+	fromColumn: AgencyLedger.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f5cb4a29-c25d-48b8-871d-564e9f61397d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: AgencyNdisConfig.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 383601e2-33c8-4e85-93f6-e75f6ac5d55d
+	fromColumn: AgencyTaskRun.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 7f5adb6c-e5a6-4812-a5f6-0c9c7963e7b4
+	fromColumn: Batch.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 87d62c7d-2781-49ae-b847-e90e091194df
+	fromColumn: BillingExtra.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9b7eea47-75bd-4593-8ae8-75cb2cad6133
+	fromColumn: BudgetWarningLevel.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship ee3dfb51-65e5-49fd-bdf7-72fcb2fd113d
+	fromColumn: Claim.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3061b850-327b-493b-9847-4fc4764bdb76
+	fromColumn: CustomField.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship fe34ede2-55af-48ed-9f0f-0d55742dd383
+	fromColumn: CustomSection.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 6438386e-139b-4452-9271-980cb052b70e
+	fromColumn: Document.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship a93fae0c-6832-4f18-8bd5-528f1d4971f4
+	fromColumn: NdisRemittanceAdvice.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0cb08271-9959-4ad9-a30b-48b7d5129ca8
+	fromColumn: NdisWebhookRegistration.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2b026b7a-f920-4412-ae31-79a7e8016741
+	fromColumn: Note.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 92cca3f3-ceea-4e26-931d-dd87b7247e7f
+	fromColumn: Participant.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 350c609c-d058-4137-b7de-5c3a6e276ad4
+	fromColumn: ParticipantRegistration.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship b38f0707-3125-4810-bba8-9adc2881ed78
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: PayabilityRate.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f46a3fd6-2779-4d9c-9d0b-f1b518aa8d01
+	fromColumn: PlanNdisBudget.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 400d8c27-c25a-4cae-a9e2-ee82db6ae2a1
+	fromColumn: Provider.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 73a5bc38-10af-4403-acc1-4bcfb9291c3a
+	fromColumn: RemitBatch.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 95e60607-7d8c-495b-99df-bb19be8b7523
+	fromColumn: Agency.SuburbId
+	toColumn: Suburb.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 8428f7ab-74a7-48a6-9943-d3f18ddf003b
+	fromColumn: Template.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 93d4e8d2-ad05-44ea-bdfd-2dc94bee6a8b
+	fromColumn: User.AgencyId
+	toColumn: Agency.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship fd521606-6b25-4710-92a7-69cbbb75bd97
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Member.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 5d2f850a-d49f-443e-b966-6815d2a3ca7f
+	fromColumn: User.RoleId
+	toColumn: Role.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3dfda0b7-9eb1-48a9-9c76-1d659849d834
+	fromColumn: UserAppConfig.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 5247f89e-7aa7-4894-969f-6d3c16d6448d
+	fromColumn: UserDevice.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1c96f7ba-4817-4b05-a77f-d0d1ae28f265
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: UserLogin.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship b1dc7cee-71ce-48f8-8dbc-5b8e7dcbe644
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: UserRole.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 846955d1-20df-4fb0-b888-8f9f158006fb
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: UserToken.UserId
+	toColumn: User.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 59b5f385-c59e-4626-aa0e-aea4ca0f5c73
+	fromColumn: AgencyTaskRun.BackgroundTaskId
+	toColumn: BackgroundTask.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship e58a310a-e1da-430f-874c-294d75d9bd1b
+	fromColumn: BatchItem.BatchId
+	toColumn: Batch.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship cf14c067-3a62-4be9-8853-61eb08ca899a
+	isActive: false
+	fromColumn: ClaimLine.ClaimId
+	toColumn: Claim.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship dba7303a-ca45-4077-8468-c99023c8d662
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: DataLock.ClaimId
+	toColumn: Claim.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 35dab969-76d5-43b9-b371-1c55d53299cd
+	isActive: false
+	fromColumn: Document.NoteId
+	toColumn: Note.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f4c4775e-5832-4645-9abc-478acb3447c2
+	fromColumn: MemberSupportType.MemberId
+	toColumn: Member.UserId
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1e493e31-e37b-4f97-8775-1baa7cafd74e
+	fromColumn: NdisRemittanceAdviceItem.NdisRemittanceAdviceId
+	toColumn: NdisRemittanceAdvice.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 617af329-5c88-4281-aef8-6fd3c6614d95
+	fromColumn: NdisWebhookRegistration.NdisWebhookEventId
+	toColumn: NdisWebhookEvent.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0ccf8ff0-2df4-40c6-a6d6-cb3df80e7cf7
+	fromColumn: Note.CategoryId
+	toColumn: NoteCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2d1eb0a3-6134-4150-8b44-22dcbebb74fa
+	isActive: false
+	fromColumn: Note.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship ddc83512-d01e-432d-8618-e372b585bb9d
+	isActive: false
+	fromColumn: Provider.FocusNoteId
+	toColumn: Note.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1def44e2-5cdb-438a-8d90-5f4a99042e90
+	isActive: false
+	fromColumn: NdisRemittanceAdviceItem.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship db17eef8-db41-4c7e-ac12-e552c16d15dd
+	fromColumn: ParticipantAssociate.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship bfbe43ca-432a-4dae-9696-7fbed8f8e486
+	fromColumn: ParticipantContact.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f86cf2e1-ca6a-4dde-87be-95323fce4c72
+	fromColumn: ParticipantExtra.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship bd8c9936-2515-4b3d-9434-107779bb4ff0
+	fromColumn: Participant.CurrentPlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship b0313f3e-9760-40b8-897c-c8a7310fb76c
+	fromColumn: Plan.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship e982a9f5-e0f5-4f31-9429-b349a120ee0e
+	fromColumn: Participant.PriceZoneId
+	toColumn: PriceZone.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship fbf2bc39-aebc-42d8-9826-83d2ac3f50cb
+	fromColumn: RemitPay.ParticipantId
+	toColumn: Participant.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship a61defc3-326e-42da-95e6-c6fe79e8ea7e
+	isActive: false
+	fromColumn: Participant.SuburbId
+	toColumn: Suburb.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2a65eadd-33cf-453a-a9f8-94e259b2cc47
+	fromColumn: ParticipantRegistration.BirthCountryId
+	toColumn: Country.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 57e96bc1-470e-4265-8b84-c0ba3327b555
+	fromColumn: ParticipantRegistrationExtra.RegistrationId
+	toColumn: ParticipantRegistration.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 354b6b47-7ad5-4a28-81a1-dfc984e28580
+	isActive: false
+	fromColumn: RemitPay.ProviderId
+	toColumn: Provider.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0c8741a1-9589-46f5-9694-d698b6af3e81
+	fromColumn: ServiceAgreement.ProviderId
+	toColumn: Provider.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 06b3059f-aac2-4e76-9937-a47c0a4ba45d
+	isActive: false
+	fromColumn: RemitPay.BatchId
+	toColumn: RemitBatch.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f34c1930-615d-45bf-815d-458c9bf890f4
+	isActive: false
+	fromColumn: ServiceAgreement.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2065f335-2b85-45f3-8647-83f6d5651d30
+	fromColumn: ServiceAgreementItem.AgreementId
+	toColumn: ServiceAgreement.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 18294901-104a-4536-a395-ef3dc5be47ff
+	isActive: false
+	fromColumn: Suburb.PriceZoneId
+	toColumn: PriceZone.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 393e9397-2298-4e14-9e70-c6c4dc222135
+	fromColumn: TaskRunSubProcess.BackgroundTaskId
+	toColumn: BackgroundTask.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 72484ef5-5b82-4964-86fc-c77a3c8d4286
+	fromColumn: Template.NotificationId
+	toColumn: Notification.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 8fdff496-6a90-4d25-bd58-e217eac09660
+	fromColumn: RefreshToken.UserDeviceId
+	toColumn: UserDevice.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9b348734-914f-424a-bfa3-24adaaef8c97
+	fromColumn: BudgetAdvice.SupportPurposeId
+	toColumn: SupportPurpose.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship d4d2c618-613d-4cbb-b90f-73c623d150cf
+	fromColumn: BudgetAlert.SupportPurposeId
+	toColumn: SupportPurpose.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship c343ad44-c708-4391-9914-7862f287b1a2
+	fromColumn: SupportCategory.PurposeId
+	toColumn: SupportPurpose.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1d49b5f9-9cd5-4e69-9745-0618a38a9043
+	fromColumn: Catalogue.SupportItemId
+	toColumn: SupportItem.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9d531acc-0c09-4122-9119-3de95ba542c6
+	fromColumn: ClaimLine.SupportItemId
+	toColumn: SupportItem.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 13d2909d-5d1d-404f-bd46-5fda6edb5e4c
+	fromColumn: ServiceBookingItem.SupportItemId
+	toColumn: SupportItem.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship aa292d97-00c0-460c-a760-18f6e66d3c49
+	fromColumn: SupportItem.CategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3b33fe61-19b6-4c34-aae5-84e7c2ec2a57
+	isActive: false
+	fromColumn: SupportItem.PaceCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship a56e3d52-f468-4816-a7ae-e479b11a455c
+	isActive: false
+	fromColumn: BudgetAlert.SupportCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship cfe6879e-ddda-46db-a84a-84b2b10a67e6
+	fromColumn: BudgetItem.SupportCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship af9ac2ad-7340-4064-80bd-01c07576c975
+	fromColumn: Installment.SupportCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 3b8af9a6-5979-414a-a9cb-292b1206b03e
+	fromColumn: ServiceAgreementItem.SupportCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1b2f8814-b732-4803-8f41-86242b1ed76e
+	isActive: false
+	fromColumn: ServiceBookingItem.SupportCategoryId
+	toColumn: SupportCategory.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship a3813e86-f0ea-44f4-8dc2-d9c7fbca0b0e
+	fromColumn: ServiceBookingItem.ServiceBookingId
+	toColumn: ServiceBooking.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship be55ccdf-acd4-43d4-86c5-69518751b8be
+	isActive: false
+	fromColumn: ServiceBooking.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship c5ed0977-3363-4dbf-b26c-bec1fb37ed8b
+	fromColumn: ServiceAgreementItemFundingPeriod.AgreementItemId
+	toColumn: ServiceAgreementItem.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 94d0080c-1e74-4123-ac3b-ebedb4366f5d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: RoleClaim.RoleId
+	toColumn: Role.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship cf127830-3348-4458-b677-8a371f0ab210
+	fromColumn: CataloguePrice.PriceZoneId
+	toColumn: PriceZone.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 9e69f982-7704-46e8-8242-f47b4dc9a742
+	fromColumn: PlanPeriod.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship dd1c0abd-75ec-417d-8eca-9cfa76e9bddd
+	fromColumn: BudgetAdvice.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 0dc88312-5de1-489e-8f7f-c1cffaa453c0
+	fromColumn: BudgetAlert.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 7184ddf0-43b0-4866-af99-f1df91e2174c
+	fromColumn: BudgetItem.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 6c87f6ad-fda0-471e-89f3-b6d7c543a680
+	fromColumn: Installment.PlanId
+	toColumn: Plan.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 10b9f526-fcfc-4f23-b581-48efc69a4d7b
+	isActive: false
+	fromColumn: NdisRemittanceAdviceItem.ClaimLineId
+	toColumn: ClaimLine.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship e7129904-3d56-4109-9982-4287d0f49a49
+	fromColumn: InstallmentItem.InstallmentId
+	toColumn: Installment.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4d74de80-3c59-4398-a838-66c788f0e33b
+	fromColumn: ClaimLine.RejectReasonId
+	toColumn: ClaimRejectReason.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 8db03793-b3d0-4637-afdf-60d927a0a4a2
+	fromColumn: ClaimLinePart.ClaimLineId
+	toColumn: ClaimLine.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 086ab936-0bb5-4af0-bf71-a990f1ebdd2d
+	isActive: false
+	fromColumn: ClaimLine.CatalogueId
+	toColumn: Catalogue.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 53b7647c-0001-4e7a-8a50-dea099180251
+	fromColumn: CataloguePrice.CatalogueId
+	toColumn: Catalogue.Id
+
+	annotation PBI_IsFromSource = FS
+
+relationship da05d04f-0ea4-5f3f-9ae4-35bb898fae5d
+	fromColumn: Bill.AgencyId
+	toColumn: Agency.Id
+
+relationship 7e46205a-c1ce-88c7-5443-d73a1b8e7d38
+	fromColumn: PlanStatement.PlanId
+	toColumn: Plan.Id
+
+relationship 1c29b071-2fbe-1d79-749d-e957981bc507
+	fromColumn: Claim.ClaimBatchId
+	toColumn: ClaimBatch.Id
+
+relationship 7bf69a68-6e01-4701-bcb3-a1bd0617a718
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sys database_firewall_rules'.create_date
+	toColumn: LocalDateTable_b0115a5c-4a3d-4e7c-b592-2a86458d119a.Date
+
+relationship 3cf12997-043f-4a98-a83c-2c77a783ffaa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sys database_firewall_rules'.modify_date
+	toColumn: LocalDateTable_eeaa6079-50ad-48f5-a676-588617a2d208.Date
+
+relationship a8ee8a54-968b-43f4-b889-f43a5a81dd79
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sys ipv6_database_firewall_rules'.create_date
+	toColumn: LocalDateTable_04b8aa22-c904-4066-885c-60fe242cd6f1.Date
+
+relationship ca652763-3c72-43fa-b654-db17f253ac2b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'sys ipv6_database_firewall_rules'.modify_date
+	toColumn: LocalDateTable_7e1b737d-8ead-40ba-aee0-822351788a82.Date
+
+relationship 14041dbc-892c-4059-9f52-dfd5024c93b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: __impNoteP1.CreatedAt
+	toColumn: LocalDateTable_a6075c07-f2e5-4b99-a36f-cc7882676bdb.Date
+
+relationship 9020de6c-53ec-4e8e-95f9-4bd879b8efc7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: __impNoteP2.CreatedAt
+	toColumn: LocalDateTable_c545a3d9-8aa9-4e12-aeb5-0be7de55bdc6.Date
+
+relationship b55e6a72-fc87-4477-91e3-3dbf7e4743c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: _impHoliday.Date
+	toColumn: LocalDateTable_82a1999a-4d79-43d8-9a79-6a3714c2969f.Date
+
+relationship 74298950-a5a0-48f2-b587-a112be6ef52d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Acknowledgement.ViewedAt
+	toColumn: LocalDateTable_75a43d56-8ed9-4043-a417-3b7e18df7d7d.Date
+
+relationship 26b1049d-103b-4bcc-977f-9555cde07f6d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Acknowledgement.AcceptedAt
+	toColumn: LocalDateTable_6feb26ae-a3f9-44e7-a14a-90a062187e1a.Date
+
+relationship a299e91e-c69f-4021-9772-3ff6da862ea0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Agency.LockedAt
+	toColumn: LocalDateTable_37a6fee1-f11a-4796-8f3b-1daf677288ba.Date
+
+relationship 2ef7a6ce-bfb1-4a30-b750-ce0a28adbbf2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Agency.LockGraceEnd
+	toColumn: LocalDateTable_c42226f3-f25b-4ce2-9e77-66b72aab3cae.Date
+
+relationship 9d29a40e-449c-432f-8a3c-029feee02bc9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Agency.CreatedAt
+	toColumn: LocalDateTable_6ec70493-7067-44ef-9020-2bfe9e7b03ab.Date
+
+relationship 77ebb1b0-56f8-4c57-8c81-bb0f9c92689a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Agency.UpdatedAt
+	toColumn: LocalDateTable_9a0efcc1-3e07-4124-980b-be4044acb13a.Date
+
+relationship 04d6c2ce-3f53-4948-8f74-5c8db8f30175
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyConfig.UpdatedAt
+	toColumn: LocalDateTable_515da9d8-8d7a-4867-8184-01cdb481097b.Date
+
+relationship b2e74f1a-d54b-4c42-bdc2-5c48d925dcad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyConfig.BillingStartDate
+	toColumn: LocalDateTable_62abfad2-120b-4fc8-b49d-e53e914ff189.Date
+
+relationship 6bec872d-9133-44ab-aed6-19ec5758b11d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyContact.CreatedAt
+	toColumn: LocalDateTable_05e9fc76-17c9-491e-8310-22fbf762c093.Date
+
+relationship 647389a9-e0c0-41fa-9feb-9dc6bf40e822
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyContact.UpdatedAt
+	toColumn: LocalDateTable_4aab2c29-6478-48ae-8878-fdb7d86d9821.Date
+
+relationship fb071ae7-f7b3-4c72-b157-41cba4d94693
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyContact_20250722.CreatedAt
+	toColumn: LocalDateTable_9487f2c5-352f-45a1-a11f-f059446e5786.Date
+
+relationship 7cd42385-7b1c-425c-937e-f7a076a86992
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyContact_20250722.UpdatedAt
+	toColumn: LocalDateTable_4d8ebf5e-3d19-43bc-b4d9-5ba843d8ade7.Date
+
+relationship 462254b1-1ca8-426e-a9ca-48fee3529bb9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bulletin.PublishDate
+	toColumn: LocalDateTable_3f8e757c-3f08-4344-80ce-c7b88ba3878f.Date
+
+relationship e9fae345-a83e-4e22-baf6-875267016038
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bulletin.ActiveFrom
+	toColumn: LocalDateTable_3647bf16-7286-4dd2-b451-f84eaab48f3c.Date
+
+relationship b1687440-354d-4e80-bfef-706511fe3f70
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bulletin.ActiveTo
+	toColumn: LocalDateTable_99307824-d436-4c6e-846d-40cdc8aa1802.Date
+
+relationship 4a1e7263-6361-48a3-8787-384d82950385
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bulletin.UpdatedAt
+	toColumn: LocalDateTable_7022d814-c641-4921-8375-7f184ce4c251.Date
+
+relationship 9324cb71-c9d7-499d-a2db-8e48d93e39bb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.CreatedAt
+	toColumn: LocalDateTable_b0aab69f-f3e8-4b53-9a0f-539050837620.Date
+
+relationship 2e6f2613-0013-4aef-9451-3de6405e64da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.UpdatedAt
+	toColumn: LocalDateTable_e79547a7-e8af-4928-9de0-a947783514c6.Date
+
+relationship 67581b64-bad8-4530-b79b-cdfcd51f5e80
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.LockoutEnd
+	toColumn: LocalDateTable_5d7c6b8b-dfbc-4b0e-a586-516d52551859.Date
+
+relationship 83050784-15b4-4340-a503-108720ddd1ce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.WelcomeEmailSentAt
+	toColumn: LocalDateTable_61458106-c651-46dc-818a-5abe1009a3c7.Date
+
+relationship 99cec9c8-c61e-4698-80d6-af976e0c69dc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.OtpActionLockoutEnd
+	toColumn: LocalDateTable_7b6822ca-d837-4c15-8176-a4ce405dba12.Date
+
+relationship df45dfc6-4161-4529-af5c-32fc42749820
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.OtpSentAt
+	toColumn: LocalDateTable_278b4428-f667-41b0-8c9d-02562b0e7188.Date
+
+relationship 093420d7-4604-4e85-9b5b-91e7d74e9b60
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.PasswordExpiresAt
+	toColumn: LocalDateTable_5acd5ab2-02af-40ec-93de-9fd17139294d.Date
+
+relationship 75a383fd-e4f4-4f68-b391-8639c0f84828
+	joinOnDateBehavior: datePartOnly
+	fromColumn: User.LastLoginAt
+	toColumn: LocalDateTable_a7c4cce4-259b-4c85-ae5a-2cb2a732a4f1.Date
+
+relationship 62e41f9a-f186-4b6c-a4b2-db5905462fba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyLedger.Date
+	toColumn: LocalDateTable_b47158ce-179b-46d1-8099-b5a20e240e4c.Date
+
+relationship 23313ff6-fe03-415f-8b44-b2ea169f8425
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyLedger.PeakRecordedAt
+	toColumn: LocalDateTable_b32e165b-ca4f-474f-af1d-022275646568.Date
+
+relationship 23ab081a-9b87-4478-a4e8-6cafa641a3fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyLedger.LastCheckedAt
+	toColumn: LocalDateTable_e68cf001-0d11-4859-b75f-d0c403bdec3e.Date
+
+relationship 7d1e729b-e535-4157-a813-231a5ddb8193
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.ProdaDeviceExpiresAt
+	toColumn: LocalDateTable_b6ac0803-e800-43ca-b579-4d1c56a9de13.Date
+
+relationship 1b4efda5-e6b2-4ee9-8002-f82587d9e73c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.ProdaPublicKeyExpiresAt
+	toColumn: LocalDateTable_4124b109-a16e-4795-8ebc-89353f10b12a.Date
+
+relationship 77ff2066-9275-4c8c-b015-60808ca43b3b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.ProdaDeviceActivatedAt
+	toColumn: LocalDateTable_78465318-d73b-41f4-99e2-12c87df17124.Date
+
+relationship 52a9473b-87a8-4035-ae66-4f0c06399840
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.NdisApiAccessTokenGeneratedAt
+	toColumn: LocalDateTable_f7aba0d9-1f9e-4cb6-999b-6c59f72cf923.Date
+
+relationship c98a1c9d-7832-4dc9-84df-173ca882ee69
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.NdisApiAccessTokenExpiresAt
+	toColumn: LocalDateTable_23599aba-3fd5-4f6a-aba8-9f1db546c3c4.Date
+
+relationship d2d1acf0-5143-4a4e-8344-c757bacd6645
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.UpdatedAt
+	toColumn: LocalDateTable_ddf2d849-f36d-4495-b628-f20937a87b5c.Date
+
+relationship ea28721d-428f-4162-b73a-eb49d4da1fbd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyNdisConfig.NdisGatewayDeviceCertExpiryDate
+	toColumn: LocalDateTable_c8648dce-1031-4eba-bf3a-bfbc98b331bc.Date
+
+relationship e69f670d-7ad6-4eaf-a676-99199e1f9304
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyTaskRun.StartedAt
+	toColumn: LocalDateTable_94019cdc-362c-4577-b561-8547dc1de722.Date
+
+relationship 90d7ad32-0297-494f-a9a0-3d2067498f54
+	joinOnDateBehavior: datePartOnly
+	fromColumn: AgencyTaskRun.EndedAt
+	toColumn: LocalDateTable_86fdb836-a7d4-4fed-a077-aaa3210fd557.Date
+
+relationship 41ce1a92-2a81-4791-8db7-2c74c41a3b58
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Batch.ProcessStart
+	toColumn: LocalDateTable_f0b934f4-8e4d-492f-a994-54c803a8dadf.Date
+
+relationship aa57ce64-56e0-4b67-9f1f-b38224d93e97
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Batch.ProcessEnd
+	toColumn: LocalDateTable_2933250a-47e5-433e-b3db-9d710ff704b2.Date
+
+relationship ceb231b7-0983-4f50-a33f-96f8b6eee082
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Batch.CreatedAt
+	toColumn: LocalDateTable_5052541b-97ca-44cf-906b-5ba88bf32235.Date
+
+relationship a9574f21-6004-4aac-978d-e75492e1f700
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Batch.ProcessScheduledAt
+	toColumn: LocalDateTable_0c8c0a0b-56c5-4c86-a732-7651642b2d16.Date
+
+relationship 5be9172a-411d-4739-9d5e-a85e42cad90c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Batch.LastActivityAt
+	toColumn: LocalDateTable_7057a354-397c-4660-b97c-e406bee2fc95.Date
+
+relationship 4010efa6-2b97-4fa6-a11f-9cd32afade73
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BatchItem.ProcessStart
+	toColumn: LocalDateTable_31bd3d8c-9d05-41a5-8e0a-0dae6639c245.Date
+
+relationship 26d0dcab-78cf-4521-a46b-e6cbef5bf5ee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BatchItem.ProcessEnd
+	toColumn: LocalDateTable_4452bf9c-e099-4ca4-aff5-b309dc476794.Date
+
+relationship ba942c2b-c610-43b1-b121-4bedea903071
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BatchItem.CreatedAt
+	toColumn: LocalDateTable_04b9f657-85f7-4085-843b-dac1631493b4.Date
+
+relationship e5d6b8ab-8e41-42ce-969d-af99aad11174
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingExtra.ReportingDate
+	toColumn: LocalDateTable_3ada145e-d471-468c-a4b9-5f4d6d1b161e.Date
+
+relationship e810e0d8-0228-4ab8-b7d7-29d3eb345869
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingExtra.CreatedAt
+	toColumn: LocalDateTable_51bf5980-057d-4eae-9931-4397f0a48579.Date
+
+relationship 3d476a79-2601-4bd7-9424-426405758ecf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.InvoiceDate
+	toColumn: LocalDateTable_244e4fbe-b306-459b-8bca-07b1ede45f30.Date
+
+relationship 2dc9a8e0-ffd5-43ea-ac3b-8d9e5f82fd2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.NdisSubmitQueuedAt
+	toColumn: LocalDateTable_ca8ef1fb-d9ff-4043-bf27-a3807069f20c.Date
+
+relationship b5600c9c-ddb9-4098-9079-f603bd8f394c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.NdisStatusCheckedAt
+	toColumn: LocalDateTable_65c7b8a9-b3b0-4bf7-acc1-7c3c3e62360a.Date
+
+relationship 5b02436b-5068-4b23-b5a4-2eca3be20caa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ApprovedAt
+	toColumn: LocalDateTable_27efca57-fc46-4783-8c8a-50516d83060d.Date
+
+relationship 191d31fc-859e-447e-8541-a67b6e2447a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.SubmittedAt
+	toColumn: LocalDateTable_8e62de31-bf53-402f-9645-1931bf957cdd.Date
+
+relationship 9d9b4e4c-90af-4d30-a89b-747a04099ca0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ApprovalDueDate
+	toColumn: LocalDateTable_7c3820f8-df7c-4121-96d2-d269d1579af7.Date
+
+relationship 2dc20566-3b63-40b2-b22e-beda7a83939f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.CreatedAt
+	toColumn: LocalDateTable_ea087480-17a1-4c0e-8ff7-746d275b83d5.Date
+
+relationship 7cfe98d7-11d9-4b41-b851-c22e4c2262e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.UpdatedAt
+	toColumn: LocalDateTable_bb96aa0d-6c72-4153-b105-3492e958c581.Date
+
+relationship 241713d4-38cf-4bd5-8c7e-b257c6769340
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.NdisPaidAt
+	toColumn: LocalDateTable_5e3515b2-eb95-4e93-aa72-4c4a2ff7657e.Date
+
+relationship 7917bb2c-4809-45dd-9615-90254c697d10
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ScanReportQuerySentAt
+	toColumn: LocalDateTable_7e88b8f4-be66-4dcc-9497-567c456c2af5.Date
+
+relationship ba4dcb72-6cbf-4c46-b28a-110a049aa514
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.PayabilityFastTrackedAt
+	toColumn: LocalDateTable_87dca1c7-6cf2-40ac-b56f-16cfd5f3a083.Date
+
+relationship f019db3e-0185-46a5-8d09-0d4671e4337a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ScanReportReceivedAt
+	toColumn: LocalDateTable_935e21ea-9c0a-461e-9f3b-0207bce4003d.Date
+
+relationship a3ebc1dc-04bb-4b2b-8fb9-22e28603df3e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.SubmitLockedAt
+	toColumn: LocalDateTable_6b2be50f-0ef7-4780-ac74-866dc3fb4836.Date
+
+relationship e34c4671-fbdf-44b7-a2c6-277a2965c60e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.PayFastTrackedAt
+	toColumn: LocalDateTable_915d6d21-125a-4b85-8e1f-50065d594aa8.Date
+
+relationship e9e892b7-3c1d-4b3e-8ada-df70960689a2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.EditLockedAt
+	toColumn: LocalDateTable_9757b0b3-b002-4c58-b145-db5ea818f8f7.Date
+
+relationship a096e515-ffcc-47d3-bd9b-bfb8fc3048a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ProviderRemittanceAdviceSentAt
+	toColumn: LocalDateTable_dc8e1a2a-b545-41c9-80ff-b10c27ab150e.Date
+
+relationship 3127c1f8-9fcb-4b1a-8e15-3017162b4a83
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Claim.ProviderPaidAt
+	toColumn: LocalDateTable_4174e847-a119-411d-a4aa-bbb543357f32.Date
+
+relationship 89f83bab-bb42-4c1c-a152-6387d27658d5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimBatch.SubmittedAt
+	toColumn: LocalDateTable_8eb736b2-d2bf-4a83-96d8-5549af862df0.Date
+
+relationship 94ea66aa-2fbd-468a-a287-34863d311503
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimBatch.CallbackReceivedAt
+	toColumn: LocalDateTable_53c5e7be-ba76-489e-846f-f56ecb5072ab.Date
+
+relationship 6355217d-5750-48e3-ae77-a32a54c3f26f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimBatch.CreatedAt
+	toColumn: LocalDateTable_77ee2d8c-b2c7-4ed0-b9ba-aae959832625.Date
+
+relationship a8d13438-c9f2-49b0-b01d-43b016e99608
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimBatch.ProcessedAt
+	toColumn: LocalDateTable_532f09f6-23a6-4434-b401-158566294805.Date
+
+relationship 455ba870-33a7-44d8-bdb3-01a94a41e0e3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CustomField.CreatedAt
+	toColumn: LocalDateTable_d0db6d4b-fe50-4e1a-9ee9-a3e65f33a0d3.Date
+
+relationship 369a9718-4a20-482e-b93f-602a98615e7a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: CustomField.UpdatedAt
+	toColumn: LocalDateTable_49e0663e-b648-46cf-a6a8-9f448e325ff3.Date
+
+relationship 00ef18a1-5b9f-4eae-9866-f90fb5bcd5d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DataLock.LockedAt
+	toColumn: LocalDateTable_c2154db0-0536-45d6-917b-5a1cc81b9a04.Date
+
+relationship 4e73df99-8221-46f3-aa1b-753d6bc0179d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DataLock.LastSignalAt
+	toColumn: LocalDateTable_d47f161c-9acd-4cd4-8237-5eafbf60ee10.Date
+
+relationship 4f44eeba-2383-4f34-8435-0b498fd0e686
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Document.CreatedAt
+	toColumn: LocalDateTable_766f2437-0502-483d-a5c6-170ab8dddcc5.Date
+
+relationship 70fb257b-71fc-41e4-bdf2-cff20a3a924c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Member.CreatedAt
+	toColumn: LocalDateTable_785cb583-7366-4c1c-9977-c273ca037500.Date
+
+relationship 5de7b2eb-5b70-486d-beef-c07109cd0ace
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Member.UpdatedAt
+	toColumn: LocalDateTable_e1d99ad2-b3bc-4827-8fbf-90e7f893b8b8.Date
+
+relationship 741f87b5-63c4-4f12-987b-fc20298b9351
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdvice.PaidDate
+	toColumn: LocalDateTable_9362bd9c-aacb-4bc8-9b57-3a3bf24c1180.Date
+
+relationship 41e9f859-420e-4945-8d06-fc9672a834e8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdvice.RecordedAt
+	toColumn: LocalDateTable_41e5f34c-5c4b-4daa-b1b2-c95ad2dd73de.Date
+
+relationship eb128ed8-7348-4341-9873-297704ba6d7f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisWebhookRegistration.CreatedAt
+	toColumn: LocalDateTable_264d64ad-e707-487b-93e0-d9b5561f81af.Date
+
+relationship f7af9db2-ab15-4230-9496-4dd3aaecf5ad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Note.CreatedAt
+	toColumn: LocalDateTable_e38f3724-8e61-498d-96a6-5d3582e69ed0.Date
+
+relationship 1b187833-2b41-492c-80cb-ed253948d078
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Note.UpdatedAt
+	toColumn: LocalDateTable_9ec0b3e1-6b09-4de1-9a64-910a88e66533.Date
+
+relationship a9bea8aa-ef41-4cc9-8de1-a87f4b6e6629
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.BirthDate
+	toColumn: LocalDateTable_575616f3-5c0c-44e1-a3ad-a41d446f5ef5.Date
+
+relationship 3970e9e0-501b-49a5-9833-f7de3ab0e69a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.ActiveFrom
+	toColumn: LocalDateTable_50d1309b-d65b-4317-ad75-9fc6f0b54e2f.Date
+
+relationship 262f0efc-392d-49af-b08b-b35a80885787
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.ActiveTo
+	toColumn: LocalDateTable_7cf40642-1d4f-4f76-b9ba-c14f3b95cd55.Date
+
+relationship 0faaacf8-916c-41c1-91a1-9df334c1e8e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.SyncedAt
+	toColumn: LocalDateTable_85faacd7-387c-4d60-89b7-380cd6db753a.Date
+
+relationship 5106a6dd-62ee-4193-879e-33586f4dcb14
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.CreatedAt
+	toColumn: LocalDateTable_bfc6a190-c405-4463-8ccb-b4c66d699deb.Date
+
+relationship 31d5d27e-6a47-45b3-81e1-29990bfb9b85
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.UpdatedAt
+	toColumn: LocalDateTable_45f96a39-4915-498d-9f32-f4e8cfebc4c9.Date
+
+relationship 1853f203-1229-4827-b7ca-af3bf4fe648a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.OnBoardDate
+	toColumn: LocalDateTable_cacdc852-2879-48c1-8ce1-5f68a0c53a94.Date
+
+relationship e00dd4f6-7a7a-45ba-a9d8-901dab0ea38e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.OffBoardDate
+	toColumn: LocalDateTable_2aa2fbfe-2c89-4ce8-b382-ea35cd5787ad.Date
+
+relationship 6bd34a3e-4d81-4772-9966-3297572ee569
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Participant.PlanCheckedAt
+	toColumn: LocalDateTable_2d9217d7-e7b8-4630-80ba-c902e0b674f8.Date
+
+relationship 215110e1-63f6-4ad5-9b54-500d5fddf38a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantRegistration.BirthDate
+	toColumn: LocalDateTable_96dee768-b844-4ed5-b349-7944e8066f33.Date
+
+relationship f261c0d9-17d5-4612-97f7-f478ce1f2e12
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantRegistration.AcceptedAt
+	toColumn: LocalDateTable_c2861f60-5cce-489d-8380-a9f58580eb9d.Date
+
+relationship b503f201-8054-4f65-9455-df28545e888e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantRegistration.DeclinedAt
+	toColumn: LocalDateTable_10a443de-1404-4fb0-9346-fe3dbf8321ed.Date
+
+relationship 89fd5944-479a-4888-bb9d-91811b2b6135
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantRegistration.SubmittedAt
+	toColumn: LocalDateTable_dda9e827-34d9-49cc-bbd7-5e43bb4ce4da.Date
+
+relationship 0e0ec56e-0b64-4771-a8dd-2e8aedc8ff05
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanNdisBudget.UpdatedAt
+	toColumn: LocalDateTable_8479093b-137b-47cd-b187-1f2a66c1fe70.Date
+
+relationship d4ef51d0-44bb-4b08-867d-366035658cd0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanNdisBudget.CreatedAt
+	toColumn: LocalDateTable_c15c7ea5-e5bb-4386-9e6b-638132406377.Date
+
+relationship 5e03e295-cd73-4ef8-b3d2-ee2d6aff60d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.ProcessStart
+	toColumn: LocalDateTable_556da5ef-c652-4619-92f3-698680e19e20.Date
+
+relationship 6545663f-dc3e-4727-b934-de42770b5be3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.ProcessEnd
+	toColumn: LocalDateTable_690028c4-2a6e-48fe-a35e-b66d2a2bb7fe.Date
+
+relationship 8fab1549-a43b-4cf6-bd4c-9aa4f99e7add
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.CreatedAt
+	toColumn: LocalDateTable_e1f31d33-507f-436f-852e-8cea4399b066.Date
+
+relationship d41902c8-36cd-47b9-9e43-79400d1c92f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.StartDate
+	toColumn: LocalDateTable_5396e3f7-66a6-4e64-92e2-327351a8f665.Date
+
+relationship b78cf48e-601f-4e77-bed4-5776e405bb3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.EndDate
+	toColumn: LocalDateTable_c45e0db4-2745-445a-b43d-f10ae3895cc4.Date
+
+relationship 0f8d00a2-f2d8-4036-95e9-56f928319695
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.IssueDate
+	toColumn: LocalDateTable_99cf1707-2844-4349-bfb0-163e43294d40.Date
+
+relationship e790b5ca-e0cb-498a-ae0d-b736804cb1ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.DraftCreatedAt
+	toColumn: LocalDateTable_a57402e0-d30d-4528-a729-c18f08c9e5a5.Date
+
+relationship 6e254a08-d2c4-4d12-840d-53a52816b54d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.ReportGeneratedAt
+	toColumn: LocalDateTable_d017df2c-65cf-40c9-ba78-b4299b9759e1.Date
+
+relationship 242dee0d-5e4c-46c0-a3b3-789f66c5f0fb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.PdfCreatedAt
+	toColumn: LocalDateTable_f416d505-d20b-45d7-89c6-6701a51fc267.Date
+
+relationship 02b1d923-964d-4b4a-8a8b-9cb1f65cd663
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.DownloadedAt
+	toColumn: LocalDateTable_9c13715f-1475-4e64-99ff-bdd8100db872.Date
+
+relationship ab01cfca-dc31-474e-a918-a03e072915fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatement.EmailSentAt
+	toColumn: LocalDateTable_ffa3016f-8a3a-4a2e-9b3a-149e87b897d1.Date
+
+relationship 2376ca08-8f8b-41b2-b414-178ffb365427
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider.CreatedAt
+	toColumn: LocalDateTable_d23307e7-503e-42f5-936b-b74961d720bf.Date
+
+relationship a2b28a45-3782-4619-bc1b-17b682fd4e18
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider.UpdatedAt
+	toColumn: LocalDateTable_1878601b-48fe-4bbb-b368-779b2ef5a947.Date
+
+relationship 9564e9ad-57b7-4c92-aded-ddc3b6d22361
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider.AbnVerifiedAt
+	toColumn: LocalDateTable_b70f2f0f-85ba-4c65-97af-9c27f568d0e3.Date
+
+relationship e75ebac3-588c-47ef-84e7-af74bb950b63
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider.PosabilityInvitationSentAt
+	toColumn: LocalDateTable_85a5d0f6-2eaa-4b37-9221-fbce548b8ebb.Date
+
+relationship 4dc25db3-7bd7-4138-b10c-829122a081bf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitBatch.BatchDate
+	toColumn: LocalDateTable_c8ccf79e-6684-40d8-aa59-7f7505818ff8.Date
+
+relationship 2c0fc6ec-90b8-43ee-bbbd-79fac31b5ffc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitBatch.AbaDownloadedAt
+	toColumn: LocalDateTable_26a61436-4041-4fae-8223-3cd322d30bcf.Date
+
+relationship 68035205-fe62-4d7a-9af1-e86d1e8f7d55
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitBatch.BpbDownloadedAt
+	toColumn: LocalDateTable_a92a9948-45fb-4bd9-8381-465d3fcb05a1.Date
+
+relationship 853fbbd4-cd15-40c0-8de9-0383b20603e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitBatch.CreatedAt
+	toColumn: LocalDateTable_22998665-f6ba-4251-889e-30fdaee98b42.Date
+
+relationship 7f37ec49-f2d9-4309-9777-058d9a9493b8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitBatch.UpdatedAt
+	toColumn: LocalDateTable_fba88838-227f-40c1-a018-8fcd59e08137.Date
+
+relationship a3c57286-960b-4053-8083-9203183fa45b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.StartDate
+	toColumn: LocalDateTable_f6bd21fa-84bd-4f23-b322-617b41d4917f.Date
+
+relationship e9fc6242-cda5-4ece-b8d5-d2e04df5ae10
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.EndDate
+	toColumn: LocalDateTable_926dec9d-06fe-4c17-9ffa-74a93c5664ea.Date
+
+relationship 21e5dce6-88db-46ac-8228-246cde44ae99
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.CreatedAt
+	toColumn: LocalDateTable_505f7313-578d-4bef-8915-1d7510c78f12.Date
+
+relationship cace9402-b376-4574-9e1a-ab40b5e20937
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.UpdatedAt
+	toColumn: LocalDateTable_3dbb60f1-7738-4791-8093-afad09f13b20.Date
+
+relationship fa703d38-3c80-40f4-b452-c623836ff785
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.LowBudgetNotifiedAt
+	toColumn: LocalDateTable_67c28a4e-6236-4050-babb-877cee3c7aab.Date
+
+relationship b5384408-aad7-4106-be34-6ecaccc0cb0a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.UsageWarningSentAt
+	toColumn: LocalDateTable_c9262f78-92bf-41b5-9dda-d42e47f14c88.Date
+
+relationship b2b6b381-ef95-4cc2-b5da-d4a14b021a36
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreement.BudgetUsageWarningSentAt
+	toColumn: LocalDateTable_14c9a9c8-6ebf-454d-b114-ef04ce16a73b.Date
+
+relationship 18934ab0-9711-47fb-ab0a-78ba82d36b62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TaskRunSubProcess.StartedAt
+	toColumn: LocalDateTable_b12cdd53-fb4b-4de8-a42b-4faadf1fa1aa.Date
+
+relationship b88d8996-7018-47a2-a905-1260564eb14e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TaskRunSubProcess.EndedAt
+	toColumn: LocalDateTable_87360658-684b-4f26-943f-e613bbe9554f.Date
+
+relationship 26601565-355e-47f1-8c16-998d6121b1ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Template.CreatedAt
+	toColumn: LocalDateTable_5ac48e2e-d309-4bf7-affd-5adf79b76bc6.Date
+
+relationship bedb54bb-fe79-4399-b0af-dd7a46cdb415
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Template.UpdatedAt
+	toColumn: LocalDateTable_521dab52-29d5-4813-aa9c-e142ada1b80d.Date
+
+relationship 17a7605d-8432-47e8-bf0c-95c1325ab0d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Variable.UpdatedAt
+	toColumn: LocalDateTable_0a715daf-9650-429d-8c5a-49275424a521.Date
+
+relationship f5b8825a-d08c-4e36-80a0-99970b1cce13
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UserRequest.ActionedAt
+	toColumn: LocalDateTable_fe9231a9-912e-482f-aa67-ab38eff540aa.Date
+
+relationship 77aede08-980c-477b-88f8-1f234223394c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UserRequest.CreatedAt
+	toColumn: LocalDateTable_47f5994c-216e-4fc0-b821-9cc5ab3f86fd.Date
+
+relationship 223185bc-d1ad-485c-9194-4c24b365053f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UserDevice.CreatedAt
+	toColumn: LocalDateTable_97f7434c-bb6c-4b08-ae12-d279d0c29e0e.Date
+
+relationship 3ea8da54-0de9-483f-b413-d5e4f257198e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UserDevice.LastReportAt
+	toColumn: LocalDateTable_25975f5f-456f-4d45-8e31-60e7814b2165.Date
+
+relationship 09dbc073-2809-4b2f-9b15-eccd31d5c997
+	joinOnDateBehavior: datePartOnly
+	fromColumn: UserAppConfig.UpdatedAt
+	toColumn: LocalDateTable_d41023a2-9b00-413e-bbc1-81cf9d4ee52b.Date
+
+relationship 21fd4dff-e9fc-4988-a02f-d42c20cd771c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Timeline.Time
+	toColumn: LocalDateTable_4233d393-4220-4894-8fe7-ca7c232358af.Date
+
+relationship 9e3a9c41-6450-4ed5-bb63-58f33d45dd24
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TestJobs.CreatedAt
+	toColumn: LocalDateTable_7e59e378-909d-4ed4-aed7-0ca1ac5e6330.Date
+
+relationship 2963d790-26f4-478a-ad15-8fcef4b0192b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TaskRunTrace.Date
+	toColumn: LocalDateTable_599fa82b-7098-4826-a40c-8b9e726915e5.Date
+
+relationship 15794316-585a-4e08-b82e-7e6c186dc6ea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TaskRunTrace.StartedAt
+	toColumn: LocalDateTable_c0b65a6f-cac3-4a76-9192-3bd2a20eabd7.Date
+
+relationship b1e76833-bd50-4087-9b12-86812dbc763f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: TaskRunTrace.EndedAt
+	toColumn: LocalDateTable_e08f4038-7b47-498d-bbf0-1935ebc3f2e0.Date
+
+relationship 7ce4db89-19ba-453e-85b6-4e76cfcb192a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SupportItem.VariantApplicableFrom
+	toColumn: LocalDateTable_a2fd854f-5be9-46d1-8fc9-3093db2dceef.Date
+
+relationship 3fb2ed87-6721-4420-b65b-0add3880e5c2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SupportItem.VariantApplicableTo
+	toColumn: LocalDateTable_15e57039-df08-4dd6-97dd-99090b045c6c.Date
+
+relationship c8bc430c-2e57-475e-9066-9ecea6a6a757
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SpecifiedSupport.UpdatedAt
+	toColumn: LocalDateTable_1eb34eb7-3fe8-440c-9978-65dea3773ad0.Date
+
+relationship aba93678-ebd9-4bd9-8022-40cbcb6a499f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceBooking.StartDate
+	toColumn: LocalDateTable_6f813e82-91a6-47b0-aef0-48bb4a1a1733.Date
+
+relationship f30a5888-9528-4666-91cb-dc7e6b84faa0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceBooking.EndDate
+	toColumn: LocalDateTable_49696f07-41f6-4391-b51c-995e0a529050.Date
+
+relationship f433471c-07b5-40fa-be09-bd4c3fa32972
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceBooking.RevisedEndDate
+	toColumn: LocalDateTable_492a34c7-c0fd-48ff-a750-f66acb51ed00.Date
+
+relationship 9931da81-94bf-492e-a0d8-039d542c413e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceBooking.SubmitDate
+	toColumn: LocalDateTable_69752473-cb8d-41e7-a9d8-50871f7e3f9f.Date
+
+relationship d4549c3d-73b0-4b9a-9f38-5b3baa2ecdb2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceBooking.SyncedAt
+	toColumn: LocalDateTable_025cdf32-3fc5-4e7d-ae9a-45f61d036f90.Date
+
+relationship e3cd8506-8b18-4437-ab1f-1c7d0c5b7ed9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItemFundingPeriod.StartDate
+	toColumn: LocalDateTable_34233eea-74a4-4e2c-a81e-fc15dce2decb.Date
+
+relationship 48cbcb85-767d-41ba-a103-3bb869fc65ba
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItemFundingPeriod.EndDate
+	toColumn: LocalDateTable_2a155a89-3812-465f-bca0-72c44e4994be.Date
+
+relationship 34a366ca-35c9-49df-a845-9b648884c186
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItemFundingPeriod.CreatedAt
+	toColumn: LocalDateTable_1abae179-7d5a-4124-8a6e-4d8425d03c5d.Date
+
+relationship 0cac695d-653c-45e4-a078-c4a3cf8bc109
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItemFundingPeriod.UpdatedAt
+	toColumn: LocalDateTable_f4f0c481-667f-4a0f-b822-9a8e9c7e0bbc.Date
+
+relationship 503b3959-d6fe-43e4-8943-dea25419ffdd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItem.StartDate
+	toColumn: LocalDateTable_aefdc8ec-5530-47f6-96fb-b9abb504fc1f.Date
+
+relationship c378e204-7e33-4c89-b577-31463e9a3e9d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItem.EndDate
+	toColumn: LocalDateTable_b831945b-980f-4e64-9caa-486ff7ff27c7.Date
+
+relationship c9290bc7-fff7-4783-b24d-0cea91796dc8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItem.CreatedAt
+	toColumn: LocalDateTable_8c037dc5-48ea-41a4-bea2-9b8790f0436c.Date
+
+relationship a71b25f7-480a-46c5-bc6b-6d31d29ec10c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ServiceAgreementItem.UpdatedAt
+	toColumn: LocalDateTable_7b267de9-27f4-422d-b8b2-f1c3c36e79c6.Date
+
+relationship eb44dde2-4ca5-411e-b845-6ffeeb6c04f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ScanProfile_IMP.UpdatedAt
+	toColumn: LocalDateTable_56695b55-d974-4e99-a2f3-16a22c5c6da2.Date
+
+relationship dc345f88-ec3a-40ed-a417-eaf37dae8b24
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ScanProfile.UpdatedAt
+	toColumn: LocalDateTable_0043858c-af5d-489b-bf77-cb926416e635.Date
+
+relationship 3a4316d5-5c1f-4f15-bc04-5831d71bf0da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ScanFilter_IMP.UpdatedAt
+	toColumn: LocalDateTable_a1f50cf8-385e-46c7-9915-b659903a6ac3.Date
+
+relationship 27e8aaf8-6b80-42ea-917b-9e9e71473e9f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ScanFilter.UpdatedAt
+	toColumn: LocalDateTable_a834c50a-c597-4cb2-ab95-f34e3091afe5.Date
+
+relationship 8231f25b-3442-4895-b5ca-20bdb56c3f29
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RemitPay.RemittanceAdviceSentAt
+	toColumn: LocalDateTable_9b0d579d-880e-4509-b43b-9cd78e5d7af5.Date
+
+relationship 161ab712-45e8-43cc-a926-14f16c3023bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ReleaseVersion.ReleaseDate
+	toColumn: LocalDateTable_dec57d80-6079-4e08-862f-035054ed17d5.Date
+
+relationship e89aba84-c9bd-4452-8052-b322e6c6e7e2
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RefreshToken.Expires
+	toColumn: LocalDateTable_ad0d4c9e-d22f-450e-8638-3b4028e2067c.Date
+
+relationship ad1fab13-7368-4948-bc73-8d29ceb3101f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RefreshToken.CreatedAt
+	toColumn: LocalDateTable_c1e9f6fd-0871-4133-8b86-50373d638211.Date
+
+relationship 348641a3-5422-4cd2-b361-3f1f298e1095
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider_BCK_20230705.AbnVerifiedAt
+	toColumn: LocalDateTable_12ea1bbd-eaa0-4065-9d5c-83eb040fc591.Date
+
+relationship 114bd3ab-beb8-400e-8411-a7f9074a3c58
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider_BCK_20230705.CreatedAt
+	toColumn: LocalDateTable_e0fa418a-7e4f-4e46-b5f8-a3ceed6384b0.Date
+
+relationship bb2030f0-28c6-4da3-9c92-72ed4b69369f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Provider_BCK_20230705.UpdatedAt
+	toColumn: LocalDateTable_477f5dfb-82e6-47da-97fc-92c8af04e402.Date
+
+relationship 1375b24a-6056-4e48-899a-ab5885f20742
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatementPublishLedger.PublishDate
+	toColumn: LocalDateTable_f70c82c8-b675-4e9f-933a-b08c731899ae.Date
+
+relationship c86956fe-c81f-4d28-a8f4-91b7fe943f66
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanStatementPublishLedger.RecordedAt
+	toColumn: LocalDateTable_954b54a5-9e72-414d-bbd7-f167806c21c3.Date
+
+relationship 7fe4b3d6-32fd-4263-ab34-fcedf656c498
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanPeriod.StartDate
+	toColumn: LocalDateTable_221858d2-bbf4-4959-bd87-84b94978b27d.Date
+
+relationship 1ae5cc25-1891-4f3a-8523-5f54ae3dcdd3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanPeriod.EndDate
+	toColumn: LocalDateTable_6ba65c7b-35e2-4559-86de-85d1d08b582c.Date
+
+relationship 14aa1e79-eba7-41df-a92b-54a03d7caaca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PlanPeriod.CreatedAt
+	toColumn: LocalDateTable_3a679680-5d37-431b-9a37-67af7717d127.Date
+
+relationship b0642606-3846-4d73-8745-dbf5579a5a02
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.StartDate
+	toColumn: LocalDateTable_31eca0d6-4c35-40dc-9af9-fa4b26a4a3ad.Date
+
+relationship 8b53c051-9857-4304-99d6-0dd182f932fc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.EndDate
+	toColumn: LocalDateTable_af2a1310-64db-47ae-a957-1a3c8c523e55.Date
+
+relationship 5830e345-be08-4f06-a70e-e71901b85984
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.RemainingDaysNotifiedAt
+	toColumn: LocalDateTable_8e9a671b-df15-48ff-aeea-ada99b2a0663.Date
+
+relationship 43e20708-8aba-47ea-bc27-24c0a3ca4a2f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.ExpiryAlertNotifiedAt
+	toColumn: LocalDateTable_1e0ee3f4-95d8-4655-9300-637036929d5b.Date
+
+relationship 7e7cd332-24ff-4074-9d14-0ab052bb8be6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.ImportedAt
+	toColumn: LocalDateTable_0c8f89ac-63a5-42ed-bcdf-62d2b637c383.Date
+
+relationship bc0583c0-66f5-4a85-ac03-ebc2c4b819b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.PlanSyncedAt
+	toColumn: LocalDateTable_2ebf5a50-0d59-427e-aaf1-1382f3e41995.Date
+
+relationship 29bfb674-db4c-4b65-a7b6-5fe8acbe181d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.ServiceBookingsSyncedAt
+	toColumn: LocalDateTable_2d356a79-6a55-4a02-b778-6ab92f5f9cb7.Date
+
+relationship 2dc5e5a0-77fc-4803-b41a-7c5136cf1ee0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.BudgetSyncedAt
+	toColumn: LocalDateTable_abd61995-6bf7-4785-a468-d3c264888b81.Date
+
+relationship 088c8b42-5d48-4ad9-bf65-f68348c9e69d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.FirstStartDate
+	toColumn: LocalDateTable_c3736bab-f34f-4fdf-b2a9-be97e1148edb.Date
+
+relationship ba85a499-3b75-418c-bfbd-5b3c5fd13d2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.NdisBudgetCheckedAt
+	toColumn: LocalDateTable_24e8d486-06a9-4f8a-851d-e5b2acded756.Date
+
+relationship 15d878a3-435c-485c-81c9-da4c3bbb57ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan_20241111_PacePlans.VirtualEndDate
+	toColumn: LocalDateTable_89b1c078-a2b8-4ab9-b1de-3e188e961fdf.Date
+
+relationship 013e993e-d31e-4ea1-a4dd-c8d7284e9525
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.StartDate
+	toColumn: LocalDateTable_996ac5e3-3f69-412f-b09d-d4272dc811de.Date
+
+relationship 5728d33b-eff2-4e0c-a39f-9645becdb2a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.EndDate
+	toColumn: LocalDateTable_4d4daf4e-ef39-4b23-b020-56dc318a24f1.Date
+
+relationship e084091b-224a-40fc-97e5-675077b2f51a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.RemainingDaysNotifiedAt
+	toColumn: LocalDateTable_aa7811ff-5553-4569-a27e-d17f5145b4ed.Date
+
+relationship 3b394150-bb87-4d76-b43c-1bbd5fe88f19
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.ExpiryAlertNotifiedAt
+	toColumn: LocalDateTable_8f86b220-e604-475f-8eae-9c79efa2a4b2.Date
+
+relationship afac84e4-ad5a-4922-820b-0607c1f1b1f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.ImportedAt
+	toColumn: LocalDateTable_94447cb0-fa01-4af4-ac80-a68433b3a516.Date
+
+relationship 139a0463-b3bf-4c63-9454-668901c51d95
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.PlanSyncedAt
+	toColumn: LocalDateTable_83a73c75-5c2e-4ea4-b875-20871563d05f.Date
+
+relationship 81b9f740-21c8-4bca-b69c-9cd6c3179d53
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.ServiceBookingsSyncedAt
+	toColumn: LocalDateTable_29daa5fc-106e-43c3-939b-7c972d385b58.Date
+
+relationship dcd093b7-6dfd-40b0-bd31-219ffee0efe7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.BudgetSyncedAt
+	toColumn: LocalDateTable_cee1efc2-db07-487e-87d6-9d0d97d24edb.Date
+
+relationship 83c0a25c-23e0-4c95-9706-dcfd71ab745b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.FirstStartDate
+	toColumn: LocalDateTable_47ba6863-696e-4dd6-b57a-6f78d0c5e851.Date
+
+relationship bdf87bdc-f3c6-4c2e-8204-5ba41083bfbb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.NdisBudgetCheckedAt
+	toColumn: LocalDateTable_cebf4031-c255-4670-8740-824ecdf21af1.Date
+
+relationship aa1e16bc-624c-427b-b3b9-8d772d2f4f1e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Plan.VirtualEndDate
+	toColumn: LocalDateTable_95755594-70e5-4c9e-b4f3-93f221807f67.Date
+
+relationship 19b40411-45f1-4204-9f60-7fc422093b46
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantContact.CreatedAt
+	toColumn: LocalDateTable_ee4593f1-db8c-4ce8-b759-48be1b118cca.Date
+
+relationship 89b60d95-e5d8-4984-b9b3-91841f3f2ca5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantContact.UpdatedAt
+	toColumn: LocalDateTable_0b1c49db-2a9c-4b43-9bfb-f4c0b7b64d99.Date
+
+relationship d61ac27a-6245-4c0d-a4ea-e8d172d51b11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ParticipantAssociate.CreatedAt
+	toColumn: LocalDateTable_cace0ad8-8c32-4e0a-9d8e-dfcc5c409736.Date
+
+relationship abfd744d-121a-4f53-b1d0-99539eb08437
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Note_20231008.CreatedAt
+	toColumn: LocalDateTable_9eb61467-23ff-43c0-b134-e50a566b611f.Date
+
+relationship 753a7dd9-09b4-428b-b401-494dab95e00e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdviceItem.PaymentRequestDate
+	toColumn: LocalDateTable_44863c94-9ef6-4029-92be-3f8c17cb4056.Date
+
+relationship c692ee12-2029-480e-867b-c4bddb85ea07
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdviceItem.StartDate
+	toColumn: LocalDateTable_05e44bb1-fd09-4cb8-bc5a-73c12da6e42d.Date
+
+relationship e4db1781-2dba-42d9-9237-a35e70002dde
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdviceItem.EndDate
+	toColumn: LocalDateTable_78202122-eca2-42dc-aabe-1a85925f9021.Date
+
+relationship 254bf595-e0b2-4ab3-ae7a-7b99e2c79829
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisRemittanceAdviceItem.RecordedAt
+	toColumn: LocalDateTable_2757480d-b6a8-4a23-83e8-a70f2de52b64.Date
+
+relationship dd1c4a1f-9be3-4c71-b779-22433c71d885
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisApiOutage.Start
+	toColumn: LocalDateTable_d0eaffd1-d846-4122-a996-33441ea8cff8.Date
+
+relationship b7040f21-f642-41b0-9d2e-03c898c78bb3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisApiOutage.End
+	toColumn: LocalDateTable_010807ce-526c-4f17-9cc4-415f35469047.Date
+
+relationship 1a8cb6fa-4702-417b-8113-49424c50c34a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: NdisApiOutage.NotifiedAt
+	toColumn: LocalDateTable_f33b2963-6ce8-455a-94ab-4c5568ef048c.Date
+
+relationship f41bf647-7eaa-462f-bda5-25682f4a6cdf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: MemberSupportType.CreatedAt
+	toColumn: LocalDateTable_6e5542e9-2868-4ef9-a879-84370590738e.Date
+
+relationship 31ecd3ec-74a0-4005-a9a7-5debe41d1674
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment_Bck_20241022.StartDate
+	toColumn: LocalDateTable_28bfe53d-953f-4d4d-b36e-896b5dccabda.Date
+
+relationship 91c947b5-69d4-4219-a033-64e2f7f0ef48
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment_Bck_20241022.EndDate
+	toColumn: LocalDateTable_7e4f70d5-c551-4554-98e1-e1ea196be21e.Date
+
+relationship 4902a961-a7e7-4210-a436-9c8f9a27a564
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment_Bck_20241022.SyncedAt
+	toColumn: LocalDateTable_115bae24-afd6-43c7-81be-7b7f2b5b4db2.Date
+
+relationship 9775ccf7-26a4-4ba2-a0fa-902759b1be1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment.StartDate
+	toColumn: LocalDateTable_19191c8d-3162-43ed-b15b-5b5d17235fb8.Date
+
+relationship b8469f35-dbf4-4daf-a083-4f292e205b7c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment.EndDate
+	toColumn: LocalDateTable_fd40d1ed-4b40-4772-8874-93343db4ae4a.Date
+
+relationship 096c4ae7-d756-44cb-ae26-1bcde7d15d78
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment.SyncedAt
+	toColumn: LocalDateTable_e944599c-93df-4b68-abf0-d7d398bd5146.Date
+
+relationship 9a113983-eced-4012-8cf5-900b86e5e2a0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Installment.CreatedAt
+	toColumn: LocalDateTable_ec11971b-83dc-4718-9746-61797c09cd95.Date
+
+relationship dd4ec10a-3501-49c4-b5d9-2ecab22c794c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: IdempotentToken.CreatedAt
+	toColumn: LocalDateTable_9402ccfd-e675-4e04-8957-795d8882d23f.Date
+
+relationship 9985acfe-faa1-4f14-875f-27bd4deaadd7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Holiday.Date
+	toColumn: LocalDateTable_c239f5ea-bc98-426a-aa51-14163a3852f5.Date
+
+relationship 1c2063c2-5eec-49a5-84a1-4ddccfe50c82
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FundingPeriodSpend.CreatedAt
+	toColumn: LocalDateTable_3a226eb8-0d93-4c01-82d3-6dfd4b01ea50.Date
+
+relationship a5ac7cd7-a562-4efc-8a4a-89761e6b0fc5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FundingPeriod.StartDate
+	toColumn: LocalDateTable_396e671b-4d30-4513-b0b3-2dccfb7dfbf0.Date
+
+relationship cef54b7b-854e-4378-b5f0-5048496aab3e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FundingPeriod.EndDate
+	toColumn: LocalDateTable_d73b01c2-d57b-4e2e-a0f8-79509baaec3f.Date
+
+relationship f0b12642-d59c-4135-9b11-112b0a415f0c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DebugLog.CreatedAt
+	toColumn: LocalDateTable_aae6853c-cfdc-4223-bfc5-d2034cc2306a.Date
+
+relationship e6a00828-3499-4b02-bd95-f082f5321237
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLinePart.StartDate
+	toColumn: LocalDateTable_4f870778-c08a-4f29-b72a-22c9aa9a3bb9.Date
+
+relationship da05b9a5-6939-4681-ba17-a5f65a4fd2d7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLinePart.EndDate
+	toColumn: LocalDateTable_576a7370-b9da-4d5e-92af-f8ee1aff3fea.Date
+
+relationship f97a6e12-d5a0-4b9a-8774-33c41c138f8c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.StartDate
+	toColumn: LocalDateTable_0541fd29-bf2c-4d8f-978e-b72e789f7379.Date
+
+relationship cc1e56cd-c753-4bc1-99f3-3da0dfd323fe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.EndDate
+	toColumn: LocalDateTable_eff0b0e5-97ee-4c16-8623-3a526d8ad426.Date
+
+relationship 51d0d51f-7331-4d04-9115-0bcef210bbbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.SubmitDate
+	toColumn: LocalDateTable_fece9d98-4722-4a0f-8587-1285bb8f29f1.Date
+
+relationship 393f4120-2096-4ca1-8699-73d4f5f3d1ae
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.PaidDate
+	toColumn: LocalDateTable_faa3b655-0b11-46a3-a7a8-771c82d5dcf4.Date
+
+relationship c7a88118-492b-4e3f-99ee-28b0240cd7ff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.SubmittedAt
+	toColumn: LocalDateTable_a2c6b943-bd6d-4f7d-82b1-648e21c3ca1e.Date
+
+relationship eaf5aef7-0317-4396-86e6-bcbfe42bc7f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.CreatedAt
+	toColumn: LocalDateTable_9edf6264-9c34-4878-af8e-f9441264f880.Date
+
+relationship ee834968-3d3b-4c04-ba74-bf19c4b4eb54
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.UpdatedAt
+	toColumn: LocalDateTable_e31038b8-4c2c-4f62-b880-71f52c92ddc3.Date
+
+relationship 7590b488-e92c-464f-b690-33eb6a853496
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.PaidAt
+	toColumn: LocalDateTable_07a07cf7-814b-4c2b-b5e2-ea1f9bec6f08.Date
+
+relationship 5958fde3-f523-4e16-85c0-849514fb26df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.CancelledAt
+	toColumn: LocalDateTable_f701f6d0-c3bd-42b4-89db-e928dc5366ac.Date
+
+relationship ef7bd334-4ecc-44de-b379-7e1f5c44dcf3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.SubmitLockedAt
+	toColumn: LocalDateTable_76d00dbf-5582-4ed2-912c-4d6505f5cd49.Date
+
+relationship 90c09087-0db2-43cb-8d66-e67b0442ddd8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.NdisStatusCheckedAt
+	toColumn: LocalDateTable_fcaebf99-9259-4074-b21a-136ce627ede2.Date
+
+relationship cfa0324c-71c3-4337-9c0c-3e7d3b67de8a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ClaimLine.NdisCancelStatusCheckedAt
+	toColumn: LocalDateTable_68286d6d-ae23-40e5-ba6d-5631e7114ee7.Date
+
+relationship c88e0908-11ac-4085-8256-27ccb5dfee23
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Catalogue.NdisStartDate
+	toColumn: LocalDateTable_d5b263ec-fdb7-475e-820c-9b4741cf5fdb.Date
+
+relationship 2e8f8163-6255-4f7d-9515-9c29d128fb60
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Catalogue.NdisEndDate
+	toColumn: LocalDateTable_382b5f92-091c-492a-b3b3-015b0bcf661e.Date
+
+relationship eaef847a-e390-44ce-9ed1-10e73f409996
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Catalogue.ActiveFrom
+	toColumn: LocalDateTable_2c60365c-670d-4ef5-8651-9996d93e3c6d.Date
+
+relationship 51b43262-252f-4836-b618-91bee2e6b783
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Catalogue.ActiveTo
+	toColumn: LocalDateTable_10e62a37-494a-42e5-8afe-27ca0ed2fcfb.Date
+
+relationship f586e3cf-00cd-48b0-a7df-3ee8608744d9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Catalogue.CreatedAt
+	toColumn: LocalDateTable_6aae3ffb-5228-4e52-99de-df0724b9a40b.Date
+
+relationship 27e31474-2222-44a5-a678-86eeb8315a32
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Business.AbnCheckedAt
+	toColumn: LocalDateTable_386640e8-2258-4339-aab8-5c91a96c61a4.Date
+
+relationship 74722de2-af29-420b-9045-7629be9cbbdc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Business.CreatedAt
+	toColumn: LocalDateTable_d2e3daee-93df-4647-b6b9-d0b88b0401c2.Date
+
+relationship 44874e34-2fff-4a35-a58a-0605838b2b39
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Business.AbnStatusEffectiveFrom
+	toColumn: LocalDateTable_c5961b16-82c9-4085-82a7-64294818c10b.Date
+
+relationship e3b0f909-9de8-4aa6-8f57-198d1deb8e11
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetItem_20230720.BudgetWarningNotifiedAt
+	toColumn: LocalDateTable_cf41198d-d1fd-449b-b79c-0ef09f2c45ee.Date
+
+relationship eb7b78f8-35b7-4927-974d-200398c8e8cc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetItem_20230720.SyncedAt
+	toColumn: LocalDateTable_7acf97e6-6868-4e84-a0cc-1f91ac0c1161.Date
+
+relationship 8fb5a149-86fd-4947-85ff-c91492b83ca9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetItem.BudgetWarningNotifiedAt
+	toColumn: LocalDateTable_2f60e174-e9aa-4bbd-93c9-38ecae95ba6d.Date
+
+relationship 04b231e3-7471-4795-a672-1ea13755c28f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetItem.SyncedAt
+	toColumn: LocalDateTable_be6f9119-e398-4c04-9d3d-1e1198b773c8.Date
+
+relationship a1d2bb43-2901-4d9f-adbd-b23e87807d4d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetAlert.NotifiedAt
+	toColumn: LocalDateTable_7f659943-eb4f-4f8f-851a-ad7320eb5ea7.Date
+
+relationship 282d955f-fdc5-4f41-9614-846811f2956a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetAlert.CheckedAt
+	toColumn: LocalDateTable_abfb27ce-8c49-4718-91c5-23bfac4c51e8.Date
+
+relationship 57269f17-60e0-44e5-bc05-40bbe268de2b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BudgetAdvice.CreatedAt
+	toColumn: LocalDateTable_4ce740ae-9498-41f9-9996-3a2bc1722a5d.Date
+
+relationship fa51cc7a-67a2-4bab-bb93-a9abbb7fe870
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingRateCard.CreatedAt
+	toColumn: LocalDateTable_2f3b9ee7-84cd-47ac-816c-91c2e286793a.Date
+
+relationship 0dbdc910-dc36-42ec-b141-cf7a54c7ec4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingRateCard.UpdatedAt
+	toColumn: LocalDateTable_76c361e3-3a7d-4d24-9ddb-b2bea1487cba.Date
+
+relationship bb2ee7a2-1c10-4d94-86e3-3e6a58563d09
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingAdditionalCharge.ReportingDate
+	toColumn: LocalDateTable_bd014612-dbba-4344-9122-7e93a4800e20.Date
+
+relationship ea683cdb-2345-480e-bd03-63ae4504e4d9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BillingAdditionalCharge.CreatedAt
+	toColumn: LocalDateTable_d2b587e6-4abc-4823-8dd6-747d5daa51c5.Date
+
+relationship 3c150aa7-ce90-45bf-a37a-6b12c1b90d4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.InvoiceDate
+	toColumn: LocalDateTable_9a68ed0e-fa82-4295-8e01-a39e4a8a1695.Date
+
+relationship 6ceed22d-80b6-4cda-a104-b4238bfa1730
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.FirstClaimSubmitDate
+	toColumn: LocalDateTable_d9d26802-7c7b-49ed-9898-4f90f5bcaff1.Date
+
+relationship a201cc2b-16df-4cdf-b276-b78241af3207
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.ExportedAt
+	toColumn: LocalDateTable_3e78b806-36e1-40a6-aacb-5bcc66dd6ad7.Date
+
+relationship bb55928d-361d-4e6b-b588-e7c283309f0f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.CreatedAt
+	toColumn: LocalDateTable_b1bb10d1-d4b6-44f6-9610-7d2800b7f784.Date
+
+relationship c1463de6-6ed2-4cff-879a-fc14a68c3abf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.BillingEmailSentAt
+	toColumn: LocalDateTable_eb8911c8-d391-4790-a917-dce2065e5cb9.Date
+
+relationship 9e543890-8b6b-4650-a206-27e0709f8217
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.DownloadedAt
+	toColumn: LocalDateTable_623f5411-2636-440a-b7b3-45e022193d23.Date
+
+relationship 7e9512d5-7bce-4746-a5f9-f7180272f9bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.NotifiedAt
+	toColumn: LocalDateTable_ac616964-de9e-4462-bf5f-d06a50ddef3f.Date
+
+relationship 2677c2ac-62a8-45e1-bc21-b2a403c11036
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Bill.PaymentDueDate
+	toColumn: LocalDateTable_961c3b06-c4ec-42df-8108-f6ad749051b9.Date
+
+relationship 1d2e436c-f5f6-4e27-b756-f6611379e7d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.CreationDateTime
+	toColumn: LocalDateTable_7c55a601-e46e-4774-a7e2-3e43acdbc7c7.Date
+
+relationship 2d8651f9-70d7-4a3e-b5e1-85487aa66ad8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.RequestedExecutionDate
+	toColumn: LocalDateTable_3746d197-914e-49ee-9891-b0ea3fa60889.Date
+
+relationship 050b8aab-bac3-41f1-ac4d-c7de49047ff3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.AcceptanceDateTime
+	toColumn: LocalDateTable_30fa431f-b37b-401e-ab20-c615d7dbcd75.Date
+
+relationship bc0ff29b-8aeb-484f-b339-391bf5f6c8c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.TaskQueuedAt
+	toColumn: LocalDateTable_b9ea3b27-7090-4f84-a94a-7ba7ba1e2b9f.Date
+
+relationship cf3e572c-11df-42d7-b2c7-67c01732366b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.PaymentRequestedAt
+	toColumn: LocalDateTable_98bdc43d-93e9-4b06-9a7a-eb9796bb639e.Date
+
+relationship fe7967b3-9ab8-4a9f-b202-80e74903fb74
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.PaymentResponseReceivedAt
+	toColumn: LocalDateTable_6795528e-0f9d-415a-a9f1-f0034e93b722.Date
+
+relationship 4d8f8450-96fa-49c3-a649-46abce53b0a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.LastStatusCheckedAt
+	toColumn: LocalDateTable_cfc72007-7de1-4907-98db-e783e5867d76.Date
+
+relationship 012dc94f-bd3f-4267-acc1-ddd04579cda4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.FailedAlertSentAt
+	toColumn: LocalDateTable_48c9bf04-f558-44bd-988a-66001bfd25d9.Date
+
+relationship 75ed7e01-efc8-4ebf-af8b-7d8adbcb58ca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankTransaction.CreatedAt
+	toColumn: LocalDateTable_c81168ce-6ef6-4c2d-9238-48950630775c.Date
+
+relationship b9a3c843-4c42-4c12-9ccc-8304ed32ad3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedTransaction.TransactionDate
+	toColumn: LocalDateTable_923ed0ee-3ee1-49dd-85b0-2e2a695d753b.Date
+
+relationship 996f72f1-72e4-4f27-b5ad-796f4ade81d1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedTransaction.ValueDate
+	toColumn: LocalDateTable_f422c68b-fdd5-46a7-9f7e-f5921043640a.Date
+
+relationship aa0a43e0-0042-4a68-b44a-a655171ef35a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedTransaction.CreatedAt
+	toColumn: LocalDateTable_0ea2cc14-a444-4f27-8373-eec5a4a79605.Date
+
+relationship 3ebf6dc0-53f8-423b-93fd-e825bbb55eee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedImport.ImportDate
+	toColumn: LocalDateTable_f0c8da4f-ac79-4f36-a45d-4b79f9fddfd0.Date
+
+relationship 22402130-f14c-4f89-a5a8-de7e226ffd82
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedImport.CreatedAt
+	toColumn: LocalDateTable_3be7f9fa-35d1-440b-a380-23f180fa393f.Date
+
+relationship 5b13950c-da55-43b8-84a1-63142b7860fe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedBalance.BalanceDate
+	toColumn: LocalDateTable_58c6b5c4-7472-4505-a9c2-d2798099f759.Date
+
+relationship 6db35a5c-982e-4946-b0c2-43642daf12cb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedBalance.NextProcessingDate
+	toColumn: LocalDateTable_718b617e-61df-41b3-abb8-45313ddf1d61.Date
+
+relationship 8929c207-a387-4ff0-b52f-cca0febfe477
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BankFeedBalance.CreatedAt
+	toColumn: LocalDateTable_23dde2da-6ab5-415d-a706-593581743835.Date
+
+relationship 3aa5716a-094c-47ed-8f72-732bf5f4e3d3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BackgroundTask.LastPingedAt
+	toColumn: LocalDateTable_efe3645c-6cae-4c7e-a90c-6521fb63540d.Date
+
+relationship 4f867b75-fc0e-4460-ad83-2ab3a4dd564c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BackgroundTask.LastInvokedAt
+	toColumn: LocalDateTable_4e0a8cd5-3729-43c3-98c1-112e0fbd2a91.Date
+
+relationship 6c7d36a3-9d86-4249-a7bc-788abd14f0be
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Attachment.CreatedAt
+	toColumn: LocalDateTable_3b7bf255-dcab-4918-9a06-873d332ffd10.Date
+
+relationship babdaee5-d499-49e1-b13e-f737eb569843
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Attachment.UpdatedAt
+	toColumn: LocalDateTable_e89a0c19-6d8b-44a6-aca8-ad295f803fed.Date
+
+relationship bb9ff03e-10bd-4782-86e2-004475bbf3f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ApiKey.CreatedAt
+	toColumn: LocalDateTable_6b7cb108-81b5-46e9-b611-aaadec4664cb.Date
+
+relationship 50453a1a-c56f-49c8-a408-197595a743f4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ApiKey.UpdatedAt
+	toColumn: LocalDateTable_c617234c-b99c-4e1c-9949-2716003d94ff.Date
+
+relationship 60e7b490-89aa-5709-2cf6-f4801add42ef
+	fromColumn: Suburb.StateId
+	toColumn: State.Id
+

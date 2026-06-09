@@ -1,0 +1,146 @@
+table TaskRunTrace
+	lineageTag: 540e4f95-bc57-410e-b269-d8ca7f45028b
+
+	column Id
+		dataType: string
+		lineageTag: 3cdb493e-619c-4cc8-9940-a468879606d2
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 61f7f867-c21e-4067-adb1-c27c1cd24b8a
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 3081e759-1691-42c5-b26f-0ba182105791
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: 7da68c53-b263-43c1-a3bf-c03572d707a3
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RunGroupRef
+		dataType: string
+		lineageTag: 989d252e-fc55-407f-9b6a-4e837170b907
+		summarizeBy: none
+		sourceColumn: RunGroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchRef
+		dataType: string
+		lineageTag: bb952b0d-9415-4e91-bbb4-78cc6136f50d
+		summarizeBy: none
+		sourceColumn: BatchRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: string
+		lineageTag: c114bbc3-85fc-4afe-8431-0984f6d1664d
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column Task
+		dataType: string
+		lineageTag: 2e1a5021-1cb4-49f1-88d7-ccb7a640f2e7
+		summarizeBy: none
+		sourceColumn: Task
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubTask
+		dataType: string
+		lineageTag: ce0dbb6a-6993-4786-b2d4-33954ab7d96d
+		summarizeBy: none
+		sourceColumn: SubTask
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9588a1e5-f50c-44f6-ac9c-e82b26db9638
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 2963d790-26f4-478a-ad15-8fcef4b0192b
+			defaultHierarchy: LocalDateTable_599fa82b-7098-4826-a40c-8b9e726915e5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bf9ffa6f-c119-4785-9b0d-28ad7ad6bbf3
+		summarizeBy: none
+		sourceColumn: StartedAt
+
+		variation Variation
+			isDefault
+			relationship: 15794316-585a-4e08-b82e-7e6c186dc6ea
+			defaultHierarchy: LocalDateTable_c0b65a6f-cac3-4a76-9192-3bd2a20eabd7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d439309d-ca40-460f-8788-33828d30e7c3
+		summarizeBy: none
+		sourceColumn: EndedAt
+
+		variation Variation
+			isDefault
+			relationship: b1e76833-bd50-4087-9b12-86812dbc763f
+			defaultHierarchy: LocalDateTable_e08f4038-7b47-498d-bbf0-1935ebc3f2e0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Elapsed
+		dataType: double
+		lineageTag: 9330a50e-dba4-4a84-8cee-f2aa00dbd251
+		summarizeBy: sum
+		sourceColumn: Elapsed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Notes
+		dataType: string
+		lineageTag: efda491e-e20c-482c-8f96-7827515ee0f9
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TaskRunTrace = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_TaskRunTrace = Source{[Schema="dbo",Item="TaskRunTrace"]}[Data]
+				in
+				    dbo_TaskRunTrace
+
+	annotation PBI_ResultType = Table
+

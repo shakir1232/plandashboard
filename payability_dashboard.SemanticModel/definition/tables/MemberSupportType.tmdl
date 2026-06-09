@@ -1,0 +1,60 @@
+table MemberSupportType
+	lineageTag: c7475fdf-5ec2-4170-85ac-58f675dae0b9
+
+	column Id
+		dataType: string
+		lineageTag: 8fae9099-3ff5-485e-b95e-e1d03c305135
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column MemberId
+		dataType: string
+		lineageTag: d3b6cfce-7194-49cb-bad4-32ec8fbd0821
+		summarizeBy: none
+		sourceColumn: MemberId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportTypeId
+		dataType: string
+		lineageTag: 9fd2b538-e2ed-40fe-b917-6229400d5cd7
+		summarizeBy: none
+		sourceColumn: SupportTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d3dc7a02-7768-48c4-a306-9827e4c0a971
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: f41bf647-7eaa-462f-bda5-25682f4a6cdf
+			defaultHierarchy: LocalDateTable_6e5542e9-2868-4ef9-a879-84370590738e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 3df9dc97-2a07-40ac-a5ec-c002edef3afd
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MemberSupportType = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_MemberSupportType = Source{[Schema="dbo",Item="MemberSupportType"]}[Data]
+				in
+				    dbo_MemberSupportType
+
+	annotation PBI_ResultType = Table
+

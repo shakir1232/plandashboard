@@ -1,0 +1,90 @@
+table Aspect
+	lineageTag: b110fefc-89bc-4edb-aeac-4695751ed700
+
+	column Id
+		dataType: string
+		lineageTag: 425b037e-a501-412c-bcab-6be7e8d28f83
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 90fa326d-0e08-47d9-9c37-f1ca4485a86a
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 52e9fc45-fb18-468f-b248-4dd708f27163
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 342236f4-deff-44fe-89c3-718a40cb9678
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalRef
+		dataType: string
+		lineageTag: 2af0d09b-1f83-4c19-b20c-24c0e8a92cb8
+		summarizeBy: none
+		sourceColumn: ExternalRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagCss
+		dataType: string
+		lineageTag: 21daeaac-50de-4471-acdf-b8e47c1f646e
+		summarizeBy: none
+		sourceColumn: FlagCss
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDefault
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e7cb8924-5a40-4b62-9818-b84db15dca3b
+		summarizeBy: none
+		sourceColumn: IsDefault
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 5c80b4cb-e8d6-49d9-9bf5-0eaaf1f1367e
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1ca9944d-e48c-4b20-9418-53ab4d44830c
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Aspect = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Aspect = Source{[Schema="dbo",Item="Aspect"]}[Data]
+				in
+				    dbo_Aspect
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,125 @@
+table TaskRunSubProcess
+	lineageTag: 5f4e0614-b319-4b6c-b007-c2b5d26c2103
+
+	column Id
+		dataType: string
+		lineageTag: 1e0a50b1-019b-4a44-aec8-53e64f26139e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column BackgroundTaskId
+		dataType: string
+		lineageTag: 59bc5e33-a8a9-4ebc-b2cf-d772331fdd0f
+		summarizeBy: none
+		sourceColumn: BackgroundTaskId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 87757bd5-7d27-48f8-9e73-19a51e0b66bc
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchRef
+		dataType: string
+		lineageTag: e073c2f9-2557-483f-aa41-e0bdad2ed45d
+		summarizeBy: none
+		sourceColumn: BatchRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxBatchSize
+		dataType: int64
+		formatString: 0
+		lineageTag: cf878ec0-78b9-43f6-a34d-dcf53592c1c0
+		summarizeBy: sum
+		sourceColumn: MaxBatchSize
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: bc4a66d1-b825-4a6f-b1c9-57b3584b61b8
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRunning
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b2c5f056-cfeb-4ae4-aa30-9a9ac80948bf
+		summarizeBy: none
+		sourceColumn: IsRunning
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1a79b84f-02dc-4aff-ac08-ae174b537f94
+		summarizeBy: none
+		sourceColumn: StartedAt
+
+		variation Variation
+			isDefault
+			relationship: 18934ab0-9711-47fb-ab0a-78ba82d36b62
+			defaultHierarchy: LocalDateTable_b12cdd53-fb4b-4de8-a42b-4faadf1fa1aa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d4b7edcb-b9a2-4115-9eee-9fc94f04d9b3
+		summarizeBy: none
+		sourceColumn: EndedAt
+
+		variation Variation
+			isDefault
+			relationship: b88d8996-7018-47a2-a905-1260564eb14e
+			defaultHierarchy: LocalDateTable_87360658-684b-4f26-943f-e613bbe9554f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data
+		dataType: string
+		lineageTag: 5a530cb7-6175-45fc-b72a-1d892dbc946b
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pointer
+		dataType: string
+		lineageTag: 03221dab-7c91-4229-a4a1-461bc91a1a08
+		summarizeBy: none
+		sourceColumn: Pointer
+
+		annotation SummarizationSetBy = Automatic
+
+	column RunGroupRef
+		dataType: string
+		lineageTag: 13e4111b-a6c2-4c58-9186-ee2c6ba37b9c
+		summarizeBy: none
+		sourceColumn: RunGroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TaskRunSubProcess = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_TaskRunSubProcess = Source{[Schema="dbo",Item="TaskRunSubProcess"]}[Data]
+				in
+				    dbo_TaskRunSubProcess
+
+	annotation PBI_ResultType = Table
+

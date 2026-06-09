@@ -1,0 +1,242 @@
+table NdisRemittanceAdviceItem
+	lineageTag: a55a02f5-f3e6-44ec-908b-e40f069cfc5b
+
+	column Id
+		dataType: string
+		lineageTag: bfea3f61-5732-4fa6-b0b9-295504be327f
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRemittanceAdviceId
+		dataType: string
+		lineageTag: 3c592566-6837-46a8-b353-e3fe6d0db665
+		summarizeBy: none
+		sourceColumn: NdisRemittanceAdviceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimLineId
+		dataType: string
+		lineageTag: 58cd39d4-1f8a-4569-833d-480cd57ed599
+		summarizeBy: none
+		sourceColumn: ClaimLineId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: ed8add54-896e-433f-9bfe-99e301489c9c
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 7e9ecba1-84ab-420d-8c82-046f114ad599
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisClaimNumber
+		dataType: string
+		lineageTag: ac39e324-9b36-4188-a88f-fe4f85c131ec
+		summarizeBy: none
+		sourceColumn: NdisClaimNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterNdisClaimNumber
+		dataType: string
+		lineageTag: 8ed4453f-2671-4f67-80f9-f25fccf2606d
+		summarizeBy: none
+		sourceColumn: MasterNdisClaimNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsReferenceMissing
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 283ad9e2-499c-4849-9114-54dbb51f94fc
+		summarizeBy: none
+		sourceColumn: IsReferenceMissing
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentRequestDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd6f8c95-5b15-4a2c-8710-e1a9f29411df
+		summarizeBy: none
+		sourceColumn: PaymentRequestDate
+
+		variation Variation
+			isDefault
+			relationship: 753a7dd9-09b4-428b-b401-494dab95e00e
+			defaultHierarchy: LocalDateTable_44863c94-9ef6-4029-92be-3f8c17cb4056.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dbfa36e0-0812-4b92-a7b9-064fbb5e4331
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: c692ee12-2029-480e-867b-c4bddb85ea07
+			defaultHierarchy: LocalDateTable_05e44bb1-fd09-4cb8-bc5a-73c12da6e42d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e49a0c44-7722-4cc8-ad4d-6839907095bd
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: e4db1781-2dba-42d9-9237-a35e70002dde
+			defaultHierarchy: LocalDateTable_78202122-eca2-42dc-aabe-1a85925f9021.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 7f8e5f12-7994-47f8-b677-7c1b6ea502ef
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d5de30f2-3cf9-4ac6-93f5-ceb7f5aaf684
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ClaimAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 14a98012-7915-4cff-9e02-6c19eaf6ddae
+		summarizeBy: sum
+		sourceColumn: ClaimAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PayAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a82b26b5-6e0c-48e7-aec4-023098400e49
+		summarizeBy: sum
+		sourceColumn: PayAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NdisDocRef
+		dataType: string
+		lineageTag: 4a7b92eb-47fe-42e7-9cca-dc7fcbd8b9d5
+		summarizeBy: none
+		sourceColumn: NdisDocRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemNdisRef
+		dataType: string
+		lineageTag: 204dad35-905e-4ed0-abc2-30112df1defd
+		summarizeBy: none
+		sourceColumn: SupportItemNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimTypeNdisRef
+		dataType: string
+		lineageTag: fc607656-9360-451b-89ee-30a114446909
+		summarizeBy: none
+		sourceColumn: ClaimTypeNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CancelReasonNdisRef
+		dataType: string
+		lineageTag: 89a4af00-8f41-45a8-95c0-257db18acbec
+		summarizeBy: none
+		sourceColumn: CancelReasonNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchClaimNdisRef
+		dataType: string
+		lineageTag: 61dce968-8fa2-4e77-8ede-64d8e8b76ab5
+		summarizeBy: none
+		sourceColumn: BatchClaimNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceBookingNdisRef
+		dataType: string
+		lineageTag: d0fefd2b-8b45-4af2-95d9-d78ec8f126d8
+		summarizeBy: none
+		sourceColumn: ServiceBookingNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantNdisRef
+		dataType: string
+		lineageTag: d07caf61-777b-4c10-8f5d-9459b3c4cc86
+		summarizeBy: none
+		sourceColumn: ParticipantNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantName
+		dataType: string
+		lineageTag: 7c9c958c-3e94-4599-b9ea-5b624ff66b42
+		summarizeBy: none
+		sourceColumn: ParticipantName
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecordedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 65eb32c2-8f2b-48a9-ab63-f072078a8219
+		summarizeBy: none
+		sourceColumn: RecordedAt
+
+		variation Variation
+			isDefault
+			relationship: 254bf595-e0b2-4ab3-ae7a-7b99e2c79829
+			defaultHierarchy: LocalDateTable_2757480d-b6a8-4a23-83e8-a70f2de52b64.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NdisRemittanceAdviceItem = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NdisRemittanceAdviceItem = Source{[Schema="dbo",Item="NdisRemittanceAdviceItem"]}[Data]
+				in
+				    dbo_NdisRemittanceAdviceItem
+
+	annotation PBI_ResultType = Table
+

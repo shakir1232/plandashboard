@@ -1,0 +1,106 @@
+table NdisWebhookEvent
+	lineageTag: 55152123-aae7-4b0f-996e-2617a23ff4de
+
+	column Id
+		dataType: string
+		lineageTag: 8a2952a9-4389-4ea1-b134-b91ccf5cfe7a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisEventRef
+		dataType: string
+		lineageTag: ad43852a-5485-4a92-95ca-43bf40cbd0f2
+		summarizeBy: none
+		sourceColumn: NdisEventRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebhookUrl
+		dataType: string
+		lineageTag: 6e33b436-aa67-4cff-a24e-75d26defc815
+		summarizeBy: none
+		sourceColumn: WebhookUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency
+		dataType: string
+		lineageTag: dabcac7e-2d75-42ec-ba39-038aa6cf28a9
+		summarizeBy: none
+		sourceColumn: Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signature
+		dataType: string
+		lineageTag: 5aba9404-1e15-469c-8fd6-1d5283a0d7ab
+		summarizeBy: none
+		sourceColumn: Signature
+
+		annotation SummarizationSetBy = Automatic
+
+	column Algorithm
+		dataType: string
+		lineageTag: db299237-9877-4242-8c86-404aa91cbc6c
+		summarizeBy: none
+		sourceColumn: Algorithm
+
+		annotation SummarizationSetBy = Automatic
+
+	column BasicAuth
+		dataType: string
+		lineageTag: 7a3c62ea-b5c5-4a36-9953-38e1ff936bd1
+		summarizeBy: none
+		sourceColumn: BasicAuth
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f48965ed-b824-46ef-b149-f89e9955deee
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 15db390d-6300-494b-a659-921de8a71906
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsGlobalSubscription
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 405b6b33-a169-42bf-bf0e-eade18d410e4
+		summarizeBy: none
+		sourceColumn: IsGlobalSubscription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProxyAgencyId
+		dataType: string
+		lineageTag: d2165a44-4922-45f8-84d3-87ffd245b584
+		summarizeBy: none
+		sourceColumn: ProxyAgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NdisWebhookEvent = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NdisWebhookEvent = Source{[Schema="dbo",Item="NdisWebhookEvent"]}[Data]
+				in
+				    dbo_NdisWebhookEvent
+
+	annotation PBI_ResultType = Table
+

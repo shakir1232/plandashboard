@@ -1,0 +1,7 @@
+role role
+	modelPermission: read
+
+	tablePermission Agency = Agency[Email] = USERPRINCIPALNAME()
+
+	annotation PBI_Id = 6b78486f20a84919b84a0e68ee94e139
+

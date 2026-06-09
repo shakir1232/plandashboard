@@ -1,0 +1,191 @@
+table SupportCategory
+	lineageTag: a4ed52ce-3724-4eb0-9ff9-9b7269199ba5
+
+	column Id
+		dataType: string
+		lineageTag: 82e61bec-5424-44b7-ac3e-402775d04b92
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PurposeId
+		dataType: string
+		lineageTag: 9ebf5a85-fa7d-4715-8fa2-89da8cbfe1fe
+		summarizeBy: none
+		sourceColumn: PurposeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 6263a77b-02a1-45ac-9404-a378bc8ffd0b
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisNumRef
+		dataType: string
+		lineageTag: f9249246-c1fa-4315-8933-a168966938a1
+		summarizeBy: none
+		sourceColumn: NdisNumRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisDesc
+		dataType: string
+		lineageTag: 53d035a0-885c-4e96-ab55-db8fb75ebbb3
+		summarizeBy: none
+		sourceColumn: NdisDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: e59f9f64-27ec-440f-a77d-808942c06c94
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column SkipBudgetAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 002bb227-12ee-404a-bec9-160809fd5ade
+		summarizeBy: none
+		sourceColumn: SkipBudgetAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: 63550f98-980b-43e6-9b24-3998dd846577
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 9d4df56a-709b-40d5-b865-34d5692ab2fd
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2c681e23-c208-45f1-bec3-edc9ff5d2d02
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceOnly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4e15aae1-f7f6-4dce-b344-f6e16acb388c
+		summarizeBy: none
+		sourceColumn: IsPaceOnly
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceLabel
+		dataType: string
+		lineageTag: b6ecb612-a01e-4923-8373-e0be45876e43
+		summarizeBy: none
+		sourceColumn: PaceLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaceNdisRef
+		dataType: string
+		lineageTag: 61948252-ae22-4ad7-b9a0-7a7e6fb71cbb
+		summarizeBy: none
+		sourceColumn: PaceNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetType
+		dataType: string
+		lineageTag: c065dd45-1f06-4276-96d1-e710d36732af
+		summarizeBy: none
+		sourceColumn: BudgetType
+
+		annotation SummarizationSetBy = Automatic
+
+	column FundManagementTypes
+		dataType: string
+		lineageTag: 1f837dbc-31cc-4866-a798-7250bf89d4e3
+		summarizeBy: none
+		sourceColumn: FundManagementTypes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IgnoreBudgetLimitForPace
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cb70a9af-55ff-4d82-8ffc-025db357b702
+		summarizeBy: none
+		sourceColumn: IgnoreBudgetLimitForPace
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPacePinnedForClaim
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 66a62d17-f035-4d49-b359-ff4453706ba7
+		summarizeBy: none
+		sourceColumn: IsPacePinnedForClaim
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsNdiaManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9c189913-986a-4c5f-99b1-e56bff2a5181
+		summarizeBy: none
+		sourceColumn: IsNdiaManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortLabel
+		dataType: string
+		lineageTag: bbb26eb9-28de-4c63-990e-4323df7d4e5c
+		summarizeBy: none
+		sourceColumn: ShortLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlexibleBudget
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 48e646b7-f72d-4f6e-9a7c-b879c9148c37
+		summarizeBy: none
+		sourceColumn: FlexibleBudget
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisDescVariants
+		dataType: string
+		lineageTag: 7fae9135-c2c5-4fa2-bc35-3c3f40aac609
+		summarizeBy: none
+		sourceColumn: NdisDescVariants
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SupportCategory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_SupportCategory = Source{[Schema="dbo",Item="SupportCategory"]}[Data]
+				in
+				    dbo_SupportCategory
+
+	annotation PBI_ResultType = Table
+

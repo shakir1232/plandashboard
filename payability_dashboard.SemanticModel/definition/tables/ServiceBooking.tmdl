@@ -1,0 +1,198 @@
+table ServiceBooking
+	lineageTag: daf8c743-c6af-46f9-b7db-8cb8a3e3f225
+
+	column Id
+		dataType: string
+		lineageTag: 239a6e87-346e-4039-bba7-0bf97021b139
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: c5208bc1-856e-40b3-9fa9-93356a6fdf07
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 5fc44eb6-a6b6-4dcd-91e0-0deb7504fb73
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BookingTypeId
+		dataType: string
+		lineageTag: 1864c42e-8685-479d-bac9-b402b5988a8e
+		summarizeBy: none
+		sourceColumn: BookingTypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 81eabb89-e6d3-4895-b505-e7b9b8dd7665
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Initiator
+		dataType: string
+		lineageTag: e0cc342f-0897-46ae-b78c-bfdcfbd8effc
+		summarizeBy: none
+		sourceColumn: Initiator
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderComments
+		dataType: string
+		lineageTag: a55ff35b-57df-4620-a236-623bec95cf59
+		summarizeBy: none
+		sourceColumn: ProviderComments
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 078b0b07-0b98-49a2-93c6-a79de1fe029c
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: aba93678-ebd9-4bd9-8022-40cbcb6a499f
+			defaultHierarchy: LocalDateTable_6f813e82-91a6-47b0-aef0-48bb4a1a1733.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 84ab16d1-486b-4d15-a711-a6e9abcddf47
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: f30a5888-9528-4666-91cb-dc7e6b84faa0
+			defaultHierarchy: LocalDateTable_49696f07-41f6-4391-b51c-995e0a529050.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevisedEndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6a435e51-da74-4112-bf5a-f0c66960add7
+		summarizeBy: none
+		sourceColumn: RevisedEndDate
+
+		variation Variation
+			isDefault
+			relationship: f433471c-07b5-40fa-be09-bd4c3fa32972
+			defaultHierarchy: LocalDateTable_492a34c7-c0fd-48ff-a750-f66acb51ed00.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubmitDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 74eca3a9-4e5f-49dd-9e72-684da6120677
+		summarizeBy: none
+		sourceColumn: SubmitDate
+
+		variation Variation
+			isDefault
+			relationship: 9931da81-94bf-492e-a0d8-039d542c413e
+			defaultHierarchy: LocalDateTable_69752473-cb8d-41e7-a9d8-50871f7e3f9f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column VirtualStatusNdisDesc
+		dataType: string
+		lineageTag: c69d4fb4-3f89-49ed-9053-c58feb86aa7c
+		summarizeBy: none
+		sourceColumn: VirtualStatusNdisDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusNdisDesc
+		dataType: string
+		lineageTag: 00479d64-7532-4013-9b5f-9f8fdce0b75d
+		summarizeBy: none
+		sourceColumn: StatusNdisDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column BookingTypeNdisDesc
+		dataType: string
+		lineageTag: 9aa6014d-d23d-417c-8fb1-7b9438db954b
+		summarizeBy: none
+		sourceColumn: BookingTypeNdisDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column InkindProgram
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ad3dd253-6430-499b-ad4a-3cb75ffde37e
+		summarizeBy: none
+		sourceColumn: InkindProgram
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsBudgetExclude
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b1982af3-320b-4d2d-925e-04305169ad25
+		summarizeBy: none
+		sourceColumn: IsBudgetExclude
+
+		annotation SummarizationSetBy = Automatic
+
+	column SyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 97210b1b-12ad-4588-9911-d2a9b65cf2c7
+		summarizeBy: none
+		sourceColumn: SyncedAt
+
+		variation Variation
+			isDefault
+			relationship: d4549c3d-73b0-4b9a-9f38-5b3baa2ecdb2
+			defaultHierarchy: LocalDateTable_025cdf32-3fc5-4e7d-ae9a-45f61d036f90.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 46a713a7-8645-4833-a348-4d8be0ebd533
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 0fad1913-b1a4-43f5-96cd-587638c46f9c
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ServiceBooking = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ServiceBooking = Source{[Schema="dbo",Item="ServiceBooking"]}[Data]
+				in
+				    dbo_ServiceBooking
+
+	annotation PBI_ResultType = Table
+

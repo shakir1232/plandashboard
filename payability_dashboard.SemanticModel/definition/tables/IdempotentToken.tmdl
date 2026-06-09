@@ -1,0 +1,61 @@
+table IdempotentToken
+	lineageTag: 2790c6c8-03ae-41c3-8a89-22c4f6bfc9f1
+
+	column UserId
+		dataType: string
+		lineageTag: 2a988146-a728-426b-98e5-7d04dc712909
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TimeSegment
+		dataType: int64
+		formatString: 0
+		lineageTag: ff6d117c-cdf1-418a-bc25-1b4ec2433116
+		summarizeBy: sum
+		sourceColumn: TimeSegment
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataHash
+		dataType: string
+		lineageTag: b00f0b22-0740-42dd-8833-6990bfaf1bfe
+		summarizeBy: none
+		sourceColumn: DataHash
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionRef
+		dataType: string
+		lineageTag: 2bf42551-3c0f-4fc3-930b-eb7bc1bb4345
+		summarizeBy: none
+		sourceColumn: ActionRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 90eec7a8-e41a-4f6e-88f2-e2e94fe170d5
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: dd4ec10a-3501-49c4-b5d9-2ecab22c794c
+			defaultHierarchy: LocalDateTable_9402ccfd-e675-4e04-8957-795d8882d23f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition IdempotentToken = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_IdempotentToken = Source{[Schema="dbo",Item="IdempotentToken"]}[Data]
+				in
+				    dbo_IdempotentToken
+
+	annotation PBI_ResultType = Table
+

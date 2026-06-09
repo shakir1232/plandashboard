@@ -1,0 +1,52 @@
+table _impHoliday
+	lineageTag: a3c0dda4-63cd-44e0-a752-de0977fb455c
+
+	column Id
+		dataType: string
+		lineageTag: fff64019-53c1-4917-9b1b-1bb4c80a0b2e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 13ec6acd-70bc-4e08-9727-1b7ab5e0f1a4
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column States
+		dataType: string
+		lineageTag: 74875fed-0a97-499f-af3f-db1eaeb5294d
+		summarizeBy: none
+		sourceColumn: States
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bfeb9953-712e-4817-96f8-c5ba6497aff3
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: b55e6a72-fc87-4477-91e3-3dbf7e4743c7
+			defaultHierarchy: LocalDateTable_82a1999a-4d79-43d8-9a79-6a3714c2969f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _impHoliday = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo__impHoliday = Source{[Schema="dbo",Item="_impHoliday"]}[Data]
+				in
+				    dbo__impHoliday
+
+	annotation PBI_ResultType = Table
+

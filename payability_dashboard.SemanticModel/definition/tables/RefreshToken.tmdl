@@ -1,0 +1,107 @@
+table RefreshToken
+	lineageTag: feb1e2b9-1e6e-4b76-8335-2ccb398cf477
+
+	column Id
+		dataType: string
+		lineageTag: 266245f1-bf10-467f-a235-a3d56b59f8fe
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 66ce1ffa-7326-4117-8dff-809ff1ac266a
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expires
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2568597-8cbf-40aa-8b22-aaf99829c8df
+		summarizeBy: none
+		sourceColumn: Expires
+
+		variation Variation
+			isDefault
+			relationship: e89aba84-c9bd-4452-8052-b322e6c6e7e2
+			defaultHierarchy: LocalDateTable_ad0d4c9e-d22f-450e-8638-3b4028e2067c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceRef
+		dataType: string
+		lineageTag: 0ddd85d3-cec2-4cd2-a04d-703f4bc3d997
+		summarizeBy: none
+		sourceColumn: DeviceRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatorIpAddress
+		dataType: string
+		lineageTag: acf4fe2d-e82f-4cd8-9b8a-3ee2ee9cec37
+		summarizeBy: none
+		sourceColumn: CreatorIpAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 22c8dd69-e8f9-480e-921e-003984bb76b3
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: ad1fab13-7368-4948-bc73-8d29ceb3101f
+			defaultHierarchy: LocalDateTable_c1e9f6fd-0871-4133-8b86-50373d638211.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPersistent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c86131dd-7c7d-45ad-b1e2-8dc464fb6f1e
+		summarizeBy: none
+		sourceColumn: IsPersistent
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientType
+		dataType: string
+		lineageTag: 3aa835ae-afcf-451d-bf49-fb3099282acb
+		summarizeBy: none
+		sourceColumn: ClientType
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserDeviceId
+		dataType: string
+		lineageTag: 1f367e33-36b6-47e2-9677-4d11d3f9ca34
+		summarizeBy: none
+		sourceColumn: UserDeviceId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImpersonatorId
+		dataType: string
+		lineageTag: 9374d9da-33d8-411d-a826-57235c4ec620
+		summarizeBy: none
+		sourceColumn: ImpersonatorId
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RefreshToken = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_RefreshToken = Source{[Schema="dbo",Item="RefreshToken"]}[Data]
+				in
+				    dbo_RefreshToken
+
+	annotation PBI_ResultType = Table
+

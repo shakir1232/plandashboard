@@ -1,0 +1,67 @@
+table BillingRateTier
+	lineageTag: 589cd6ee-ae86-4f9d-a9ca-efa2fe01545c
+
+	column Id
+		dataType: string
+		lineageTag: b7169441-1e03-462a-af21-9262d83b368e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column RateCardId
+		dataType: string
+		lineageTag: 84705a11-3bf5-47c0-8adf-1a68d8b38557
+		summarizeBy: none
+		sourceColumn: RateCardId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 442b680e-ed8b-4f11-b476-f5dad99c02a7
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column TierLowerLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: a18dde37-66ee-420a-aaf2-f6c0be7f8597
+		summarizeBy: sum
+		sourceColumn: TierLowerLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column TierUpperLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: a98c4615-b8fa-48ed-aa3f-0dee110b9e71
+		summarizeBy: sum
+		sourceColumn: TierUpperLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column SaasFee
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c5ba8bc5-1cd4-4d21-bdff-e13c45694cc3
+		summarizeBy: sum
+		sourceColumn: SaasFee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition BillingRateTier = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BillingRateTier = Source{[Schema="dbo",Item="BillingRateTier"]}[Data]
+				in
+				    dbo_BillingRateTier
+
+	annotation PBI_ResultType = Table
+

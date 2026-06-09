@@ -1,0 +1,655 @@
+table Participant
+	lineageTag: e526f4f7-cebe-48a7-9a9e-c017d908f9d6
+
+	measure 'Participation Count' = DISTINCTCOUNT(Participant[Id])
+		formatString: 0
+		lineageTag: 0d2e7573-e7ed-4974-be9d-96f921ac2f39
+
+	measure 'Total Participation' =
+			
+			COUNTROWS(Participant)
+		formatString: 0
+		lineageTag: 2e69325a-cb17-4286-b29b-4919dc081fdc
+
+	column Id
+		dataType: string
+		lineageTag: 8d04f8a3-471e-484e-b429-367f9ef87345
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 5ac7ee11-f055-4b48-ad59-81d86d72ca64
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 78a1bfde-da2e-4282-845f-a7080d334b26
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentPlanId
+		dataType: string
+		lineageTag: 05cf8eff-82c3-4434-acdd-799f4a7317a7
+		summarizeBy: none
+		sourceColumn: CurrentPlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbId
+		dataType: string
+		lineageTag: 342a5a84-f0d0-41be-8884-56eb9b690da2
+		summarizeBy: none
+		sourceColumn: SuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 7bd123ab-ed9c-410a-a98f-510b5ea5e05a
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: cb1e5cf4-754b-4804-afa3-5a7ac3b5333f
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: 3274d4c2-0904-4459-bdb4-5b32ce6991de
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 0b477ecd-884d-4b48-bc6a-327ad8cba6d6
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: eabf7a04-5538-417c-ad7b-f8e823c5171a
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 119bbd32-6070-4d85-b094-a576d7ad93fd
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		variation Variation
+			isDefault
+			relationship: a9bea8aa-ef41-4cc9-8de1-a87f4b6e6629
+			defaultHierarchy: LocalDateTable_575616f3-5c0c-44e1-a3ad-a41d446f5ef5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 55084adc-4553-4c9c-8011-bbbe96dc2f07
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactEmail
+		dataType: string
+		lineageTag: d0927f06-8f79-4fa8-b3dc-3a89ac4d9614
+		summarizeBy: none
+		sourceColumn: ContactEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 8b589093-b56d-4c42-8faf-443185eb05aa
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 0bedb567-52b1-4232-ac25-2f0e3e0633ad
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommMethods
+		dataType: string
+		lineageTag: 900d8fba-8164-4b5f-9b5b-b3270f8b19e6
+		summarizeBy: none
+		sourceColumn: CommMethods
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: 3cebf443-6093-480c-a609-92d90c6de5eb
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: d6c306ad-0de0-40af-83a1-7d3ee9ef6a22
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: 47912962-348a-451e-8a7b-1393fce543a0
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimApprovalRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dce5c6f6-5805-4b2b-a93d-e554f9c85325
+		summarizeBy: none
+		sourceColumn: IsClaimApprovalRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsClaimApprover
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 58f5a4b4-9252-4bc4-8bdf-3d55ede0e406
+		summarizeBy: none
+		sourceColumn: IsClaimApprover
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlanReportReceiver
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 93d62751-0d02-4d26-ba86-be30cc0a39ab
+		summarizeBy: none
+		sourceColumn: IsPlanReportReceiver
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: accdf695-da37-4c6b-86ca-2451c4693432
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastComment
+		dataType: string
+		lineageTag: 9afa4ec2-3dbc-46a2-b55d-797a0efc6141
+		summarizeBy: none
+		sourceColumn: LastComment
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e4603d52-c59f-46b6-891a-b96c33fd9354
+		summarizeBy: none
+		sourceColumn: ActiveFrom
+
+		variation Variation
+			isDefault
+			relationship: 3970e9e0-501b-49a5-9833-f7de3ab0e69a
+			defaultHierarchy: LocalDateTable_50d1309b-d65b-4317-ad75-9fc6f0b54e2f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveTo
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 58f0d52c-a2ae-45ed-afee-65bb059659f2
+		summarizeBy: none
+		sourceColumn: ActiveTo
+
+		variation Variation
+			isDefault
+			relationship: 262f0efc-392d-49af-b08b-b35a80885787
+			defaultHierarchy: LocalDateTable_7cf40642-1d4f-4f76-b9ba-c14f3b95cd55.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsGrantPortalAccess
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d0a0c014-0b77-4f00-813c-5ec819d2cd20
+		summarizeBy: none
+		sourceColumn: IsGrantPortalAccess
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoBilling
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: efd799d9-7bd2-46dc-bc64-e07c54cf12ef
+		summarizeBy: none
+		sourceColumn: IsAutoBilling
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9c7f1971-8e53-4f4d-b875-b34304e008ed
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: a9a8af33-2fff-4408-a8ee-ea63df9201ca
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column SyncedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a364828c-508c-4d4d-bdb6-288a536f6446
+		summarizeBy: none
+		sourceColumn: SyncedAt
+
+		variation Variation
+			isDefault
+			relationship: 0faaacf8-916c-41c1-91a1-9df334c1e8e6
+			defaultHierarchy: LocalDateTable_85faacd7-387c-4d60-89b7-380cd6db753a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4183283c-e124-4f71-b9bc-4a8aa37ce686
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 5106a6dd-62ee-4193-879e-33586f4dcb14
+			defaultHierarchy: LocalDateTable_bfc6a190-c405-4463-8ccb-b4c66d699deb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3589fb2f-8112-47be-823d-a5832c63e453
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 31d5d27e-6a47-45b3-81e1-29990bfb9b85
+			defaultHierarchy: LocalDateTable_45f96a39-4915-498d-9f32-f4e8cfebc4c9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1c443149-b71f-4422-84bb-2c4cfa23ee15
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 8b80e9a9-7943-45c1-acf1-85da7f1d8268
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: efd9e02d-84df-406a-808f-a4228f3dec88
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 7c509e2c-e801-48f5-8ec4-974992ce81ea
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 695b8439-4680-4685-80a3-293217b34473
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column FocusAttachmentId
+		dataType: string
+		lineageTag: c6a48606-127e-4e5a-ac83-46a32e4b0ffd
+		summarizeBy: none
+		sourceColumn: FocusAttachmentId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessTempRef
+		dataType: string
+		lineageTag: 07ba92aa-3246-4e88-9e00-24a0bf7c5f82
+		summarizeBy: none
+		sourceColumn: ProcessTempRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column GenderId
+		dataType: string
+		lineageTag: 79bf54e9-00b0-4222-b18e-47698e31b4a4
+		summarizeBy: none
+		sourceColumn: GenderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PronounId
+		dataType: string
+		lineageTag: da4a0fa2-8fa7-4e2b-a4cf-c78e2ca38cc6
+		summarizeBy: none
+		sourceColumn: PronounId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryDisabilityId
+		dataType: string
+		lineageTag: c14da5b8-84c4-4115-932b-b164b966c987
+		summarizeBy: none
+		sourceColumn: PrimaryDisabilityId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreferredCommMethodId
+		dataType: string
+		lineageTag: 2df33ca8-0f8a-4442-a789-c78a97e6fb5c
+		summarizeBy: none
+		sourceColumn: PreferredCommMethodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthCountryId
+		dataType: string
+		lineageTag: 9d3107ad-28ee-4dea-8674-6ae19c26d85e
+		summarizeBy: none
+		sourceColumn: BirthCountryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegistrationId
+		dataType: string
+		lineageTag: c2133425-9f50-451a-8bd9-06c68aa83710
+		summarizeBy: none
+		sourceColumn: RegistrationId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpokenLanguages
+		dataType: string
+		lineageTag: 5743b61b-3513-4ae1-971f-78160648c93c
+		summarizeBy: none
+		sourceColumn: SpokenLanguages
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCulturallyDiverse
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4c166979-eb9d-4b04-b34b-87e8e088a7d9
+		summarizeBy: none
+		sourceColumn: IsCulturallyDiverse
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInterpreterRequired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f479e9fb-6085-45c1-8b76-02c9b55e0f10
+		summarizeBy: none
+		sourceColumn: IsInterpreterRequired
+
+		annotation SummarizationSetBy = Automatic
+
+	column InterpreterType
+		dataType: string
+		lineageTag: 78821503-2306-429f-8180-dfc15b776bb7
+		summarizeBy: none
+		sourceColumn: InterpreterType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PreferredName
+		dataType: string
+		lineageTag: fb6effbb-de77-4a4e-8acf-6725fe55c00e
+		summarizeBy: none
+		sourceColumn: PreferredName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IndigenousBackgroundId
+		dataType: string
+		lineageTag: 5d30f116-f01d-423c-8699-aba00b26b18c
+		summarizeBy: none
+		sourceColumn: IndigenousBackgroundId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRegionId
+		dataType: string
+		lineageTag: ca96584c-d12f-4080-a60a-d2d65d9c7f09
+		summarizeBy: none
+		sourceColumn: NdisRegionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceManaged
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 83273855-a5af-4165-84ff-99175cf29496
+		summarizeBy: none
+		sourceColumn: IsPaceManaged
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnBoardDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fc4326ee-5eb5-4d1e-ae8c-1e40ec348de0
+		summarizeBy: none
+		sourceColumn: OnBoardDate
+
+		variation Variation
+			isDefault
+			relationship: 1853f203-1229-4827-b7ca-af3bf4fe648a
+			defaultHierarchy: LocalDateTable_cacdc852-2879-48c1-8ce1-5f68a0c53a94.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column OffBoardDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f14cc9f5-8121-4187-922b-f362220750ba
+		summarizeBy: none
+		sourceColumn: OffBoardDate
+
+		variation Variation
+			isDefault
+			relationship: e00dd4f6-7a7a-45ba-a9d8-901dab0ea38e
+			defaultHierarchy: LocalDateTable_2aa2fbfe-2c89-4ce8-b382-ea35cd5787ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPlanReportSendByPost
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ca2158d9-43d4-4501-9892-f82f0b0a2b3c
+		summarizeBy: none
+		sourceColumn: IsPlanReportSendByPost
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlertAttachmentCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 015a6e21-885f-4ff9-831e-1b13b67e752b
+		summarizeBy: sum
+		sourceColumn: AlertAttachmentCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalRef
+		dataType: string
+		lineageTag: 119a27a2-1f11-4c49-90e1-254d2b90815e
+		summarizeBy: none
+		sourceColumn: ExternalRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlertNoteCount
+		dataType: int64
+		formatString: 0
+		lineageTag: bc3ce5f9-3756-4d88-bf55-4137f7e15841
+		summarizeBy: sum
+		sourceColumn: AlertNoteCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column FocusNoteId
+		dataType: string
+		lineageTag: 206e8574-6953-410b-9785-5120c401b576
+		summarizeBy: none
+		sourceColumn: FocusNoteId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsbSecondary
+		dataType: string
+		lineageTag: d60abf97-d3a1-4661-9bef-c40dad91c18e
+		summarizeBy: none
+		sourceColumn: BankBsbSecondary
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNameSecondary
+		dataType: string
+		lineageTag: caef0380-cb5e-43fd-bf23-f5fd480cc35a
+		summarizeBy: none
+		sourceColumn: BankAccountNameSecondary
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumberSecondary
+		dataType: string
+		lineageTag: eb816b96-506b-400b-8f9a-21b16083a513
+		summarizeBy: none
+		sourceColumn: BankAccountNumberSecondary
+
+		annotation SummarizationSetBy = Automatic
+
+	column LegacyRef
+		dataType: string
+		lineageTag: 47c2d774-107b-451f-a828-2da945e0e421
+		summarizeBy: none
+		sourceColumn: LegacyRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column TempRef
+		dataType: string
+		lineageTag: fa0effba-55a4-4494-b1ec-6e2a823f914d
+		summarizeBy: none
+		sourceColumn: TempRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceZoneId
+		dataType: string
+		lineageTag: 78979506-80c9-4f51-828b-4cb205c305ad
+		summarizeBy: none
+		sourceColumn: PriceZoneId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsServiceAgreementMandatory
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 95abae2b-e0b6-4233-891b-eb5242722813
+		summarizeBy: none
+		sourceColumn: IsServiceAgreementMandatory
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanCheckedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c1649f52-959a-4287-b242-e4234346ceb6
+		summarizeBy: none
+		sourceColumn: PlanCheckedAt
+
+		variation Variation
+			isDefault
+			relationship: 6bd34a3e-4d81-4772-9966-3297572ee569
+			defaultHierarchy: LocalDateTable_2d9217d7-e7b8-4630-80ba-c902e0b674f8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender Clean'
+		dataType: string
+		lineageTag: ae4cd33a-9e12-419f-95c4-4785c8bfb802
+		summarizeBy: none
+		sourceColumn: Gender Clean
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Participant = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Participant = Source{[Schema="dbo",Item="Participant"]}[Data],
+				    #"Added Conditional Column" = Table.AddColumn(dbo_Participant, "Gender Clean", each if [GenderId] = "GENDER_MALE" then "Male " else if [GenderId] = "GENDER_FEMALE" then "Female" else if [GenderId] = "GENDER_NO_DISCLOSE" then "No Disclosure" else if [GenderId] = "GENDER_UNSPECIFIED" then "Unspecified" else "Unknown")
+				in
+				    #"Added Conditional Column"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

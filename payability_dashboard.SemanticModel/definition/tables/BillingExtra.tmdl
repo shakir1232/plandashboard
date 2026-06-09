@@ -1,0 +1,175 @@
+table BillingExtra
+	lineageTag: ba54c0b5-7d36-48a7-8f6f-b0a1056a011b
+
+	column Id
+		dataType: string
+		lineageTag: 8151c7b9-dd52-4e80-a6bc-bafd2f04a02c
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: ede4208f-6d81-46bf-bb7f-16a47e3173d5
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillId
+		dataType: string
+		lineageTag: ef6c0f39-a0a2-4cc7-8870-50ba715c14a9
+		summarizeBy: none
+		sourceColumn: BillId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 7265f26b-d4dd-4a1b-8c6a-851d74a55e9e
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: ed7aff33-9fd2-43bd-9066-113ab9a8cf64
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a068e9c-8726-4d42-bbdc-23c5665d2699
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 13474f50-b41b-4a35-b32e-737aa1b4f55d
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ae89f2f4-a905-422d-a951-27a860d95c03
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column TotalAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 75b132d1-17eb-43ec-9b01-36bcd6e3e14f
+		summarizeBy: sum
+		sourceColumn: TotalAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Description
+		dataType: string
+		lineageTag: 20f92ca7-1f28-44a5-b5ce-d95068745196
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: f5bb995c-19b5-46a3-9594-83da19de6e64
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportingDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 798c4fa4-501b-40ef-84aa-f7a68d053087
+		summarizeBy: none
+		sourceColumn: ReportingDate
+
+		variation Variation
+			isDefault
+			relationship: e5d6b8ab-8e41-42ce-969d-af99aad11174
+			defaultHierarchy: LocalDateTable_3ada145e-d471-468c-a4b9-5f4d6d1b161e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 4ce21de3-6d58-4b8b-a126-17418dc773a5
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dd4defac-a00b-4f06-a13a-a09725c4742b
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: e810e0d8-0228-4ab8-b7d7-29d3eb345869
+			defaultHierarchy: LocalDateTable_51bf5980-057d-4eae-9931-4397f0a48579.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 6c0f508a-913c-42ae-bf64-21561997ca9d
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d7b17e5e-de72-4b6d-b185-b92662bc5b98
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column MyobItemCode
+		dataType: string
+		lineageTag: 98e10736-2d83-403e-a4bc-d6dae0b748b4
+		summarizeBy: none
+		sourceColumn: MyobItemCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BillingExtra = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BillingExtra = Source{[Schema="dbo",Item="BillingExtra"]}[Data]
+				in
+				    dbo_BillingExtra
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,93 @@
+table Note_20231008
+	lineageTag: c49c93b8-6873-4650-a2e1-fa66a0e86220
+
+	column Id
+		dataType: string
+		lineageTag: ca375fc6-2528-4f97-b93d-3b56278161e7
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 04120346-8590-48a0-83ce-e91214e6ea58
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderId
+		dataType: string
+		lineageTag: 4ab93a92-78aa-4d76-a0f6-0830838274c6
+		summarizeBy: none
+		sourceColumn: HolderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderType
+		dataType: string
+		lineageTag: 3843c6cf-e1da-42d8-8720-fa5651bc8b7e
+		summarizeBy: none
+		sourceColumn: HolderType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: d02a770e-39c8-4ab0-9224-d00c448751cf
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6f90db64-1514-463e-8c81-b039471d0f40
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: abfd744d-121a-4f53-b1d0-99539eb08437
+			defaultHierarchy: LocalDateTable_9eb61467-23ff-43c0-b134-e50a566b611f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d8d20b90-8c43-40ff-9f20-7b23d3fa51ed
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 594fafd5-0f2d-4ddc-b3aa-3029a9bf429e
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 17f157fb-ed70-4e37-91dc-c0781599179a
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Note_20231008 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Note_20231008 = Source{[Schema="dbo",Item="Note_20231008"]}[Data]
+				in
+				    dbo_Note_20231008
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,124 @@
+table ScanFilter_20230911
+	lineageTag: aa69626f-87a1-43c4-9843-d1a149340b37
+
+	column Id
+		dataType: string
+		lineageTag: ca52d78c-ef9a-47fc-a3ad-66b0495d15d7
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProfileId
+		dataType: string
+		lineageTag: 5f7c6ea9-05a8-47bf-9196-cb54130b61a7
+		summarizeBy: none
+		sourceColumn: ProfileId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FieldId
+		dataType: string
+		lineageTag: 2d476343-69db-4ba2-9622-b8dff1afe2f6
+		summarizeBy: none
+		sourceColumn: FieldId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 77b389a0-9bf7-46ed-9145-58f3198d5376
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Action
+		dataType: string
+		lineageTag: d74a2a6a-b53c-40db-80f1-0dac95d2805f
+		summarizeBy: none
+		sourceColumn: Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 967eee8f-c521-4703-9eb8-db818a95cad4
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column Regex
+		dataType: string
+		lineageTag: 9e1417e4-570a-4196-82df-fdd0b7dc17d9
+		summarizeBy: none
+		sourceColumn: Regex
+
+		annotation SummarizationSetBy = Automatic
+
+	column Replacer
+		dataType: string
+		lineageTag: af1aa8d5-117d-4a9c-bc4c-2c69e80b6877
+		summarizeBy: none
+		sourceColumn: Replacer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Format
+		dataType: string
+		lineageTag: 36e488c8-a102-4e30-a522-98cf6dbe15c5
+		summarizeBy: none
+		sourceColumn: Format
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: d3bbe730-374b-4384-b2e7-5198db3de669
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Rank
+		dataType: double
+		lineageTag: c2e05f51-8811-4835-a40b-c7b6f74bc6d3
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsBoosted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4f30c5e-618c-44f3-a6a0-5719f088bfd9
+		summarizeBy: none
+		sourceColumn: IsBoosted
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: eb9180bf-83b9-48ac-aba8-0ae1b72a615f
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ScanFilter_20230911 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ScanFilter_20230911 = Source{[Schema="dbo",Item="ScanFilter_20230911"]}[Data]
+				in
+				    dbo_ScanFilter_20230911
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,284 @@
+table Attachment
+	lineageTag: 6af6c601-7463-4e61-8e60-78152bd1c83e
+
+	column Id
+		dataType: string
+		lineageTag: 717ae9ce-fe21-44b0-92a3-f3b887892bd0
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 4fd8f0f3-ab68-4be8-b4d4-0e5ca1717163
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderId
+		dataType: string
+		lineageTag: 57399cd5-87da-4ff9-bacf-ba83042e96fd
+		summarizeBy: none
+		sourceColumn: HolderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HolderType
+		dataType: string
+		lineageTag: ed331bd0-830e-4fea-9a8c-428ebf2c96d5
+		summarizeBy: none
+		sourceColumn: HolderType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 22896325-2485-4c98-83ab-124eb9c8a676
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileKey
+		dataType: string
+		lineageTag: a19c2975-7412-4d31-ad2a-d13677ad9354
+		summarizeBy: none
+		sourceColumn: FileKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileName
+		dataType: string
+		lineageTag: 6935fdd1-b48c-4f14-9e7d-fbf88ad2e372
+		summarizeBy: none
+		sourceColumn: FileName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileSizeBytes
+		dataType: double
+		lineageTag: 43cef637-bb78-46d4-ba10-e56006677304
+		summarizeBy: sum
+		sourceColumn: FileSizeBytes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ContentType
+		dataType: string
+		lineageTag: 7657fd5f-da84-4a35-9af0-c21f68af6821
+		summarizeBy: none
+		sourceColumn: ContentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Container
+		dataType: string
+		lineageTag: b2286580-7424-4982-abbe-e6fc1c775ee3
+		summarizeBy: none
+		sourceColumn: Container
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 28248e46-799f-4cb9-ae97-4c93a805415f
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: b48c2c41-32c2-41dd-9fcc-d3e585734bad
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Annotation
+		dataType: string
+		lineageTag: 7cbfad58-cecd-4ab8-8906-424d63312d27
+		summarizeBy: none
+		sourceColumn: Annotation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Thumbnail
+		dataType: string
+		lineageTag: 66dd4400-27ce-4fed-95e6-7007ff6504f3
+		summarizeBy: none
+		sourceColumn: Thumbnail
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 29a48fa6-2157-4992-a9ef-c5b2310de36d
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 6c7d36a3-9d86-4249-a7bc-788abd14f0be
+			defaultHierarchy: LocalDateTable_3b7bf255-dcab-4918-9a06-873d332ffd10.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78d7ca73-06eb-4cb6-85f1-5a3434814a1d
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: 05c7053e-8c54-4dc8-85fa-bfee3f1487a9
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalPages
+		dataType: int64
+		formatString: 0
+		lineageTag: af52cc32-47f3-4fc4-a73b-d679bd48767a
+		summarizeBy: sum
+		sourceColumn: TotalPages
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: a814cd39-4738-4964-8928-4f538a5c42ae
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryId
+		dataType: string
+		lineageTag: 5fe4e585-e89e-49ea-8c95-49b633f7cdb5
+		summarizeBy: none
+		sourceColumn: CategoryId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 942ca68e-5bae-4a32-a79b-db8954ce9c05
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Note
+		dataType: string
+		lineageTag: 734c74b2-2199-462e-befa-522ac1e198dc
+		summarizeBy: none
+		sourceColumn: Note
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileContentType
+		dataType: string
+		lineageTag: 1ac0eb62-c8c4-48e5-a380-33dd7a19accb
+		summarizeBy: none
+		sourceColumn: FileContentType
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileTotalPages
+		dataType: int64
+		formatString: 0
+		lineageTag: d7222009-6a75-41dc-b7b2-a60fc1394e6e
+		summarizeBy: sum
+		sourceColumn: FileTotalPages
+
+		annotation SummarizationSetBy = Automatic
+
+	column FileContainer
+		dataType: string
+		lineageTag: 95f6ef34-26ef-45c8-a2eb-f0e9e7e5b4ea
+		summarizeBy: none
+		sourceColumn: FileContainer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 212ba610-7883-4538-9332-11049d4e0795
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsPinned
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 390a56d4-905b-42af-99cb-0199c58d08d9
+		summarizeBy: none
+		sourceColumn: IsPinned
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsInvoiceFile
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b49dd386-b65c-4803-9ddc-818ed4547e22
+		summarizeBy: none
+		sourceColumn: IsInvoiceFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 8582e2fc-6425-47a7-8924-b051e34958ce
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e5fb5d1b-0006-4124-80a2-8c3bc0e332e4
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: babdaee5-d499-49e1-b13e-f737eb569843
+			defaultHierarchy: LocalDateTable_e89a0c19-6d8b-44a6-aca8-ad295f803fed.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7d47f526-a10e-4e86-bbcf-fdd4656ed2e9
+		summarizeBy: none
+		sourceColumn: IsAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Attachment = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Attachment = Source{[Schema="dbo",Item="Attachment"]}[Data]
+				in
+				    dbo_Attachment
+
+	annotation PBI_ResultType = Table
+

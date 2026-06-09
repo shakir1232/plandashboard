@@ -1,0 +1,159 @@
+table BillingAdditionalCharge
+	lineageTag: 53923f00-e146-47d4-ab3c-8ce9499c4c10
+
+	column Id
+		dataType: string
+		lineageTag: 677458ec-08a2-4c60-817c-cc025c59f18f
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: e18d593d-5741-46a5-a5ea-c3af86fbcbb7
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillId
+		dataType: string
+		lineageTag: 55e1f1c0-3a95-4006-be28-9a165df872d0
+		summarizeBy: none
+		sourceColumn: BillId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: db033dd7-bad7-467a-833a-ceccb676fc30
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: a835b948-6c5c-4bc7-a584-635be3723e6b
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 33b45c3a-9d97-4941-8b79-c9c5fc487954
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 79b570e7-4803-41a6-b549-06d0bfa4d2f3
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column TotalAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8d6876d2-045f-4dc7-a532-b5e3a10b3aa6
+		summarizeBy: sum
+		sourceColumn: TotalAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Description
+		dataType: string
+		lineageTag: 1cc10665-b28f-471f-aa90-7e2ae449dbef
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 8985e259-c972-45c5-bd54-cd2c82f305c7
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportingDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9233a3b5-deae-4c67-81cf-a2e4c0491f9a
+		summarizeBy: none
+		sourceColumn: ReportingDate
+
+		variation Variation
+			isDefault
+			relationship: bb2ee7a2-1c10-4d94-86e3-3e6a58563d09
+			defaultHierarchy: LocalDateTable_bd014612-dbba-4344-9122-7e93a4800e20.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: d2d03556-ecc7-4726-a9a7-f5deab9eb15e
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 641c3daf-7168-43d1-9f9c-760aabbc38da
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: ea683cdb-2345-480e-bd03-63ae4504e4d9
+			defaultHierarchy: LocalDateTable_d2b587e6-4abc-4823-8dd6-747d5daa51c5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: d273a362-fd42-4f4d-a805-24be47b475d7
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e51b4a85-dae7-4aa6-89fa-48b71fe6dbf2
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BillingAdditionalCharge = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BillingAdditionalCharge = Source{[Schema="dbo",Item="BillingAdditionalCharge"]}[Data]
+				in
+				    dbo_BillingAdditionalCharge
+
+	annotation PBI_ResultType = Table
+

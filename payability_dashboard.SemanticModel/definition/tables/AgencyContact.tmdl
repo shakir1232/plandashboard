@@ -1,0 +1,147 @@
+table AgencyContact
+	lineageTag: 1dfac538-9c66-4e9a-a177-b92498aff92c
+
+	column Id
+		dataType: string
+		lineageTag: 1bd3e4b7-a009-4a6d-a0a6-50b63c2d860e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: bd8222bf-eb67-48d2-b930-45d5555b0fe8
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 377234d6-24db-456d-a5a8-60cd1c55b312
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 3b511dc6-02fa-464a-b7d7-8fa24f8e4467
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 19392255-b2a2-4c7f-bdfe-9a3cf87afe32
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: fecb333d-180a-4e2c-9b29-5fb8812af58d
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: a6ea65e9-af7e-4e97-9638-b0e33f063f11
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: fac19e3f-6e02-47f7-850f-bcdcbd245146
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a013a1a3-edd4-4ec3-9ba5-26d28ada736a
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 6bec872d-9133-44ab-aed6-19ec5758b11d
+			defaultHierarchy: LocalDateTable_05e9fc76-17c9-491e-8310-22fbf762c093.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b0a22f80-ce84-4d03-bd73-b2901fc70076
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 647389a9-e0c0-41fa-9feb-9dc6bf40e822
+			defaultHierarchy: LocalDateTable_4aab2c29-6478-48ae-8878-fdb7d86d9821.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1d6c71db-93f0-477b-8b8b-967eca5b271a
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: bda0419e-e329-4dff-ba36-464fab7e0992
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: 34bd74c7-7ddb-4af9-bc60-61b2812dec50
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 873aa47f-407d-4713-b24e-4639f38df519
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 3f60d733-f848-40b2-8e33-1e05ea19e7d5
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AgencyContact = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_AgencyContact = Source{[Schema="dbo",Item="AgencyContact"]}[Data]
+				in
+				    dbo_AgencyContact
+
+	annotation PBI_ResultType = Table
+

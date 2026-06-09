@@ -1,0 +1,89 @@
+table BudgetAdvice
+	lineageTag: 118e6b5b-74e6-4af8-8880-3770e9dc1879
+
+	column Id
+		dataType: string
+		lineageTag: a1248b85-8743-4a8d-afa8-6da0d13fd983
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: 4bc76173-ff8b-4c87-8098-34f4e28d7689
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportPurposeId
+		dataType: string
+		lineageTag: 64e05fe3-051c-4b13-972b-e8fc189021c0
+		summarizeBy: none
+		sourceColumn: SupportPurposeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column LevelRef
+		dataType: string
+		lineageTag: 3474fabf-31b0-4d26-af6e-5958035f0915
+		summarizeBy: none
+		sourceColumn: LevelRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threshold
+		dataType: double
+		lineageTag: c954098c-9a67-417e-9d59-86e15f006070
+		summarizeBy: sum
+		sourceColumn: Threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RecordedSpentRatio
+		dataType: double
+		lineageTag: ef03cfeb-5c9b-4469-baf3-0e48840f071d
+		summarizeBy: sum
+		sourceColumn: RecordedSpentRatio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cdc6600b-4b9b-4af7-b75a-ebc6b6f4dff1
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 57269f17-60e0-44e5-bc05-40bbe268de2b
+			defaultHierarchy: LocalDateTable_4ce740ae-9498-41f9-9996-3a2bc1722a5d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bc11d32c-8889-4106-8ff1-f28c49f021e4
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BudgetAdvice = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BudgetAdvice = Source{[Schema="dbo",Item="BudgetAdvice"]}[Data]
+				in
+				    dbo_BudgetAdvice
+
+	annotation PBI_ResultType = Table
+

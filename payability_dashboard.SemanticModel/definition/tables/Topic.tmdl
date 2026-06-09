@@ -1,0 +1,83 @@
+table Topic
+	lineageTag: cd6915fd-ea68-4d2b-b084-06d302f379ef
+
+	column Id
+		dataType: string
+		lineageTag: b592672a-cba2-42b0-a847-0544e2e9ebb9
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 7918937d-ba6c-4c98-9d88-df0cacad8fff
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 046a4588-490a-4bf9-a505-9e616e7968fb
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagCss
+		dataType: string
+		lineageTag: fe85b8c7-cf0e-49f9-9af1-8bc730fad659
+		summarizeBy: none
+		sourceColumn: FlagCss
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 5317b657-ebeb-4a11-8860-ba20e1cecd0b
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsStoreSnapshot
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5497ba9d-42a0-4694-904c-4770b11cb929
+		summarizeBy: none
+		sourceColumn: IsStoreSnapshot
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotReportPeriodInHours
+		dataType: int64
+		formatString: 0
+		lineageTag: 2eef1905-c695-48e0-b55c-6d2173e7273e
+		summarizeBy: sum
+		sourceColumn: SnapshotReportPeriodInHours
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 695ab5ed-2042-45ba-8633-8ab0bee37f1c
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Topic = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Topic = Source{[Schema="dbo",Item="Topic"]}[Data]
+				in
+				    dbo_Topic
+
+	annotation PBI_ResultType = Table
+

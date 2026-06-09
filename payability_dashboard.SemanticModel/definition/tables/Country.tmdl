@@ -1,0 +1,73 @@
+table Country
+	lineageTag: ae38c525-3d4f-4e77-8046-899628b47724
+
+	column Id
+		dataType: string
+		lineageTag: 4eaa4bc9-e211-4510-b167-d26b6332ddb9
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: aa25f2a8-9d67-4a25-aa1c-1eaa4c0e34b3
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlphaCode2
+		dataType: string
+		lineageTag: a0a7254e-1663-4acf-9d46-7639adcfc26b
+		summarizeBy: none
+		sourceColumn: AlphaCode2
+
+		annotation SummarizationSetBy = Automatic
+
+	column AlphaCode3
+		dataType: string
+		lineageTag: a034edea-779f-4b81-954f-46c3730ab0ac
+		summarizeBy: none
+		sourceColumn: AlphaCode3
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumericCode
+		dataType: string
+		lineageTag: e5eb915f-c8b1-4eb4-99b4-bf6793688370
+		summarizeBy: none
+		sourceColumn: NumericCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 11061910-fc9d-4643-9172-41352109a1fe
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3bb1efa4-a5b1-4c81-87d9-4ad2b22e4152
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Country = Source{[Schema="dbo",Item="Country"]}[Data]
+				in
+				    dbo_Country
+
+	annotation PBI_ResultType = Table
+

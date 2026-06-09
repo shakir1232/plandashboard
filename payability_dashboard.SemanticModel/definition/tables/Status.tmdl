@@ -1,0 +1,140 @@
+table Status
+	lineageTag: 0b851749-aaef-4865-bedb-a1eee08095af
+
+	column AGENCY_ACTIVE
+		dataType: string
+		lineageTag: 094b53e8-837d-4a0d-bd03-ed35bd25834f
+		summarizeBy: none
+		sourceColumn: AGENCY_ACTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGENCY
+		dataType: string
+		lineageTag: f2efc909-8ed1-4daa-ba26-ed6931d3a770
+		summarizeBy: none
+		sourceColumn: AGENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column Active
+		dataType: string
+		lineageTag: 5160c603-527e-4770-b7d1-e00cf5a0ca90
+		summarizeBy: none
+		sourceColumn: Active
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 08d3fbd6-532f-46da-afb2-c1f188d37ee7
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 0693cb02-37b1-4ea9-bf54-9cc3a1062897
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: e65c6a7d-f4d9-4245-ab02-785faec213cb
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 1
+		dataType: int64
+		formatString: 0
+		lineageTag: ba3da17a-f4ec-447a-aeb8-01a10f2696ac
+		summarizeBy: sum
+		sourceColumn: 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column true
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 11dcdf4a-e024-4a49-9e2c-8be5c891a764
+		summarizeBy: none
+		sourceColumn: true
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 3d9db6a5-1140-4e61-b810-d75b46e456f1
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: b19149e1-c70c-4e37-823b-a6964d7d5bd6
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: 518b59dd-2cb8-4e0e-8b3c-8a4578514401
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: 63d6befc-b544-47b6-9116-eaa170b7d1a9
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: 86ff04b8-c27c-4bb2-b60a-4ec12373e155
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column14
+		dataType: string
+		lineageTag: b4a3d3f0-7fbf-461b-a198-b3792528de46
+		summarizeBy: none
+		sourceColumn: Column14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: 5e9d1adf-51c8-42c4-a191-1b1d46fe549d
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Status = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Status = Source{[Schema="dbo",Item="Status"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(dbo_Status, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"AGENCY_ACTIVE", type text}, {"AGENCY", type text}, {"Active", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"1", Int64.Type}, {"true", type logical}, {"Column9", type any}, {"Column10", type any}, {"Column11", type any}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

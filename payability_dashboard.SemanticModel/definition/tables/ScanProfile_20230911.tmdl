@@ -1,0 +1,187 @@
+table ScanProfile_20230911
+	lineageTag: 65460b3a-3b93-4c05-994c-f1d28ec9dcb7
+
+	column Id
+		dataType: string
+		lineageTag: 28efef98-3f60-4a10-96ef-75fa42c26ccf
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 87016a24-ecf9-487f-af1e-2005d97bcaa9
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyAbn
+		dataType: string
+		lineageTag: 5de88e84-6a76-44ed-a89c-dc897c6d342b
+		summarizeBy: none
+		sourceColumn: CompanyAbn
+
+		annotation SummarizationSetBy = Automatic
+
+	column OcrModelRef
+		dataType: string
+		lineageTag: 8d6d924c-e4c2-44a0-9549-99e95e8fb0de
+		summarizeBy: none
+		sourceColumn: OcrModelRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsApplyExtendedRules
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c2e163cd-7f40-4a7b-8f3e-fed4a9a8d14b
+		summarizeBy: none
+		sourceColumn: IsApplyExtendedRules
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2c08c9ca-2ea7-4916-bed7-2f9d1f991069
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessId
+		dataType: string
+		lineageTag: 44ab2c64-b0b0-48bf-a954-6836ed2c3364
+		summarizeBy: none
+		sourceColumn: BusinessId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsApplyLinesTableExtractMethod
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fa0609d2-ad16-4157-a433-c40248c24b0f
+		summarizeBy: none
+		sourceColumn: IsApplyLinesTableExtractMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinesTableColumnCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 3955d6e9-f6ba-4790-b3f3-571cbcda513c
+		summarizeBy: sum
+		sourceColumn: LinesTableColumnCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineSupportItemColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: df9dca5e-8d2e-4d57-acdc-e88e871eb916
+		summarizeBy: sum
+		sourceColumn: LineSupportItemColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineStartDateColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 97d45cf2-8eb5-48f3-a4a6-9108493b6bd9
+		summarizeBy: sum
+		sourceColumn: LineStartDateColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineEndDateColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 43e020a5-6d60-4dcb-9642-ed3445c76986
+		summarizeBy: sum
+		sourceColumn: LineEndDateColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineQuantityColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: f553f4bd-863c-45c2-bd6a-8507ea624eb9
+		summarizeBy: sum
+		sourceColumn: LineQuantityColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineUnitPriceColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 31e66a26-738a-41b6-9f3d-89a02864d868
+		summarizeBy: sum
+		sourceColumn: LineUnitPriceColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineTotalColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: d98c7a0e-d653-4409-9e51-7d92413bee52
+		summarizeBy: sum
+		sourceColumn: LineTotalColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineClaimTypeColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: f0aa3cd5-3087-4f52-ab2c-4a4b8003c2aa
+		summarizeBy: sum
+		sourceColumn: LineClaimTypeColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineTaxCodeColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: d35f6eed-bbc4-469f-9126-4ef81ea3e92b
+		summarizeBy: sum
+		sourceColumn: LineTaxCodeColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinesTableColumnHints
+		dataType: string
+		lineageTag: 071db268-9e51-4c7e-bf3d-f4f0716ed2e2
+		summarizeBy: none
+		sourceColumn: LinesTableColumnHints
+
+		annotation SummarizationSetBy = Automatic
+
+	column FilterExclusions
+		dataType: string
+		lineageTag: 52fc4628-bbd1-4ef7-922c-af6f27e5b301
+		summarizeBy: none
+		sourceColumn: FilterExclusions
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineDescriptionColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 5daf7825-1c1c-4497-b9ec-06153538551e
+		summarizeBy: sum
+		sourceColumn: LineDescriptionColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ScanProfile_20230911 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ScanProfile_20230911 = Source{[Schema="dbo",Item="ScanProfile_20230911"]}[Data]
+				in
+				    dbo_ScanProfile_20230911
+
+	annotation PBI_ResultType = Table
+

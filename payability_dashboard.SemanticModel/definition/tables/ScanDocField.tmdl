@@ -1,0 +1,58 @@
+table ScanDocField
+	lineageTag: 9181bd84-e04d-4edf-b40c-88828a8cc609
+
+	column Id
+		dataType: string
+		lineageTag: 3cfc97e2-e461-4d81-b521-90971e362cb2
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: b2358c0d-8643-4219-9afe-d437d6a67f8c
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsGeneric
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 80c9c456-2f59-4833-a264-367a3cb4a6f0
+		summarizeBy: none
+		sourceColumn: IsGeneric
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFormatApplicable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 65e219a5-e0c3-4431-8e28-37069bb62e57
+		summarizeBy: none
+		sourceColumn: IsFormatApplicable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: c82aeb8d-0c97-40fa-bb25-1b8ca8f872d3
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition ScanDocField = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ScanDocField = Source{[Schema="dbo",Item="ScanDocField"]}[Data]
+				in
+				    dbo_ScanDocField
+
+	annotation PBI_ResultType = Table
+

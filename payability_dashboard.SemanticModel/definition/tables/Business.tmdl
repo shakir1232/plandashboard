@@ -1,0 +1,199 @@
+table Business
+	lineageTag: 4e1d4141-1805-4a98-913d-160fd42b5dc3
+
+	column Id
+		dataType: string
+		lineageTag: b5fe076d-ad74-4fa6-a53e-2aeb35dad585
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abn
+		dataType: string
+		lineageTag: 24070c7a-9670-47cf-b647-95f1e9e044bd
+		summarizeBy: none
+		sourceColumn: Abn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: bde99137-8789-46ac-9305-e32cf5a6d82f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAbnActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 273ade7d-0c51-4e3b-a9da-c202e854540f
+		summarizeBy: none
+		sourceColumn: IsAbnActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAbnVerified
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 008815b6-00a6-4f68-8042-93040f52b210
+		summarizeBy: none
+		sourceColumn: IsAbnVerified
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbnStatus
+		dataType: string
+		lineageTag: ec51d6b3-a30d-47cb-9c98-2cded7cfd3a8
+		summarizeBy: none
+		sourceColumn: AbnStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbnCheckedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2c9ff094-6994-4e3e-bc82-5a5d1db1ae04
+		summarizeBy: none
+		sourceColumn: AbnCheckedAt
+
+		variation Variation
+			isDefault
+			relationship: 27e31474-2222-44a5-a678-86eeb8315a32
+			defaultHierarchy: LocalDateTable_386640e8-2258-4339-aab8-5c91a96c61a4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanRating
+		dataType: int64
+		formatString: 0
+		lineageTag: 002efc0f-b968-43e1-a5f9-f2e4cd6f11a1
+		summarizeBy: sum
+		sourceColumn: ScanRating
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fcb6bb27-b4a0-4c0c-ae0b-9df0b36b3829
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 74722de2-af29-420b-9045-7629be9cbbdc
+			defaultHierarchy: LocalDateTable_d2e3daee-93df-4647-b6b9-d0b88b0401c2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7334a900-2469-44c4-9dd5-a54d08e9b243
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalProviderCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 294b7663-84bb-4aae-86b5-948d7b07159c
+		summarizeBy: sum
+		sourceColumn: TotalProviderCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActiveProviderCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 947a0ccd-926f-4a50-b1d2-8d25ed65ca7e
+		summarizeBy: sum
+		sourceColumn: ActiveProviderCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanServiceProvider
+		dataType: string
+		lineageTag: f7c52ba9-7755-4d9d-b206-5b960d05fcc0
+		summarizeBy: none
+		sourceColumn: ScanServiceProvider
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanRatingExternal
+		dataType: int64
+		formatString: 0
+		lineageTag: 0da55a6b-422b-4fb8-ac6c-7976491adae0
+		summarizeBy: sum
+		sourceColumn: ScanRatingExternal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScanTips
+		dataType: string
+		lineageTag: 1367f554-b9e7-45ae-b193-0766b9c6968f
+		summarizeBy: none
+		sourceColumn: ScanTips
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbrEntityName
+		dataType: string
+		lineageTag: 24a2f2e6-1231-48c1-9bcb-db4a555552e1
+		summarizeBy: none
+		sourceColumn: AbrEntityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbrEntityTypeCode
+		dataType: string
+		lineageTag: d23317b1-5a12-4254-8850-4f869f4ba1b9
+		summarizeBy: none
+		sourceColumn: AbrEntityTypeCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbrEntityTypeName
+		dataType: string
+		lineageTag: 1ebbf9f4-8383-416e-a85f-28609e6571db
+		summarizeBy: none
+		sourceColumn: AbrEntityTypeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbrBusinessNames
+		dataType: string
+		lineageTag: de68319f-3c7d-44ba-8f83-8989b598d9fd
+		summarizeBy: none
+		sourceColumn: AbrBusinessNames
+
+		annotation SummarizationSetBy = Automatic
+
+	column AbnStatusEffectiveFrom
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 33302f9f-8351-43f7-8055-80bbbe781d10
+		summarizeBy: none
+		sourceColumn: AbnStatusEffectiveFrom
+
+		variation Variation
+			isDefault
+			relationship: 44874e34-2fff-4a35-a58a-0605838b2b39
+			defaultHierarchy: LocalDateTable_c5961b16-82c9-4085-82a7-64294818c10b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Business = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Business = Source{[Schema="dbo",Item="Business"]}[Data]
+				in
+				    dbo_Business
+
+	annotation PBI_ResultType = Table
+

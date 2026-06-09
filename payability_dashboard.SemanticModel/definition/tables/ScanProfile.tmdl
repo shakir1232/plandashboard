@@ -1,0 +1,335 @@
+table ScanProfile
+	lineageTag: 71bdcb02-a2c2-4440-9ba7-970cf2537b37
+
+	column Id
+		dataType: string
+		lineageTag: 82a1bcb1-511c-43f5-9297-fd5e8fdececb
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 823bcdba-6646-49d5-8d3f-c7ced9bb18a5
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyAbn
+		dataType: string
+		lineageTag: d199af54-335e-4d14-bea2-1f761cb52140
+		summarizeBy: none
+		sourceColumn: CompanyAbn
+
+		annotation SummarizationSetBy = Automatic
+
+	column OcrModelRef
+		dataType: string
+		lineageTag: 47fba5f1-64c5-4ba3-8aa1-b9bc9e201897
+		summarizeBy: none
+		sourceColumn: OcrModelRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessId
+		dataType: string
+		lineageTag: 6e7a66b3-f02d-40c3-9e6e-ad564e7ae4dc
+		summarizeBy: none
+		sourceColumn: BusinessId
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsApplyLinesTableExtractMethod
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2faaa24f-32d8-416a-a308-8d160549ae47
+		summarizeBy: none
+		sourceColumn: IsApplyLinesTableExtractMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinesTableColumnCount
+		dataType: int64
+		formatString: 0
+		lineageTag: b222c6ac-eb99-444e-bb3c-3d83357f6fff
+		summarizeBy: sum
+		sourceColumn: LinesTableColumnCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinesTableColumnHints
+		dataType: string
+		lineageTag: a0dc010d-206c-4e90-8db5-0e89a37fafb2
+		summarizeBy: none
+		sourceColumn: LinesTableColumnHints
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineDescriptionColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: ae34f77e-2c06-472a-aa8c-f1924c4a7c0b
+		summarizeBy: sum
+		sourceColumn: LineDescriptionColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineSupportItemColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 8aa3fde3-0a3a-4afc-8404-cdf2ecedf7d3
+		summarizeBy: sum
+		sourceColumn: LineSupportItemColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineStartDateColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c0dd7a4-22a2-4fe1-a0db-4378635cd8ab
+		summarizeBy: sum
+		sourceColumn: LineStartDateColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineEndDateColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: e26f5174-ef8e-485c-ab7b-aa08b06b6b56
+		summarizeBy: sum
+		sourceColumn: LineEndDateColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineQuantityColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: aaa196fe-3a12-4a85-9400-55ed6f5df212
+		summarizeBy: sum
+		sourceColumn: LineQuantityColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineUnitPriceColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: d1d137bc-5439-4fe0-a1ea-704e3f590abb
+		summarizeBy: sum
+		sourceColumn: LineUnitPriceColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineTotalColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: e1e7fefc-2443-4bd6-b8d4-176b56222ae6
+		summarizeBy: sum
+		sourceColumn: LineTotalColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineClaimTypeColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 066868c2-c868-4e28-9fd9-52e2a4d1500b
+		summarizeBy: sum
+		sourceColumn: LineClaimTypeColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineTaxCodeColumnIndex
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d9d041e-8147-40c7-ba42-8b95f5d2a29c
+		summarizeBy: sum
+		sourceColumn: LineTaxCodeColumnIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column FilterExclusions
+		dataType: string
+		lineageTag: 1cd00222-9712-4127-bf36-9bd92c89c36f
+		summarizeBy: none
+		sourceColumn: FilterExclusions
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantNdisRefExclusions
+		dataType: string
+		lineageTag: f5060579-c6f6-4f9d-ac13-a94e04dd457a
+		summarizeBy: none
+		sourceColumn: ParticipantNdisRefExclusions
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceNumberExclusions
+		dataType: string
+		lineageTag: da912f1b-3ab3-4cfc-9992-59030e60a88e
+		summarizeBy: none
+		sourceColumn: InvoiceNumberExclusions
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsReleaseCandidate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6c87eb51-dfd3-466b-aca2-f66800d384b8
+		summarizeBy: none
+		sourceColumn: IsReleaseCandidate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReleaseNotes
+		dataType: string
+		lineageTag: d26c4eb6-2ddc-4406-a722-d80dd9cedb26
+		summarizeBy: none
+		sourceColumn: ReleaseNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a7e85623-dbee-4a43-8719-180c28ea7d35
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 912b118f-ed18-4fc9-95d7-21bdd5972cf1
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: ee8f0d5d-fa35-49d5-a218-6e594b8f24fe
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6d771296-cba6-4aac-ad76-de122eadd1a5
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: dc345f88-ec3a-40ed-a417-eaf37dae8b24
+			defaultHierarchy: LocalDateTable_0043858c-af5d-489b-bf77-cb926416e635.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MissingFields
+		dataType: string
+		lineageTag: 786e4844-6866-4f38-9313-e22e8b84a643
+		summarizeBy: none
+		sourceColumn: MissingFields
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRecheckWithTableExtractMethod
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 341c8359-e85e-4765-8675-a78bf0e3861c
+		summarizeBy: none
+		sourceColumn: IsRecheckWithTableExtractMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsMultiAbnInvoice
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d3962e7f-1b2a-4916-83d3-ef64ca5d4c31
+		summarizeBy: none
+		sourceColumn: IsMultiAbnInvoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrimaryAbnRegex
+		dataType: string
+		lineageTag: 17446618-ba95-4864-9891-2760297187b4
+		summarizeBy: none
+		sourceColumn: PrimaryAbnRegex
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLinesGroupedByDate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4989db23-3ea5-48d1-9e24-37beb7ffa6a8
+		summarizeBy: none
+		sourceColumn: IsLinesGroupedByDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterId
+		dataType: string
+		lineageTag: 5b8401a8-f2ae-4196-977e-c4ac61c6dd66
+		summarizeBy: none
+		sourceColumn: MasterId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DistinctPhrases
+		dataType: string
+		lineageTag: e2932143-32eb-422f-943d-2ebec0d1c7a3
+		summarizeBy: none
+		sourceColumn: DistinctPhrases
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: e2ff0d1b-2f20-48ee-b2c8-947668121faa
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsFlattenInvoiceFile
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2fb527d7-ce53-49ab-ad5d-90d727d2a532
+		summarizeBy: none
+		sourceColumn: IsFlattenInvoiceFile
+
+		annotation SummarizationSetBy = Automatic
+
+	column AdditionalAbns
+		dataType: string
+		lineageTag: 6d0f30dd-8b36-483a-8220-93bf95a33cc2
+		summarizeBy: none
+		sourceColumn: AdditionalAbns
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineSkipRegex
+		dataType: string
+		lineageTag: a2abc45f-6a08-4301-a04d-d1dadd176b43
+		summarizeBy: none
+		sourceColumn: LineSkipRegex
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ScanProfile = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ScanProfile = Source{[Schema="dbo",Item="ScanProfile"]}[Data]
+				in
+				    dbo_ScanProfile
+
+	annotation PBI_ResultType = Table
+

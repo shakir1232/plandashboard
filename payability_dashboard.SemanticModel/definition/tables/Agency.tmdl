@@ -1,0 +1,644 @@
+table Agency
+	lineageTag: ac93480a-ac0c-48ee-92b9-7bdc34f5b894
+
+	measure Agency_count = DISTINCTCOUNT(Agency[Id])
+		formatString: 0
+		lineageTag: a205bebf-0185-4c01-989a-b67312e45600
+
+	measure 'Offboard Agencies' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Agency[Id]),
+			    Agency[StatusId] = "AGENCY_OFFBOARDING"
+			)
+		formatString: 0
+		lineageTag: 2117b8ae-53a4-4ac1-8984-fbef892e7633
+
+	measure OffboardingAgency =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(Agency[Id]),
+			    Agency[StatusId] = "AGENCY_OFFBOARDING"
+			)
+		formatString: 0
+		lineageTag: bf267e64-8171-4ea2-ac6f-2e421f29ebe6
+
+	measure 'Total Agencies Prev 3M' =
+			
+			VAR EndDate = TODAY()
+			VAR StartDate = EDATE(EndDate, -3)
+			
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( Agency ),
+			    FILTER (
+			        ALL ( Agency ),
+			        DATEVALUE ( Agency[CreatedAt] ) >= StartDate
+			            && DATEVALUE ( Agency[CreatedAt] ) < EndDate
+			    )
+			)
+		formatString: 0
+		lineageTag: 25dd8364-e8da-4518-8739-06e31b3c75a7
+
+	measure 'Agency Change' =
+			
+			Agency[Agency_count] - [Total Agencies Prev 3M]
+		formatString: 0
+		lineageTag: 03adee6b-82be-4b0f-8060-64b59f1cfd41
+
+	measure 'Agencies This Month' =
+			
+			VAR _StartOfMonth = DATE ( YEAR ( TODAY() ), MONTH ( TODAY() ), 1 )
+			VAR _StartOfNextMonth = EOMONTH ( TODAY(), 0 ) + 1
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( Agency ),
+			    FILTER (
+			        ALL ( Agency ),
+			        DATEVALUE ( Agency[CreatedAt] ) >= _StartOfMonth
+			            && DATEVALUE ( Agency[CreatedAt] ) < _StartOfNextMonth
+			    )
+			)
+		formatString: 0
+		lineageTag: 140fd49d-a3b1-44ec-920d-81ebc4f301a0
+
+	measure 'Agencies Previous Month' =
+			
+			VAR _StartOfPrevMonth = EOMONTH ( TODAY(), -2 ) + 1
+			VAR _StartOfThisMonth = DATE ( YEAR ( TODAY() ), MONTH ( TODAY() ), 1 )
+			RETURN
+			CALCULATE (
+			    COUNTROWS ( Agency ),
+			    FILTER (
+			        ALL ( Agency ),
+			        DATEVALUE ( Agency[CreatedAt] ) >= _StartOfPrevMonth
+			            && DATEVALUE ( Agency[CreatedAt] ) < _StartOfThisMonth
+			    )
+			)
+		formatString: 0
+		lineageTag: 19ccaff6-88d1-460a-aff9-523349f7b1b3
+
+	measure 'Agency Monthly Growth' =
+			
+			COALESCE ( [Agencies This Month], 0 ) - COALESCE ( [Agencies Previous Month], 0 )
+		formatString: 0
+		lineageTag: b51e5a05-fa5f-4c5a-acde-22d7b1c7b436
+
+	measure 'Agency Monthly Change Display' =
+			
+			VAR _Change = [Agency Monthly Growth]
+			RETURN
+			IF (
+			    _Change > 0,
+			    "+" & FORMAT ( _Change, "0" ),
+			    FORMAT ( _Change, "0" )
+			)
+		lineageTag: dc804128-ba4f-4c6e-8b2a-8100de252d0c
+
+	measure 'Agency Trendy Icon' =
+			
+			IF (
+			    [Agency Monthly Growth] >= 0,
+			    UNICHAR(9650),   -- green
+			    UNICHAR(9660)    -- red
+			)
+		lineageTag: 409788c5-55db-47c9-9bd9-b68cfef14c44
+
+	measure 'Agency Trend Display' =
+			
+			VAR _Growth = COALESCE ( [Agency Monthly Growth], 0 )
+			VAR _Icon =
+			    IF ( _Growth >= 0, UNICHAR ( 9650 ), UNICHAR ( 9660 ) )
+			RETURN
+			_Icon & " " &
+			IF (
+			    _Growth > 0,
+			    "+" & FORMAT ( _Growth, "0" ),
+			    FORMAT ( _Growth, "0" )
+			)
+		lineageTag: 8f54ea87-529b-4d55-9878-9d513621eb25
+
+	measure 'Agency Trend Color' = ```
+			
+			VAR _Growth =
+			    COALESCE ( [Agency Monthly Growth], 0 )
+			
+			RETURN
+			IF (
+			    _Growth >= 0,
+			    "#8BC45B",
+			    "#F3A6A6"
+			) 
+			```
+		lineageTag: 9d4d5ecc-affc-4091-8044-728ed8c85881
+
+	measure 'Status Count' = COUNT(agency[statusnew])
+		formatString: 0
+		lineageTag: 05c42999-7890-492e-b887-d12c7d9000c7
+
+	measure LegendLabel =
+			
+			VAR TotalCount =
+			    CALCULATE(
+			        COUNTROWS(agency),
+			        ALL(agency)
+			    )
+			
+			VAR CurrentCount =
+			    CALCULATE(
+			        COUNTROWS(agency)
+			    )
+			
+			VAR PercentValue =
+			    DIVIDE(CurrentCount, TotalCount)
+			
+			RETURN
+			Agency[Status Count]
+			    & " "
+			    & CurrentCount
+			    & " ("
+			    & FORMAT(PercentValue, "0%")
+			    & ")"
+		lineageTag: ab41b280-dbb1-4bd7-877d-92e4ccc458e6
+
+	measure 'Onboarding Count' =
+			
+			CALCULATE(
+			    COUNTROWS(Agency),
+			    Agency[StatusNew] = "ONBOARDING"
+			)
+		formatString: 0
+		lineageTag: 25816a88-bf3e-408b-b0a5-59bc78ca6e69
+
+	measure 'Offboarding Count' =
+			
+			CALCULATE(
+			    COUNTROWS(Agency),
+			    Agency[StatusNew] = "OFFBOARDING"
+			)
+		formatString: 0
+		lineageTag: b069bfc5-d58c-4149-8b8c-e89f665e3abd
+
+	column Id
+		dataType: string
+		lineageTag: abc677c3-e7f5-40aa-a131-4df4c7b55631
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: 177068b0-8d21-46ad-94b2-0addcd4d1cd2
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbId
+		dataType: string
+		lineageTag: 698cda06-7e16-4d9a-9d47-c739e12cf9a5
+		summarizeBy: none
+		sourceColumn: SuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TokenCustomerRef
+		dataType: string
+		lineageTag: 305cad2e-a76f-40cf-a95f-03ba2e91e537
+		summarizeBy: none
+		sourceColumn: TokenCustomerRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: 9da03a77-df57-40b7-a3a3-0164529b14f9
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Code
+		dataType: string
+		lineageTag: b98dc2c1-8347-4af8-913c-a11bfbc47218
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 24e5ce36-7c9c-47fc-bcda-c80aefc39996
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: b249af7f-ffd7-4f55-8b64-5f138e01833a
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Abn
+		dataType: string
+		lineageTag: 8ad6dbb5-8daf-4cf0-9e18-6d3012af91b3
+		summarizeBy: none
+		sourceColumn: Abn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: d275b4a0-5406-420d-b92f-aa732d34e5af
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLocked
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cbf6a589-bb1f-4c14-ae6a-5e6748a4ef6d
+		summarizeBy: none
+		sourceColumn: IsLocked
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockIssue
+		dataType: string
+		lineageTag: a1795367-729f-4095-a4d7-895c67f6c347
+		summarizeBy: none
+		sourceColumn: LockIssue
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 76b75f20-c11f-4c62-ac52-fe18103b1f6f
+		summarizeBy: none
+		sourceColumn: LockedAt
+
+		variation Variation
+			isDefault
+			relationship: a299e91e-c69f-4021-9772-3ff6da862ea0
+			defaultHierarchy: LocalDateTable_37a6fee1-f11a-4796-8f3b-1daf677288ba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LockGraceEnd
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cfc0d852-5acb-4d58-95d6-a2f91772df2e
+		summarizeBy: none
+		sourceColumn: LockGraceEnd
+
+		variation Variation
+			isDefault
+			relationship: 2ef7a6ce-bfb1-4a30-b750-ce0a28adbbf2
+			defaultHierarchy: LocalDateTable_c42226f3-f25b-4ce2-9e77-66b72aab3cae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: eae15f21-7db4-4c35-a48c-35ba102ecb82
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		lineageTag: 8a164b23-012a-4365-b08b-4562918af088
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContactName
+		dataType: string
+		lineageTag: c5ce6b5d-4445-4500-bf06-c235267071af
+		summarizeBy: none
+		sourceColumn: ContactName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: 1027456f-d99c-4e60-b9f5-eb1d9d0dc0d1
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: d51bf4f5-3118-47c9-91f0-3c64975da476
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 9db3ccfb-cb9b-4f70-924e-34ad60b30c78
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fax
+		dataType: string
+		lineageTag: e1ab7e96-f762-4c89-8788-2d3366154c25
+		summarizeBy: none
+		sourceColumn: Fax
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankName
+		dataType: string
+		lineageTag: 992c14eb-1fdb-4b28-aa5f-28e6ee7e729a
+		summarizeBy: none
+		sourceColumn: BankName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankCode
+		dataType: string
+		lineageTag: a04eaccf-2dfc-4950-aad8-c1c59a3529d3
+		summarizeBy: none
+		sourceColumn: BankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: 029577c7-8c7d-4363-820f-94d0e4232ea8
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: 20bae4c4-2f90-4411-920c-51f14d9f86df
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: 62b3001a-7ab5-49c8-9b33-be740e4440dd
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankDirectEntryUserRef
+		dataType: string
+		lineageTag: cd63d811-0393-45c3-b76d-dbe30bb21026
+		summarizeBy: none
+		sourceColumn: BankDirectEntryUserRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: bdae0c77-af39-4da1-be34-4d76a7a5356a
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProcessRank
+		dataType: double
+		lineageTag: 4459467d-18a0-4908-b963-942a0bb86e16
+		summarizeBy: sum
+		sourceColumn: ProcessRank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsOperative
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: abb317ee-c2d9-4ae5-bbed-01dfe7f57d9f
+		summarizeBy: none
+		sourceColumn: IsOperative
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRunBackgroundTask
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 223ac8c8-f8f7-4ab3-bff6-2656ab355c6b
+		summarizeBy: none
+		sourceColumn: IsRunBackgroundTask
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 13b27a78-7438-4d93-8f3d-06595db3f200
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column Version
+		dataType: string
+		lineageTag: 8b8b8346-6b89-4ae0-b09b-0f74bb923593
+		summarizeBy: none
+		sourceColumn: Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 93a8b5e6-a872-4bfd-b2bb-5bd6d8cb9e73
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 9d29a40e-449c-432f-8a3c-029feee02bc9
+			defaultHierarchy: LocalDateTable_6ec70493-7067-44ef-9020-2bfe9e7b03ab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30ec2354-1052-4c20-a871-26f905354dac
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 77ebb1b0-56f8-4c57-8c81-bb0f9c92689a
+			defaultHierarchy: LocalDateTable_9a0efcc1-3e07-4124-980b-be4044acb13a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bc815ae8-90e5-4c3f-b1d7-2b948d711a50
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: a492218e-a735-4556-b33e-01b29ee0a518
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentSubscriptionId
+		dataType: string
+		lineageTag: f1da9568-8036-4cab-ac3e-05f0acab05be
+		summarizeBy: none
+		sourceColumn: CurrentSubscriptionId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: e012bb3b-a455-43c2-a658-53ee90db455c
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedById
+		dataType: string
+		lineageTag: ceea0fc9-b128-46ed-a01b-4e4b7a85268b
+		summarizeBy: none
+		sourceColumn: UpdatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityName
+		dataType: string
+		lineageTag: e5a39985-a50a-40f4-9b29-a4520c541838
+		summarizeBy: none
+		sourceColumn: EntityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 0234df52-b09e-4818-a19b-442a2532cdb2
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column LegacyRef
+		dataType: string
+		lineageTag: 25570c60-5828-4320-b736-3297be6a2640
+		summarizeBy: none
+		sourceColumn: LegacyRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column TempRef
+		dataType: string
+		lineageTag: e15f114e-4463-47bb-847e-f01ce5b849e1
+		summarizeBy: none
+		sourceColumn: TempRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Alias
+		dataType: string
+		lineageTag: adbe5373-decd-4812-9a06-d28cb4bfd1a5
+		summarizeBy: none
+		sourceColumn: Alias
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillingNotes
+		dataType: string
+		lineageTag: 58a17ecc-7034-4808-95ea-b7ea05ddcfbb
+		summarizeBy: none
+		sourceColumn: BillingNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsTestDataAgency
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5e0227e8-15b7-4c82-a153-0d144190a7d1
+		summarizeBy: none
+		sourceColumn: IsTestDataAgency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tags
+		dataType: string
+		lineageTag: 7ea813cc-b7b3-49f8-b8b7-fd8ceed1906c
+		summarizeBy: none
+		sourceColumn: Tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillTo
+		dataType: string
+		lineageTag: 3b0c1ae8-48db-4fd5-b121-bbf8de811035
+		summarizeBy: none
+		sourceColumn: BillTo
+
+		annotation SummarizationSetBy = Automatic
+
+	column DealOwner
+		dataType: string
+		lineageTag: fad712ca-4a23-44df-9cbb-ee06ff8a67e9
+		summarizeBy: none
+		sourceColumn: DealOwner
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusNew
+		dataType: string
+		lineageTag: d8ac1939-a3b2-4adf-b799-6a529d3266aa
+		summarizeBy: none
+		sourceColumn: StatusNew
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName = FORMAT(Agency[CreatedAt], "MMM")
+		lineageTag: 9d9011e4-5759-4a9d-8ded-89de4984940b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Agency = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Agency = Source{[Schema="dbo",Item="Agency"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_Agency,{{"CreatedAt", type datetimezone}, {"StatusId", type text}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "StatusId", "StatusId - Copy"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Duplicated Column","AGENCY_","",Replacer.ReplaceText,{"StatusId - Copy"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Replaced Value",{{"StatusId - Copy", "StatusNew"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

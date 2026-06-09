@@ -1,0 +1,49 @@
+table BudgetWarningLevel
+	lineageTag: 3449b54d-a079-40e5-ac8d-d890372f5213
+
+	column AgencyId
+		dataType: string
+		lineageTag: 7d822928-82b6-4cdc-9f46-96a8ff09cf40
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Level
+		dataType: int64
+		formatString: 0
+		lineageTag: be27de46-729c-4e89-8b4b-578b253a6376
+		summarizeBy: sum
+		sourceColumn: Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column Threshold
+		dataType: double
+		lineageTag: 08570e62-0bda-4378-93d6-3ddce46636e9
+		summarizeBy: sum
+		sourceColumn: Threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TemplateVariant
+		dataType: string
+		lineageTag: 9770bd9a-a1d5-4747-bba0-22337ad3b32f
+		summarizeBy: none
+		sourceColumn: TemplateVariant
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BudgetWarningLevel = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BudgetWarningLevel = Source{[Schema="dbo",Item="BudgetWarningLevel"]}[Data]
+				in
+				    dbo_BudgetWarningLevel
+
+	annotation PBI_ResultType = Table
+

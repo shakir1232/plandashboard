@@ -1,0 +1,70 @@
+table PayabilityRate
+	lineageTag: 7fef9869-6fa2-4141-b350-4a1fc9da3f03
+
+	column Id
+		dataType: string
+		lineageTag: f6ef76f2-4412-4a3c-a146-d83eee9a8f05
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 2f42816a-3cf0-41bb-9721-0d728b526fa7
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderId
+		dataType: string
+		lineageTag: 1dc9d65f-cb70-44a1-871e-d9afd7dbaadb
+		summarizeBy: none
+		sourceColumn: ProviderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BaseCharge
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: b5891b0c-088a-4542-95bd-1fa444f08403
+		summarizeBy: sum
+		sourceColumn: BaseCharge
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CommissionRate
+		dataType: double
+		lineageTag: a68c95a8-52e0-4231-b398-7b6bd86e9524
+		summarizeBy: sum
+		sourceColumn: CommissionRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CommissionMaxLimit
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 22a0b4cb-fe4f-4ef9-93dd-c95a9ac41603
+		summarizeBy: sum
+		sourceColumn: CommissionMaxLimit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	partition PayabilityRate = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PayabilityRate = Source{[Schema="dbo",Item="PayabilityRate"]}[Data]
+				in
+				    dbo_PayabilityRate
+
+	annotation PBI_ResultType = Table
+

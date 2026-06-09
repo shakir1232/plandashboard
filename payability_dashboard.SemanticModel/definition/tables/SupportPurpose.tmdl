@@ -1,0 +1,108 @@
+table SupportPurpose
+	lineageTag: dcf43501-4307-4419-bc19-b6f3ec00d3a6
+
+	column Id
+		dataType: string
+		lineageTag: 1df4be12-962d-4dcb-b204-3bbf5a9f349e
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisRef
+		dataType: string
+		lineageTag: dfccca88-f94d-41e9-812a-34e14c491bb3
+		summarizeBy: none
+		sourceColumn: NdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: c04ad074-5709-43ce-b21b-08a5f707c8f6
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 8dccc327-6f88-42ec-96f9-753cb7c15fd6
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column CombinedBudgetAlert
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 95ac511d-a13e-4819-a2d0-8aa6062a4647
+		summarizeBy: none
+		sourceColumn: CombinedBudgetAlert
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: d4c983f4-2f5f-4fd0-8e85-88b7fa28b595
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 78edfc56-9480-4744-809f-5eaa7b4a7607
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPaceOnly
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 486e480b-29a4-4595-a29f-b4ed27b8007b
+		summarizeBy: none
+		sourceColumn: IsPaceOnly
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlexibleBudget
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4e1b97c0-c71f-48e8-9e8d-70afdf78c1c0
+		summarizeBy: none
+		sourceColumn: FlexibleBudget
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortLabel
+		dataType: string
+		lineageTag: 284d1615-4bcd-4e7d-90fc-2c74a64978f5
+		summarizeBy: none
+		sourceColumn: ShortLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisDescVariants
+		dataType: string
+		lineageTag: c9a708da-f9bb-4d49-a3fd-92a1dba555bb
+		summarizeBy: none
+		sourceColumn: NdisDescVariants
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SupportPurpose = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_SupportPurpose = Source{[Schema="dbo",Item="SupportPurpose"]}[Data]
+				in
+				    dbo_SupportPurpose
+
+	annotation PBI_ResultType = Table
+

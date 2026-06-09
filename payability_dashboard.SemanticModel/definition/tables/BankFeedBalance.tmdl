@@ -1,0 +1,257 @@
+table BankFeedBalance
+	lineageTag: 8ad71fff-2037-4cc7-aabb-fa79961b1940
+
+	column Id
+		dataType: string
+		lineageTag: 2a23396c-4590-41c1-8b9a-d0408b6dd462
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportId
+		dataType: string
+		lineageTag: 71f6d746-40d1-4582-a35b-9a6716f7122f
+		summarizeBy: none
+		sourceColumn: ImportId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BalanceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6c2f776b-a1cb-41a8-af70-274db72f8952
+		summarizeBy: none
+		sourceColumn: BalanceDate
+
+		variation Variation
+			isDefault
+			relationship: 5b13950c-da55-43b8-84a1-63142b7860fe
+			defaultHierarchy: LocalDateTable_58c6b5c4-7472-4505-a9c2-d2798099f759.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountNumber
+		dataType: string
+		lineageTag: 031d80ce-c965-4380-8ace-b77bae0af3d3
+		summarizeBy: none
+		sourceColumn: AccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceOfAccount
+		dataType: string
+		lineageTag: 89d6f781-c9aa-4e39-8ac4-37dfb5463781
+		summarizeBy: none
+		sourceColumn: SourceOfAccount
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountFormat
+		dataType: string
+		lineageTag: c259a693-1336-42e2-a7cb-fd12572ca325
+		summarizeBy: none
+		sourceColumn: AccountFormat
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountName
+		dataType: string
+		lineageTag: f8091db7-b313-447c-8c74-48ae1ed16e3b
+		summarizeBy: none
+		sourceColumn: AccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyCode
+		dataType: string
+		lineageTag: 945347fd-8498-490e-9435-e7f3f7f862cc
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpeningBalance
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1fdf0481-a44b-45dc-accb-32fbdf87f03d
+		summarizeBy: sum
+		sourceColumn: OpeningBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ClosingBalance
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7f23c6c1-6ec8-411a-8119-fe592ca49fa5
+		summarizeBy: sum
+		sourceColumn: ClosingBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column DebitTotal
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 377c1797-0752-4cbf-8427-c7e5c16451d3
+		summarizeBy: sum
+		sourceColumn: DebitTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NumberOfDebits
+		dataType: int64
+		formatString: 0
+		lineageTag: 177c1e85-073f-463a-81d6-30bbaad3080c
+		summarizeBy: sum
+		sourceColumn: NumberOfDebits
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditTotal
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6ac7be73-1aae-4169-9124-ba813e10a936
+		summarizeBy: sum
+		sourceColumn: CreditTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NumberOfCredits
+		dataType: int64
+		formatString: 0
+		lineageTag: 51e9cfd0-ccc7-4faa-95f2-3a7e870ae7bc
+		summarizeBy: sum
+		sourceColumn: NumberOfCredits
+
+		annotation SummarizationSetBy = Automatic
+
+	column DebitInterestRate
+		dataType: double
+		lineageTag: bd099014-e23a-4f1a-8623-29fc420e7e7c
+		summarizeBy: sum
+		sourceColumn: DebitInterestRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CreditInterestRate
+		dataType: double
+		lineageTag: 09a49457-772e-49dd-a97d-9efeef40694e
+		summarizeBy: sum
+		sourceColumn: CreditInterestRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OverdraftLimit
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a737156a-5815-4669-886d-884851f3d314
+		summarizeBy: sum
+		sourceColumn: OverdraftLimit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column DebitInterestAccrued
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 1e5d71d7-2e3f-43b2-9a19-bfbc453bccea
+		summarizeBy: sum
+		sourceColumn: DebitInterestAccrued
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CreditInterestAccrued
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8c068495-97e3-4be3-bd81-b3c3b6f3d7c0
+		summarizeBy: sum
+		sourceColumn: CreditInterestAccrued
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column FidAccrued
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: ce9e9084-e67a-4490-8b07-7bf4f6c9558d
+		summarizeBy: sum
+		sourceColumn: FidAccrued
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column BadTaxAccrued
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 661aeffa-c980-4a5b-a7db-371b3c018c85
+		summarizeBy: sum
+		sourceColumn: BadTaxAccrued
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column NextProcessingDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7e0ce26a-23d4-43b9-acbe-e56a53592b4c
+		summarizeBy: none
+		sourceColumn: NextProcessingDate
+
+		variation Variation
+			isDefault
+			relationship: 6db35a5c-982e-4946-b0c2-43642daf12cb
+			defaultHierarchy: LocalDateTable_718b617e-61df-41b3-abb8-45313ddf1d61.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: f7add0a6-aec6-4691-9ca5-421c06ec3c50
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14c06c43-6550-40ce-b6a2-7032644fbc84
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 8929c207-a387-4ff0-b52f-cca0febfe477
+			defaultHierarchy: LocalDateTable_23dde2da-6ab5-415d-a706-593581743835.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BankFeedBalance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BankFeedBalance = Source{[Schema="dbo",Item="BankFeedBalance"]}[Data]
+				in
+				    dbo_BankFeedBalance
+
+	annotation PBI_ResultType = Table
+

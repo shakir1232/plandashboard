@@ -1,0 +1,73 @@
+table NoteCategory
+	lineageTag: d4394cd7-a0fa-4928-b80b-9a4d764f935a
+
+	column Id
+		dataType: string
+		lineageTag: df0a7f9b-c825-422b-9890-0f11e39815b2
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column MasterId
+		dataType: string
+		lineageTag: 51901018-0a3b-4d48-af33-5b0b8cdc619e
+		summarizeBy: none
+		sourceColumn: MasterId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: c16ccb6d-9f36-40cd-9828-1890a5984ac2
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: f5be048c-0621-4711-8061-ab242efc2fe5
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Path
+		dataType: string
+		lineageTag: 1469a7d9-e741-4754-a53c-1b230fbb182f
+		summarizeBy: none
+		sourceColumn: Path
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 09a27f82-b464-495a-a2ce-39cb23562ed8
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7c398bc7-1b6a-4076-b102-ef998afee7b3
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NoteCategory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NoteCategory = Source{[Schema="dbo",Item="NoteCategory"]}[Data]
+				in
+				    dbo_NoteCategory
+
+	annotation PBI_ResultType = Table
+

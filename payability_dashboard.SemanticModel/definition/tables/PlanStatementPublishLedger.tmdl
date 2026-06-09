@@ -1,0 +1,119 @@
+table PlanStatementPublishLedger
+	lineageTag: 84932332-e34c-4fe4-88f6-c1cb2e3bc68f
+
+	column Id
+		dataType: string
+		lineageTag: 329eb637-8d03-4c11-8260-ea8131b1bf95
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 95a5dfe7-73a9-4781-af5b-281000c326e2
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchRef
+		dataType: string
+		lineageTag: 2944d7b4-b393-4c43-a61b-6a4ff0ad6a11
+		summarizeBy: none
+		sourceColumn: BatchRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column PublishDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 269fcf29-b417-43b9-92dd-dbad8893d066
+		summarizeBy: none
+		sourceColumn: PublishDate
+
+		variation Variation
+			isDefault
+			relationship: 1375b24a-6056-4e48-899a-ab5885f20742
+			defaultHierarchy: LocalDateTable_f70c82c8-b675-4e9f-933a-b08c731899ae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b4c2fe04-1bc1-4ff8-9b72-b6ff9759e765
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 89529e98-5b92-4550-af32-9384e5ceae15
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantCount
+		dataType: int64
+		formatString: 0
+		lineageTag: efd08763-6978-441c-bf54-763b9dcab6fd
+		summarizeBy: sum
+		sourceColumn: ParticipantCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanCount
+		dataType: int64
+		formatString: 0
+		lineageTag: f5dd88ce-5f42-4e62-9f54-aab1126f5253
+		summarizeBy: sum
+		sourceColumn: PlanCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanIds
+		dataType: string
+		lineageTag: aea514e6-126e-4269-8901-d3e5413ed616
+		summarizeBy: none
+		sourceColumn: PlanIds
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAutoEmailPlanStatements
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1059ebe0-3396-43de-b5bb-401251f9d50b
+		summarizeBy: none
+		sourceColumn: IsAutoEmailPlanStatements
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecordedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 62be13fa-1e45-4b84-bd2d-1aeb785d9553
+		summarizeBy: none
+		sourceColumn: RecordedAt
+
+		variation Variation
+			isDefault
+			relationship: c86956fe-c81f-4d28-a8f4-91b7fe943f66
+			defaultHierarchy: LocalDateTable_954b54a5-9e72-414d-bbd7-f167806c21c3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PlanStatementPublishLedger = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PlanStatementPublishLedger = Source{[Schema="dbo",Item="PlanStatementPublishLedger"]}[Data]
+				in
+				    dbo_PlanStatementPublishLedger
+
+	annotation PBI_ResultType = Table
+

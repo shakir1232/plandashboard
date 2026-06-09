@@ -1,0 +1,76 @@
+table NdisWebhookRegistration
+	lineageTag: f4859d39-8649-47da-ac87-b2dbfd987e81
+
+	column Id
+		dataType: string
+		lineageTag: 87aaf48f-336a-450e-8edf-08446eabf9f1
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 394b56af-8b3b-4418-90c9-3c7530e326c0
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisWebhookEventId
+		dataType: string
+		lineageTag: 4a828464-2950-485c-b9ea-ac64512118c9
+		summarizeBy: none
+		sourceColumn: NdisWebhookEventId
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisGuidRef
+		dataType: string
+		lineageTag: d512057f-b700-4271-9b32-3cd2e9c86d01
+		summarizeBy: none
+		sourceColumn: NdisGuidRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 84595672-5f34-466a-b5fe-50b360b8962a
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: eb128ed8-7348-4341-9873-297704ba6d7f
+			defaultHierarchy: LocalDateTable_264d64ad-e707-487b-93e0-d9b5561f81af.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: 69c51b9c-4c6a-4f00-a767-c4bcf7798f05
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebhookUrl
+		dataType: string
+		lineageTag: a7eeaacf-dc68-4c6e-87a9-0ad986393d23
+		summarizeBy: none
+		sourceColumn: WebhookUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NdisWebhookRegistration = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NdisWebhookRegistration = Source{[Schema="dbo",Item="NdisWebhookRegistration"]}[Data]
+				in
+				    dbo_NdisWebhookRegistration
+
+	annotation PBI_ResultType = Table
+

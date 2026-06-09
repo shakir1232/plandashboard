@@ -1,0 +1,97 @@
+table NdisApiOutage
+	lineageTag: 51498f21-54c4-48ed-9de3-02df1a7148b7
+
+	column Id
+		dataType: string
+		lineageTag: 2d5be670-f2c5-4238-8442-17dad6b9e64a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 73e0c224-76e6-47ec-a41f-a6285e2ec57a
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column OfflineMessage
+		dataType: string
+		lineageTag: 098ded7d-adb1-44af-a9e5-b3a46e3b8f60
+		summarizeBy: none
+		sourceColumn: OfflineMessage
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2de2f7b7-f14e-4d9b-88ca-8614efad58f5
+		summarizeBy: none
+		sourceColumn: Start
+
+		variation Variation
+			isDefault
+			relationship: dd1c4a1f-9be3-4c71-b779-22433c71d885
+			defaultHierarchy: LocalDateTable_d0eaffd1-d846-4122-a996-33441ea8cff8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column End
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d75add27-7065-470a-99a4-bae0a3b5d798
+		summarizeBy: none
+		sourceColumn: End
+
+		variation Variation
+			isDefault
+			relationship: b7040f21-f642-41b0-9d2e-03c898c78bb3
+			defaultHierarchy: LocalDateTable_010807ce-526c-4f17-9cc4-415f35469047.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column NotifiedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9c1fdf6d-cd9b-473c-a762-e9b6123b7f59
+		summarizeBy: none
+		sourceColumn: NotifiedAt
+
+		variation Variation
+			isDefault
+			relationship: 1a8cb6fa-4702-417b-8113-49424c50c34a
+			defaultHierarchy: LocalDateTable_f33b2963-6ce8-455a-94ab-4c5568ef048c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: cc86fe13-da28-441c-a06b-056f5920c09a
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 09c4aeee-baa0-46db-89a4-8125caa9b0ec
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NdisApiOutage = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NdisApiOutage = Source{[Schema="dbo",Item="NdisApiOutage"]}[Data]
+				in
+				    dbo_NdisApiOutage
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,115 @@
+table Suburb
+	lineageTag: 998ac0de-e9a9-4b55-a363-d2d15b6bbbd9
+
+	column Id
+		dataType: string
+		lineageTag: de90aed9-cd7f-4999-ad9c-bb0f82fe8ae2
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateId
+		dataType: string
+		lineageTag: f7c53020-b104-4825-ae61-b573d7dff906
+		summarizeBy: none
+		sourceColumn: StateId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PriceZoneId
+		dataType: string
+		lineageTag: d045a75a-c923-4d2b-863f-b2a9eb8c6a1f
+		summarizeBy: none
+		sourceColumn: PriceZoneId
+
+		annotation SummarizationSetBy = Automatic
+
+	column OverridePriceZoneId
+		dataType: string
+		lineageTag: 7f6750c3-b1f0-46be-bc63-19ec85f30f59
+		summarizeBy: none
+		sourceColumn: OverridePriceZoneId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 222691b2-6e88-4d8f-984d-e5510bffc5e3
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Postcode
+		dataType: string
+		lineageTag: 996e5120-c02b-4471-bf5a-d80f1fba0a56
+		summarizeBy: none
+		sourceColumn: Postcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 22decfdc-eabc-4bba-aa1e-40402045eb2b
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hint
+		dataType: string
+		lineageTag: 6fd998ff-e743-4f7b-be85-79d6cf904c29
+		summarizeBy: none
+		sourceColumn: Hint
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: double
+		lineageTag: 8cee8603-4187-428d-8a83-3f43947989eb
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: 8b5f673d-febd-4614-bc2c-79700db61bad
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsArchived
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f15c12d6-3d6d-4e2d-9c41-a5796d6576a4
+		summarizeBy: none
+		sourceColumn: IsArchived
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalRef
+		dataType: string
+		lineageTag: c4d6c382-b8ae-497f-add6-5e8c8ca875c5
+		summarizeBy: none
+		sourceColumn: ExternalRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Suburb = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_Suburb = Source{[Schema="dbo",Item="Suburb"]}[Data]
+				in
+				    dbo_Suburb
+
+	annotation PBI_ResultType = Table
+

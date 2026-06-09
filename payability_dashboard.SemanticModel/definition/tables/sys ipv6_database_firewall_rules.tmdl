@@ -1,0 +1,75 @@
+table 'sys ipv6_database_firewall_rules'
+	lineageTag: 86a95e2d-f18c-40e4-b2dd-82408a228629
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e80520d-8948-4986-9b08-39ef32cf9c13
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: f2d2ebb0-6803-4c82-88a6-353506838ac4
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_ipv6_address
+		dataType: string
+		lineageTag: ceb1a8db-be8a-448c-a173-441adc1ca819
+		summarizeBy: none
+		sourceColumn: start_ipv6_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_ipv6_address
+		dataType: string
+		lineageTag: c9c99680-bbbf-4c3f-86e3-9678dab4a647
+		summarizeBy: none
+		sourceColumn: end_ipv6_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column create_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ccbcd294-c62f-4bea-8b65-f3dc213936a5
+		summarizeBy: none
+		sourceColumn: create_date
+
+		variation Variation
+			isDefault
+			relationship: a8ee8a54-968b-43f4-b889-f43a5a81dd79
+			defaultHierarchy: LocalDateTable_04b8aa22-c904-4066-885c-60fe242cd6f1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column modify_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c52c4dfd-a240-4210-9e59-7716fb0d45b3
+		summarizeBy: none
+		sourceColumn: modify_date
+
+		variation Variation
+			isDefault
+			relationship: ca652763-3c72-43fa-b654-db17f253ac2b
+			defaultHierarchy: LocalDateTable_7e1b737d-8ead-40ba-aee0-822351788a82.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sys ipv6_database_firewall_rules' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    sys_ipv6_database_firewall_rules = Source{[Schema="sys",Item="ipv6_database_firewall_rules"]}[Data]
+				in
+				    sys_ipv6_database_firewall_rules
+
+	annotation PBI_ResultType = Table
+

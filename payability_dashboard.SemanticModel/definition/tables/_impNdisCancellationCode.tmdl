@@ -1,0 +1,30 @@
+table _impNdisCancellationCode
+	lineageTag: 30dcfcbb-b282-42ee-9edb-3f58f61fe82b
+
+	column Code
+		dataType: string
+		lineageTag: 6ded0e38-3df3-4d45-8ecc-bad6603fc28b
+		summarizeBy: none
+		sourceColumn: Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Label
+		dataType: string
+		lineageTag: 0a1c7f67-322c-483c-a553-914bb5edf48e
+		summarizeBy: none
+		sourceColumn: Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _impNdisCancellationCode = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo__impNdisCancellationCode = Source{[Schema="dbo",Item="_impNdisCancellationCode"]}[Data]
+				in
+				    dbo__impNdisCancellationCode
+
+	annotation PBI_ResultType = Table
+

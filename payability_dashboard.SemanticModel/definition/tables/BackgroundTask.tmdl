@@ -1,0 +1,194 @@
+table BackgroundTask
+	lineageTag: 486e8b6e-ce3f-43ac-bed9-6f3c6b3053bc
+
+	column Id
+		dataType: string
+		lineageTag: 684b870d-aa50-43ae-857e-26976198ef23
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 45c77b2c-da69-480e-aff8-a1e12314f9c7
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: a9ede60b-944d-4e5a-8c53-587d96d21786
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 268cee71-4e48-4e88-8176-9e3a90f0a1a7
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency
+		dataType: string
+		lineageTag: 987be526-3b25-436f-8648-f1563af2189c
+		summarizeBy: none
+		sourceColumn: Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column IntervalSeconds
+		dataType: int64
+		formatString: 0
+		lineageTag: c1d5a1ae-9255-4f80-b69f-f03cdf439431
+		summarizeBy: sum
+		sourceColumn: IntervalSeconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days
+		dataType: string
+		lineageTag: af669396-19c3-4090-ae19-042a01969ead
+		summarizeBy: none
+		sourceColumn: Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Times
+		dataType: string
+		lineageTag: a6db418d-2efa-4572-8887-79dc05af6a0b
+		summarizeBy: none
+		sourceColumn: Times
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWatcher
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 70f659f6-b72e-43db-9524-32662b5345ee
+		summarizeBy: none
+		sourceColumn: IsWatcher
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsFederatedRun
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6831672c-60ac-4c62-b3ce-5c51cfd5449c
+		summarizeBy: none
+		sourceColumn: IsFederatedRun
+
+		annotation SummarizationSetBy = Automatic
+
+	column RunningFlagResetMinutes
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a146365-8294-4288-a951-ed7c2d595d8d
+		summarizeBy: sum
+		sourceColumn: RunningFlagResetMinutes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dependencies
+		dataType: string
+		lineageTag: 6a29320c-3bac-42cc-815b-6bf4b2339844
+		summarizeBy: none
+		sourceColumn: Dependencies
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastRunBatchRef
+		dataType: string
+		lineageTag: d136a4bc-3df7-4c05-88ad-a12aaad093c7
+		summarizeBy: none
+		sourceColumn: LastRunBatchRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastPingedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 568dd780-4810-4417-99d1-b706e1b5c23a
+		summarizeBy: none
+		sourceColumn: LastPingedAt
+
+		variation Variation
+			isDefault
+			relationship: 3aa5716a-094c-47ed-8f72-732bf5f4e3d3
+			defaultHierarchy: LocalDateTable_efe3645c-6cae-4c7e-a90c-6521fb63540d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastInvokedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6eae27dc-7edf-4ace-8ee3-b361e775eb1e
+		summarizeBy: none
+		sourceColumn: LastInvokedAt
+
+		variation Variation
+			isDefault
+			relationship: 4f867b75-fc0e-4460-ad83-2ab3a4dd564c
+			defaultHierarchy: LocalDateTable_4e0a8cd5-3729-43c3-98c1-112e0fbd2a91.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: 49185c7f-c037-4c96-a337-0d27bcfca9b8
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f5d8c331-6bcf-4498-ae93-933d45fd1d17
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column QueueRef
+		dataType: string
+		lineageTag: 516810fd-c812-402a-980c-13708b98b7aa
+		summarizeBy: none
+		sourceColumn: QueueRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastRunGroupRef
+		dataType: string
+		lineageTag: d422640e-bf9c-475c-b754-5b9e0ea54d84
+		summarizeBy: none
+		sourceColumn: LastRunGroupRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column CanInvokeManually
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7eada394-53af-4c8a-a749-1a1b0ab22214
+		summarizeBy: none
+		sourceColumn: CanInvokeManually
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BackgroundTask = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_BackgroundTask = Source{[Schema="dbo",Item="BackgroundTask"]}[Data]
+				in
+				    dbo_BackgroundTask
+
+	annotation PBI_ResultType = Table
+

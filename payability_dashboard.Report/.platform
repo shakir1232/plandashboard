@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "payability_dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0e7e1561-57e1-45e1-aa2b-7bffbabadb68"
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU04",
+      "reportVersionAtImport": {
+        "visual": "2.8.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "AccessibleTidal",
+      "reportVersionAtImport": {
+        "visual": "2.8.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "powerKPIMatrixEB2381CC88A8425FBEB1B07FF57784E6",
+    "ChicletSlicer1448559807354",
+    "CMXPBIINDIVIDUAL522CF36C0BC94257929BE018ECD8C3F3"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "AccessibleTidal",
+          "path": "BuiltInThemes/AccessibleTidal.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "australia.states.topo",
+          "path": "Shapemaps/australia.states.topo.json",
+          "type": "ShapeMap"
+        },
+        {
+          "name": "CY26SU04",
+          "path": "BaseThemes/CY26SU04.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Agencie9039242685493469.png",
+          "path": "Agencie9039242685493469.png",
+          "type": "Image"
+        },
+        {
+          "name": "App67164696207565.png",
+          "path": "App67164696207565.png",
+          "type": "Image"
+        },
+        {
+          "name": "Claims36447369300504395.png",
+          "path": "Claims36447369300504395.png",
+          "type": "Image"
+        },
+        {
+          "name": "Close_Icon18102964512972142.svg",
+          "path": "Close_Icon18102964512972142.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Data34754728141940505.png",
+          "path": "Data34754728141940505.png",
+          "type": "Image"
+        },
+        {
+          "name": "FilterAlt18887097488944027.svg",
+          "path": "FilterAlt18887097488944027.svg",
+          "type": "Image"
+        },
+        {
+          "name": "logo14677639327148384.png",
+          "path": "logo14677639327148384.png",
+          "type": "Image"
+        },
+        {
+          "name": "Logo5001752809854596.svg",
+          "path": "Logo5001752809854596.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Participant7244088128908286.png",
+          "path": "Participant7244088128908286.png",
+          "type": "Image"
+        },
+        {
+          "name": "Provider8368777944136709.png",
+          "path": "Provider8368777944136709.png",
+          "type": "Image"
+        },
+        {
+          "name": "Revenue10355280968467417.png",
+          "path": "Revenue10355280968467417.png",
+          "type": "Image"
+        },
+        {
+          "name": "trending_up_24dp_1F1F1F_FILL0_49155072393922106.svg",
+          "path": "trending_up_24dp_1F1F1F_FILL0_49155072393922106.svg",
+          "type": "Image"
+        },
+        {
+          "name": "Users11294024058903618.png",
+          "path": "Users11294024058903618.png",
+          "type": "Image"
+        },
+        {
+          "name": "Wave-Bottom7513177219179947.png",
+          "path": "Wave-Bottom7513177219179947.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "filterPaneHiddenInEditMode": true,
+    "useDefaultAggregateDisplayName": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

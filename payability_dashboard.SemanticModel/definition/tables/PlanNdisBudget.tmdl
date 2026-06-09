@@ -1,0 +1,123 @@
+table PlanNdisBudget
+	lineageTag: 7d0ea5d2-090d-4c0b-8347-22488bd64cb0
+
+	column Id
+		dataType: string
+		lineageTag: 7d1de760-ac8b-4480-b973-8285e772804d
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: 31e26b08-5d19-4ac5-8508-d71ab43fc7aa
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 716c33dc-c602-4f57-bc0c-b55b856eecc9
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlanId
+		dataType: string
+		lineageTag: dd66fe3b-9657-410f-a3fd-407d659f6261
+		summarizeBy: none
+		sourceColumn: PlanId
+
+		annotation SummarizationSetBy = Automatic
+
+	column HttpStatusCode
+		dataType: string
+		lineageTag: db3ad324-a303-4a94-a779-b08aa7558183
+		summarizeBy: none
+		sourceColumn: HttpStatusCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetResponse
+		dataType: string
+		lineageTag: 7f622a8e-161a-44d5-9911-79f10854c08d
+		summarizeBy: none
+		sourceColumn: BudgetResponse
+
+		annotation SummarizationSetBy = Automatic
+
+	column HasBudgetConsent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 65b14ae2-3890-4d4c-b5f5-d932303f6da6
+		summarizeBy: none
+		sourceColumn: HasBudgetConsent
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4f492454-0e01-46b4-a35a-6376b8082ca5
+		summarizeBy: none
+		sourceColumn: UpdatedAt
+
+		variation Variation
+			isDefault
+			relationship: 0e0ec56e-0b64-4771-a8dd-2e8aedc8ff05
+			defaultHierarchy: LocalDateTable_8479093b-137b-47cd-b187-1f2a66c1fe70.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b1317392-a99a-4f13-ae94-69f0725a3570
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: d4ef51d0-44bb-4b08-867d-366035658cd0
+			defaultHierarchy: LocalDateTable_c15c7ea5-e5bb-4386-9e6b-638132406377.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 06eb0ad6-9dad-4be6-bb53-f57b8f0d39ae
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 73d60db8-8b1b-4ab3-aff4-dab0c1a3d6cc
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column BudgetApiRef
+		dataType: string
+		lineageTag: ff485af9-0d9e-4ca1-b9ab-d44bc99edb2b
+		summarizeBy: none
+		sourceColumn: BudgetApiRef
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PlanNdisBudget = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_PlanNdisBudget = Source{[Schema="dbo",Item="PlanNdisBudget"]}[Data]
+				in
+				    dbo_PlanNdisBudget
+
+	annotation PBI_ResultType = Table
+

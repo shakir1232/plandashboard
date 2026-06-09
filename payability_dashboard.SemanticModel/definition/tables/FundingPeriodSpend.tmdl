@@ -1,0 +1,83 @@
+table FundingPeriodSpend
+	lineageTag: bdaa20c2-1817-4649-9420-2dd86ff62245
+
+	column Id
+		dataType: string
+		lineageTag: 6b787e60-25be-4ea3-b3b2-0dce1ad82c3a
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column FundingPeriodId
+		dataType: string
+		lineageTag: 0097eaa2-5723-4439-aaf8-e5d5b860c069
+		summarizeBy: none
+		sourceColumn: FundingPeriodId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimLineId
+		dataType: string
+		lineageTag: a2f2afe1-0f53-445d-aa90-ad8d67272935
+		summarizeBy: none
+		sourceColumn: ClaimLineId
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 4a72b27d-02b8-4da3-83ee-33d5114c3956
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AgreementAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 7591acb7-cfc0-47b6-84fc-39d06a157051
+		summarizeBy: sum
+		sourceColumn: AgreementAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column IsFlexiblePoolFund
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 469359f4-5374-433f-b4c5-075ae39ce7a0
+		summarizeBy: none
+		sourceColumn: IsFlexiblePoolFund
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5d80fdc2-117a-40ef-bab1-7a9ae54f2b15
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 1c2063c2-5eec-49a5-84a1-4ddccfe50c82
+			defaultHierarchy: LocalDateTable_3a226eb8-0d93-4c01-82d3-6dfd4b01ea50.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FundingPeriodSpend = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_FundingPeriodSpend = Source{[Schema="dbo",Item="FundingPeriodSpend"]}[Data]
+				in
+				    dbo_FundingPeriodSpend
+
+	annotation PBI_ResultType = Table
+

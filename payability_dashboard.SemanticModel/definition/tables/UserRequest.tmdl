@@ -1,0 +1,246 @@
+table UserRequest
+	lineageTag: 114db030-c768-445b-a9cc-d94a0f9ef1e1
+
+	column Id
+		dataType: string
+		lineageTag: ec161422-e462-4a01-8cbf-390258a5f90d
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypeId
+		dataType: string
+		lineageTag: 98c79dfa-3fff-4f8e-a88e-a1504d5582a3
+		summarizeBy: none
+		sourceColumn: TypeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusId
+		dataType: string
+		lineageTag: dd4f42fb-b01e-4acb-9488-fd56a8bdcad2
+		summarizeBy: none
+		sourceColumn: StatusId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: ff960735-37c4-4949-975b-ddb7d3b1669a
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: string
+		lineageTag: 79c8676a-d582-43b7-9955-123718ea1b58
+		summarizeBy: none
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column RoleId
+		dataType: string
+		lineageTag: 85822d48-efe0-42ba-bb72-3d5be87389e6
+		summarizeBy: none
+		sourceColumn: RoleId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SuburbId
+		dataType: string
+		lineageTag: 86c41d2b-89a5-42f5-ab74-82aca05c2050
+		summarizeBy: none
+		sourceColumn: SuburbId
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 941b87ee-538f-4f9c-9fca-41044644c7dc
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: ab854c98-c733-469d-8c1e-c042f1f1d17c
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 241aacdc-d2fc-4c5c-b592-f7f82e8cf674
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		lineageTag: 87ce844f-8f9e-40e3-ad21-36f9f7e2d40c
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		lineageTag: e731bb43-73a2-43f7-992d-cadc30893727
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone
+		dataType: string
+		lineageTag: 28b6e23c-afdd-4081-bc9b-04401accd248
+		summarizeBy: none
+		sourceColumn: Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mobile
+		dataType: string
+		lineageTag: 576cdfd3-bded-4641-885b-b8336f21f7d1
+		summarizeBy: none
+		sourceColumn: Mobile
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: 41043c62-fcd8-44b1-ba06-0fccd5087110
+		summarizeBy: none
+		sourceColumn: Address
+
+		annotation SummarizationSetBy = Automatic
+
+	column TwoFactorMethod
+		dataType: string
+		lineageTag: fbf11b0b-d925-40d5-ace1-373a1f6f15e0
+		summarizeBy: none
+		sourceColumn: TwoFactorMethod
+
+		annotation SummarizationSetBy = Automatic
+
+	column ElevatedPermissionScopes
+		dataType: string
+		lineageTag: b6c0cf85-5c66-4b05-9168-63230049f7c3
+		summarizeBy: none
+		sourceColumn: ElevatedPermissionScopes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCommEmail
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 94a8b173-fcae-4f44-8d44-b9a3904fb3f5
+		summarizeBy: none
+		sourceColumn: IsCommEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCommSms
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 236115df-c993-447c-999f-e330857ec185
+		summarizeBy: none
+		sourceColumn: IsCommSms
+
+		annotation SummarizationSetBy = Automatic
+
+	column InternalNotes
+		dataType: string
+		lineageTag: 0a3f5aca-38f5-4c55-9e6e-fdc7aa7f99af
+		summarizeBy: none
+		sourceColumn: InternalNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalNotes
+		dataType: string
+		lineageTag: 9744dec9-992b-4635-86cf-b7f3945892f8
+		summarizeBy: none
+		sourceColumn: ExternalNotes
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsProcessed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4127fbf7-bd76-4bf5-acab-62263b948b16
+		summarizeBy: none
+		sourceColumn: IsProcessed
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionedById
+		dataType: string
+		lineageTag: 3fe6cac1-2693-4030-9d0e-21f5c334e401
+		summarizeBy: none
+		sourceColumn: ActionedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActionedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6e14fb3b-f1e6-4a53-9dcf-dbdc20767133
+		summarizeBy: none
+		sourceColumn: ActionedAt
+
+		variation Variation
+			isDefault
+			relationship: f5b8825a-d08c-4e36-80a0-99970b1cce13
+			defaultHierarchy: LocalDateTable_fe9231a9-912e-482f-aa67-ab38eff540aa.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedById
+		dataType: string
+		lineageTag: fd88b2de-9d2b-4e8a-b63e-8e6642e42ca5
+		summarizeBy: none
+		sourceColumn: CreatedById
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2f10314d-c8b8-4b60-ab7a-2550856780fe
+		summarizeBy: none
+		sourceColumn: CreatedAt
+
+		variation Variation
+			isDefault
+			relationship: 77aede08-980c-477b-88f8-1f234223394c
+			defaultHierarchy: LocalDateTable_47f5994c-216e-4fc0-b821-9cc5ab3f86fd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsDeleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3a8f0b20-97d4-4614-8e8a-f5c6babcf1e1
+		summarizeBy: none
+		sourceColumn: IsDeleted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserRequest = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_UserRequest = Source{[Schema="dbo",Item="UserRequest"]}[Data]
+				in
+				    dbo_UserRequest
+
+	annotation PBI_ResultType = Table
+

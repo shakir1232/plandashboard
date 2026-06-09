@@ -1,0 +1,75 @@
+table 'sys database_firewall_rules'
+	lineageTag: 9f9787be-32f1-44d1-97b1-4394196a9f57
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b18c693-02a5-414d-8d73-e8cb6800ea4d
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 7d1055dd-9170-4ec8-b435-697df432d915
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_ip_address
+		dataType: string
+		lineageTag: a24dcdb3-9855-40de-aa45-6ce5677983f4
+		summarizeBy: none
+		sourceColumn: start_ip_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_ip_address
+		dataType: string
+		lineageTag: 665be306-bd20-4809-b0f2-402b3ac3da1d
+		summarizeBy: none
+		sourceColumn: end_ip_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column create_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c1a8ddcf-b71d-4319-8bda-95f5f9050f92
+		summarizeBy: none
+		sourceColumn: create_date
+
+		variation Variation
+			isDefault
+			relationship: 7bf69a68-6e01-4701-bcb3-a1bd0617a718
+			defaultHierarchy: LocalDateTable_b0115a5c-4a3d-4e7c-b592-2a86458d119a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column modify_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fd3a60d7-ee1b-4a16-b409-4620a266b609
+		summarizeBy: none
+		sourceColumn: modify_date
+
+		variation Variation
+			isDefault
+			relationship: 3cf12997-043f-4a98-a83c-2c77a783ffaa
+			defaultHierarchy: LocalDateTable_eeaa6079-50ad-48f5-a676-588617a2d208.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sys database_firewall_rules' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    sys_database_firewall_rules = Source{[Schema="sys",Item="database_firewall_rules"]}[Data]
+				in
+				    sys_database_firewall_rules
+
+	annotation PBI_ResultType = Table
+

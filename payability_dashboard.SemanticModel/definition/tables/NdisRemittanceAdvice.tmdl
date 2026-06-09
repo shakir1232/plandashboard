@@ -1,0 +1,135 @@
+table NdisRemittanceAdvice
+	lineageTag: 21c06a49-6712-4790-be3e-9ae1a18c1042
+
+	column Id
+		dataType: string
+		lineageTag: 1d8c5f07-930e-45ff-9b64-4bb3bb2291b3
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyId
+		dataType: string
+		lineageTag: e71b19eb-c573-482a-94e3-f18afe5a8245
+		summarizeBy: none
+		sourceColumn: AgencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgencyNdisRef
+		dataType: string
+		lineageTag: 8caf6844-02d5-4d48-8f50-102038193809
+		summarizeBy: none
+		sourceColumn: AgencyNdisRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column NdisClearingNumber
+		dataType: string
+		lineageTag: e0c3f098-721e-4064-9baf-487371f35e63
+		summarizeBy: none
+		sourceColumn: NdisClearingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialYear
+		dataType: string
+		lineageTag: d303bf51-eefe-4f86-9d1a-e7e6efece3bc
+		summarizeBy: none
+		sourceColumn: FinancialYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaidDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c5843683-67d0-4d09-b561-ca810128f135
+		summarizeBy: none
+		sourceColumn: PaidDate
+
+		variation Variation
+			isDefault
+			relationship: 741f87b5-63c4-4f12-987b-fc20298b9351
+			defaultHierarchy: LocalDateTable_9362bd9c-aacb-4bc8-9b57-3a3bf24c1180.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: a051d3a3-a083-4c0f-94ba-c8882c24146f
+		summarizeBy: sum
+		sourceColumn: ClaimAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column PayAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d86ccc27-06ab-44a2-91c5-8ff06d68ffc4
+		summarizeBy: sum
+		sourceColumn: PayAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CancelAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d05b57b2-ea7e-42a3-adb9-6ab59935dd75
+		summarizeBy: sum
+		sourceColumn: CancelAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column UnfoundAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e7b9414e-df34-408c-a011-117694db86b3
+		summarizeBy: sum
+		sourceColumn: UnfoundAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column LineCount
+		dataType: int64
+		formatString: 0
+		lineageTag: 52cad1b8-58f0-4ad9-82f6-4e95fea74f92
+		summarizeBy: sum
+		sourceColumn: LineCount
+
+		annotation SummarizationSetBy = Automatic
+
+	column RecordedAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88ed8024-a2a1-4da3-98de-fe3bf5263c79
+		summarizeBy: none
+		sourceColumn: RecordedAt
+
+		variation Variation
+			isDefault
+			relationship: 41e9f859-420e-4945-8d06-fc9672a834e8
+			defaultHierarchy: LocalDateTable_41e5f34c-5c4b-4daa-b1b2-c95ad2dd73de.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition NdisRemittanceAdvice = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_NdisRemittanceAdvice = Source{[Schema="dbo",Item="NdisRemittanceAdvice"]}[Data]
+				in
+				    dbo_NdisRemittanceAdvice
+
+	annotation PBI_ResultType = Table
+

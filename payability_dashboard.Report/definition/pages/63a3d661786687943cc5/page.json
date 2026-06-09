@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "63a3d661786687943cc5",
+  "displayName": "PopUP",
+  "displayOption": "FitToPage",
+  "height": 1280,
+  "width": 1280,
+  "pageBinding": {
+    "name": "35ec491387954c1921f8",
+    "type": "Default",
+    "parameters": []
+  },
+  "type": "Tooltip"
+}

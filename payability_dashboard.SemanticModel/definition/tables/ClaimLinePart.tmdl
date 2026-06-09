@@ -1,0 +1,177 @@
+table ClaimLinePart
+	lineageTag: 3b5311d9-907f-42d7-88cd-86f1f58d108d
+
+	column Id
+		dataType: string
+		lineageTag: cc028995-7ddb-4b03-9c2e-c3d4bb9e5728
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimLineId
+		dataType: string
+		lineageTag: 312d1e05-963c-42aa-a758-7999a3845f75
+		summarizeBy: none
+		sourceColumn: ClaimLineId
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemRef
+		dataType: string
+		lineageTag: 081a5685-65b6-4a3b-9f8c-d591c77d11d2
+		summarizeBy: none
+		sourceColumn: SupportItemRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportItemHint
+		dataType: string
+		lineageTag: e0b33639-4e3f-41de-b3d4-55a904ad3de6
+		summarizeBy: none
+		sourceColumn: SupportItemHint
+
+		annotation SummarizationSetBy = Automatic
+
+	column TaxCodeRef
+		dataType: string
+		lineageTag: 99479bde-7e08-452e-b3af-469e8c119e1b
+		summarizeBy: none
+		sourceColumn: TaxCodeRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClaimTypeRef
+		dataType: string
+		lineageTag: 1f8c3ea0-b65c-49c4-bb96-52f699f53e55
+		summarizeBy: none
+		sourceColumn: ClaimTypeRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: double
+		lineageTag: 539248ab-f8c2-4df0-99cc-c10ac7e02841
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bc97c3f3-6999-4acf-8f50-6712e30c970c
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ClaimAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 9751d2dd-1761-4d74-b0fc-bd2bab96c02c
+		summarizeBy: sum
+		sourceColumn: ClaimAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column InvoiceLineAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6074b5b9-eb11-4a75-8d88-3fa349f94f96
+		summarizeBy: sum
+		sourceColumn: InvoiceLineAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9201cc8f-d001-4be3-8d31-c139509d4075
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: e6a00828-3499-4b02-bd95-f082f5321237
+			defaultHierarchy: LocalDateTable_4f870778-c08a-4f29-b72a-22c9aa9a3bb9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 07bd0615-8113-40da-b2f1-7b8c166c7578
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: da05b9a5-6939-4681-ba17-a5f65a4fd2d7
+			defaultHierarchy: LocalDateTable_576a7370-b9da-4d5e-92af-f8ee1aff3fea.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExternalRef
+		dataType: string
+		lineageTag: e9918a0a-2f3b-4535-a39e-49b36f7a7b37
+		summarizeBy: none
+		sourceColumn: ExternalRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column ItemDesc
+		dataType: string
+		lineageTag: f1b8729d-51ec-4575-8e0e-084fe975e7c8
+		summarizeBy: none
+		sourceColumn: ItemDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: double
+		lineageTag: b4ef5f9f-1968-4131-9f75-2fa44e17d853
+		summarizeBy: sum
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InvoicePageNo
+		dataType: int64
+		formatString: 0
+		lineageTag: 055d1542-d824-439e-8c3e-829f17cb04a9
+		summarizeBy: sum
+		sourceColumn: InvoicePageNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceLineNo
+		dataType: int64
+		formatString: 0
+		lineageTag: d3815717-ea4a-4a75-88e4-442de93d0e13
+		summarizeBy: sum
+		sourceColumn: InvoiceLineNo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ClaimLinePart = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_ClaimLinePart = Source{[Schema="dbo",Item="ClaimLinePart"]}[Data]
+				in
+				    dbo_ClaimLinePart
+
+	annotation PBI_ResultType = Table
+

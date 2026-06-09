@@ -1,0 +1,240 @@
+table RemitPay
+	lineageTag: a17494e5-1ac4-45c9-afb1-32c43bb8a2a0
+
+	column Id
+		dataType: string
+		lineageTag: ea2198e1-28d8-4512-a88d-7a198257cbab
+		summarizeBy: none
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column BatchId
+		dataType: string
+		lineageTag: 79dedf37-fca6-4a6f-8979-adac8b394b31
+		summarizeBy: none
+		sourceColumn: BatchId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProviderId
+		dataType: string
+		lineageTag: adba5582-08cc-4843-9613-ea33fc40fbe0
+		summarizeBy: none
+		sourceColumn: ProviderId
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParticipantId
+		dataType: string
+		lineageTag: 59c665d9-7cd3-45a4-8f77-3ddbaafbd841
+		summarizeBy: none
+		sourceColumn: ParticipantId
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransferType
+		dataType: string
+		lineageTag: 5c73a182-653c-4f27-a523-f66f550306e7
+		summarizeBy: none
+		sourceColumn: TransferType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Beneficiary
+		dataType: string
+		lineageTag: a4512a91-d57e-4f72-93f4-93ca80a7f498
+		summarizeBy: none
+		sourceColumn: Beneficiary
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payee
+		dataType: string
+		lineageTag: bc618385-f919-4003-b74f-92a68a3f23a9
+		summarizeBy: none
+		sourceColumn: Payee
+
+		annotation SummarizationSetBy = Automatic
+
+	column PayeeAbn
+		dataType: string
+		lineageTag: d6c1d05b-c012-431c-8059-37f76f86f201
+		summarizeBy: none
+		sourceColumn: PayeeAbn
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankCode
+		dataType: string
+		lineageTag: e4ad54e1-1f89-40b2-bf7d-b7cf3a732281
+		summarizeBy: none
+		sourceColumn: BankCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountName
+		dataType: string
+		lineageTag: c10bd802-cfbd-4256-add8-edd6b0eff99c
+		summarizeBy: none
+		sourceColumn: BankAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankBsb
+		dataType: string
+		lineageTag: 503e4ed7-baff-4880-9541-ee6348e38284
+		summarizeBy: none
+		sourceColumn: BankBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column BankAccountNumber
+		dataType: string
+		lineageTag: 6fadad2e-6ace-4212-ae9b-f50cb81e18d2
+		summarizeBy: none
+		sourceColumn: BankAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayBillerName
+		dataType: string
+		lineageTag: 10dca2be-818d-47f0-ab64-98ee1c0c4beb
+		summarizeBy: none
+		sourceColumn: BpayBillerName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayBillerCode
+		dataType: string
+		lineageTag: 11dfabde-c4fc-4370-9703-7be65fb55259
+		summarizeBy: none
+		sourceColumn: BpayBillerCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column BpayPayerReference
+		dataType: string
+		lineageTag: 51a1c2fa-f326-430f-8f4b-b98ebe0642f9
+		summarizeBy: none
+		sourceColumn: BpayPayerReference
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionCode
+		dataType: string
+		lineageTag: c4ad4d25-f919-4fcd-baa4-178702145b7a
+		summarizeBy: none
+		sourceColumn: TransactionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		lineageTag: 28541236-3cf7-4a5e-8c8d-8ccc54048466
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: eee843c9-2253-42f1-ab2c-8263e7cb246e
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column TraceBsb
+		dataType: string
+		lineageTag: 300a7c59-1bf1-4626-af82-8d2c375259d5
+		summarizeBy: none
+		sourceColumn: TraceBsb
+
+		annotation SummarizationSetBy = Automatic
+
+	column TraceAccountNumber
+		dataType: string
+		lineageTag: 5eb8ee25-92e0-41c9-a1c8-2a5f5a67bb9f
+		summarizeBy: none
+		sourceColumn: TraceAccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column TraceRemitter
+		dataType: string
+		lineageTag: 4b94f191-49c7-44c6-a28a-ad97818d30af
+		summarizeBy: none
+		sourceColumn: TraceRemitter
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemittanceAdviceSentAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43c079c5-9b04-4ea0-9ec6-a1dfca788a66
+		summarizeBy: none
+		sourceColumn: RemittanceAdviceSentAt
+
+		variation Variation
+			isDefault
+			relationship: 8231f25b-3442-4895-b5ca-20bdb56c3f29
+			defaultHierarchy: LocalDateTable_9b0d579d-880e-4509-b43b-9cd78e5d7af5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemittanceAdviceEmails
+		dataType: string
+		lineageTag: 85a18da7-3171-4669-ad79-b61ba897ca3f
+		summarizeBy: none
+		sourceColumn: RemittanceAdviceEmails
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImportRef
+		dataType: string
+		lineageTag: b64e134b-c367-4314-9d2b-23f46ce3e9d3
+		summarizeBy: none
+		sourceColumn: ImportRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column MergeRef
+		dataType: string
+		lineageTag: c67c45f8-8e4f-4fce-8776-108142185957
+		summarizeBy: none
+		sourceColumn: MergeRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column RemitTranRef
+		dataType: string
+		lineageTag: daf4563a-0e4f-4ff8-a0e8-9440598d5a17
+		summarizeBy: none
+		sourceColumn: RemitTranRef
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeqNum
+		dataType: int64
+		formatString: 0
+		lineageTag: c0c8468c-bdb5-4c38-b75d-91101aaeebfc
+		summarizeBy: sum
+		sourceColumn: SeqNum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition RemitPay = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("fixxt-dev.database.windows.net", "Fixxt-Planability-Dev"),
+				    dbo_RemitPay = Source{[Schema="dbo",Item="RemitPay"]}[Data]
+				in
+				    dbo_RemitPay
+
+	annotation PBI_ResultType = Table
+
